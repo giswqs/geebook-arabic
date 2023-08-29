@@ -13,7 +13,7 @@ kernelspec:
 
 (chapter01)=
 
-# Introducing GEE and Geemap
+# إِحتراف تطبيق GEE و geemap في بيئة Python
 
 ```{contents}
 :local:
@@ -22,7 +22,7 @@ kernelspec:
 
 +++
 
-## Introduction
+## مدخل 
 
 [Google Earth Engine](https://earthengine.google.com) is a widely used cloud-computing platform in the geospatial community. It features a multi-petabyte data catalog of satellite imagery and geospatial datasets, enabling users to easily and efficiently visualize, manipulate, and analyze geospatial data. Built upon the [Earth Engine Python API](https://developers.google.com/earth-engine/guides/python_install) and open-source mapping libraries, [geemap](https://geemap.org) makes it much easier to analyze and visualize Earth Engine datasets in a Jupyter environment. Since its initial release in April 2020, geemap has become the most popular Python package for interactive analysis and visualization of Earth Engine data.
 
