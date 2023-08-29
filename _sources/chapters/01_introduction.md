@@ -50,47 +50,45 @@ width: 100%
 
 
 
-## What is Google Earth Engine
 
-Google Earth Engine (GEE) is a cloud computing platform with a multi-petabyte [data catalog](https://developers.google.com/earth-engine/datasets) of satellite imagery and geospatial datasets {cite}`Gorelick2017-mz`. During the past few years, GEE has become very popular in the geospatial community, and it has empowered numerous environmental applications at local, regional, and global scales {cite}`Amani2020-vb,Boothroyd2020-fx,Tamiminia2020-df,Wu2019-at`. Since GEE became publicly available in 2010, there has been an exponential growth in the number of peer-reviewed journal publications empowered by GEE (see {numref}`ch01_gee_pubs`). Based on the most recent bibliometric analysis, there are 1,077 peer-reviewed journal publications with the word “Google Earth Engine” in the title and 2,969 publications with the word "Google Earth Engine" in either the title or abstract. In 2022, the number of publications with “Google Earth Engine” in the title or abstract reached 1,150, which is more than a 280-fold increase from the year 2014 with only 4 publications.
+###	1.3 ما هو Google Earth Engine (GEE)؟ 
+هو عبارة عن منصة سحابية تحتوي على كم هائل من البيانات المكانية  و صور الأقمار الصناعية [Gorelick et al., 2017](https://book.geemap.org/chapters/bibliography.html#id3) . خلال السنوات الأخيرة انتشر استخدام GEE بشكل كبير جداً في تطبيقات البيئة و على جميع المستويات حول العالم [Amani et al., 2020, Boothroyd et al., 2020, Tamiminia et al., 2020, Wu et al., 2019](https://book.geemap.org/chapters/bibliography.html#id3). في الشكل أدناه 1.2 يوضح عدد البحوث المنشورة التي تتضمن استخدام GEE.
 
 ```{figure} images/ch01_gee_pubs.jpg
 ---
 name: ch01_gee_pubs
 width: 100%
 ---
-The number of journal publications empowered by Google Earth Engine.
+Google الشكل 1.2 عدد البحوث المنشورة المسجلة في
 ```
 
-To use Earth Engine, you must first [sign up for an Earth Engine account](https://code.earthengine.google.com/register) ({numref}`ch01_gee_signup`). You cannot use Google Earth Engine unless your application has been approved. Once you receive the application approval email, you can log in to the [Earth Engine JavaScript Code Editor](https://code.earthengine.google.com) to get familiar with the JavaScript API.
+استخدام GEE  يتطلب أن يكون لدى المستخدم حساب على منصة Google. يمكن الدخول إلى GEE من خلال محرر أكواد جافا الخاص بجوجل و الذي يسمى    Google Earth JavaScript Code Editorكما في الشكل 1.3.
 
 ```{figure} images/ch01_gee_signup.jpg
 ---
 name: ch01_gee_signup
 width: 100%
 ---
-Signing up for an Earth Engine account.
+ تسجيل حساب على Earth Engine.
 ```
 
-## What is geemap
-
-GEE provides users with both JavaScript and Python APIs for making computational requests to the Earth Engine servers. While the GEE JavaScript API has robust [documentation](https://developers.google.com/earth-engine) and an interactive IDE (i.e., [GEE JavaScript Code Editor](https://code.earthengine.google.com)), the GEE Python API has relatively limited functionality for visualizing results interactively, and there is a lack of documentation. The **geemap** Python package was created to fill this gap {cite}`Wu2020-br`. It is built upon a number of open-source Python libraries, such as the [earthengine-api](https://pypi.org/project/earthengine-api), [folium](https://python-visualization.github.io/folium), [ipyleaflet](https://github.com/jupyter-widgets/ipyleaflet), and [ipywidgets](https://github.com/jupyter-widgets/ipywidgets) packages. Geemap enables users to analyze and visualize Earth Engine datasets interactively within a Jupyter environment with minimal coding (see {numref}`ch01_geemap_gui`).
-
-**Geemap** is intended for students and researchers who would like to utilize the Python ecosystem of diverse libraries and tools to explore Google Earth Engine. It is also designed for existing GEE users who would like to transition from the GEE JavaScript API to the Python API. Geemap provides an interactive graphical user interface for converting GEE JavaScript projects to Python scripts without coding. It can save users a lot of time and effort by providing a simple interface for exploring and visualizing Earth Engine datasets.
-
+###	1.4 ما هو **geemap** ؟
+يمكن جوجل أيرث GEE مستخدميه من البرمجة بيئتين برمجيتين هما JavaScript API  و Python API. تعتبر البرمجة في بيئة JavaScript أكفاء بكثير منها في بيئة Python من حيث وظائف تمثيل النتائج و بشكل فعال و ذلك لوجود مصادر متعددة و احتوائها على بيئة تطوير متكاملة تشمل برامج و تطبيقات جاهزة تزيد من قدرة المطورين في هذا المجال على تحرير و بناء و اختبار البيانات المكانية  فضلا عن تصدير الطبقات المتعددة للبيانات. يعتبر ذلك كله نقص في بيئة Python, و لاجل معالة هذه المشكلة تم طرح حرزمه geemap من قبل الدكتور  [2020,Wu](https://book.geemap.org/chapters/bibliography.html#id3) .    لقد تم بناء geemap بالاعتماد على مجموعة من المكتبات مفتوحه المصدر الموجودة مسبقاً في Python مثل [folium](https://python-visualization.github.io/folium), [earthengine-api](https://pypi.org/project/earthengine-api) , [ipyleaflet](https://github.com/jupyter-widgets/ipyleaflet), and [ipywidgets](https://github.com/jupyter-widgets/ipywidgets).  تمكن geemap المستخدم من تحليل و استعراض البيانات المكانية  المتاحة من قبل GEE و بشكل فعال داخل بيئة conda jupyter مع كتابة القليل من البرمجة, كما في الشكل 1.4 أدناه.
 ```{figure} images/ch01_geemap_gui.jpg
 ---
 name: ch01_geemap_gui
 width: 100%
 ---
-The geemap graphical user interface built upon ipyleaflet and ipywidgets.
+ الشكل 1.4 واجهه geemap
 ```
+
+إن الغرض الرئيسي من geemap هو تمكين المطورين من البرمجة في بيئة Python  لما لها من القدرة في العمل على البيانات, و كذلك الوصول و الاستفادة من الأرشيف الهائل للبيانات في GEE, و أيضاً سرعة تحويل البرامج منJavaScript  إلى Python و بدون الحاجة إلى جهد برمجي كبير. و بالتالي, فأن geemap  تقلل من الوقت المبذول في عملية البرمجة و من خلال واجهه بسيطة و قدرة على تصدير بيانات GEE.
+
 
 (ch01:install)=
 
-## Installing geemap
-
-The geemap package has some optional dependencies, such as [GeoPandas](https://geopandas.org) and [localtileserver](https://github.com/banesullivan/localtileserver). These optional dependencies can sometimes be a challenge to install, especially on Windows. Therefore, we advise you to closely follow the recommendations below to avoid installation problems. Note that installing geemap will automatically install all of its dependencies, including the earthengine-api package. Therefore, you do not need to install the earthengine-api package separately.
+###	1.5 تثبيت geemap:
+ تحتوي geemap  على العديد من المكتبات و الحزم الاختيارية و التي تفيد المطورين في مجال علوم البيانات المكانية  من العمل بشكل كفوء في هذا المجال و تقديم نماذج اكثر فهما و تطبيقا للواقع الخارجي, و من امثله هذه المكتبات  [GeoPandas](https://geopandas.org) ,and [localtileserver](https://github.com/banesullivan/localtileserver) و التي في بعض الأحيان يستصعب تنصيبها في بيئة Windows, لذلك ننصح بأتباع الخطوات التالي لتجنب حدوث المشاكل. و لحسن الحظ فأن تثبيت geemap يقوم بشكل اتوماتيكي بتثبيت هذه الدوال بما فيها earthengine-api لذا فأنك غير محتاج إلى إعادة تنصيبها. 
 
 (ch01:conda)=
 
