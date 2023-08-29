@@ -387,7 +387,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1. مدخل</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.2. الفصل الأول:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-earth-engine-gee">1.2.1. 1.1 ما هو Google Earth Engine (GEE) ؟</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-earth-engine-gee">1.2.1. 1.1 ما هو  Google Earth Engine(GEE) ؟</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-geospatial-data-science">1.3. What is Geospatial Data Science</a></li>
@@ -425,7 +425,7 @@ document.write(`
 <li><p><a class="reference internal" href="#id1" id="id11">مدخل</a></p></li>
 <li><p><a class="reference internal" href="#id2" id="id12">الفصل الأول:</a></p>
 <ul>
-<li><p><a class="reference internal" href="#google-earth-engine-gee" id="id13">1.1 ما هو Google Earth Engine (GEE) ؟</a></p></li>
+<li><p><a class="reference internal" href="#google-earth-engine-gee" id="id13">1.1 ما هو  Google Earth Engine(GEE) ؟</a></p></li>
 </ul>
 </li>
 <li><p><a class="reference internal" href="#what-is-geospatial-data-science" id="id14">What is Geospatial Data Science</a></p></li>
@@ -454,9 +454,11 @@ document.write(`
 <section id="id2">
 <h2><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">1.2. </span>الفصل الأول:</a><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <section id="google-earth-engine-gee">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink"><span class="section-number">1.2.1. </span>1.1 ما هو Google Earth Engine (GEE) ؟</a><a class="headerlink" href="#google-earth-engine-gee" title="Permalink to this heading">#</a></h3>
-<p><a class="reference external" href="https://earthengine.google.com">Google Earth Engine</a> is a widely used cloud-computing platform in the geospatial community. It features a multi-petabyte data catalog of satellite imagery and geospatial datasets, enabling users to easily and efficiently visualize, manipulate, and analyze geospatial data. Built upon the <a class="reference external" href="https://developers.google.com/earth-engine/guides/python_install">Earth Engine Python API</a> and open-source mapping libraries, <a class="reference external" href="https://geemap.org">geemap</a> makes it much easier to analyze and visualize Earth Engine datasets in a Jupyter environment. Since its initial release in April 2020, geemap has become the most popular Python package for interactive analysis and visualization of Earth Engine data.</p>
-<p>This chapter covers the fundamentals of Geospatial Data Science, Google Earth Engine, and geemap. We will walk through the process of setting up a conda environment and installing geemap. Additionally, we will explore how to utilize geemap with Google Colab without needing to install anything on your device. Finally, we will provide some useful resources for further learning about Earth Engine and geemap beyond the scope of this book.</p>
+<h3><span class="section-number">1.2.1. </span>1.1 ما هو  <a class="reference external" href="https://earthengine.google.com">Google Earth Engine</a>(GEE) ؟<a class="headerlink" href="#google-earth-engine-gee" title="Permalink to this heading">#</a></h3>
+<p>هي منصــــة معالجه سحابيـــة واســـــعة الانتشــــــار فـــــــــــي مجتـــــمع  الجغرافيـــــة   المكانيـــــة  (Geo-Spatial community).   تعرض GEE  قائمة من البيانات تصل إلى ألاف  من تيرابايت أو مـــــا يســـــــــــمى  multi-Petabytes من صور الأقمار الاصطنـــــاعية و البيانـــــــات  المكانيــــة و التي تمكن المستخدم من أجراء عمليات تحليل و معالجة و تمثيل نتائج بسهوله و كافأه  و باستخدام   القليل من البرمجــــــة أو دون الحاجة إلى إن تكون ذا معرفه بالبرمجة.</p>
+<p>تحتوي GEE  على الكثير من المكتبات و المصادر المفتوحة ذات الأهمية في خلق أدوات و نماذج برمجيه  تخص  تطبيقات الاستشعار عن بعد و نظم المعلومات الجغرافيــــــــــــة. تعتبر geemap  و احده من اهم هذه الدوال و التي لاقت انتشاراً واسعاً منذ إطلاقها في أبريل عام 2020  و التي تم بنائها في لغة بايثون <a class="reference external" href="https://developers.google.com/earth-engine/guides/python_install">Earth Engine Python API</a>  أعتماداً على مصادر خرائط مجاني و مكتبات مفتوحة المصدر. تمكن geemap المستــــــــــخدم من خلق تطبيقات تحليل تفاعليه (و تسمى interactive map) لها القابلية على التمثيل المرن للبيانـــــــــــات في بيئة jupyter و إجراء تبادل ثنائي الاتجاه بين المستخدم و البيانات المكانية الممثلة على الخرائط أو المرئيات. و يقصد  بـ (  interactive map) هي واجهات تمثيل البيــــــانات المكانيـــــــــــة التي تمكن المستــــــــــــخدم من إجراء عمليات تحليل و استعراض  للخصائص البيانات على مديات مختلفة. كذلك تمكن الخارطة التفاعلية من إجراء عمليات استعلام  (query) عن خصائص محددة و مؤشرات معينة مثل حالة الوضع الاجتماعي و الاقتصادي لمجموعة معينه أو مواقع محطات المســـــــــــاعدة و الدعم لعمليات الإنقاذ عند حدوث الكوارث الطبيعية.</p>
+<p>و تمكن الخارطة التفاعلية (  interactive map) من صناعة و استعراض البيانات و نتائج التحيل لحقول معينه في جدول البيانات, بالإضافة إلى ذلك تمكن المستــــــــــــــخدم من تســــــــــــجيل إحداثيات النقاط على الخارطة لغرض إجراء التحليل المحدد لتلك المنطقة. كما إن هناك العديد من المزايــــــــــا التي توفرها geemap  و التي سوف نستعرضها  في الفصول القادمة.</p>
+<p>في هذا الفصل سوف نستعرض أساسيات علوم البيانات المكانية و GEE  و كذلك geemap. كذلك سوف تتعلم الخطوات المطلوبة لعملية أعداد بيئة conda  و تثبيت geemap  في بيئة العمل, و أيضا توظيف geemap  مع Google colab من دون الحاجة إلى تثبيت أي برنامج إضافي أخر. و أخيراً سوف نقترح بعض المصادر القيمة و المفيدة في تعلم GEE  و geemap.</p>
 </section>
 </section>
 <section id="what-is-geospatial-data-science">
@@ -883,7 +885,7 @@ pip<span class="w"> </span>install<span class="w"> </span>.
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1. مدخل</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.2. الفصل الأول:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-earth-engine-gee">1.2.1. 1.1 ما هو Google Earth Engine (GEE) ؟</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-earth-engine-gee">1.2.1. 1.1 ما هو  Google Earth Engine(GEE) ؟</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-geospatial-data-science">1.3. What is Geospatial Data Science</a></li>
