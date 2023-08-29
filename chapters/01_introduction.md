@@ -33,7 +33,11 @@ kernelspec:
 
 في هذا الفصل سوف نستعرض أساسيات علوم البيانات المكانية و GEE  و كذلك geemap. كذلك سوف تتعلم الخطوات المطلوبة لعملية أعداد بيئة conda  و تثبيت geemap  في بيئة العمل, و أيضا توظيف geemap  مع Google colab من دون الحاجة إلى تثبيت أي برنامج إضافي أخر. و أخيراً سوف نقترح بعض المصادر القيمة و المفيدة في تعلم GEE  و geemap. 
 
-## What is Geospatial Data Science
+##  1.2	ما هي علوم البيانات المكانيـــــــــــة؟
+قبل البدء بعلوم البيانات المكانيـــــــــــــة  يجب إن نأخذ لحمــــة عامة عن علوم البيانات. لاقى علوم البيانات أهميه كبيرة خلال العقد المنصــــــــرم بما يشتمل عليه  من مصطلحــــــــــــات مثل Deep Learning, Machine Learning , Data analytic, Big data, و طبقاً إلى موقع [Google Trend](https://trends.google.com/trends/explore?q=Data%20Science,Big%20Data,Data%20Analytics,Machine%20Learning&geo=US&date=all#TIMESERIES) فأن اهتمام الباحثين عبر الأنترنت عن علوم البيانات قد ازداد و بشكل منقطع النظير منذ العام 2016. حيث يشير الموقع إلى أن 4.1 مليون عمليه بحث مسجلـــــــــــــــة عن علوم البيانات, و 7.5 مليار عمليــــــة بحث عن Big data, و 2.6 مليار عمليــة بحث عن Machine Learning, و اكثر من مليار عن data analytic. و من المفاجئ إن نســـــــــــــــبة البحث عن Big data  تنـــــــــــــــــــاقص بشــــكل ملحوظ منذ العــــــــام 2016 مع زيادة في العمــــــليات الأخرى (كما في الشكل 1.1 أدناه). 
+<picture>
+  <img alt="الشكل 1.1: مخطط أعداد التغيرات في البحوث عن big data, data analytics, data science, and machine learning March 28, 2022." src="../main/1.1_trendinDataScinec.png">
+</picture>
 
 Before introducing geospatial data science, we need to understand what **data science** is. The term "data science" has gained a lot of attention during the past decade, along with related terms such as **big data**, **data analytics**, and **machine learning**. According to [Google Trends](https://bit.ly/40lfnpW), the online search interest over time in "data science" has experienced a rapid increase since 2016 (see {numref}`ch01_google_trends`). When we googled "data science", 4.1 billion records were returned, compared to 7.6 billion on "big data", 2.6 billion on "machine learning", and 1.9 billion on "data analytics". Interestingly, the interest in "big data" has been decreasing since 2018, while the interests in "data science" and "machine learning" continue to increase.
 
