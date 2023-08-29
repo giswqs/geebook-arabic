@@ -35,23 +35,20 @@ kernelspec:
 
 ##  1.2	ما هي علوم البيانات المكانيـــــــــــة؟
 قبل البدء بعلوم البيانات المكانيـــــــــــــة  يجب إن نأخذ لحمــــة عامة عن علوم البيانات. لاقى علوم البيانات أهميه كبيرة خلال العقد المنصــــــــرم بما يشتمل عليه  من مصطلحــــــــــــات مثل Deep Learning, Machine Learning , Data analytic, Big data, و طبقاً إلى موقع [Google Trend](https://trends.google.com/trends/explore?q=Data%20Science,Big%20Data,Data%20Analytics,Machine%20Learning&geo=US&date=all#TIMESERIES) فأن اهتمام الباحثين عبر الأنترنت عن علوم البيانات قد ازداد و بشكل منقطع النظير منذ العام 2016. حيث يشير الموقع إلى أن 4.1 مليون عمليه بحث مسجلـــــــــــــــة عن علوم البيانات, و 7.5 مليار عمليــــــة بحث عن Big data, و 2.6 مليار عمليــة بحث عن Machine Learning, و اكثر من مليار عن data analytic. و من المفاجئ إن نســـــــــــــــبة البحث عن Big data  تنـــــــــــــــــــاقص بشــــكل ملحوظ منذ العــــــــام 2016 مع زيادة في العمــــــليات الأخرى (كما في الشكل 1.1 أدناه). 
-<picture>
-  <img alt="الشكل 1.1: مخطط أعداد التغيرات في البحوث عن big data, data analytics, data science, and machine learning March 28, 2022." src="../main/1.1_trendinDataScinec.png">
-</picture>
 
-Before introducing geospatial data science, we need to understand what **data science** is. The term "data science" has gained a lot of attention during the past decade, along with related terms such as **big data**, **data analytics**, and **machine learning**. According to [Google Trends](https://bit.ly/40lfnpW), the online search interest over time in "data science" has experienced a rapid increase since 2016 (see {numref}`ch01_google_trends`). When we googled "data science", 4.1 billion records were returned, compared to 7.6 billion on "big data", 2.6 billion on "machine learning", and 1.9 billion on "data analytics". Interestingly, the interest in "big data" has been decreasing since 2018, while the interests in "data science" and "machine learning" continue to increase.
 
 ```{figure} images/ch01_google_trends.jpg
 ---
 name: ch01_google_trends
 width: 100%
 ---
-Online search interest trends on data science-related keywords by Google as of March 28, 2022. The numbers on the vertical axis represent search interest relative to the highest point on the chart for the given region (worldwide) and time (2004-2022). A value of 100 is the peak popularity for the term. A value of 50 means that the term is half as popular. A score of 0 means there was not enough data for this term.
 ```
 
-Okay, so what is **data science**? Data science is a broad term that encompasses many areas of interest. From a high-level perspective, data science is the science of data or the study of data {cite}`Cao2017-eb`. From the disciplinary perspective, data science is an interdisciplinary field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from noisy, structured and unstructured data, and apply knowledge and actionable insights from data across a broad range of application domains {cite}`Dhar2013-lk`.
+تُعَرف علوم البيانات على أنها مصطلح واسع يشملُ عدد من المجالات في مساحة عمل واحدة, و من منظور أعلى يعرف علوم البيانات على انه العلم الذي يختص بدراسة البيانات  [Cao, 2017](https://book.geemap.org/chapters/bibliography.html#id8). من وجهة نظر المطورين يعرف علوم البيانات ذلك حقلُ المعرفة الذي يشمل مساحات متداخلة من تطبيق طرق علمية و عمليات رياضية و خوارزميات و نظم إحصاء لاستخلاص أنماط معرفية و دلالات عميقة من البيانات المنظمة أو غير المنظمة في هيكل معين [Dhar, 2013](https://book.geemap.org/chapters/bibliography.html#id9).
 
-**Geospatial data science** is a discipline within data science that specifically focuses on the spatial component of data. It brings forth theories, concepts and applications that are specific to geographic data in the realm of data science {cite}`Hassan2019-ub`. A good example of geospatial data science is NOAA's analysis of spatial and temporal datasets (e.g., satellite imagery, weather data, and climate models) to provide hurricane forecasts using statistics, machine learning, and mathematical models {cite}`Eftelioglu2017-gi`.
+علوم البيانات المكانية (Geospatial Data Science GDS): هو فرع علوم البيانات الذي يختص بدراسة المحتوى المكاني للبيانات. و يعرف على أنه فرع علوم البيانات الذي يجمع النظريات و المفاهيم و التطبيقات التي تختص بالبيانات الجغرافية [Hassan, 2019](https://book.geemap.org/chapters/bibliography.html#id10). مثال على علوم البيانات المكانية (GDS) هو قاعدة بيانات تحليل المعلومات الزمانية و المكانية المقدمة من مؤسسة الإدارة الوطنية للمحيطات و الغلاف الجوي NOAA و التي هي عبارة عن صور أقمار صناعية (راستر) و بيانات مناخ, و أرصاد جوي, و التي تزود نشرة أرصاد البراكين باستخدام التعلم الألي (ML) و النماذج الرياضية [Eftelioglu et al., 2017](https://book.geemap.org/chapters/bibliography.html#id10). 
+
+
 
 ## What is Google Earth Engine
 
