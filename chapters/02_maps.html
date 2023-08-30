@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>2. Creating Interactive Maps &#8212; Geospatial Data Science with Earth Engine and Geemap</title>
+    <title>2. خلق الخارطة التفاعليه Interactive Map &#8212; Geospatial Data Science with Earth Engine and Geemap</title>
   
   
   
@@ -159,7 +159,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_introduction.html">1. إِحتراف تطبيق GEE و geemap في بيئة Python API</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Creating Interactive Maps</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. خلق الخارطة التفاعليه Interactive Map</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_gee_data.html">3. Using Earth Engine Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_local_data.html">4. Using Local Geospatial Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_data_viz.html">5. Visualizing Geospatial Data</a></li>
@@ -375,7 +375,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Creating Interactive Maps</h1>
+    <h1>خلق الخارطة التفاعليه Interactive Map</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -385,25 +385,25 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-requirements">2.2. Technical requirements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-backends">2.3. Plotting backends</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyleaflet">2.3.1. Ipyleaflet</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#folium">2.3.2. Folium</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotly">2.3.3. Plotly</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydeck">2.3.4. Pydeck</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keplergl">2.3.5. KeplerGL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.1. 1. مدخل إلى الخارطة التفاعلية:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.2. 2. المتطلبات التقنية</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-back-ends">2.3. 3. رسم القاعدة الخلفية (Plotting back-ends)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyleaflet">2.3.1. 3.1 رسم قاعدة خلفية بأستخدام	Ipyleaflet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#foluim">2.3.2. 3.2 رسم قاعدة خلفية بأستخدام Foluim</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotly">2.3.3. 3.3 رسم قاعدة خلفية بأستخدام Plotly</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydeck">2.3.4. 3.4 رسم قاعدة خلفية بأستخدام Pydeck</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keplergl">2.3.5. 3.5 رسم قاعدة خلفية بأستخدام KeplerGL</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-basemaps">2.4. Adding basemaps</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-basemaps">2.4.1. Built-in basemaps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xyz-tiles">2.4.2. XYZ tiles</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wms-tiles">2.4.3. WMS tiles</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#planet-basemaps">2.4.4. Planet basemaps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basemap-gui">2.4.5. Basemap GUI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basemap">2.4. 4.	إضافة الخارطة الأساس basemap</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in">2.4.1. 4.1 أضافة خرائط اساس نوع Built-in</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xyz-tiles">2.4.2. 4.2 إضافة الخارطة الأساس XYZ tiles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wms-tiles">2.4.3. 4.3 إضافة الخارطة الأساس WMS tiles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#planet-basemaps">2.4.4. 4.4 إضافة الخارطة الأساس Planet basemaps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basemap-gui">2.4.5. 4.5 إضافة الخارطة الأساس Basemap GUI</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">2.5. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.5. الخلاصة</a></li>
 </ul>
             </nav>
         </div>
@@ -415,38 +415,47 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="creating-interactive-maps">
-<h1><span class="section-number">2. </span>Creating Interactive Maps<a class="headerlink" href="#creating-interactive-maps" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="interactive-map">
+<h1><span class="section-number">2. </span>خلق الخارطة التفاعليه Interactive Map<a class="headerlink" href="#interactive-map" title="Permalink to this heading">#</a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#introduction" id="id1">Introduction</a></p></li>
-<li><p><a class="reference internal" href="#technical-requirements" id="id2">Technical requirements</a></p></li>
-<li><p><a class="reference internal" href="#plotting-backends" id="id3">Plotting backends</a></p>
+<li><p><a class="reference internal" href="#id1" id="id4">1. مدخل إلى الخارطة التفاعلية:</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id5">2. المتطلبات التقنية</a></p></li>
+<li><p><a class="reference internal" href="#plotting-back-ends" id="id6">3. رسم القاعدة الخلفية (Plotting back-ends)</a></p>
 <ul>
-<li><p><a class="reference internal" href="#ipyleaflet" id="id4">Ipyleaflet</a></p></li>
-<li><p><a class="reference internal" href="#folium" id="id5">Folium</a></p></li>
-<li><p><a class="reference internal" href="#plotly" id="id6">Plotly</a></p></li>
-<li><p><a class="reference internal" href="#pydeck" id="id7">Pydeck</a></p></li>
-<li><p><a class="reference internal" href="#keplergl" id="id8">KeplerGL</a></p></li>
+<li><p><a class="reference internal" href="#ipyleaflet" id="id7">3.1 رسم قاعدة خلفية بأستخدام	Ipyleaflet</a></p></li>
+<li><p><a class="reference internal" href="#foluim" id="id8">3.2 رسم قاعدة خلفية بأستخدام Foluim</a></p></li>
+<li><p><a class="reference internal" href="#plotly" id="id9">3.3 رسم قاعدة خلفية بأستخدام Plotly</a></p></li>
+<li><p><a class="reference internal" href="#pydeck" id="id10">3.4 رسم قاعدة خلفية بأستخدام Pydeck</a></p></li>
+<li><p><a class="reference internal" href="#keplergl" id="id11">3.5 رسم قاعدة خلفية بأستخدام KeplerGL</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#adding-basemaps" id="id9">Adding basemaps</a></p>
+<li><p><a class="reference internal" href="#basemap" id="id12">4.	إضافة الخارطة الأساس basemap</a></p>
 <ul>
-<li><p><a class="reference internal" href="#built-in-basemaps" id="id10">Built-in basemaps</a></p></li>
-<li><p><a class="reference internal" href="#xyz-tiles" id="id11">XYZ tiles</a></p></li>
-<li><p><a class="reference internal" href="#wms-tiles" id="id12">WMS tiles</a></p></li>
-<li><p><a class="reference internal" href="#planet-basemaps" id="id13">Planet basemaps</a></p></li>
-<li><p><a class="reference internal" href="#basemap-gui" id="id14">Basemap GUI</a></p></li>
+<li><p><a class="reference internal" href="#built-in" id="id13">4.1 أضافة خرائط اساس نوع Built-in</a></p></li>
+<li><p><a class="reference internal" href="#xyz-tiles" id="id14">4.2 إضافة الخارطة الأساس XYZ tiles</a></p></li>
+<li><p><a class="reference internal" href="#wms-tiles" id="id15">4.3 إضافة الخارطة الأساس WMS tiles</a></p></li>
+<li><p><a class="reference internal" href="#planet-basemaps" id="id16">4.4 إضافة الخارطة الأساس Planet basemaps</a></p></li>
+<li><p><a class="reference internal" href="#basemap-gui" id="id17">4.5 إضافة الخارطة الأساس Basemap GUI</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#summary" id="id15">Summary</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id18">الخلاصة</a></p></li>
 </ul>
 </nav>
-<section id="introduction">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink"><span class="section-number">2.1. </span>Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">2.1. </span>1. مدخل إلى الخارطة التفاعلية:</a><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>بعد تمثيل البيانات المكانية  واحدة من اهم مميزات البرامج و التطبيقات الكفؤة, و يعرف تمثيل البيانات على أنه ترجمة المعلومات الرقمية و النصية إلى أشكال تمكن العقل البشري من فهما بسهولة و يسر و لاستخراج الأفكار و النماذج المشتركة. هناك الكثير من الصيغ التي يكمن من خلالها تمثيل البيانات منا المخططات, الرسوم البيانية, و الخرائط. و هناك الكثير من المميزات التي يجب يتمتع بها التمثيل للبيانات في الصيغة المطلوبة. حيث يجب أن تكون الصيغة التي مُثلت بها البيانات بسيطة و سهلة خاليه من التعقيد, و أن تطابق نوع البيانات, و أن تكون لها القابلية توضيح النقاط الجوهرية التي يهدف إليها المصمم. و على الرغم من وجود الكثير من البرامج و التطبيقات التي تساعد على تمثيل البيانات المكانية إلا أنها تعد مهمه ليست بالسهلة إلى حد ما, لما تحتويه من عناصر رقمية يجب إسقاطها طبقة التمثيل بدقة و التي تمثل موقع تلك المعلومات على سطح الأرض.</p>
+<p>تعتبر الخرائط من أهم الصيغ التي يحتاجها العاملون في مجال نظم المعلومات الجغرافية و الاستشعار عن بعد و كذلك بقية الحقول المعرفية لتمثيل البيانات و تحديد موقع الظواهر في موقعها الحقيقي. تمثل الخرائط طريقة سهله لتمثيل البيانات الرقمية التي تحمل إحداثيات مطابقة للواقع المكاني و تمكن من تصديرها على شكل صور, PDF, KML, أو غيرها من الصيغ, و يسمى هذا النوع من الخرائط بالخرائط الثابتة (static maps). على الرغم من ذلك هناك بعض محددات في إصدار خرائط  باستخدام الخرائط الثابتة بشكل يتلائم مع الغرض أحيانا. من هذه المحددات منها عدم إمكانية تحديد مساحات كبيره, و لا يمكن إظهار ديناميكية التفاعل مع صيغة البيانات مثل تتبع التغيرات عبر الزمن أو الارتباطات. و المهم أنها لا تستطيع إظهار مستويات مختلفة من البيانات. و من الخلال الخرائط الثابتة لا يستطيع المستخدم من تخصيص أو فلترة البيانات حسب احتياجه و بشكل ديناميكي. و لا يمكن خلالها التركيز على القيم المتطرفة أو الشذوذ أو تحديد القيم الغير واضحة.</p>
+<p>و لأجل معالجة جميع هذه المشاكل تم طرح الخارطة التفاعلية و كذلك ربطها بقاعدة ضخمة من البيانات و التي تكون جاهزة للمستخدم مما يتيح بناء تطبيق و استخدامها و اكتشاف حقول جديدة من خلال أتاحتها إلى جميع الباحثين حول العالم.
+الخارطة التفاعلية هي تطبيق يسمح باستعراض البيانات على متصفح الويب. تمكن الخارطة التفاعلية المستخدم من تمثيل البيانات على شكل طبقات يستطيع المستخدم تخصيصها و إدارتها بشكل مرن. من خلال الخارطة التفاعلية من زيادة و تصغير حجم مساحة التمثيل مما يتيح له الكشف عن العناصر المشتركة و الأنماط و قياس تأثير الظواهر في مديات مختلفة. أضافة الى ذلك أمكانية أضافة تطبيقات مباشرة على البيانات  من خلال بعض النوافذ و التلميحات و التي تعتبر أدوات إضافية يتحكم بها المستخدم.</p>
+<p>هناك الكثير من المميزات التي تجعل من الخارطة التفاعلية أكثر استخداما من غيرها منها:</p>
+<p>•	المشاركة مع المستخدمين: عند العمل كفريق في مشروع ما فأن الخارطة التفاعلية تتيح للمستخدم أمكانية المشاركة مع الفريق و بالتالي تكامل إخراج المشروع و البيانات من قبل أكثر من وجه نظر.
+•	تغيير حجم الخارطة مساحة أنتشار البيانات في مستويات متعددة على الشاشة.
+•	تصوير البيانات على شكل طبقات قابلة للتعديل على الشاشة و التي تمثل أحيانا البيانات لفترات زمنية مختلفة مما يتيح تتبع التغيرات عبر الزمن.</p>
 </section>
-<section id="technical-requirements">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink"><span class="section-number">2.2. </span>Technical requirements</a><a class="headerlink" href="#technical-requirements" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">2.2. </span>2. المتطلبات التقنية</a><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>كما اسلفنا في الفصل الأول فان العمل على الخارطة التفاعلية يحتاج إلى بعض من المكتب التي يجب ان يتم استيرادها للعمل على البيانات المكانية. و تتطلب هذه المكتبات  بعض أدارة لبيئة conda و تثبيت بعض الحزم الضرورية و طلب تصريح العمل على بيانات Google Earth Engine. و يأتي ملخص الخطوات التقنية التي تسبق العمل على الخارطة التفاعلية بما يلي:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>gee<span class="w"> </span>python
 conda<span class="w"> </span>activate<span class="w"> </span>gee
 conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>mamba
@@ -479,10 +488,11 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="plotting-backends">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">2.3. </span>Plotting backends</a><a class="headerlink" href="#plotting-backends" title="Permalink to this heading">#</a></h2>
+<section id="plotting-back-ends">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink"><span class="section-number">2.3. </span>3. رسم القاعدة الخلفية (Plotting back-ends)</a><a class="headerlink" href="#plotting-back-ends" title="Permalink to this heading">#</a></h2>
+<p>يتطلب رسم الخرائط إنشاء القاعدة الأساسية التي سوف يتم رسم الخارطة الأساس عليها و التي تحتوي على دوال تقوم بعملية إسقاط المعلومات في موقعها الحقيقي على السطح بشكل رقمي على الخارطة يتناسب حسب مقياس الرسم المعتمد. و التي تمكن المستخدم من تمثيل البيانات المكانية  بسهوله و يسر. هناك العديد من المكتبات التي تساعد في عمل الهيكل الأساس الذي يستعمل في <strong>geemap</strong></p>
 <section id="ipyleaflet">
-<h3><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">2.3.1. </span>Ipyleaflet</a><a class="headerlink" href="#ipyleaflet" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id7" role="doc-backlink"><span class="section-number">2.3.1. </span>3.1 رسم قاعدة خلفية بأستخدام	Ipyleaflet</a><a class="headerlink" href="#ipyleaflet" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geemap</span>
@@ -492,7 +502,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>  <span class="c1"># الطريقة الاعتيادية و التي تأخذ المدخلات الافتراضية</span>
 </pre></div>
 </div>
 </div>
@@ -506,7 +516,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>  <span class="c1">#تحديد حجم و ارتفاع الخارطة و مرك أو إحداثي المنطقة المراد استعراضها</span>
 <span class="n">Map</span>
 </pre></div>
 </div>
@@ -514,7 +524,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">data_ctrl</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">toolbar_ctrl</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">draw_ctrl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">data_ctrl</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">toolbar_ctrl</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">draw_ctrl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1">#في حالة إضافة أشرطة الأدوات الخاصة بالبيانات و تغيير المساحة إلى الخارطة </span>
 <span class="n">Map</span>
 </pre></div>
 </div>
@@ -536,18 +546,13 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="folium">
-<h3><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">2.3.2. </span>Folium</a><a class="headerlink" href="#folium" title="Permalink to this heading">#</a></h3>
+<section id="foluim">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">2.3.2. </span>3.2 رسم قاعدة خلفية بأستخدام Foluim</a><a class="headerlink" href="#foluim" title="Permalink to this heading">#</a></h3>
+<p>استخدام مكتبة <strong>folium</strong> مع الإعدادات الافتراضية و تحديد إحداثيات المركز و المساحة و المدى للخارطة. و تلاحظ أنها تختلف عن Ipyleaflet في عدد الأدوات المتاحة و كذلك محدودية البحث عن موقع معين.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geemap.foliumap</span> <span class="k">as</span> <span class="nn">geemap</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+<span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span> 
 <span class="n">Map</span>
 </pre></div>
 </div>
@@ -562,7 +567,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="plotly">
-<h3><a class="toc-backref" href="#id6" role="doc-backlink"><span class="section-number">2.3.3. </span>Plotly</a><a class="headerlink" href="#plotly" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id9" role="doc-backlink"><span class="section-number">2.3.3. </span>3.3 رسم قاعدة خلفية بأستخدام Plotly</a><a class="headerlink" href="#plotly" title="Permalink to this heading">#</a></h3>
+<p>تلاحظ أن <strong>plotly</strong> تتيح للمستخدم إمكانية رسم مخطط للبيانات للمنطقة المحددة و ضمن الطبقة المطلوبة, كذلك المباشرة بعملية تحميل المخطط</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geemap.plotlymap</span> <span class="k">as</span> <span class="nn">geemap</span>
@@ -587,61 +593,64 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="pydeck">
-<h3><a class="toc-backref" href="#id7" role="doc-backlink"><span class="section-number">2.3.4. </span>Pydeck</a><a class="headerlink" href="#pydeck" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">2.3.4. </span>3.4 رسم قاعدة خلفية بأستخدام Pydeck</a><a class="headerlink" href="#pydeck" title="Permalink to this heading">#</a></h3>
+<p>تقوم pydeck باستعراض الطبقات على الخارطة الأساس CARTO, OpenStreetMap contributors.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geemap.deck</span> <span class="k">as</span> <span class="nn">geemap</span>
+<span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
+<span class="n">Map</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>مع ملاحظه أنها تحتاج إلى تنصيب في بعض الأحيان و لأجل ذلك يجب أن تنفذ الإيعاز التالي:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
-<span class="n">Map</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install pydeck
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="keplergl">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">2.3.5. </span>KeplerGL</a><a class="headerlink" href="#keplergl" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">2.3.5. </span>3.5 رسم قاعدة خلفية بأستخدام KeplerGL</a><a class="headerlink" href="#keplergl" title="Permalink to this heading">#</a></h3>
+<p>على الرغم من أن kepler ملحقة بـgeemap إلا إنها تحتاج إلى تنصيب مستقل و لأجل ذلك قم بتنفيذ الإيعاز الأخير.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geemap.kepler</span> <span class="k">as</span> <span class="nn">geemap</span>
+<span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
+<span class="n">Map</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
-<span class="n">Map</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install kepler
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="adding-basemaps">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink"><span class="section-number">2.4. </span>Adding basemaps</a><a class="headerlink" href="#adding-basemaps" title="Permalink to this heading">#</a></h2>
-<section id="built-in-basemaps">
-<h3><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">2.4.1. </span>Built-in basemaps</a><a class="headerlink" href="#built-in-basemaps" title="Permalink to this heading">#</a></h3>
+<section id="basemap">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">2.4. </span>4.	إضافة الخارطة الأساس basemap</a><a class="headerlink" href="#basemap" title="Permalink to this heading">#</a></h2>
+<p>الخارطة الأساس هي طبقة من المعلومات الجغرافية التي تعتبر أرضية متكونة من سياق يقوم بأسقاط البيانات المكانية إعتماداً على إشارات مرجعية مكانية لسمات ثابتة لا تتغير مثل الأنهار, الحدود, و الطرق, و غيرها. و تصنف الخرائط الأساس إلى خمس أنواع و التي يمكن إدراجها و حسب الإيعازات المشار إليها أدناه في كل نقطة.</p>
+<section id="built-in">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink"><span class="section-number">2.4.1. </span>4.1 أضافة خرائط اساس نوع Built-in</a><a class="headerlink" href="#built-in" title="Permalink to this heading">#</a></h3>
+<p>هناك حوالي 411  نوع من الخرائط الأساس التي تعتبر ضمنيه في <strong>geemap</strong> و الشائع منها هي  **OpenStreetMap, <strong>ROADMAP</strong>, <strong>SATELLITE</strong>, <strong>TERRAIN</strong>, <strong>HYBRID</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geemap</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">basemap</span><span class="o">=</span><span class="s1">&#39;HYBRID&#39;</span><span class="p">)</span>
+
+<span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">basemap</span><span class="o">=</span><span class="s1">&#39;HYBRID&#39;</span><span class="p">)</span> <span class="c1"># HYBRID   إدراج خارطة أساس </span>
 <span class="n">Map</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>في حال تغيير نوع الخارطة الأساس و في هذا المثال تم تغيير الخراطة الأساس إلى OpenTopoMap</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="s1">&#39;OpenTopoMap&#39;</span><span class="p">)</span>
@@ -649,6 +658,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </div>
+<p>و لغرض طباعة أسماء خرائط الأساس (built-in basemaps) الموجودة ضمن    <strong>geemap</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">basemap</span> <span class="ow">in</span> <span class="n">geemap</span><span class="o">.</span><span class="n">basemaps</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
@@ -657,6 +667,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </div>
+<p>لأجل معرفة عدد الخرائط الأساس في <strong>geemap</strong> بعد التحديث قم بتنفيذ الإيعاز التالي:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">geemap</span><span class="o">.</span><span class="n">basemaps</span><span class="p">)</span>
@@ -666,7 +677,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="xyz-tiles">
-<h3><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">2.4.2. </span>XYZ tiles</a><a class="headerlink" href="#xyz-tiles" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id14" role="doc-backlink"><span class="section-number">2.4.2. </span>4.2 إضافة الخارطة الأساس XYZ tiles</a><a class="headerlink" href="#xyz-tiles" title="Permalink to this heading">#</a></h3>
+<p>هناك نوع من الخرائط الأساس لا يوجد في ضمن geemap بل يتم استيراده من مصدر خارجي و هو عباره عن برتوكول يقوم بعملية إرجاع جغرافي لتشكيلات ثابته يتم تحديدها من قبل المستخدم. تعتبر XYZ tiles واحدة من هذه الأنواع و التي يتم تحميلها من رابط معين و تضاف كطبقة إلى القاعدة الخلفية. في الخطوات التالية يتم إضافة الخارطة الأساس XYZ tiles إلى الخارطة.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -682,7 +694,9 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="wms-tiles">
-<h3><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">2.4.3. </span>WMS tiles</a><a class="headerlink" href="#wms-tiles" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id15" role="doc-backlink"><span class="section-number">2.4.3. </span>4.3 إضافة الخارطة الأساس WMS tiles</a><a class="headerlink" href="#wms-tiles" title="Permalink to this heading">#</a></h3>
+<p>تزود هذه الخارطة من قبل المجموعة الاتحادية استخراج خصائص الأرض من صور عالية الدقة, و التي هي عباره عن جمعية مشـــتركه لأكثر من دوله وظيفتها تحليل الغطاء الأرضــــي على مســــــتوى العالم (Global Scale). للمزيد الرابط التالي         <a class="reference external" href="https://www.mrlc.gov/">Multi-Resolution Land Characteristics (MRLC) Consortium</a>.
+قم بتنفيذ الخطوات التالية لأجل استيراد خارطة أساس WMS tiles:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -702,19 +716,21 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="planet-basemaps">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink"><span class="section-number">2.4.4. </span>Planet basemaps</a><a class="headerlink" href="#planet-basemaps" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id16" role="doc-backlink"><span class="section-number">2.4.4. </span>4.4 إضافة الخارطة الأساس Planet basemaps</a><a class="headerlink" href="#planet-basemaps" title="Permalink to this heading">#</a></h3>
+<p>تعتبر Planet Basemaps واحدة من اهم الخرائط الأساس التي تزود التغيرات في الغطاء النباتي على مدار السنه منذ العام 2016 . لقد قام فريق من المطورين متخصص في مجال نظم المعلومات الجغرافية ببناء هذه الخارطة الأساس و بالاستفادة من البرامج المتطورة التي تعمل على دمج صور الأقمار الصناعية على مستوى العالم و استخلاص الموزاييك الأرضي و على مديات زمنيه تتقارب لفترات ثلاثة هي شهريه, ربع سنوية, و سنوية. تزود Planet basemaps المستخدمين بالقدرة على الحصول على رؤية دقيقه لمساحات واسعة و كذلك التحليل الزمني لفترات معينه مما يتيح إمكانيه تتبع التغيرات و التنبؤ بمستقبل التنوع السطحي للبيئة.
+<code class="docutils literal notranslate"><span class="pre">ملاحظه:</span> <span class="pre">لأجل</span> <span class="pre">استخدام</span> <span class="pre">Planet</span> <span class="pre">basemaps</span> <span class="pre">يجب</span> <span class="pre">عليك</span> <span class="pre">تغيير</span> <span class="pre">مفتاح</span> <span class="pre">بيئة</span> <span class="pre">العمل</span> <span class="pre">و</span> <span class="pre">الذي</span> <span class="pre">يكون</span> <span class="pre">ضمن</span> <span class="pre">نظام</span> <span class="pre">التشغيل</span> <span class="pre">الخاص</span> <span class="pre">بـ</span> <span class="pre">conda.</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PLANET_API_KEY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;YOUR_API_KEY&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PLANET_API_KEY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;YOUR_API_KEY&quot;</span>  <span class="c1">#  هنا يمكن تغير مفتاح الدخول الى بيئة العمل على الخارطة الاساس</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">quarterly_tiles</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">planet_quarterly_tiles</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">quarterly_tiles</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">planet_quarterly_tiles</span><span class="p">()</span>   <span class="c1"># هذه الخطوات تمكن من استعراض البيانات للقواعد الأساس حسب الربع السنوي</span>
 <span class="k">for</span> <span class="n">tile</span> <span class="ow">in</span> <span class="n">quarterly_tiles</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">tile</span><span class="p">)</span>
 </pre></div>
@@ -723,7 +739,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">monthly_tiles</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">planet_monthly_tiles</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">monthly_tiles</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">planet_monthly_tiles</span><span class="p">()</span>  <span class="c1">#  هذه الخطوات تمكن من استعراض البيانات للقواعد الأساس شهريا</span>
 <span class="k">for</span> <span class="n">tile</span> <span class="ow">in</span> <span class="n">monthly_tiles</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">tile</span><span class="p">)</span>
 </pre></div>
@@ -733,7 +749,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
-<span class="n">Map</span><span class="o">.</span><span class="n">add_planet_by_month</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2020</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">Map</span><span class="o">.</span><span class="n">add_planet_by_month</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2020</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>  <span class="c1"># لأجل إضافة خارطة أساس على المدى الشهري و المحدد للشهر الثامن لعام 2020 كما في هذا المثال</span>
 <span class="n">Map</span>
 </pre></div>
 </div>
@@ -742,7 +758,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
-<span class="n">Map</span><span class="o">.</span><span class="n">add_planet_by_quarter</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2019</span><span class="p">,</span> <span class="n">quarter</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">Map</span><span class="o">.</span><span class="n">add_planet_by_quarter</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2019</span><span class="p">,</span> <span class="n">quarter</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># لأجل إضافة خارطة أساس على المدى الربع سنوي و المحدد لربع السنه الثاني لعام  2019 كما في هذا المثال</span>
 <span class="n">Map</span>
 </pre></div>
 </div>
@@ -750,19 +766,19 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="basemap-gui">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink"><span class="section-number">2.4.5. </span>Basemap GUI</a><a class="headerlink" href="#basemap-gui" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id17" role="doc-backlink"><span class="section-number">2.4.5. </span>4.5 إضافة الخارطة الأساس Basemap GUI</a><a class="headerlink" href="#basemap-gui" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PLANET_API_KEY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;YOUR_API_KEY&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PLANET_API_KEY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;YOUR_API_KEY&quot;</span>  <span class="c1"># تغيير المفتاح</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>  <span class="c1"># أضافة الخارطه</span>
 <span class="n">Map</span>
 </pre></div>
 </div>
@@ -770,8 +786,9 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 </section>
-<section id="summary">
-<h2><a class="toc-backref" href="#id15" role="doc-backlink"><span class="section-number">2.5. </span>Summary</a><a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h2><a class="toc-backref" href="#id18" role="doc-backlink"><span class="section-number">2.5. </span>الخلاصة</a><a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>الخارطة التفاعلية هي تطبيق يسمح باستعراض البيانات على متصفح الويب. لاجل خلق خارطة تفاعليه هناك عدد من المتطلبات التقنية التي يجب تحضيرها للعمل. و كذلك يجب تحديد نوع القاعدة الخلفية التي سوف يتم رسم الخارطه الاساس عليها و كذلك بقية الطبقات للبيانات المكانية. تحتوي القاعده الخلفيه على عدد من الادوات و التلميحات التي تمكن المستخدم من العمل بشكل مباشر على استخدام تطبيقات جاهزه تجعل من العمل مرن و سهل في التبادل مع الواجهة و مصدر البيانات. و جميع ما تم تنفيذه في الفصل هذا هو واجهه للخارطة التفاعلية.</p>
 </section>
 </section>
 
@@ -842,25 +859,25 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-requirements">2.2. Technical requirements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-backends">2.3. Plotting backends</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyleaflet">2.3.1. Ipyleaflet</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#folium">2.3.2. Folium</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotly">2.3.3. Plotly</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydeck">2.3.4. Pydeck</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keplergl">2.3.5. KeplerGL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.1. 1. مدخل إلى الخارطة التفاعلية:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.2. 2. المتطلبات التقنية</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-back-ends">2.3. 3. رسم القاعدة الخلفية (Plotting back-ends)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyleaflet">2.3.1. 3.1 رسم قاعدة خلفية بأستخدام	Ipyleaflet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#foluim">2.3.2. 3.2 رسم قاعدة خلفية بأستخدام Foluim</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotly">2.3.3. 3.3 رسم قاعدة خلفية بأستخدام Plotly</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydeck">2.3.4. 3.4 رسم قاعدة خلفية بأستخدام Pydeck</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keplergl">2.3.5. 3.5 رسم قاعدة خلفية بأستخدام KeplerGL</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-basemaps">2.4. Adding basemaps</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-basemaps">2.4.1. Built-in basemaps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xyz-tiles">2.4.2. XYZ tiles</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wms-tiles">2.4.3. WMS tiles</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#planet-basemaps">2.4.4. Planet basemaps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basemap-gui">2.4.5. Basemap GUI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basemap">2.4. 4.	إضافة الخارطة الأساس basemap</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in">2.4.1. 4.1 أضافة خرائط اساس نوع Built-in</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xyz-tiles">2.4.2. 4.2 إضافة الخارطة الأساس XYZ tiles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wms-tiles">2.4.3. 4.3 إضافة الخارطة الأساس WMS tiles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#planet-basemaps">2.4.4. 4.4 إضافة الخارطة الأساس Planet basemaps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basemap-gui">2.4.5. 4.5 إضافة الخارطة الأساس Basemap GUI</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">2.5. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.5. الخلاصة</a></li>
 </ul>
   </nav></div>
 
