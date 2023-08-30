@@ -123,7 +123,7 @@ name: ch01_conda_geemap
 شكل 1.6 تعفيل بيئة gee و تنصيب geemap
 ```
 
-ما أسلفنا أن هناك العديد من المكتبات الملحقة بـ geemap مثل GeoPandas, localtileserver, [osmnx](https://github.com/gboeing/osmnx), [rioxarray](https://github.com/corteva/rioxarray) and [rio-cogeo](https://github.com/cogeotiff/rio-cogeo) ,و للمزيد من المعلومات عن المكتبات الملحقة يمكن الدخول إلى الرابط التالي [requirements_all.txt](https://github.com/gee-community/geemap/blob/master/requirements_all.txt)  . لحسن الحظ إن هذه المكتبات متوفرة في حزمة  [pygis](https://pygis.gishub.org/)  و التي بالإمكان تنصيبها في إيعاز واحد. على الرغم من ذلك إلى إن تنصيب geemap يأخذ وقتاً طويلاً لتحميل جميع المكتبات الملحقة, لذا يمكن تنصيب pygis من خلال  حزمه [Mamba](https://github.com/mamba-org/mamba) و التي هي أسرع و أكفاء كما أنها منصة قابلة للتنصيب في بيئات مختلفة.mamba هي عبارة عن حزمة قابله للكتابة و التنفيذ و التي تجعل من تنصيب الحزم الأخرى أسرع, و هي أيضا قابلة للتنصيب في بيئات Windows, Linux, MacOS و متوافقة مع جميع الحزم الأخرى. وتنصب كما في  الإيعازات التالية  في prompt  و كما في الشكل 1.7 ادناه:
+كما أسلفنا أن هناك العديد من المكتبات الملحقة بـ geemap مثل GeoPandas, localtileserver, [osmnx](https://github.com/gboeing/osmnx), [rioxarray](https://github.com/corteva/rioxarray) and [rio-cogeo](https://github.com/cogeotiff/rio-cogeo) ,و للمزيد من المعلومات عن المكتبات الملحقة يمكن الدخول إلى الرابط التالي [requirements_all.txt](https://github.com/gee-community/geemap/blob/master/requirements_all.txt)  . لحسن الحظ إن هذه المكتبات متوفرة في حزمة  [pygis](https://pygis.gishub.org/)  و التي بالإمكان تنصيبها في إيعاز واحد. على الرغم من ذلك إلى إن تنصيب geemap يأخذ وقتاً طويلاً لتحميل جميع المكتبات الملحقة, لذا يمكن تنصيب pygis من خلال  حزمه [Mamba](https://github.com/mamba-org/mamba) و التي هي أسرع و أكفاء كما أنها منصة قابلة للتنصيب في بيئات مختلفة.mamba هي عبارة عن حزمة قابله للكتابة و التنفيذ و التي تجعل من تنصيب الحزم الأخرى أسرع, و هي أيضا قابلة للتنصيب في بيئات Windows, Linux, MacOS و متوافقة مع جميع الحزم الأخرى. وتنصب كما في  الإيعازات التالية  في prompt  و كما في الشكل 1.7 ادناه:
 
 ```bash
 conda install -c conda-forge mamba
@@ -138,67 +138,53 @@ name: ch01_install_mamba
 Fig. 1.7 Installing the Mamba package manager.
 ```
 
-Once Mamba is installed in a conda environment, you can then simply replace any `conda` command with `mamba`. For example, to install pygis, type "mamba install -c conda-forge pygis" and press **Enter** (see {numref}`ch01_install_pygis`).
+#### 1.5.2 تنصيب geemap باستخدام **pip** :
+عتبر pip عباره عن مدير الحزم الضرورية للموديل الذي يتم بناءه. يمكن تنصيب **geemap** باستخدام **pip**  عن طريق الإيعاز التالي _pip install geemap_ . يُمكن pip من تنصيب جميع الملحقات التابعة ل geemap بشكل منفرد و كما موضح في بعض الأمثلة أدناه:
 
-```{figure} images/ch01_install_pygis.jpg
----
-name: ch01_install_pygis
----
-Installing optional dependencies of geemap through the pygis package.
-```
+*_ملاحظة:و حسب شكل الإيعاز التالي pip install geemap[extra]  حيث  يتم وضع اسم المكتبة الملحقة بدل كلمه extra._*
 
-Congratulations! You have successfully installed geemap and its dependencies. We will dive into geemap in the next chapter.
+       • pip install geemap[all]
+       • pip install geemap[backends]
+       • pip install geemap[lidar]
+       • pip install geemap[raster]
+       • pip install geemap[sql]
+       • pip install geemap[apps]
+       • pip install geemap[vector]
 
-### Installing with pip
+يمكمن تنصيب geemap من خلال [PyPI](https://pypi.org/project/geemap) و بأستخدام **pip**
 
-Geemap is also available on [PyPI](https://pypi.org/project/geemap). It can be installed with pip using the following command:
 
 ```bash
 pip install geemap
 ```
 
-All optional dependencies of geemap are listed in [requirements_all.txt](https://github.com/gee-community/geemap/blob/master/requirements_all.txt), which can be installed using one of the following:
-
-- `pip install geemap[extra]`: installing extra optional dependencies listed in requirements_extra.txt.
-- `pip install geemap[all]`: installing all optional dependencies listed in requirements_all.txt.
-- `pip install geemap[backends]`: installing keplergl, pydeck, and plotly.
-- `pip install geemap[lidar]`: installing ipygany, ipyvtklink, laspy, panel, pyntcloud[LAS], pyvista, pyvista-xarray, and rioxarray.
-- `pip install geemap[raster]`: installing geedim, localtileserver, rio-cogeo, rioxarray, netcdf4, and pyvista-xarray.
-- `pip install geemap[sql]`: installing psycopg2 and sqlalchemy.
-- `pip install geemap[apps]`: installing gradio, streamlit-folium, and voila
-- `pip install geemap[vector]`: installing geopandas and osmnx.
-
-### Installing from source
-
-You may install the latest development version by cloning the GitHub repository with [Git](https://git-scm.com) and using pip to install from the local directory:
+####	1.5.3 تنصيب geemap باستخدام مصدر خارجي:
+يمكن تنصيب geemap عن طريق أحد المستودعات الموجودة في [Git](https://git-scm.com) مع pip و حسب الإيعاز التالي:
 
 ```bash
 git clone https://github.com/gee-community/geemap
 cd geemap
 pip install .
 ```
-
-It is also possible to install the latest development version directly from the GitHub repository with:
-
+أو عن طريق الإيعاز التالي:
 ```bash
 pip install git+https://github.com/gee-community/geemap
 ```
 
-### Upgrading geemap
 
-If you have installed geemap before and want to upgrade to the latest version, you can run the following command in your terminal:
+و لتنصيب أخر إصدار مباشراً من داخل terminal يمكن استخدام الإيعاز التالي: 
 
 ```bash
 pip install -U geemap
 ```
 
-If you use conda, you can update geemap to the latest version by running the following command in your terminal:
+لاجل أجراء عملية تحديث على نسخة geemap يمكن استخدام الايعاز التالي من داخل conda
 
 ```bash
 conda update -c conda-forge geemap
 ```
 
-To install the development version from GitHub directly within a Jupyter notebook without using Git, run the following code in a Jupyter notebook and restart the kernel to take effect:
+ولأجل تنصيب  أخر نسخه مطوره من داخل jupyter noteobook و بدون Git يمكن تنفيذ الإيعاز التالي مع أعاده تشغيل kernel لأجل تفعيل الإصدار الجديد. 
 
 ```{code-cell} ipython3
 import geemap
@@ -206,15 +192,17 @@ import geemap
 geemap.update_package()
 ```
 
-### Using Docker
+#### 1.5.5	تنصيب geemap من خلال Docker
+يمكن تنصيب geemap من خلال حاوية [Docker](https://docs.docker.com/get-docker/) ولكن يجب تنصيب Docker أولا, و من ثم تنفيذ الإيعاز التالي من خلال الTerminal الخاص بك:
 
-Geemap is also available on [Docker Hub](https://hub.docker.com/r/giswqs/geemap).
-
-To use geemap in a Docker container, you first need to install [Docker](https://docs.docker.com/get-docker). Once Docker is installed, you can pull the latest geemap image from Docker Hub by running the following command in your terminal:
 
 ```bash
 docker run -it -p 8888:8888 giswqs/geemap:latest
 ```
+
+###	1.6 العمل في بيئة **Jupyter notebook**:
+
+العمل في بيئة jupyter notebook : بعد خلق بيئة جديدة في conda يجب تفعيلها و من خلال الإيعاز التالي من داخل Conda Command Prompt 
 
 ## Creating a Jupyter notebook
 
