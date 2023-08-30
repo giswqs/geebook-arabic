@@ -13,7 +13,7 @@ kernelspec:
 
 (chapter01)=
 
-# إِحتراف تطبيق GEE و geemap في بيئة Python
+# إِحتراف تطبيق GEE و geemap في بيئة Python API
 
 ```{contents}
 :local:
