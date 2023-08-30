@@ -135,7 +135,7 @@ mamba install -c conda-forge pygis
 ---
 name: ch01_install_mamba
 ---
-Fig. 1.7 Installing the Mamba package manager.
+Fig. 1.7: Installing the Mamba package manager.
 ```
 
 #### 1.5.2 تنصيب geemap باستخدام **pip** :
@@ -204,39 +204,35 @@ docker run -it -p 8888:8888 giswqs/geemap:latest
 
 العمل في بيئة jupyter notebook : بعد خلق بيئة جديدة في conda يجب تفعيلها و من خلال الإيعاز التالي من داخل Conda Command Prompt 
 
-## Creating a Jupyter notebook
-
-Let's activate the conda environment created in the previous section:
 
 ```bash
 conda activate gee
 ```
+بعد الدخول فأن امتداد ملف العمل في الذكرة   (Directory)  على سبيل المثال
 
-Next, launch JupyterLab by typing the following commands in the **Terminal** or **Anaconda Prompt**:
+'''bash
+( cd C:\Users\'-_yourname_-'\Courses_Projects\Geographic_Data_Science
+'''
 
-```bash
-jupyter lab
-```
-
-JupyterLab will open as a new tab in the browser. Click the **Python 3** icon in the top left corner of the JupyterLab **Launcher** window (see {numref}`ch01_jupyterlab`) or go to **File -> New -> Notebook** to create a new notebook. Select the newly created notebook in the JupyterLab File Browser tab and press **F2** to rename the notebook, e.g., **chapter01.ipynb**.
+ثم كتابه **JupyterLab**. بعد ذلك سوف يقوم المتصفح الافتراضي بفتح نافذة جديدة تحتوي على بيئة jupyter. عند النقر على **Python3** عند الجهة العليا على اليسار كما في الشكل 1.8 أو من خلال قائمة **File** -> **New** -> **Notebook**
 
 ```{figure} images/ch01_jupyterlab.jpg
 ---
 name: ch01_jupyterlab
 ---
-The JupyterLab user interface.
+Fig. 1.8: The JupyterLab user interface.
 ```
+يتضمن Jupyter notebook واجهتين هما command mode  و  Edit mode. يختص Edit mode  بكتابة الكود البرمجي على شكل خلايا أشبه بمحرر النصوص, في حين إن command mode يسمح بكتابة الكود البرمجي على شكل رزمه كاملة. كما في الشكل 1.8 أعلاه. هناك العديد من مختصرات لوحة المفاتيح التي تساعد على سرعة إنجاز البرامج في بيئة jupyter و التي بعضها تستخدم في كلا الواجهين و البعض الاخر يستخدم لواجهه معينة.
 
-Jupyter notebook has two modes: **Edit mode** and **Command mode**. The Edit mode allows you to type into the cells like a normal text editor. The Command mode allows you to edit the notebook as a whole, but not type into individual cells. Jupyter notebook has many keyboard shortcuts {cite}`Yordanov2017-hl`. Here are some commonly used shortcuts. Note that the shortcuts are for Windows and Linux users. For Mac users, replace `Ctrl` with `Command`.
+تستخدم المختصرات التالية في كلا الواجهتين:
 
-Shortcuts in both modes:
 
 - `Shift + Enter`: run the current cell, select below
 - `Ctrl + Enter`: run selected cells
 - `Alt + Enter`: run the current cell, insert below
 - `Ctrl + S`: save and checkpoint
 
-While in command mode (press `Esc` to activate):
+و المختصرات التالية تستخدم في  command mode بعد الضغط على Esc لأجل التفعيل:
 
 - `A`: insert cell above
 - `B`: insert cell below
@@ -247,7 +243,8 @@ While in command mode (press `Esc` to activate):
 - `M`: change the cell type to Markdown
 - `P`: open the command palette
 
-While in edit mode (press `Enter` to activate):
+
+و في بيئة Edit يتم استخدام المختصرات التالية مع الضغط على Enter لأجل التفعيل: 
 
 - `Esc`: activate the command mode
 - `Tab`: code completion or indent
@@ -255,9 +252,9 @@ While in edit mode (press `Enter` to activate):
 
 (ch01-ee-auth)=
 
-## Earth Engine authentication
+ 1.7 المصادقة على الدخول إلى GEE:
 
-You need to authenticate Earth Engine before using it. The package for the Earth Engine Python API is called [earthengine-api](https://pypi.org/project/earthengine-api), which should have been automatically installed by the geemap package as described in {numref}`ch01:install`. Enter the following script into a code cell of a Jupyter notebook and press `Shift + Enter` to execute:
+ يتطلب المصادقة على الدخول إلى GEE  الحصول على حساب Google و لا يمكن الوصول إلى البيانات المكانية  في أرشيف GEE إلا بعد تأكيد رابط التفعيل في الأيميل المسجل لفتح الحساب. إن حزمة [earthengine-api](https://pypi.org/project/earthengine-api) هي المسؤولة عن الدخول إلى GEE  و التي يتم تنصيبها بشكل أتوماتيكي مع geemap. و بعد كتابة الإيعازات التالية ثم الضغط على shift + Enter يتم البدء بعملية الحصول على التصريح بالدخول إلى GEE:
 
 ```{code-cell} ipython3
 import ee
@@ -265,52 +262,57 @@ import ee
 ee.Authenticate()
 ```
 
-After running the above script, a new tab will open in the browser asking you to sign in to your Earth Engine account. After signing in, you will be asked to authorize the Google Earth Engine Authenticator. If this is the first time you are authenticating Earth Engine, click **CHOOSE PROJECT** to select a Cloud Project to use for Earth Engine (see {numref}`ch01_generate_token`).
+سوف يتم فتح نافذة جديدة في المتصفح تطلب أدخال الحساب الذي تم تسجيله في جوجل, و بعد إدخال الحساب سوف يُطلب من المستخدم تخويل GEE و إجراء عمليه المصادقة, و اذا كانت لأول مره يفضل الدخول إلى CHOOSE PROJECT لتحديد المساحة السحابية المخصصة لتنفيذ البرنامج على GEE كما في الشكل 1.9:
 
 ```{figure} images/ch01_generate_token.jpg
 ---
 name: ch01_generate_token
 ---
-Earth Engine Notebook Authenticator.
+Fig. 1.9: Earth Engine Notebook Authenticator.
 ```
 
-You can either choose an existing Cloud Project or create a new one. If you choose to create a new Cloud Project, enter a project name, e.g., `ee-your-username` and click the blue **SELECT** button to create a new Cloud Project. If a red warning message appears at the bottom of the page, click on the **Cloud Terms of Service** link to accept the terms of service and then click the **SELECT** button again (see {numref}`ch01_create_project`).
+
+يمكن اختيار مشروع سحابي جديد أو مشروع موجود أصلا في حال اختيار مشروع جديد. أدخل أسم للمشروع مثل (_ee-your-name_) ثم الضغط على تبويب **SELECT** لخلق مشروع جديد. اذا ظهرت لك رسالة تحذير باللون الأحمر أضغط على سياسة الخدمة السحابية **Cloud Terms of Service** للموافقة ثم اختيار SELECT كما في الشكل 1.10 التالي (see {numref}`ch01_create_project`).
 
 ```{figure} images/ch01_create_project.jpg
 ---
 name: ch01_create_project
 ---
-Creating a new Cloud Project.
+Fig. 1.10: Creating a new Cloud Project.
 ```
 
-After selecting a Cloud Project, click the **GENERATE TOKEN** button to generate a new token. You will be asked to choose your Earth Engine account for the Notebook Client (see {numref}`ch01_choose_account`).
+بعد تحديد أو خلق مشروع سحابي أضغط على توليد رابط مشفر **GENERATE TOKEN** سوف يتم السؤال عن حساب المستخدم في **EE** للتسجيل في خدمة عملاء **Notebook** و كما في الشكل التالي 1.11  التالي: (see {numref}`ch01_choose_account`).
 
 ```{figure} images/ch01_choose_account.jpg
 ---
 name: ch01_choose_account
 ---
-Choosing an account for the Earth Engine Notebook Client.
+Fig. 1.11: Choosing an account for the Earth Engine Notebook Client.
 ```
 
-Click the **Allow** button to allow the Notebook Client to access your Earth Engine account (see {numref}`ch01_notebook_client`).
+ثم أضغط على زر **Allow**  للسماح لخدمة عملاء **Notebook** للوصول إلى حساب المستخدم في **EE** كما في الشكل 1.12 ادناه:
+
 
 ```{figure} images/ch01_notebook_client.jpg
 ---
 name: ch01_notebook_client
 ---
-Choosing an account for the Earth Engine Notebook Client.
+Fig. 1.12: Choosing an account for the Earth Engine Notebook Client.
 ```
 
-An authentication code will be generated and displayed on the page. Copy the authorization code and paste it into the notebook cell asking for the verification code. Press **Enter** and the `Successfully saved authorization token` message should appear beneath the authorization code you entered (see {numref}`ch01_auth_code`).
+سوف يتم فتح صفحة جديدة في المتصفح تحتوي على كود المصادقة, قم بنسخ الكود ثم لصقه في تبويب خلية **Notebook** و التي تَسئلك عن رمز التحقق, ثم أضغط **Enter** وسوف تظهر عبارة Successfully saved authorization token كما في الشكل 1.13. إلى هنا تمت عملية المصادقة على الدخول إلى EE  عن طريق **jupyter Notebook** و الوصول إلى أرشيف **Google** و هذه الخطوات يتم تنفيذها مره واحده فقط. 
+{numref}`ch01_auth_code`).
 
 ```{figure} images/ch01_auth_code.jpg
 ---
 name: ch01_auth_code
 ---
-Copying the authentication code.
+Fig. 1.13: Copying the authentication code.
 ```
 
-Congratulations! You have successfully authenticated Earth Engine for use in your Jupyter notebook. In general, authentication for local installations is a one-time step that generates a persistent authorization token stored on a local computer. The token can be found in the following file path depending on your operating system. Note that you might need to show the hidden directories on your computer in order to see the `.config` folder under the home directory.
+إلى هنا تمت عملية المصادقة على الدخول إلى EE  عن طريق jupyter Notebook و الوصول إلى أرشيف Google و هذه الخطوات يتم تنفيذها مره واحده فقط. و للوصول إلى رمز التحقق في ذاكرة الحاسوب فهو في الامتداد التالي  و حسب نوع نظام التشغيل: 
+
+
 
 ```{code-cell}
 Windows: C:\\Users\\USERNAME\\.config\\earthengine\\credentials
@@ -318,103 +320,66 @@ Linux: /home/USERNAME/.config/earthengine/credentials
 MacOS: /Users/USERNAME/.config/earthengine/credentials
 ```
 
-Once Earth Engine is authenticated, you can run the following script to initialize Earth Engine for a new Python session.
+بعد اتمام عمليه الحصول على تخويل الوصول الى EE, يمكن خلق فصل جديد في Python من خلال الايعاز التالي:
 
 ```{code-cell} ipython3
 ee.Initialize()
 ```
 
-In general, you will need to initialize Earth Engine for each new Python session, i.e., whenever you open a Jupyter notebook or Python script and want to use Earth Engine. Fortunately, geemap can automatically initialize Earth Engine for you when creating an interactive map, which will be covered in the next chapter. In other words, you rarely need to run `ee.Initialize()` explicitly.
+###  1.8	استخدام Google Colab:
+اذا كان لديك مشكله في تنصيب geemap في جهازك يمكن استخدام Google colab, و الذي هو عباره عن محرر كود Jupyter سحابي  تم تزويده مجانياً من قبل Google. و من مميزاته انه لا يحتاج إلى تنصيب و يمكن لأي من أعضاء فريق العمل أن يقوم بعميلة الدخول إلى البرنامج و القيام بعملية تحرير كما هو في عمل مشــــــــاركة (Google Doc.) مع الزملاء. من خلال الرابط التالي يمكن تحرير [colab 01_introduction.ipynb ](https://colab.research.google.com/github/giswqs/geebook/blob/master/chapters/01_introduction.ipynb). 
 
-## Using Google Colab
+بعد إتمام عمليه التنصيب لـgeemap  يمكن للمستخدم من اطلاق الخارطة التفاعلية من خلال الإيعازات التالية مع ملاحظة ازله # من الايعاز.
 
-If you have difficulties installing geemap on your computer, you can try out geemap with [Google Colab](https://colab.research.google.com) without installing anything on your machine. Google Colab is a free Jupyter notebook environment that runs entirely in the cloud. Most importantly, it does not require a setup and the notebooks that you create can be simultaneously edited by your team members - just like the way you edit documents in Google Docs!
-
-Click [01_introduction.ipynb](https://colab.research.google.com/github/giswqs/geebook/blob/master/chapters/01_introduction.ipynb) to launch the notebook in Google Colab.
-
-Next, press **Ctrl + /** to uncomment the following line to install geemap:
 
 ```{code-cell} ipython3
 # %pip install geemap
-```
 
-After geemap has been installed successfully, type the following code in a new cell:
-
-```{code-cell} ipython3
 import geemap
-
 Map = geemap.Map()
 Map
 ```
 
-Follow the on-screen instructions to authenticate Earth Engine. After that, you should be able to see the interactive map displayed beneath the code cell (see {numref}`ch01_colab`).
+د إتمام عمليه الحصول على تخويل الدخول إلى GEE و تنفيذ الإيعازات أعلاه سوف تظهر لك الخارطة التفاعلية كما في اشكل رقم 1.14 أدنا: 
+ (see {numref}`ch01_colab`).
 
 ```{figure} images/ch01_colab.jpg
 ---
 name: ch01_colab
 width: 100%
 ---
-The interactive map displayed in Google Colab.
+Fig. 1.14: The interactive map displayed in Google Colab.
 
 ```
 
-## Using geemap with a VPN
 
-When using geemap through a VPN, it's important to use "geemap.set_proxy(port=your-port-number)" to connect to Earth Engine servers ({numref}`ch01_vpn_proxy`). Failure to do so may result in a connection timeout issue.
+###	1.9 خصائص و مميزات geemap:
+ قبل البدء بشرح استخدام geemap بشكل مفصل يجب إن نطلع على بعض مميزاتها للتعرف على مدى أهميه العمل عليها و ما يميزها عن باقي برامج بناء تطبيقات البيانات المكانية.
 
-```{code-cell} ipython3
-import geemap
+ •	القدرة على تحويل برنامج JavaScript إلى برنامج Python.  بما في ذلك دعم بعض الدوال الموجدة في JavaScript مثل Map.addLayer(), Map.setCenter(), Map.centerObject(), Map.setOptions(). 
+•	الوصول إلى بيانات EE و استـــــــعراضها على شـــــكل طبقات في الخارطة التفاعلية بما في ذلك shapefile, satellite images دون الحاجة إلى كتابة برامج كبيرة.
 
-geemap.set_proxy(port='your-port-number')
-Map = geemap.Map()
-Map
-```
+•	إمكانية الوصول إلى shapefile في EE و استخراج البيانات المكانية داخل الحيز المحدد للمتجه مع إجراء عمليات إحصائية جغرافية و استعراضها بطبقة خاصة.
 
-```{figure} images/ch01_vpn_proxy.jpg
----
-name: ch01_vpn_proxy
----
-Using geemap with a VPN.
-```
+•	الوصول إلى البيانات المكانية  في كل طبقة من خلال Inspector tool الموجودة في الخارطة, مع القدرة على استخلاص البيانات المكانية  في كل إحداثي من كل طبقة على شكل مصفوفه ذات أبعاد معينة في numpy.
 
-## Key features of geemap
+•	تحويل البيانات المتبادل بين GeoJSON و دالة تجميع الخصائص المكانية EE.FeatureCollctioin(). 
 
-Below is a partial list of geemap features. Please check the geemap [API Reference](https://geemap.org/geemap) and [tutorials](https://geemap.org/tutorials) for more details.
+•	تصدير البيانات من صيغة تجميع للخصائص المستخدمة في EE.FeatureCollection() إلى صيغ أخرى shp, csv, json, kml, and  kmz . 
 
-- Convert Earth Engine JavaScript projects to Python scripts and Jupyter notebooks.
-- Display Earth Engine data layers on interactive maps.
-- Support Earth Engine JavaScript API-styled functions in Python, such as Map.addLayer(), Map.setCenter(), Map.centerObject(), Map.setOptions().
-- Visualize Earth Engine vector and raster data without coding.
-- Retrieve Earth Engine data interactively using the Inspector tool.
-- Creating interactive plots from Earth Engine data by simply clicking on the map.
-- Convert data between the GeoJSON and Earth Engine FeatureCollection formats.
-- Use drawing tools to interact with Earth Engine data.
-- Use shapefiles with Earth Engine without having to upload data to one's GEE account.
-- Export data in the Earth Engine FeatureCollection format to other formats (i.e., shp, csv, json, kml, kmz).
-- Export Earth Engine Image and ImageCollection as GeoTIFF.
-- Extract pixels from an Earth Engine Image into a 3D numpy array.
-- Calculate zonal statistics by group.
-- Add a custom legend for Earth Engine data.
-- Convert Earth Engine JavaScript projects to Python code from directly within a Jupyter notebook.
-- Add animated text to GIF images generated from Earth Engine data.
-- Add colorbar and images to GIF animations generated from Earth Engine data.
-- Create satellite timelapse animations with animated text using Earth Engine.
-- Search places and datasets from Earth Engine Data Catalog.
-- Use the timeseries inspector to visualize landscape changes over time.
-- Export Earth Engine maps as HTML files and PNG images.
-- Search Earth Engine API documentation within Jupyter notebooks.
-- Import Earth Engine assets from personal Earth Engine accounts.
-- Publish interactive GEE maps directly within a Jupyter notebook.
-- Add local raster datasets (e.g., GeoTIFF) to the map.
-- Support Cloud Optimized GeoTIFF (COG) and SpatioTemporal Asset Catalog (STAC).
-- Perform image classification and accuracy assessment.
-- Extract pixel values interactively and export data as shapefile and CSV.
-- Visualize land cover change with Sankey diagrams.
-- Load vector data from a PostGIS server.
-- Create publication-quality maps with cartoee.
+•	تصدير مجموعة الصور في ImageCollectoin أو Image إلى صيغة GeoTIFF. 
 
-## Summary
+•	إمكانية خلr نصوص متحركة مع شريط الألوان إلى الصور بصيغة  GIF  و التي يتم توليدها من بيانات EE .
 
-In this chapter, we began by covering the fundamentals of Geospatial Data Science, Google Earth Engine, and geemap. We then provided guidance on setting up a conda environment for installing geemap and its dependencies. Additionally, we walked through the process of using geemap with Google Colab as a cloud-based alternative to a local installation.
+•	القدرة على خلق صور متحركة حسب التسلسل الزمني بمفهوم TimeLapse  لصور الأقمار الصناعية.
 
-By now, you should have a fully functional conda environment that is ready for working with Earth Engine and geemap. In our next chapter, we will explore geemap in greater depth.
+•	تمكين المستخدم من توظيف مستكشف السلسلة الزمنية لتمثيل التغيرات عبر الزمن.
+
+•	دعم استيــــــــراد البيـــــــانات المكانيــــــــة  من صيغة GeoTIFF و أرشيــــــــف البينــــــات الزمكانيــــــــه  ( Spatio-Temporal Asset Catalog) المعدلة سحابياً من قبل Google. 
+
+•	القدرة على تحميل البيانات من خادم PostGIS
+
+
+### 1.10 خلاصة:
+علوم البيانات المكانية هو ذلك الحقل الذي يقوم بتطبيق النظريات و الخوارزميات و النماذج الرياضية التي يشتقها ميدان علوم البيانات على المعلومات التي تقترن إحداثيات على سطح الأرض و التي تسمى البينات المكانية. لقد تم تغطيه أساسيات علوم الجغرافيا المكانية و استراض أهمية  Google Earth Engine GEE في عمليه تزويد المستخدمين بأرشيف هائل من البيانات المعدلة و الجاهزة للاستخدام في جميع التطبيقات. كذلك استخدام geemap في colab  و تثبيتها في anaconda و العمل في بيئة jupyter Notebook و ما يميز العمل فيها. في الفصل الأحق سوف نتعمق في استخدام geemap و كيفية بناء بعض التطبيقات. ختام الفصل الاول.
+
