@@ -123,20 +123,19 @@ name: ch01_conda_geemap
 شكل 1.6 تعفيل بيئة gee و تنصيب geemap
 ```
 
-ما أسلفنا أن هناك العديد من المكتبات الملحقة بـ geemap مثل GeoPandas, localtileserver, [osmnx](https://github.com/gboeing/osmnx), [rioxarray](https://github.com/corteva/rioxarray) and [rio-cogeo](https://github.com/cogeotiff/rio-cogeo) ,و للمزيد من المعلومات عن المكتبات الملحقة يمكن الدخول إلى الرابط التالي [requirements_all.txt](https://github.com/gee-community/geemap/blob/master/requirements_all.txt)  . لحسن الحظ إن هذه المكتبات متوفرة في حزمة  [pygis](https://pygis.gishub.org/)  و التي بالإمكان تنصيبها في إيعاز واحد. على الرغم من ذلك إلى إن تنصيب geemap يأخذ وقتاً طويلاً لتحميل جميع المكتبات الملحقة, لذا يمكن تنصيب pygis من خلال  حزمه [Mamba](https://github.com/mamba-org/mamba) و التي هي أسرع و أكفاء كما أنها منصة قابلة للتنصيب في بيئات مختلفة.mamba هي عبارة عن حزمة قابله للكتابة و التنفيذ و التي تجعل من تنصيب الحزم الأخرى أسرع, و هي أيضا قابلة للتنصيب في بيئات Windows, Linux, MacOS و متوافقة مع جميع الحزم الأخرى. وتنصب كما في  الإيعازات التالية  في prompt كما في الشكل 1.7 ادناه:
+ما أسلفنا أن هناك العديد من المكتبات الملحقة بـ geemap مثل GeoPandas, localtileserver, [osmnx](https://github.com/gboeing/osmnx), [rioxarray](https://github.com/corteva/rioxarray) and [rio-cogeo](https://github.com/cogeotiff/rio-cogeo) ,و للمزيد من المعلومات عن المكتبات الملحقة يمكن الدخول إلى الرابط التالي [requirements_all.txt](https://github.com/gee-community/geemap/blob/master/requirements_all.txt)  . لحسن الحظ إن هذه المكتبات متوفرة في حزمة  [pygis](https://pygis.gishub.org/)  و التي بالإمكان تنصيبها في إيعاز واحد. على الرغم من ذلك إلى إن تنصيب geemap يأخذ وقتاً طويلاً لتحميل جميع المكتبات الملحقة, لذا يمكن تنصيب pygis من خلال  حزمه [Mamba](https://github.com/mamba-org/mamba) و التي هي أسرع و أكفاء كما أنها منصة قابلة للتنصيب في بيئات مختلفة.mamba هي عبارة عن حزمة قابله للكتابة و التنفيذ و التي تجعل من تنصيب الحزم الأخرى أسرع, و هي أيضا قابلة للتنصيب في بيئات Windows, Linux, MacOS و متوافقة مع جميع الحزم الأخرى. وتنصب كما في  الإيعازات التالية  في prompt  و كما في الشكل 1.7 ادناه:
 
 ```bash
 conda install -c conda-forge mamba
 mamba install -c conda-forge pygis
 ```
-
-To install Mamba, type "conda install -c conda-forge mamba" and press **Enter** (see {numref}`ch01_install_mamba`).
+.
 
 ```{figure} images/ch01_install_mamba.jpg
 ---
 name: ch01_install_mamba
 ---
-Installing the Mamba package manager.
+Fig. 1.7 Installing the Mamba package manager.
 ```
 
 Once Mamba is installed in a conda environment, you can then simply replace any `conda` command with `mamba`. For example, to install pygis, type "mamba install -c conda-forge pygis" and press **Enter** (see {numref}`ch01_install_pygis`).
