@@ -112,18 +112,18 @@ name: ch01_conda_create
 gee الشكل 1.5 خلق بيئة جديدة بأسم.
 ```
 
-Next, activate the new conda environment by typing "conda activate gee" and press **Enter**. Then, install geemap into the environment we just activated by typing "conda install -c conda-forge geemap" and press **Enter** (see {numref}`ch01_conda_geemap`).
+-تفعيل بيئة gee  من خلال كتابة الإيعاز التالي “conda activate gee”  ستلاحظ تحول إِمتداد بيئة العمل من (base) إلى (gee).
+
+3-تنصيب geemap في بيئة gee من خلال الإيعاز “conda install –c conda-forge geemap” كما في الشكل التالي (أدراج شكل 1.6).
 
 ```{figure} images/ch01_conda_geemap.jpg
 ---
 name: ch01_conda_geemap
 ---
-Activating the new conda environment and installing geemap.
+شكل 1.6 تعفيل بيئة gee و تنصيب geemap
 ```
 
-Geemap has a list of optional dependencies specified in the [requirements_all.txt](https://github.com/gee-community/geemap/blob/master/requirements_all.txt), such as GeoPandas, localtileserver, [osmnx](https://github.com/gboeing/osmnx), [rioxarray](https://github.com/corteva/rioxarray) and [rio-cogeo](https://github.com/cogeotiff/rio-cogeo). It can be a bit cumbersome to install these optional dependencies individually, but luckily these optional dependencies are available through the [pygis](https://pygis.gishub.org) Python package which can be installed with a single command.
-
-Since pygis has many dependencies, it might take a while for conda to resolve dependencies. Therefore, we highly recommend you to install [Mamba](https://github.com/mamba-org/mamba), a fast, robust, and cross-platform package manager. Mamba is a re-write of conda that significantly increases the speed of resolving and installing packages. It runs on Windows, macOS, and Linux, and is fully compatible with conda packages and supports most of conda’s commands. The following commands install Mamba and pygis:
+ما أسلفنا أن هناك العديد من المكتبات الملحقة بـ geemap مثل GeoPandas, localtileserver, [osmnx](https://github.com/gboeing/osmnx), [rioxarray](https://github.com/corteva/rioxarray) and [rio-cogeo](https://github.com/cogeotiff/rio-cogeo) ,و للمزيد من المعلومات عن المكتبات الملحقة يمكن الدخول إلى الرابط التالي [requirements_all.txt](https://github.com/gee-community/geemap/blob/master/requirements_all.txt)  . لحسن الحظ إن هذه المكتبات متوفرة في حزمة  [pygis](https://pygis.gishub.org/)  و التي بالإمكان تنصيبها في إيعاز واحد. على الرغم من ذلك إلى إن تنصيب geemap يأخذ وقتاً طويلاً لتحميل جميع المكتبات الملحقة, لذا يمكن تنصيب pygis من خلال  حزمه [Mamba](https://github.com/mamba-org/mamba) و التي هي أسرع و أكفاء كما أنها منصة قابلة للتنصيب في بيئات مختلفة.mamba هي عبارة عن حزمة قابله للكتابة و التنفيذ و التي تجعل من تنصيب الحزم الأخرى أسرع, و هي أيضا قابلة للتنصيب في بيئات Windows, Linux, MacOS و متوافقة مع جميع الحزم الأخرى. وتنصب كما في  الإيعازات التالية  في prompt كما في الشكل 1.7 ادناه:
 
 ```bash
 conda install -c conda-forge mamba
