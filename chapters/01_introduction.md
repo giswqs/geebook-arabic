@@ -92,11 +92,12 @@ width: 100%
 
 (ch01:conda)=
 
-### Installing with conda
+   1.5.1	تثبيت geemap في بيئة conda: 
+لأجل تثبيت geemap ينصح استخدام حزمة Conda و التي يمكن الحصول عليها من الموقع التالي ([conda](https://conda.io/en/latest)  و الذي هو عبارة عن موزع و مترجم Python مع المكتبات الأساسية للعمل على البيانات. كما و يمكن الحصول على           ذلك من خلال تنصيب  [Miniconda](https://docs.conda.io/en/latest/miniconda.html) و الذي هو عباره عن موزع يحتوي على مرتجم Python مع مدير بيئة conda.   
+توجد geemap عن طريق قناة Anocanda  التي تسمى [conda-forge](https://anaconda.org/conda-forge/geemap) و التي هي عبارة عن جهد مجاني لمجموعة محترفه تزود حزم دعم لطيف واسع من البرامج. يفضل تنصيب  geemap في بيئة جديدة و نظيفة لأجل تجنب حدوث التعارض مع            حزم الدوال و المكتبات التي تتعامل مع البيانات المكانية  و التي قد تكون موجودة مسبقاً, لذا يستحسن تنصيب geemap في بيئة نظيفة. الخطوات التالية هي لخلق بيئة جديدة و تنصيب متكامل ل geemap.
 
-To install geemap and its dependencies, we recommend you use the [conda](https://conda.io/en/latest) package and environment manager. This can be obtained by installing the [Anaconda Distribution](https://www.anaconda.com/products/distribution) (a free Python distribution for data science), or through [Miniconda](https://docs.conda.io/en/latest/miniconda.html) (minimal distribution only containing Python and the conda package manager). Also see the [installation docs](https://conda.io/docs/user-guide/install/download.html) for more information on how to install Anaconda or Miniconda locally.
-
-Geemap is available on the [conda-forge](https://anaconda.org/conda-forge/geemap) Anaconda channel, a community effort that provides conda packages for a wide range of software. Creating a new conda environment to install geemap is not strictly necessary, but given that some geemap dependencies might have a version conflict with other geospatial packages in an existing conda environment, it is a good practice to start fresh by installing geemap and its dependencies in a clean environment for your project. The following commands create a new conda environment named `gee` and install geemap in it:
+للبدء بتنصيب geemap في بيئة جديدة أتبع الخطوات التالية:
+1-فتح Anaconda Prompt  أو Terminal ثم كتابة “conda create –n gee” ثم الضغط على Enter سوف يتم خلق بيئة جديدة بأسم gee كما في الشكل التالي رقم 1.5 ادناه:
 
 ```bash
 conda create -n gee python
@@ -104,13 +105,11 @@ conda activate gee
 conda install -c conda-forge geemap
 ```
 
-First, open the **Anaconda Prompt** or **Terminal** and type "conda create -n gee python". Press **Enter** to create a new conda environment named `gee` (see {numref}`ch01_conda_create`).
-
 ```{figure} images/ch01_conda_create.jpg
 ---
 name: ch01_conda_create
 ---
-Creating a new conda environment named `gee`.
+gee الشكل 1.5 خلق بيئة جديدة بأسم.
 ```
 
 Next, activate the new conda environment by typing "conda activate gee" and press **Enter**. Then, install geemap into the environment we just activated by typing "conda install -c conda-forge geemap" and press **Enter** (see {numref}`ch01_conda_geemap`).
