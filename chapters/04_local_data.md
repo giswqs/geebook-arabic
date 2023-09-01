@@ -231,7 +231,7 @@ Map.add_raster(output, cmap='coolwarm', layer_name="Clip Image")
 Map
 ```
 
-## SpatioTemporal Asset Catalog (STAC)
+## قائمة أرشيف اصول البيانات الزمانيه-المكانية
 
 ```{code-cell} ipython3
 url = 'https://tinyurl.com/22vptbws'
@@ -260,9 +260,9 @@ Map.add_stac_layer(url, bands=['B3', 'B2', 'B1'], name='False color')
 Map
 ```
 
-## Vector datasets
+## مجموعات بيانات المتجه
 
-### GeoJSON
+### صيغة GeoJSON
 
 ```{code-cell} ipython3
 in_geojson = (
@@ -325,7 +325,7 @@ Map.add_geojson(url, layer_name="Countries", style=style, hover_style=hover_styl
 Map
 ```
 
-### Shapefile
+### صيغة Shapefile
 
 ```{code-cell} ipython3
 url = "https://github.com/gee-community/geemap/blob/master/examples/data/countries.zip"
@@ -339,7 +339,7 @@ Map.add_shp(in_shp, layer_name="Countries")
 Map
 ```
 
-### KML
+### صغة KML
 
 ```{code-cell} ipython3
 in_kml = "https://github.com/gee-community/geemap/blob/master/examples/data/us_states.kml"
@@ -351,7 +351,7 @@ Map.add_kml(in_kml, layer_name="US States")
 Map
 ```
 
-### GeoDataFrame
+### صيغة GeoDataFrame
 
 ```{code-cell} ipython3
 import geopandas as gpd
@@ -364,7 +364,7 @@ Map.add_gdf(gdf, layer_name="US States")
 Map
 ```
 
-### Other vector formats
+### الصيغ الاخرى للمتجه
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -373,9 +373,9 @@ Map.add_vector(data, layer_name="Countries")
 Map
 ```
 
-## Creating points from XY
+## خلق نقاط متجه من XY
 
-### CSV to vector
+### تحويل ملف CSV الى متجه
 
 ```{code-cell} ipython3
 data = 'https://github.com/gee-community/geemap/blob/master/examples/data/us_cities.csv'
@@ -400,7 +400,7 @@ geemap.csv_to_gdf(data, latitude="latitude", longitude='longitude')
 geemap.csv_to_vector(data, 'cities.gpkg', latitude="latitude", longitude='longitude')
 ```
 
-### Adding points from XY
+### أضافة نقاط الى المتجة من بيانات XY
 
 ```{code-cell} ipython3
 cities = 'https://github.com/gee-community/geemap/blob/master/examples/data/us_cities.csv'
@@ -433,7 +433,7 @@ Map.add_points_from_xy(
 Map
 ```
 
-### Circle markers from points
+### خلق علامات دائريه من نقاط متجه
 
 ```{code-cell} ipython3
 data = 'https://github.com/gee-community/geemap/blob/master/examples/data/us_cities.csv'
@@ -453,7 +453,7 @@ Map.add_circle_markers_from_xy(
 Map
 ```
 
-## Vector data to Earth Engine
+## تصدير متجه بيانات الى Earth Engine
 
 ```{code-cell} ipython3
 in_geojson = (
@@ -486,7 +486,7 @@ fc = geemap.gdf_to_ee(gdf)
 fc = geemap.vector_to_ee(url)
 ```
 
-## Joining attribute tables
+## دمج جداول الخصائص للمتجهات
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -520,7 +520,7 @@ Map.addLayer(fc, {}, 'Countries with attr')
 Map
 ```
 
-## Converting NetCDF to ee.Image
+## تحويل بيانات بصيغة NetCDF  الى ee.Image
 
 ```{code-cell} ipython3
 import os
@@ -549,16 +549,16 @@ Map.addLayer(
 Map
 ```
 
-## OpenStreetMap data
+## بيانات  OpenStreetMap OSM 
 
-### OSM to GeoDataFrame
+### تحويل بيانات من OSM الى GeoDataFrame
 
 ```{code-cell} ipython3
 gdf = geemap.osm_to_gdf("Knoxville, Tennessee")
 gdf
 ```
 
-### OSM to ee.FeatureCollection
+### تحويل بيانات من OSM الى  ee.FeatureCollection
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -632,7 +632,7 @@ Map
 Map.add_osm_from_view(tags={"amenity": "bar", "building": True})
 ```
 
-## Reading PostGIS data
+## قرائة البيانات من برنامح PostGIS
 
 ```bash
 mamba install sqlalchemy psycopg2 -c conda-forge
@@ -666,5 +666,5 @@ Map.add_gdf_from_postgis(
 Map
 ```
 
-## Summary
+## الخلاصة
 
