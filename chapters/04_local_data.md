@@ -73,7 +73,7 @@ cm.list_colormaps()
 cm.plot_colormaps(width=12, height=0.4)
 ```
 
-### مرئيات متعدده الطيف الموجي
+### مرئيات الطيف الموجي المتعدد
 
 ```{code-cell} ipython3
 url = 'https://github.com/giswqs/leafmap/raw/master/examples/data/cog.tif'
@@ -190,7 +190,7 @@ Map.add_raster(out_cog, cmap="Greens", layer_name="NDVI")
 Map
 ```
 
-### Clipping image by mask
+### استقطاع مساحة صوره بأستخدام القناع
 
 ```{code-cell} ipython3
 url = 'https://github.com/giswqs/data/raw/main/raster/srtm90.tif'
