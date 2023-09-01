@@ -404,7 +404,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">4.6. مجموعات بيانات المتجه</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geojson">4.6.1. صيغة GeoJSON</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shapefile">4.6.2. صيغة Shapefile</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kml">4.6.3. صغة KML</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kml">4.6.3. صيغة KML</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geodataframe">4.6.4. صيغة GeoDataFrame</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">4.6.5. الصيغ الاخرى للمتجه</a></li>
 </ul>
@@ -421,7 +421,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#openstreetmap-osm">4.11. بيانات  OpenStreetMap OSM</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#osm-geodataframe">4.11.1. تحويل بيانات من OSM الى GeoDataFrame</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#osm-ee-featurecollection">4.11.2. تحويل بيانات من OSM الى  ee.FeatureCollection</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-osm-data">4.11.3. Downloading OSM data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#osm">4.11.3. تحميل بيانات OSM</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postgis">4.12. قرائة البيانات من برنامح PostGIS</a></li>
@@ -463,7 +463,7 @@ document.write(`
 <ul>
 <li><p><a class="reference internal" href="#geojson" id="id31">صيغة GeoJSON</a></p></li>
 <li><p><a class="reference internal" href="#shapefile" id="id32">صيغة Shapefile</a></p></li>
-<li><p><a class="reference internal" href="#kml" id="id33">صغة KML</a></p></li>
+<li><p><a class="reference internal" href="#kml" id="id33">صيغة KML</a></p></li>
 <li><p><a class="reference internal" href="#geodataframe" id="id34">صيغة GeoDataFrame</a></p></li>
 <li><p><a class="reference internal" href="#id13" id="id35">الصيغ الاخرى للمتجه</a></p></li>
 </ul>
@@ -482,7 +482,7 @@ document.write(`
 <ul>
 <li><p><a class="reference internal" href="#osm-geodataframe" id="id44">تحويل بيانات من OSM الى GeoDataFrame</a></p></li>
 <li><p><a class="reference internal" href="#osm-ee-featurecollection" id="id45">تحويل بيانات من OSM الى  ee.FeatureCollection</a></p></li>
-<li><p><a class="reference internal" href="#downloading-osm-data" id="id46">Downloading OSM data</a></p></li>
+<li><p><a class="reference internal" href="#osm" id="id46">تحميل بيانات OSM</a></p></li>
 </ul>
 </li>
 <li><p><a class="reference internal" href="#postgis" id="id47">قرائة البيانات من برنامح PostGIS</a></p></li>
@@ -964,7 +964,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="kml">
-<h3><a class="toc-backref" href="#id33" role="doc-backlink"><span class="section-number">4.6.3. </span>صغة KML</a><a class="headerlink" href="#kml" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id33" role="doc-backlink"><span class="section-number">4.6.3. </span>صيغة KML</a><a class="headerlink" href="#kml" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">in_kml</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/gee-community/geemap/blob/master/examples/data/us_states.kml&quot;</span>
@@ -1298,8 +1298,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="downloading-osm-data">
-<h3><a class="toc-backref" href="#id46" role="doc-backlink"><span class="section-number">4.11.3. </span>Downloading OSM data</a><a class="headerlink" href="#downloading-osm-data" title="Permalink to this heading">#</a></h3>
+<section id="osm">
+<h3><a class="toc-backref" href="#id46" role="doc-backlink"><span class="section-number">4.11.3. </span>تحميل بيانات OSM</a><a class="headerlink" href="#osm" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geemap.osm</span> <span class="k">as</span> <span class="nn">osm</span>
@@ -1531,7 +1531,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">4.6. مجموعات بيانات المتجه</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geojson">4.6.1. صيغة GeoJSON</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shapefile">4.6.2. صيغة Shapefile</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kml">4.6.3. صغة KML</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kml">4.6.3. صيغة KML</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geodataframe">4.6.4. صيغة GeoDataFrame</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">4.6.5. الصيغ الاخرى للمتجه</a></li>
 </ul>
@@ -1548,7 +1548,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#openstreetmap-osm">4.11. بيانات  OpenStreetMap OSM</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#osm-geodataframe">4.11.1. تحويل بيانات من OSM الى GeoDataFrame</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#osm-ee-featurecollection">4.11.2. تحويل بيانات من OSM الى  ee.FeatureCollection</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-osm-data">4.11.3. Downloading OSM data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#osm">4.11.3. تحميل بيانات OSM</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postgis">4.12. قرائة البيانات من برنامح PostGIS</a></li>
