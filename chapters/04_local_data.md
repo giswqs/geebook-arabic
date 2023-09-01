@@ -339,7 +339,7 @@ Map.add_shp(in_shp, layer_name="Countries")
 Map
 ```
 
-### صغة KML
+### صيغة KML
 
 ```{code-cell} ipython3
 in_kml = "https://github.com/gee-community/geemap/blob/master/examples/data/us_states.kml"
@@ -568,7 +568,7 @@ Map.centerObject(fc, 11)
 Map
 ```
 
-### Downloading OSM data
+### تحميل بيانات OSM
 
 ```{code-cell} ipython3
 import geemap.osm as osm
