@@ -114,7 +114,7 @@ Map.centerObject(image, 8)
 Map
 ```
 
-### تجميعة صور Images
+### تجميعة صور Images Collection
 
 #### تحميل تجميعة الصور
 
@@ -144,7 +144,7 @@ Map.addLayer(image, vis, 'Sentinel-2')
 Map
 ```
 
-#### فلترة تجميعة الصور Image Collection
+#### فلترة تجميعة الصور 
 
 ```{code-cell} ipython3
 Map = geemap.Map()
