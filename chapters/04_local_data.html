@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>4. Using Local Geospatial Data &#8212; Geospatial Data Science with Earth Engine and Geemap</title>
+    <title>4. أستخدام البيانات الجغرافية المكانية المحلية &#8212; Geospatial Data Science with Earth Engine and Geemap</title>
   
   
   
@@ -161,7 +161,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="01_introduction.html">1. إِحتراف تطبيق GEE و geemap في بيئة Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_maps.html">2. خلق الخارطة التفاعليه Interactive Map</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_gee_data.html">3. إستخدام بيانات Earth Engine</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Using Local Geospatial Data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. أستخدام البيانات الجغرافية المكانية المحلية</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_data_viz.html">5. Visualizing Geospatial Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_data_analysis.html">6. Analyzing Geospatial Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_data_export.html">7. Exporting Earth Engine Data</a></li>
@@ -375,7 +375,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Using Local Geospatial Data</h1>
+    <h1>أستخدام البيانات الجغرافية المكانية المحلية</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -385,18 +385,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">4.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-requirements">4.2. Technical requirements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-raster-datasets">4.3. Local raster datasets</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-band-imagery">4.3.1. Single-band imagery</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-band-imagery">4.3.2. Multi-band imagery</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-raster-gui">4.3.3. Interactive raster GUI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.1. مدخل</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.2. المتطلبات التقنية</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.3. مجموعة بيانات المرئيات المحلية</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.3.1. مرئيات الطيف الموجي الواحد</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4.3.2. مرئيات متعدده الطيف الموجي</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4.3.3. الواجهات الرسومية التفاعلية للمرئيات</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-optimized-geotiff-cog">4.4. Cloud Optimized GeoTIFF (COG)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-cog">4.4.1. Visualizing COG</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-cog">4.4.2. Creating COG</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-numpy-arrays-to-cog">4.4.3. Converting NumPy arrays to COG</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geoitff">4.4. بيانات صيغة GeoITFF المعدله سحابياَ</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">4.4.1. أستعراض و تمثيل بيانات GeoITFF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">4.4.2. خلق بيانات بصيغة GeoITFF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-geoitff">4.4.3. تحويل البيانات من مصفوفه Numpy الى بيانات GeoITFF</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clipping-image-by-mask">4.4.4. Clipping image by mask</a></li>
 </ul>
 </li>
@@ -437,63 +437,63 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="using-local-geospatial-data">
-<h1><span class="section-number">4. </span>Using Local Geospatial Data<a class="headerlink" href="#using-local-geospatial-data" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1><span class="section-number">4. </span>أستخدام البيانات الجغرافية المكانية المحلية<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#introduction" id="id1">Introduction</a></p></li>
-<li><p><a class="reference internal" href="#technical-requirements" id="id2">Technical requirements</a></p></li>
-<li><p><a class="reference internal" href="#local-raster-datasets" id="id3">Local raster datasets</a></p>
+<li><p><a class="reference internal" href="#id2" id="id10">مدخل</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id11">المتطلبات التقنية</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id12">مجموعة بيانات المرئيات المحلية</a></p>
 <ul>
-<li><p><a class="reference internal" href="#single-band-imagery" id="id4">Single-band imagery</a></p></li>
-<li><p><a class="reference internal" href="#multi-band-imagery" id="id5">Multi-band imagery</a></p></li>
-<li><p><a class="reference internal" href="#interactive-raster-gui" id="id6">Interactive raster GUI</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id13">مرئيات الطيف الموجي الواحد</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id14">مرئيات متعدده الطيف الموجي</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id15">الواجهات الرسومية التفاعلية للمرئيات</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#cloud-optimized-geotiff-cog" id="id7">Cloud Optimized GeoTIFF (COG)</a></p>
+<li><p><a class="reference internal" href="#geoitff" id="id16">بيانات صيغة GeoITFF المعدله سحابياَ</a></p>
 <ul>
-<li><p><a class="reference internal" href="#visualizing-cog" id="id8">Visualizing COG</a></p></li>
-<li><p><a class="reference internal" href="#creating-cog" id="id9">Creating COG</a></p></li>
-<li><p><a class="reference internal" href="#converting-numpy-arrays-to-cog" id="id10">Converting NumPy arrays to COG</a></p></li>
-<li><p><a class="reference internal" href="#clipping-image-by-mask" id="id11">Clipping image by mask</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id17">أستعراض و تمثيل بيانات GeoITFF</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id18">خلق بيانات بصيغة GeoITFF</a></p></li>
+<li><p><a class="reference internal" href="#numpy-geoitff" id="id19">تحويل البيانات من مصفوفه Numpy الى بيانات GeoITFF</a></p></li>
+<li><p><a class="reference internal" href="#clipping-image-by-mask" id="id20">Clipping image by mask</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#spatiotemporal-asset-catalog-stac" id="id12">SpatioTemporal Asset Catalog (STAC)</a></p></li>
-<li><p><a class="reference internal" href="#vector-datasets" id="id13">Vector datasets</a></p>
+<li><p><a class="reference internal" href="#spatiotemporal-asset-catalog-stac" id="id21">SpatioTemporal Asset Catalog (STAC)</a></p></li>
+<li><p><a class="reference internal" href="#vector-datasets" id="id22">Vector datasets</a></p>
 <ul>
-<li><p><a class="reference internal" href="#geojson" id="id14">GeoJSON</a></p></li>
-<li><p><a class="reference internal" href="#shapefile" id="id15">Shapefile</a></p></li>
-<li><p><a class="reference internal" href="#kml" id="id16">KML</a></p></li>
-<li><p><a class="reference internal" href="#geodataframe" id="id17">GeoDataFrame</a></p></li>
-<li><p><a class="reference internal" href="#other-vector-formats" id="id18">Other vector formats</a></p></li>
+<li><p><a class="reference internal" href="#geojson" id="id23">GeoJSON</a></p></li>
+<li><p><a class="reference internal" href="#shapefile" id="id24">Shapefile</a></p></li>
+<li><p><a class="reference internal" href="#kml" id="id25">KML</a></p></li>
+<li><p><a class="reference internal" href="#geodataframe" id="id26">GeoDataFrame</a></p></li>
+<li><p><a class="reference internal" href="#other-vector-formats" id="id27">Other vector formats</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#creating-points-from-xy" id="id19">Creating points from XY</a></p>
+<li><p><a class="reference internal" href="#creating-points-from-xy" id="id28">Creating points from XY</a></p>
 <ul>
-<li><p><a class="reference internal" href="#csv-to-vector" id="id20">CSV to vector</a></p></li>
-<li><p><a class="reference internal" href="#adding-points-from-xy" id="id21">Adding points from XY</a></p></li>
-<li><p><a class="reference internal" href="#circle-markers-from-points" id="id22">Circle markers from points</a></p></li>
+<li><p><a class="reference internal" href="#csv-to-vector" id="id29">CSV to vector</a></p></li>
+<li><p><a class="reference internal" href="#adding-points-from-xy" id="id30">Adding points from XY</a></p></li>
+<li><p><a class="reference internal" href="#circle-markers-from-points" id="id31">Circle markers from points</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#vector-data-to-earth-engine" id="id23">Vector data to Earth Engine</a></p></li>
-<li><p><a class="reference internal" href="#joining-attribute-tables" id="id24">Joining attribute tables</a></p></li>
-<li><p><a class="reference internal" href="#converting-netcdf-to-ee-image" id="id25">Converting NetCDF to ee.Image</a></p></li>
-<li><p><a class="reference internal" href="#openstreetmap-data" id="id26">OpenStreetMap data</a></p>
+<li><p><a class="reference internal" href="#vector-data-to-earth-engine" id="id32">Vector data to Earth Engine</a></p></li>
+<li><p><a class="reference internal" href="#joining-attribute-tables" id="id33">Joining attribute tables</a></p></li>
+<li><p><a class="reference internal" href="#converting-netcdf-to-ee-image" id="id34">Converting NetCDF to ee.Image</a></p></li>
+<li><p><a class="reference internal" href="#openstreetmap-data" id="id35">OpenStreetMap data</a></p>
 <ul>
-<li><p><a class="reference internal" href="#osm-to-geodataframe" id="id27">OSM to GeoDataFrame</a></p></li>
-<li><p><a class="reference internal" href="#osm-to-ee-featurecollection" id="id28">OSM to ee.FeatureCollection</a></p></li>
-<li><p><a class="reference internal" href="#downloading-osm-data" id="id29">Downloading OSM data</a></p></li>
+<li><p><a class="reference internal" href="#osm-to-geodataframe" id="id36">OSM to GeoDataFrame</a></p></li>
+<li><p><a class="reference internal" href="#osm-to-ee-featurecollection" id="id37">OSM to ee.FeatureCollection</a></p></li>
+<li><p><a class="reference internal" href="#downloading-osm-data" id="id38">Downloading OSM data</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#reading-postgis-data" id="id30">Reading PostGIS data</a></p></li>
-<li><p><a class="reference internal" href="#summary" id="id31">Summary</a></p></li>
+<li><p><a class="reference internal" href="#reading-postgis-data" id="id39">Reading PostGIS data</a></p></li>
+<li><p><a class="reference internal" href="#summary" id="id40">Summary</a></p></li>
 </ul>
 </nav>
-<section id="introduction">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink"><span class="section-number">4.1. </span>Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">4.1. </span>مدخل</a><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="technical-requirements">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink"><span class="section-number">4.2. </span>Technical requirements</a><a class="headerlink" href="#technical-requirements" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">4.2. </span>المتطلبات التقنية</a><a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>gee<span class="w"> </span>python
 conda<span class="w"> </span>activate<span class="w"> </span>gee
 conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>mamba
@@ -526,10 +526,10 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="local-raster-datasets">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">4.3. </span>Local raster datasets</a><a class="headerlink" href="#local-raster-datasets" title="Permalink to this heading">#</a></h2>
-<section id="single-band-imagery">
-<h3><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">4.3.1. </span>Single-band imagery</a><a class="headerlink" href="#single-band-imagery" title="Permalink to this heading">#</a></h3>
+<section id="id4">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">4.3. </span>مجموعة بيانات المرئيات المحلية</a><a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<section id="id5">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink"><span class="section-number">4.3.1. </span>مرئيات الطيف الموجي الواحد</a><a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/giswqs/data/raw/main/raster/srtm90.tif&#39;</span>
@@ -566,8 +566,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="multi-band-imagery">
-<h3><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">4.3.2. </span>Multi-band imagery</a><a class="headerlink" href="#multi-band-imagery" title="Permalink to this heading">#</a></h3>
+<section id="id6">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink"><span class="section-number">4.3.2. </span>مرئيات متعدده الطيف الموجي</a><a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/giswqs/leafmap/raw/master/examples/data/cog.tif&#39;</span>
@@ -587,14 +587,14 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="interactive-raster-gui">
-<h3><a class="toc-backref" href="#id6" role="doc-backlink"><span class="section-number">4.3.3. </span>Interactive raster GUI</a><a class="headerlink" href="#interactive-raster-gui" title="Permalink to this heading">#</a></h3>
+<section id="id7">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink"><span class="section-number">4.3.3. </span>الواجهات الرسومية التفاعلية للمرئيات</a><a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 </section>
 </section>
-<section id="cloud-optimized-geotiff-cog">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink"><span class="section-number">4.4. </span>Cloud Optimized GeoTIFF (COG)</a><a class="headerlink" href="#cloud-optimized-geotiff-cog" title="Permalink to this heading">#</a></h2>
-<section id="visualizing-cog">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">4.4.1. </span>Visualizing COG</a><a class="headerlink" href="#visualizing-cog" title="Permalink to this heading">#</a></h3>
+<section id="geoitff">
+<h2><a class="toc-backref" href="#id16" role="doc-backlink"><span class="section-number">4.4. </span>بيانات صيغة GeoITFF المعدله سحابياَ</a><a class="headerlink" href="#geoitff" title="Permalink to this heading">#</a></h2>
+<section id="id8">
+<h3><a class="toc-backref" href="#id17" role="doc-backlink"><span class="section-number">4.4.1. </span>أستعراض و تمثيل بيانات GeoITFF</a><a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://tinyurl.com/24bo8umr&#39;</span>
@@ -649,8 +649,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="creating-cog">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink"><span class="section-number">4.4.2. </span>Creating COG</a><a class="headerlink" href="#creating-cog" title="Permalink to this heading">#</a></h3>
+<section id="id9">
+<h3><a class="toc-backref" href="#id18" role="doc-backlink"><span class="section-number">4.4.2. </span>خلق بيانات بصيغة GeoITFF</a><a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/giswqs/data/raw/main/raster/srtm90.tif&quot;</span>
@@ -694,8 +694,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="converting-numpy-arrays-to-cog">
-<h3><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">4.4.3. </span>Converting NumPy arrays to COG</a><a class="headerlink" href="#converting-numpy-arrays-to-cog" title="Permalink to this heading">#</a></h3>
+<section id="numpy-geoitff">
+<h3><a class="toc-backref" href="#id19" role="doc-backlink"><span class="section-number">4.4.3. </span>تحويل البيانات من مصفوفه Numpy الى بيانات GeoITFF</a><a class="headerlink" href="#numpy-geoitff" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/giswqs/leafmap/raw/master/examples/data/cog.tif&#39;</span>
@@ -753,7 +753,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="clipping-image-by-mask">
-<h3><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">4.4.4. </span>Clipping image by mask</a><a class="headerlink" href="#clipping-image-by-mask" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id20" role="doc-backlink"><span class="section-number">4.4.4. </span>Clipping image by mask</a><a class="headerlink" href="#clipping-image-by-mask" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/giswqs/data/raw/main/raster/srtm90.tif&#39;</span>
@@ -814,7 +814,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </section>
 </section>
 <section id="spatiotemporal-asset-catalog-stac">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">4.5. </span>SpatioTemporal Asset Catalog (STAC)</a><a class="headerlink" href="#spatiotemporal-asset-catalog-stac" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id21" role="doc-backlink"><span class="section-number">4.5. </span>SpatioTemporal Asset Catalog (STAC)</a><a class="headerlink" href="#spatiotemporal-asset-catalog-stac" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://tinyurl.com/22vptbws&#39;</span>
@@ -862,9 +862,9 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="vector-datasets">
-<h2><a class="toc-backref" href="#id13" role="doc-backlink"><span class="section-number">4.6. </span>Vector datasets</a><a class="headerlink" href="#vector-datasets" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id22" role="doc-backlink"><span class="section-number">4.6. </span>Vector datasets</a><a class="headerlink" href="#vector-datasets" title="Permalink to this heading">#</a></h2>
 <section id="geojson">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink"><span class="section-number">4.6.1. </span>GeoJSON</a><a class="headerlink" href="#geojson" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id23" role="doc-backlink"><span class="section-number">4.6.1. </span>GeoJSON</a><a class="headerlink" href="#geojson" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">in_geojson</span> <span class="o">=</span> <span class="p">(</span>
@@ -943,7 +943,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="shapefile">
-<h3><a class="toc-backref" href="#id15" role="doc-backlink"><span class="section-number">4.6.2. </span>Shapefile</a><a class="headerlink" href="#shapefile" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id24" role="doc-backlink"><span class="section-number">4.6.2. </span>Shapefile</a><a class="headerlink" href="#shapefile" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/gee-community/geemap/blob/master/examples/data/countries.zip&quot;</span>
@@ -964,7 +964,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="kml">
-<h3><a class="toc-backref" href="#id16" role="doc-backlink"><span class="section-number">4.6.3. </span>KML</a><a class="headerlink" href="#kml" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id25" role="doc-backlink"><span class="section-number">4.6.3. </span>KML</a><a class="headerlink" href="#kml" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">in_kml</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/gee-community/geemap/blob/master/examples/data/us_states.kml&quot;</span>
@@ -983,7 +983,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="geodataframe">
-<h3><a class="toc-backref" href="#id17" role="doc-backlink"><span class="section-number">4.6.4. </span>GeoDataFrame</a><a class="headerlink" href="#geodataframe" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id26" role="doc-backlink"><span class="section-number">4.6.4. </span>GeoDataFrame</a><a class="headerlink" href="#geodataframe" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
@@ -1003,7 +1003,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="other-vector-formats">
-<h3><a class="toc-backref" href="#id18" role="doc-backlink"><span class="section-number">4.6.5. </span>Other vector formats</a><a class="headerlink" href="#other-vector-formats" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id27" role="doc-backlink"><span class="section-number">4.6.5. </span>Other vector formats</a><a class="headerlink" href="#other-vector-formats" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -1017,9 +1017,9 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </section>
 </section>
 <section id="creating-points-from-xy">
-<h2><a class="toc-backref" href="#id19" role="doc-backlink"><span class="section-number">4.7. </span>Creating points from XY</a><a class="headerlink" href="#creating-points-from-xy" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id28" role="doc-backlink"><span class="section-number">4.7. </span>Creating points from XY</a><a class="headerlink" href="#creating-points-from-xy" title="Permalink to this heading">#</a></h2>
 <section id="csv-to-vector">
-<h3><a class="toc-backref" href="#id20" role="doc-backlink"><span class="section-number">4.7.1. </span>CSV to vector</a><a class="headerlink" href="#csv-to-vector" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id29" role="doc-backlink"><span class="section-number">4.7.1. </span>CSV to vector</a><a class="headerlink" href="#csv-to-vector" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/gee-community/geemap/blob/master/examples/data/us_cities.csv&#39;</span>
@@ -1060,7 +1060,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="adding-points-from-xy">
-<h3><a class="toc-backref" href="#id21" role="doc-backlink"><span class="section-number">4.7.2. </span>Adding points from XY</a><a class="headerlink" href="#adding-points-from-xy" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id30" role="doc-backlink"><span class="section-number">4.7.2. </span>Adding points from XY</a><a class="headerlink" href="#adding-points-from-xy" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/gee-community/geemap/blob/master/examples/data/us_cities.csv&#39;</span>
@@ -1103,7 +1103,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="circle-markers-from-points">
-<h3><a class="toc-backref" href="#id22" role="doc-backlink"><span class="section-number">4.7.3. </span>Circle markers from points</a><a class="headerlink" href="#circle-markers-from-points" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id31" role="doc-backlink"><span class="section-number">4.7.3. </span>Circle markers from points</a><a class="headerlink" href="#circle-markers-from-points" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/gee-community/geemap/blob/master/examples/data/us_cities.csv&#39;</span>
@@ -1131,7 +1131,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </section>
 </section>
 <section id="vector-data-to-earth-engine">
-<h2><a class="toc-backref" href="#id23" role="doc-backlink"><span class="section-number">4.8. </span>Vector data to Earth Engine</a><a class="headerlink" href="#vector-data-to-earth-engine" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id32" role="doc-backlink"><span class="section-number">4.8. </span>Vector data to Earth Engine</a><a class="headerlink" href="#vector-data-to-earth-engine" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">in_geojson</span> <span class="o">=</span> <span class="p">(</span>
@@ -1180,7 +1180,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="joining-attribute-tables">
-<h2><a class="toc-backref" href="#id24" role="doc-backlink"><span class="section-number">4.9. </span>Joining attribute tables</a><a class="headerlink" href="#joining-attribute-tables" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id33" role="doc-backlink"><span class="section-number">4.9. </span>Joining attribute tables</a><a class="headerlink" href="#joining-attribute-tables" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -1233,7 +1233,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="converting-netcdf-to-ee-image">
-<h2><a class="toc-backref" href="#id25" role="doc-backlink"><span class="section-number">4.10. </span>Converting NetCDF to ee.Image</a><a class="headerlink" href="#converting-netcdf-to-ee-image" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id34" role="doc-backlink"><span class="section-number">4.10. </span>Converting NetCDF to ee.Image</a><a class="headerlink" href="#converting-netcdf-to-ee-image" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -1272,9 +1272,9 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="openstreetmap-data">
-<h2><a class="toc-backref" href="#id26" role="doc-backlink"><span class="section-number">4.11. </span>OpenStreetMap data</a><a class="headerlink" href="#openstreetmap-data" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id35" role="doc-backlink"><span class="section-number">4.11. </span>OpenStreetMap data</a><a class="headerlink" href="#openstreetmap-data" title="Permalink to this heading">#</a></h2>
 <section id="osm-to-geodataframe">
-<h3><a class="toc-backref" href="#id27" role="doc-backlink"><span class="section-number">4.11.1. </span>OSM to GeoDataFrame</a><a class="headerlink" href="#osm-to-geodataframe" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id36" role="doc-backlink"><span class="section-number">4.11.1. </span>OSM to GeoDataFrame</a><a class="headerlink" href="#osm-to-geodataframe" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">osm_to_gdf</span><span class="p">(</span><span class="s2">&quot;Knoxville, Tennessee&quot;</span><span class="p">)</span>
@@ -1285,7 +1285,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="osm-to-ee-featurecollection">
-<h3><a class="toc-backref" href="#id28" role="doc-backlink"><span class="section-number">4.11.2. </span>OSM to ee.FeatureCollection</a><a class="headerlink" href="#osm-to-ee-featurecollection" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id37" role="doc-backlink"><span class="section-number">4.11.2. </span>OSM to ee.FeatureCollection</a><a class="headerlink" href="#osm-to-ee-featurecollection" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -1299,7 +1299,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="downloading-osm-data">
-<h3><a class="toc-backref" href="#id29" role="doc-backlink"><span class="section-number">4.11.3. </span>Downloading OSM data</a><a class="headerlink" href="#downloading-osm-data" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id38" role="doc-backlink"><span class="section-number">4.11.3. </span>Downloading OSM data</a><a class="headerlink" href="#downloading-osm-data" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geemap.osm</span> <span class="k">as</span> <span class="nn">osm</span>
@@ -1395,7 +1395,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </section>
 </section>
 <section id="reading-postgis-data">
-<h2><a class="toc-backref" href="#id30" role="doc-backlink"><span class="section-number">4.12. </span>Reading PostGIS data</a><a class="headerlink" href="#reading-postgis-data" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id39" role="doc-backlink"><span class="section-number">4.12. </span>Reading PostGIS data</a><a class="headerlink" href="#reading-postgis-data" title="Permalink to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>install<span class="w"> </span>sqlalchemy<span class="w"> </span>psycopg2<span class="w"> </span>-c<span class="w"> </span>conda-forge
 </pre></div>
 </div>
@@ -1441,7 +1441,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="summary">
-<h2><a class="toc-backref" href="#id31" role="doc-backlink"><span class="section-number">4.13. </span>Summary</a><a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id40" role="doc-backlink"><span class="section-number">4.13. </span>Summary</a><a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -1512,18 +1512,18 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">4.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-requirements">4.2. Technical requirements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-raster-datasets">4.3. Local raster datasets</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-band-imagery">4.3.1. Single-band imagery</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-band-imagery">4.3.2. Multi-band imagery</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-raster-gui">4.3.3. Interactive raster GUI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.1. مدخل</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.2. المتطلبات التقنية</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.3. مجموعة بيانات المرئيات المحلية</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.3.1. مرئيات الطيف الموجي الواحد</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4.3.2. مرئيات متعدده الطيف الموجي</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4.3.3. الواجهات الرسومية التفاعلية للمرئيات</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-optimized-geotiff-cog">4.4. Cloud Optimized GeoTIFF (COG)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-cog">4.4.1. Visualizing COG</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-cog">4.4.2. Creating COG</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-numpy-arrays-to-cog">4.4.3. Converting NumPy arrays to COG</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geoitff">4.4. بيانات صيغة GeoITFF المعدله سحابياَ</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">4.4.1. أستعراض و تمثيل بيانات GeoITFF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">4.4.2. خلق بيانات بصيغة GeoITFF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-geoitff">4.4.3. تحويل البيانات من مصفوفه Numpy الى بيانات GeoITFF</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clipping-image-by-mask">4.4.4. Clipping image by mask</a></li>
 </ul>
 </li>

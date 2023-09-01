@@ -11,16 +11,16 @@ kernelspec:
   name: python3
 ---
 
-# Using Local Geospatial Data
+# أستخدام البيانات الجغرافية المكانية المحلية
 
 ```{contents}
 :local:
 :depth: 2
 ```
 
-## Introduction
+## مدخل
 
-## Technical requirements
+## المتطلبات التقنية
 
 ```bash
 conda create -n gee python
@@ -46,9 +46,9 @@ import geemap
 geemap.ee_initialize()
 ```
 
-## Local raster datasets
+## مجموعة بيانات المرئيات المحلية
 
-### Single-band imagery
+### مرئيات الطيف الموجي الواحد
 
 ```{code-cell} ipython3
 url = 'https://github.com/giswqs/data/raw/main/raster/srtm90.tif'
@@ -73,7 +73,7 @@ cm.list_colormaps()
 cm.plot_colormaps(width=12, height=0.4)
 ```
 
-### Multi-band imagery
+### مرئيات متعدده الطيف الموجي
 
 ```{code-cell} ipython3
 url = 'https://github.com/giswqs/leafmap/raw/master/examples/data/cog.tif'
@@ -87,11 +87,11 @@ Map.add_raster(filename, band=[4, 1, 2], layer_name="Color infrared")
 Map
 ```
 
-### Interactive raster GUI
+### الواجهات الرسومية التفاعلية للمرئيات 
 
-## Cloud Optimized GeoTIFF (COG)
+## بيانات صيغة GeoITFF المعدله سحابياَ
 
-### Visualizing COG
+### أستعراض و تمثيل بيانات GeoITFF
 
 ```{code-cell} ipython3
 url = 'https://tinyurl.com/24bo8umr'
@@ -125,7 +125,7 @@ Map.add_cog_layer(url2, name="Fire (post-event)")
 Map
 ```
 
-### Creating COG
+### خلق بيانات بصيغة GeoITFF
 
 ```{code-cell} ipython3
 url = "https://github.com/giswqs/data/raw/main/raster/srtm90.tif"
@@ -154,7 +154,7 @@ Map.add_colorbar(vis_params, label='Elevation (m)')
 Map
 ```
 
-### Converting NumPy arrays to COG
+### تحويل البيانات من مصفوفه Numpy الى بيانات GeoITFF
 
 ```{code-cell} ipython3
 url = 'https://github.com/giswqs/leafmap/raw/master/examples/data/cog.tif'
