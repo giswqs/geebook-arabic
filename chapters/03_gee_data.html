@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>3. Using Earth Engine Data &#8212; Geospatial Data Science with Earth Engine and Geemap</title>
+    <title>3. إستخدام بيانات Earth Engine &#8212; Geospatial Data Science with Earth Engine and Geemap</title>
   
   
   
@@ -160,7 +160,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_introduction.html">1. إِحتراف تطبيق GEE و geemap في بيئة Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_maps.html">2. خلق الخارطة التفاعليه Interactive Map</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Using Earth Engine Data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. إستخدام بيانات Earth Engine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_local_data.html">4. Using Local Geospatial Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_data_viz.html">5. Visualizing Geospatial Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_data_analysis.html">6. Analyzing Geospatial Data</a></li>
@@ -375,7 +375,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Using Earth Engine Data</h1>
+    <h1>إستخدام بيانات Earth Engine</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -385,58 +385,58 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">3.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-requirements">3.2. Technical requirements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#earth-engine-data-types">3.3. Earth Engine data types</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image">3.3.1. Image</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-earth-engine-images">3.3.1.1. Loading Earth Engine images</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-earth-engine-images">3.3.1.2. Visualizing Earth Engine images</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-cloud-geotiffs">3.3.1.3. Loading Cloud GeoTIFFs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.1. مدخل</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.2. المتطلبات التقنية</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.3. أنواع البيانات في Earth Engine</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.3.1. الصور</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3.3.1.1. تحميل الصور من Earth Engine</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3.3.1.2. استعراض و تمثيل صور Earth Engine</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geotiffs">3.3.1.3. تحميل بيانات صيعة GeoTIFFs</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imagecollection">3.3.2. ImageCollection</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-image-collections">3.3.2.1. Loading image collections</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-image-collections">3.3.2.2. Visualizing image collections</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-image-collections">3.3.2.3. Filtering image collections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#images">3.3.2. تجميعة صور Images</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">3.3.2.1. تحميل تجميعة الصور</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3.3.2.2. استعراض و تمثيل تجميعة الصور</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#image-collection">3.3.2.3. فلترة تجميعة الصور Image Collection</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry">3.3.3. Geometry</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry-types">3.3.3.1. Geometry types</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-geometry-objects">3.3.3.2. Creating Geometry objects</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-drawing-tools">3.3.3.3. Using drawing tools</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry">3.3.3. البيانات الهندسية geometry</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3.3.3.1. أنواع البيانات الهندسية</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3.3.3.2. خلق كائنات هندسية</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3.3.3.3. أستخدام ادوات الرسم</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature">3.3.4. Feature</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-feature-objects">3.3.4.1. Creating Feature objects</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-feature-properties">3.3.4.2. Setting Feature properties</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-feature-properties">3.3.4.3. Getting Feature properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features">3.3.4. البيانات الخصائصية Features</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3.3.4.1. خلق كائنات خصائصية</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.3.4.2. ضبط اعدادات الكائنات الخصائصية حسب الخواص</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">3.3.4.3. استعراض الاعدادات الافتراضية لكل خاصية</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#featurecollection">3.3.5. FeatureCollection</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-feature-collections">3.3.5.1. Loading feature collections</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-feature-collections">3.3.5.2. Creating feature collections</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-feature-collections">3.3.5.3. Filtering feature collections</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-feature-collections">3.3.5.4. Visualizing feature collections</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#styling-by-attribute">3.3.5.5. Styling by attribute</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-collections">3.3.5. تجميعة بيانات خصائصية Feature Collections</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">3.3.5.1. تحميل تجميعة بيانات خصائصية</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">3.3.5.2. خلق تجميعة بيانات خصائصية</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">3.3.5.3. فلتره تجميعة البيانات الخصائصية</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">3.3.5.4. أستعراض و تمثيل تجميعة البيانات الخصائصية</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">3.3.5.5. التصميم حسب سمه البيانات</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#earth-engine-data-catalog">3.4. Earth Engine Data Catalog</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-for-datasets">3.4.1. Searching for datasets</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-datasets-module">3.4.2. Using the datasets module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">3.4. أرشيف بيانات Earth Engine</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">3.4.1. البحث عن مجموعة بيانات معينة</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">3.4.2. أستخدام مجموعة البيانات</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-image-metadata">3.5. Getting image metadata</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-descriptive-statistics">3.6. Calculating descriptive statistics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-inspector-tool">3.7. Using the inspector tool</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-javascript-to-python">3.8. Converting JavaScript to Python</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-conversion">3.8.1. Interactive conversion</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-conversion">3.8.2. Batch conversion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata">3.5. استيراد البيانات التعريقية للصور metadata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">3.6. كيفية احتساب إحصائيات وصفية على البيانات</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">3.7. استخدام ادوات التصفح للبيانات</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#javascript-python">3.8. تحويل و ترجمعة البرامج المكتوبه بلغة JavaScript الى  Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">3.8.1. الترجمة التفاعلية</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">3.8.2. الترجمة البنيوية</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calling-javascript-functions-from-python">3.9. Calling JavaScript functions from Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">3.10. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">3.9. إستدعاء دوال JavaScript في بيئة Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">3.10. الخلاصة</a></li>
 </ul>
             </nav>
         </div>
@@ -448,77 +448,77 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="using-earth-engine-data">
-<h1><span class="section-number">3. </span>Using Earth Engine Data<a class="headerlink" href="#using-earth-engine-data" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="earth-engine">
+<h1><span class="section-number">3. </span>إستخدام بيانات Earth Engine<a class="headerlink" href="#earth-engine" title="Permalink to this heading">#</a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#introduction" id="id1">Introduction</a></p></li>
-<li><p><a class="reference internal" href="#technical-requirements" id="id2">Technical requirements</a></p></li>
-<li><p><a class="reference internal" href="#earth-engine-data-types" id="id3">Earth Engine data types</a></p>
+<li><p><a class="reference internal" href="#id1" id="id29">مدخل</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id30">المتطلبات التقنية</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id31">أنواع البيانات في Earth Engine</a></p>
 <ul>
-<li><p><a class="reference internal" href="#image" id="id4">Image</a></p>
+<li><p><a class="reference internal" href="#id4" id="id32">الصور</a></p>
 <ul>
-<li><p><a class="reference internal" href="#loading-earth-engine-images" id="id5">Loading Earth Engine images</a></p></li>
-<li><p><a class="reference internal" href="#visualizing-earth-engine-images" id="id6">Visualizing Earth Engine images</a></p></li>
-<li><p><a class="reference internal" href="#loading-cloud-geotiffs" id="id7">Loading Cloud GeoTIFFs</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id33">تحميل الصور من Earth Engine</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id34">استعراض و تمثيل صور Earth Engine</a></p></li>
+<li><p><a class="reference internal" href="#geotiffs" id="id35">تحميل بيانات صيعة GeoTIFFs</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#imagecollection" id="id8">ImageCollection</a></p>
+<li><p><a class="reference internal" href="#images" id="id36">تجميعة صور Images</a></p>
 <ul>
-<li><p><a class="reference internal" href="#loading-image-collections" id="id9">Loading image collections</a></p></li>
-<li><p><a class="reference internal" href="#visualizing-image-collections" id="id10">Visualizing image collections</a></p></li>
-<li><p><a class="reference internal" href="#filtering-image-collections" id="id11">Filtering image collections</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id37">تحميل تجميعة الصور</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id38">استعراض و تمثيل تجميعة الصور</a></p></li>
+<li><p><a class="reference internal" href="#image-collection" id="id39">فلترة تجميعة الصور Image Collection</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#geometry" id="id12">Geometry</a></p>
+<li><p><a class="reference internal" href="#geometry" id="id40">البيانات الهندسية geometry</a></p>
 <ul>
-<li><p><a class="reference internal" href="#geometry-types" id="id13">Geometry types</a></p></li>
-<li><p><a class="reference internal" href="#creating-geometry-objects" id="id14">Creating Geometry objects</a></p></li>
-<li><p><a class="reference internal" href="#using-drawing-tools" id="id15">Using drawing tools</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id41">أنواع البيانات الهندسية</a></p></li>
+<li><p><a class="reference internal" href="#id10" id="id42">خلق كائنات هندسية</a></p></li>
+<li><p><a class="reference internal" href="#id11" id="id43">أستخدام ادوات الرسم</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#feature" id="id16">Feature</a></p>
+<li><p><a class="reference internal" href="#features" id="id44">البيانات الخصائصية Features</a></p>
 <ul>
-<li><p><a class="reference internal" href="#creating-feature-objects" id="id17">Creating Feature objects</a></p></li>
-<li><p><a class="reference internal" href="#setting-feature-properties" id="id18">Setting Feature properties</a></p></li>
-<li><p><a class="reference internal" href="#getting-feature-properties" id="id19">Getting Feature properties</a></p></li>
+<li><p><a class="reference internal" href="#id12" id="id45">خلق كائنات خصائصية</a></p></li>
+<li><p><a class="reference internal" href="#id13" id="id46">ضبط اعدادات الكائنات الخصائصية حسب الخواص</a></p></li>
+<li><p><a class="reference internal" href="#id14" id="id47">استعراض الاعدادات الافتراضية لكل خاصية</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#featurecollection" id="id20">FeatureCollection</a></p>
+<li><p><a class="reference internal" href="#feature-collections" id="id48">تجميعة بيانات خصائصية Feature Collections</a></p>
 <ul>
-<li><p><a class="reference internal" href="#loading-feature-collections" id="id21">Loading feature collections</a></p></li>
-<li><p><a class="reference internal" href="#creating-feature-collections" id="id22">Creating feature collections</a></p></li>
-<li><p><a class="reference internal" href="#filtering-feature-collections" id="id23">Filtering feature collections</a></p></li>
-<li><p><a class="reference internal" href="#visualizing-feature-collections" id="id24">Visualizing feature collections</a></p></li>
-<li><p><a class="reference internal" href="#styling-by-attribute" id="id25">Styling by attribute</a></p></li>
+<li><p><a class="reference internal" href="#id15" id="id49">تحميل تجميعة بيانات خصائصية</a></p></li>
+<li><p><a class="reference internal" href="#id16" id="id50">خلق تجميعة بيانات خصائصية</a></p></li>
+<li><p><a class="reference internal" href="#id17" id="id51">فلتره تجميعة البيانات الخصائصية</a></p></li>
+<li><p><a class="reference internal" href="#id18" id="id52">أستعراض و تمثيل تجميعة البيانات الخصائصية</a></p></li>
+<li><p><a class="reference internal" href="#id19" id="id53">التصميم حسب سمه البيانات</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#earth-engine-data-catalog" id="id26">Earth Engine Data Catalog</a></p>
+<li><p><a class="reference internal" href="#id20" id="id54">أرشيف بيانات Earth Engine</a></p>
 <ul>
-<li><p><a class="reference internal" href="#searching-for-datasets" id="id27">Searching for datasets</a></p></li>
-<li><p><a class="reference internal" href="#using-the-datasets-module" id="id28">Using the datasets module</a></p></li>
+<li><p><a class="reference internal" href="#id21" id="id55">البحث عن مجموعة بيانات معينة</a></p></li>
+<li><p><a class="reference internal" href="#id22" id="id56">أستخدام مجموعة البيانات</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#getting-image-metadata" id="id29">Getting image metadata</a></p></li>
-<li><p><a class="reference internal" href="#calculating-descriptive-statistics" id="id30">Calculating descriptive statistics</a></p></li>
-<li><p><a class="reference internal" href="#using-the-inspector-tool" id="id31">Using the inspector tool</a></p></li>
-<li><p><a class="reference internal" href="#converting-javascript-to-python" id="id32">Converting JavaScript to Python</a></p>
+<li><p><a class="reference internal" href="#metadata" id="id57">استيراد البيانات التعريقية للصور metadata</a></p></li>
+<li><p><a class="reference internal" href="#id23" id="id58">كيفية احتساب إحصائيات وصفية على البيانات</a></p></li>
+<li><p><a class="reference internal" href="#id24" id="id59">استخدام ادوات التصفح للبيانات</a></p></li>
+<li><p><a class="reference internal" href="#javascript-python" id="id60">تحويل و ترجمعة البرامج المكتوبه بلغة JavaScript الى  Python</a></p>
 <ul>
-<li><p><a class="reference internal" href="#interactive-conversion" id="id33">Interactive conversion</a></p></li>
-<li><p><a class="reference internal" href="#batch-conversion" id="id34">Batch conversion</a></p></li>
+<li><p><a class="reference internal" href="#id25" id="id61">الترجمة التفاعلية</a></p></li>
+<li><p><a class="reference internal" href="#id26" id="id62">الترجمة البنيوية</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#calling-javascript-functions-from-python" id="id35">Calling JavaScript functions from Python</a></p></li>
-<li><p><a class="reference internal" href="#summary" id="id36">Summary</a></p></li>
+<li><p><a class="reference internal" href="#id27" id="id63">إستدعاء دوال JavaScript في بيئة Python</a></p></li>
+<li><p><a class="reference internal" href="#id28" id="id64">الخلاصة</a></p></li>
 </ul>
 </nav>
-<section id="introduction">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink"><span class="section-number">3.1. </span>Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h2><a class="toc-backref" href="#id29" role="doc-backlink"><span class="section-number">3.1. </span>مدخل</a><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="technical-requirements">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink"><span class="section-number">3.2. </span>Technical requirements</a><a class="headerlink" href="#technical-requirements" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h2><a class="toc-backref" href="#id30" role="doc-backlink"><span class="section-number">3.2. </span>المتطلبات التقنية</a><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>gee<span class="w"> </span>python
 conda<span class="w"> </span>activate<span class="w"> </span>gee
 conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>mamba
@@ -551,12 +551,12 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="earth-engine-data-types">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">3.3. </span>Earth Engine data types</a><a class="headerlink" href="#earth-engine-data-types" title="Permalink to this heading">#</a></h2>
-<section id="image">
-<h3><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">3.3.1. </span>Image</a><a class="headerlink" href="#image" title="Permalink to this heading">#</a></h3>
-<section id="loading-earth-engine-images">
-<h4><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">3.3.1.1. </span>Loading Earth Engine images</a><a class="headerlink" href="#loading-earth-engine-images" title="Permalink to this heading">#</a></h4>
+<section id="id3">
+<h2><a class="toc-backref" href="#id31" role="doc-backlink"><span class="section-number">3.3. </span>أنواع البيانات في Earth Engine</a><a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<section id="id4">
+<h3><a class="toc-backref" href="#id32" role="doc-backlink"><span class="section-number">3.3.1. </span>الصور</a><a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<section id="id5">
+<h4><a class="toc-backref" href="#id33" role="doc-backlink"><span class="section-number">3.3.1.1. </span>تحميل الصور من Earth Engine</a><a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="s1">&#39;USGS/SRTMGL1_003&#39;</span><span class="p">)</span>
@@ -579,8 +579,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="visualizing-earth-engine-images">
-<h4><a class="toc-backref" href="#id6" role="doc-backlink"><span class="section-number">3.3.1.2. </span>Visualizing Earth Engine images</a><a class="headerlink" href="#visualizing-earth-engine-images" title="Permalink to this heading">#</a></h4>
+<section id="id6">
+<h4><a class="toc-backref" href="#id34" role="doc-backlink"><span class="section-number">3.3.1.2. </span>استعراض و تمثيل صور Earth Engine</a><a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mf">21.79</span><span class="p">,</span> <span class="mf">70.87</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -597,8 +597,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="loading-cloud-geotiffs">
-<h4><a class="toc-backref" href="#id7" role="doc-backlink"><span class="section-number">3.3.1.3. </span>Loading Cloud GeoTIFFs</a><a class="headerlink" href="#loading-cloud-geotiffs" title="Permalink to this heading">#</a></h4>
+<section id="geotiffs">
+<h4><a class="toc-backref" href="#id35" role="doc-backlink"><span class="section-number">3.3.1.3. </span>تحميل بيانات صيعة GeoTIFFs</a><a class="headerlink" href="#geotiffs" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -647,10 +647,10 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 </section>
-<section id="imagecollection">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">3.3.2. </span>ImageCollection</a><a class="headerlink" href="#imagecollection" title="Permalink to this heading">#</a></h3>
-<section id="loading-image-collections">
-<h4><a class="toc-backref" href="#id9" role="doc-backlink"><span class="section-number">3.3.2.1. </span>Loading image collections</a><a class="headerlink" href="#loading-image-collections" title="Permalink to this heading">#</a></h4>
+<section id="images">
+<h3><a class="toc-backref" href="#id36" role="doc-backlink"><span class="section-number">3.3.2. </span>تجميعة صور Images</a><a class="headerlink" href="#images" title="Permalink to this heading">#</a></h3>
+<section id="id7">
+<h4><a class="toc-backref" href="#id37" role="doc-backlink"><span class="section-number">3.3.2.1. </span>تحميل تجميعة الصور</a><a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">collection</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">ImageCollection</span><span class="p">(</span><span class="s1">&#39;COPERNICUS/S2_SR&#39;</span><span class="p">)</span>
@@ -666,8 +666,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="visualizing-image-collections">
-<h4><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">3.3.2.2. </span>Visualizing image collections</a><a class="headerlink" href="#visualizing-image-collections" title="Permalink to this heading">#</a></h4>
+<section id="id8">
+<h4><a class="toc-backref" href="#id38" role="doc-backlink"><span class="section-number">3.3.2.2. </span>استعراض و تمثيل تجميعة الصور</a><a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -688,8 +688,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="filtering-image-collections">
-<h4><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">3.3.2.3. </span>Filtering image collections</a><a class="headerlink" href="#filtering-image-collections" title="Permalink to this heading">#</a></h4>
+<section id="image-collection">
+<h4><a class="toc-backref" href="#id39" role="doc-backlink"><span class="section-number">3.3.2.3. </span>فلترة تجميعة الصور Image Collection</a><a class="headerlink" href="#image-collection" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -716,12 +716,12 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </section>
 </section>
 <section id="geometry">
-<h3><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">3.3.3. </span>Geometry</a><a class="headerlink" href="#geometry" title="Permalink to this heading">#</a></h3>
-<section id="geometry-types">
-<h4><a class="toc-backref" href="#id13" role="doc-backlink"><span class="section-number">3.3.3.1. </span>Geometry types</a><a class="headerlink" href="#geometry-types" title="Permalink to this heading">#</a></h4>
+<h3><a class="toc-backref" href="#id40" role="doc-backlink"><span class="section-number">3.3.3. </span>البيانات الهندسية geometry</a><a class="headerlink" href="#geometry" title="Permalink to this heading">#</a></h3>
+<section id="id9">
+<h4><a class="toc-backref" href="#id41" role="doc-backlink"><span class="section-number">3.3.3.1. </span>أنواع البيانات الهندسية</a><a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
 </section>
-<section id="creating-geometry-objects">
-<h4><a class="toc-backref" href="#id14" role="doc-backlink"><span class="section-number">3.3.3.2. </span>Creating Geometry objects</a><a class="headerlink" href="#creating-geometry-objects" title="Permalink to this heading">#</a></h4>
+<section id="id10">
+<h4><a class="toc-backref" href="#id42" role="doc-backlink"><span class="section-number">3.3.3.2. </span>خلق كائنات هندسية</a><a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -779,8 +779,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="using-drawing-tools">
-<h4><a class="toc-backref" href="#id15" role="doc-backlink"><span class="section-number">3.3.3.3. </span>Using drawing tools</a><a class="headerlink" href="#using-drawing-tools" title="Permalink to this heading">#</a></h4>
+<section id="id11">
+<h4><a class="toc-backref" href="#id43" role="doc-backlink"><span class="section-number">3.3.3.3. </span>أستخدام ادوات الرسم</a><a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">Map</span><span class="o">.</span><span class="n">user_roi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -799,10 +799,10 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 </section>
-<section id="feature">
-<h3><a class="toc-backref" href="#id16" role="doc-backlink"><span class="section-number">3.3.4. </span>Feature</a><a class="headerlink" href="#feature" title="Permalink to this heading">#</a></h3>
-<section id="creating-feature-objects">
-<h4><a class="toc-backref" href="#id17" role="doc-backlink"><span class="section-number">3.3.4.1. </span>Creating Feature objects</a><a class="headerlink" href="#creating-feature-objects" title="Permalink to this heading">#</a></h4>
+<section id="features">
+<h3><a class="toc-backref" href="#id44" role="doc-backlink"><span class="section-number">3.3.4. </span>البيانات الخصائصية Features</a><a class="headerlink" href="#features" title="Permalink to this heading">#</a></h3>
+<section id="id12">
+<h4><a class="toc-backref" href="#id45" role="doc-backlink"><span class="section-number">3.3.4.1. </span>خلق كائنات خصائصية</a><a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">polygon</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">Geometry</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span>
@@ -839,8 +839,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="setting-feature-properties">
-<h4><a class="toc-backref" href="#id18" role="doc-backlink"><span class="section-number">3.3.4.2. </span>Setting Feature properties</a><a class="headerlink" href="#setting-feature-properties" title="Permalink to this heading">#</a></h4>
+<section id="id13">
+<h4><a class="toc-backref" href="#id46" role="doc-backlink"><span class="section-number">3.3.4.2. </span>ضبط اعدادات الكائنات الخصائصية حسب الخواص</a><a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">feature</span> <span class="o">=</span> <span class="p">(</span>
@@ -856,8 +856,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="getting-feature-properties">
-<h4><a class="toc-backref" href="#id19" role="doc-backlink"><span class="section-number">3.3.4.3. </span>Getting Feature properties</a><a class="headerlink" href="#getting-feature-properties" title="Permalink to this heading">#</a></h4>
+<section id="id14">
+<h4><a class="toc-backref" href="#id47" role="doc-backlink"><span class="section-number">3.3.4.3. </span>استعراض الاعدادات الافتراضية لكل خاصية</a><a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">prop</span> <span class="o">=</span> <span class="n">feature</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;species&#39;</span><span class="p">)</span>
@@ -876,10 +876,10 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 </section>
-<section id="featurecollection">
-<h3><a class="toc-backref" href="#id20" role="doc-backlink"><span class="section-number">3.3.5. </span>FeatureCollection</a><a class="headerlink" href="#featurecollection" title="Permalink to this heading">#</a></h3>
-<section id="loading-feature-collections">
-<h4><a class="toc-backref" href="#id21" role="doc-backlink"><span class="section-number">3.3.5.1. </span>Loading feature collections</a><a class="headerlink" href="#loading-feature-collections" title="Permalink to this heading">#</a></h4>
+<section id="feature-collections">
+<h3><a class="toc-backref" href="#id48" role="doc-backlink"><span class="section-number">3.3.5. </span>تجميعة بيانات خصائصية Feature Collections</a><a class="headerlink" href="#feature-collections" title="Permalink to this heading">#</a></h3>
+<section id="id15">
+<h4><a class="toc-backref" href="#id49" role="doc-backlink"><span class="section-number">3.3.5.1. </span>تحميل تجميعة بيانات خصائصية</a><a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -899,8 +899,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="creating-feature-collections">
-<h4><a class="toc-backref" href="#id22" role="doc-backlink"><span class="section-number">3.3.5.2. </span>Creating feature collections</a><a class="headerlink" href="#creating-feature-collections" title="Permalink to this heading">#</a></h4>
+<section id="id16">
+<h4><a class="toc-backref" href="#id50" role="doc-backlink"><span class="section-number">3.3.5.2. </span>خلق تجميعة بيانات خصائصية</a><a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="p">[</span>
@@ -914,8 +914,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="filtering-feature-collections">
-<h4><a class="toc-backref" href="#id23" role="doc-backlink"><span class="section-number">3.3.5.3. </span>Filtering feature collections</a><a class="headerlink" href="#filtering-feature-collections" title="Permalink to this heading">#</a></h4>
+<section id="id17">
+<h4><a class="toc-backref" href="#id51" role="doc-backlink"><span class="section-number">3.3.5.3. </span>فلتره تجميعة البيانات الخصائصية</a><a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -962,8 +962,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="visualizing-feature-collections">
-<h4><a class="toc-backref" href="#id24" role="doc-backlink"><span class="section-number">3.3.5.4. </span>Visualizing feature collections</a><a class="headerlink" href="#visualizing-feature-collections" title="Permalink to this heading">#</a></h4>
+<section id="id18">
+<h4><a class="toc-backref" href="#id52" role="doc-backlink"><span class="section-number">3.3.5.4. </span>أستعراض و تمثيل تجميعة البيانات الخصائصية</a><a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -1019,8 +1019,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="styling-by-attribute">
-<h4><a class="toc-backref" href="#id25" role="doc-backlink"><span class="section-number">3.3.5.5. </span>Styling by attribute</a><a class="headerlink" href="#styling-by-attribute" title="Permalink to this heading">#</a></h4>
+<section id="id19">
+<h4><a class="toc-backref" href="#id53" role="doc-backlink"><span class="section-number">3.3.5.5. </span>التصميم حسب سمه البيانات</a><a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mf">28.00142</span><span class="p">,</span> <span class="o">-</span><span class="mf">81.7424</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
@@ -1160,10 +1160,10 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </section>
 </section>
 </section>
-<section id="earth-engine-data-catalog">
-<h2><a class="toc-backref" href="#id26" role="doc-backlink"><span class="section-number">3.4. </span>Earth Engine Data Catalog</a><a class="headerlink" href="#earth-engine-data-catalog" title="Permalink to this heading">#</a></h2>
-<section id="searching-for-datasets">
-<h3><a class="toc-backref" href="#id27" role="doc-backlink"><span class="section-number">3.4.1. </span>Searching for datasets</a><a class="headerlink" href="#searching-for-datasets" title="Permalink to this heading">#</a></h3>
+<section id="id20">
+<h2><a class="toc-backref" href="#id54" role="doc-backlink"><span class="section-number">3.4. </span>أرشيف بيانات Earth Engine</a><a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h2>
+<section id="id21">
+<h3><a class="toc-backref" href="#id55" role="doc-backlink"><span class="section-number">3.4.1. </span>البحث عن مجموعة بيانات معينة</a><a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset_xyz</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="s1">&#39;USGS/SRTMGL1_003&#39;</span><span class="p">)</span>
@@ -1188,8 +1188,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="using-the-datasets-module">
-<h3><a class="toc-backref" href="#id28" role="doc-backlink"><span class="section-number">3.4.2. </span>Using the datasets module</a><a class="headerlink" href="#using-the-datasets-module" title="Permalink to this heading">#</a></h3>
+<section id="id22">
+<h3><a class="toc-backref" href="#id56" role="doc-backlink"><span class="section-number">3.4.2. </span>أستخدام مجموعة البيانات</a><a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">geemap.datasets</span> <span class="kn">import</span> <span class="n">DATA</span>
@@ -1218,8 +1218,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 </section>
-<section id="getting-image-metadata">
-<h2><a class="toc-backref" href="#id29" role="doc-backlink"><span class="section-number">3.5. </span>Getting image metadata</a><a class="headerlink" href="#getting-image-metadata" title="Permalink to this heading">#</a></h2>
+<section id="metadata">
+<h2><a class="toc-backref" href="#id57" role="doc-backlink"><span class="section-number">3.5. </span>استيراد البيانات التعريقية للصور metadata</a><a class="headerlink" href="#metadata" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="s1">&#39;LANDSAT/LC09/C02/T1_L2/LC09_044034_20220503&#39;</span><span class="p">)</span>
@@ -1300,8 +1300,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="calculating-descriptive-statistics">
-<h2><a class="toc-backref" href="#id30" role="doc-backlink"><span class="section-number">3.6. </span>Calculating descriptive statistics</a><a class="headerlink" href="#calculating-descriptive-statistics" title="Permalink to this heading">#</a></h2>
+<section id="id23">
+<h2><a class="toc-backref" href="#id58" role="doc-backlink"><span class="section-number">3.6. </span>كيفية احتساب إحصائيات وصفية على البيانات</a><a class="headerlink" href="#id23" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="s1">&#39;LANDSAT/LC09/C02/T1_L2/LC09_044034_20220503&#39;</span><span class="p">)</span>
@@ -1332,8 +1332,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="using-the-inspector-tool">
-<h2><a class="toc-backref" href="#id31" role="doc-backlink"><span class="section-number">3.7. </span>Using the inspector tool</a><a class="headerlink" href="#using-the-inspector-tool" title="Permalink to this heading">#</a></h2>
+<section id="id24">
+<h2><a class="toc-backref" href="#id59" role="doc-backlink"><span class="section-number">3.7. </span>استخدام ادوات التصفح للبيانات</a><a class="headerlink" href="#id24" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">),</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -1360,10 +1360,10 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="converting-javascript-to-python">
-<h2><a class="toc-backref" href="#id32" role="doc-backlink"><span class="section-number">3.8. </span>Converting JavaScript to Python</a><a class="headerlink" href="#converting-javascript-to-python" title="Permalink to this heading">#</a></h2>
-<section id="interactive-conversion">
-<h3><a class="toc-backref" href="#id33" role="doc-backlink"><span class="section-number">3.8.1. </span>Interactive conversion</a><a class="headerlink" href="#interactive-conversion" title="Permalink to this heading">#</a></h3>
+<section id="javascript-python">
+<h2><a class="toc-backref" href="#id60" role="doc-backlink"><span class="section-number">3.8. </span>تحويل و ترجمعة البرامج المكتوبه بلغة JavaScript الى  Python</a><a class="headerlink" href="#javascript-python" title="Permalink to this heading">#</a></h2>
+<section id="id25">
+<h3><a class="toc-backref" href="#id61" role="doc-backlink"><span class="section-number">3.8.1. </span>الترجمة التفاعلية</a><a class="headerlink" href="#id25" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -1389,8 +1389,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="batch-conversion">
-<h3><a class="toc-backref" href="#id34" role="doc-backlink"><span class="section-number">3.8.2. </span>Batch conversion</a><a class="headerlink" href="#batch-conversion" title="Permalink to this heading">#</a></h3>
+<section id="id26">
+<h3><a class="toc-backref" href="#id62" role="doc-backlink"><span class="section-number">3.8.2. </span>الترجمة البنيوية</a><a class="headerlink" href="#id26" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">snippet</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
@@ -1439,8 +1439,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 </section>
-<section id="calling-javascript-functions-from-python">
-<h2><a class="toc-backref" href="#id35" role="doc-backlink"><span class="section-number">3.9. </span>Calling JavaScript functions from Python</a><a class="headerlink" href="#calling-javascript-functions-from-python" title="Permalink to this heading">#</a></h2>
+<section id="id27">
+<h2><a class="toc-backref" href="#id63" role="doc-backlink"><span class="section-number">3.9. </span>إستدعاء دوال JavaScript في بيئة Python</a><a class="headerlink" href="#id27" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># %pip install oeel</span>
@@ -1557,8 +1557,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="summary">
-<h2><a class="toc-backref" href="#id36" role="doc-backlink"><span class="section-number">3.10. </span>Summary</a><a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<section id="id28">
+<h2><a class="toc-backref" href="#id64" role="doc-backlink"><span class="section-number">3.10. </span>الخلاصة</a><a class="headerlink" href="#id28" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -1629,58 +1629,58 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">3.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-requirements">3.2. Technical requirements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#earth-engine-data-types">3.3. Earth Engine data types</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image">3.3.1. Image</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-earth-engine-images">3.3.1.1. Loading Earth Engine images</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-earth-engine-images">3.3.1.2. Visualizing Earth Engine images</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-cloud-geotiffs">3.3.1.3. Loading Cloud GeoTIFFs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.1. مدخل</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.2. المتطلبات التقنية</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.3. أنواع البيانات في Earth Engine</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.3.1. الصور</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3.3.1.1. تحميل الصور من Earth Engine</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3.3.1.2. استعراض و تمثيل صور Earth Engine</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geotiffs">3.3.1.3. تحميل بيانات صيعة GeoTIFFs</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imagecollection">3.3.2. ImageCollection</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-image-collections">3.3.2.1. Loading image collections</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-image-collections">3.3.2.2. Visualizing image collections</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-image-collections">3.3.2.3. Filtering image collections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#images">3.3.2. تجميعة صور Images</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">3.3.2.1. تحميل تجميعة الصور</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3.3.2.2. استعراض و تمثيل تجميعة الصور</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#image-collection">3.3.2.3. فلترة تجميعة الصور Image Collection</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry">3.3.3. Geometry</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry-types">3.3.3.1. Geometry types</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-geometry-objects">3.3.3.2. Creating Geometry objects</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-drawing-tools">3.3.3.3. Using drawing tools</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry">3.3.3. البيانات الهندسية geometry</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3.3.3.1. أنواع البيانات الهندسية</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3.3.3.2. خلق كائنات هندسية</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3.3.3.3. أستخدام ادوات الرسم</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature">3.3.4. Feature</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-feature-objects">3.3.4.1. Creating Feature objects</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-feature-properties">3.3.4.2. Setting Feature properties</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-feature-properties">3.3.4.3. Getting Feature properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features">3.3.4. البيانات الخصائصية Features</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3.3.4.1. خلق كائنات خصائصية</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.3.4.2. ضبط اعدادات الكائنات الخصائصية حسب الخواص</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">3.3.4.3. استعراض الاعدادات الافتراضية لكل خاصية</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#featurecollection">3.3.5. FeatureCollection</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-feature-collections">3.3.5.1. Loading feature collections</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-feature-collections">3.3.5.2. Creating feature collections</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-feature-collections">3.3.5.3. Filtering feature collections</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-feature-collections">3.3.5.4. Visualizing feature collections</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#styling-by-attribute">3.3.5.5. Styling by attribute</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-collections">3.3.5. تجميعة بيانات خصائصية Feature Collections</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">3.3.5.1. تحميل تجميعة بيانات خصائصية</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">3.3.5.2. خلق تجميعة بيانات خصائصية</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">3.3.5.3. فلتره تجميعة البيانات الخصائصية</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">3.3.5.4. أستعراض و تمثيل تجميعة البيانات الخصائصية</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">3.3.5.5. التصميم حسب سمه البيانات</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#earth-engine-data-catalog">3.4. Earth Engine Data Catalog</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-for-datasets">3.4.1. Searching for datasets</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-datasets-module">3.4.2. Using the datasets module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">3.4. أرشيف بيانات Earth Engine</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">3.4.1. البحث عن مجموعة بيانات معينة</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">3.4.2. أستخدام مجموعة البيانات</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-image-metadata">3.5. Getting image metadata</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-descriptive-statistics">3.6. Calculating descriptive statistics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-inspector-tool">3.7. Using the inspector tool</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-javascript-to-python">3.8. Converting JavaScript to Python</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-conversion">3.8.1. Interactive conversion</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-conversion">3.8.2. Batch conversion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata">3.5. استيراد البيانات التعريقية للصور metadata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">3.6. كيفية احتساب إحصائيات وصفية على البيانات</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">3.7. استخدام ادوات التصفح للبيانات</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#javascript-python">3.8. تحويل و ترجمعة البرامج المكتوبه بلغة JavaScript الى  Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">3.8.1. الترجمة التفاعلية</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">3.8.2. الترجمة البنيوية</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calling-javascript-functions-from-python">3.9. Calling JavaScript functions from Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">3.10. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">3.9. إستدعاء دوال JavaScript في بيئة Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">3.10. الخلاصة</a></li>
 </ul>
   </nav></div>
 

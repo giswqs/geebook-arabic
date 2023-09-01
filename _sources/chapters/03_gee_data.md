@@ -11,16 +11,16 @@ kernelspec:
   name: python3
 ---
 
-# Using Earth Engine Data
+# إستخدام بيانات Earth Engine
 
 ```{contents}
 :local:
 :depth: 3
 ```
 
-## Introduction
+## مدخل
 
-## Technical requirements
+## المتطلبات التقنية
 
 ```bash
 conda create -n gee python
@@ -46,11 +46,11 @@ import geemap
 geemap.ee_initialize()
 ```
 
-## Earth Engine data types
+## أنواع البيانات في Earth Engine
 
-### Image
+### الصور
 
-#### Loading Earth Engine images
+#### تحميل الصور من Earth Engine
 
 ```{code-cell} ipython3
 image = ee.Image('USGS/SRTMGL1_003')
@@ -64,7 +64,7 @@ image
 image.getInfo()
 ```
 
-#### Visualizing Earth Engine images
+#### استعراض و تمثيل صور Earth Engine
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=[21.79, 70.87], zoom=3)
@@ -78,7 +78,7 @@ Map.addLayer(image, vis_params, 'SRTM')
 Map
 ```
 
-#### Loading Cloud GeoTIFFs
+#### تحميل بيانات صيعة GeoTIFFs
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -114,9 +114,9 @@ Map.centerObject(image, 8)
 Map
 ```
 
-### ImageCollection
+### تجميعة صور Images
 
-#### Loading image collections
+#### تحميل تجميعة الصور
 
 ```{code-cell} ipython3
 collection = ee.ImageCollection('COPERNICUS/S2_SR')
@@ -126,7 +126,7 @@ collection = ee.ImageCollection('COPERNICUS/S2_SR')
 collection.limit(5)
 ```
 
-#### Visualizing image collections
+#### استعراض و تمثيل تجميعة الصور
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -144,7 +144,7 @@ Map.addLayer(image, vis, 'Sentinel-2')
 Map
 ```
 
-#### Filtering image collections
+#### فلترة تجميعة الصور Image Collection
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -166,11 +166,11 @@ Map.addLayer(image, vis, 'Sentinel-2')
 Map
 ```
 
-### Geometry
+### البيانات الهندسية geometry
 
-#### Geometry types
+#### أنواع البيانات الهندسية 
 
-#### Creating Geometry objects
+#### خلق كائنات هندسية 
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -222,7 +222,7 @@ Map.addLayer(polygon, {}, 'Polygon')
 Map
 ```
 
-#### Using drawing tools
+#### أستخدام ادوات الرسم
 
 ```{code-cell} ipython3
 if Map.user_roi is not None:
@@ -234,9 +234,9 @@ if Map.user_roi is not None:
     print(Map.user_roi)
 ```
 
-### Feature
+### البيانات الخصائصية Features
 
-#### Creating Feature objects
+#### خلق كائنات خصائصية
 
 ```{code-cell} ipython3
 polygon = ee.Geometry.Polygon(
@@ -261,7 +261,7 @@ nowhereFeature = ee.Feature(None, props)
 nowhereFeature
 ```
 
-#### Setting Feature properties
+#### ضبط اعدادات الكائنات الخصائصية حسب الخواص
 
 ```{code-cell} ipython3
 feature = (
@@ -274,8 +274,7 @@ feature = feature.set(newDict)
 feature
 ```
 
-#### Getting Feature properties
-
+#### استعراض الاعدادات الافتراضية لكل خاصية
 ```{code-cell} ipython3
 prop = feature.get('species')
 prop
@@ -286,9 +285,9 @@ props = feature.toDictionary()
 props
 ```
 
-### FeatureCollection
+### تجميعة بيانات خصائصية Feature Collections
 
-#### Loading feature collections
+#### تحميل تجميعة بيانات خصائصية
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -302,7 +301,7 @@ Map
 fc.limit(3)
 ```
 
-#### Creating feature collections
+#### خلق تجميعة بيانات خصائصية
 
 ```{code-cell} ipython3
 features = [
@@ -313,7 +312,7 @@ features = [
 fromList = ee.FeatureCollection(features)
 ```
 
-#### Filtering feature collections
+#### فلتره تجميعة البيانات الخصائصية
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -348,7 +347,7 @@ Map.addLayer(fc, {}, 'Southeastern U.S.')
 Map.centerObject(fc)
 ```
 
-#### Visualizing feature collections
+#### أستعراض و تمثيل تجميعة البيانات الخصائصية
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=[40, -100], zoom=4)
@@ -392,7 +391,7 @@ Map.add_styled_vector(
 Map
 ```
 
-#### Styling by attribute
+#### التصميم حسب سمه البيانات
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=[28.00142, -81.7424], zoom=13)
@@ -500,9 +499,9 @@ Map.add_legend(title='Route Type', labels=labels, colors=colors)
 Map
 ```
 
-## Earth Engine Data Catalog
+## أرشيف بيانات Earth Engine
 
-### Searching for datasets
+### البحث عن مجموعة بيانات معينة
 
 ```{code-cell} ipython3
 dataset_xyz = ee.Image('USGS/SRTMGL1_003')
@@ -521,7 +520,7 @@ Map.addLayer(dem, vis_params, 'SRTM DEM')
 Map
 ```
 
-### Using the datasets module
+### أستخدام مجموعة البيانات
 
 ```{code-cell} ipython3
 from geemap.datasets import DATA
@@ -540,7 +539,7 @@ from geemap.datasets import get_metadata
 get_metadata(DATA.USGS_GAP_CONUS_2011)
 ```
 
-## Getting image metadata
+## استيراد البيانات التعريقية للصور metadata
 
 ```{code-cell} ipython3
 image = ee.Image('LANDSAT/LC09/C02/T1_L2/LC09_044034_20220503')
@@ -588,7 +587,7 @@ props = geemap.image_props(image)
 props
 ```
 
-## Calculating descriptive statistics
+## كيفية احتساب إحصائيات وصفية على البيانات
 
 ```{code-cell} ipython3
 image = ee.Image('LANDSAT/LC09/C02/T1_L2/LC09_044034_20220503')
@@ -607,7 +606,7 @@ geemap.image_mean_value(image)
 geemap.image_stats(image)
 ```
 
-## Using the inspector tool
+## استخدام ادوات التصفح للبيانات
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=(40, -100), zoom=4)
@@ -631,9 +630,9 @@ Map.addLayer(states, {}, "US States")
 Map
 ```
 
-## Converting JavaScript to Python
+## تحويل و ترجمعة البرامج المكتوبه بلغة JavaScript الى  Python
 
-### Interactive conversion
+### الترجمة التفاعلية
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -653,7 +652,7 @@ Map.setCenter(-122.1899, 37.5010, 10)
 Map.addLayer(image, vizParams, 'False color composite')
 ```
 
-### Batch conversion
+### الترجمة البنيوية
 
 ```{code-cell} ipython3
 snippet = """
@@ -692,7 +691,7 @@ js_to_python_dir(in_dir=js_dir, out_dir=out_dir, use_qgis=False)
 py_to_ipynb_dir(js_dir)
 ```
 
-## Calling JavaScript functions from Python
+## إستدعاء دوال JavaScript في بيئة Python
 
 ```{code-cell} ipython3
 # %pip install oeel
@@ -767,5 +766,5 @@ Map.addLayer(grid.style(**style), {}, 'Grid')
 Map
 ```
 
-## Summary
+## الخلاصة
 
