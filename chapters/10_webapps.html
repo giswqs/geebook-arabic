@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>10. Building Interactive Web Apps &#8212; Geospatial Data Science with Earth Engine and Geemap</title>
+    <title>10. بناء تطبيق ويب تفاعلي &#8212; Geospatial Data Science with Earth Engine and Geemap</title>
   
   
   
@@ -167,7 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="07_data_export.html">7. تصدير بيانات Earth Engine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_cartoee.html">8. رسم خارطة بأستخدام مفهوم كارتوي</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09_timelapse.html">9. خلق صور متحركة حسب الفاصل الزمني</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Building Interactive Web Apps</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. بناء تطبيق ويب تفاعلي</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11_applications.html">11. Earth Engine Applications</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
@@ -375,7 +375,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Building Interactive Web Apps</h1>
+    <h1>بناء تطبيق ويب تفاعلي</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -385,16 +385,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">10.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-requirements">10.2. Technical requirements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-javascript-web-apps">10.3. Building JavaScript web apps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing-javascript-web-apps">10.4. Publishing JavaScript web apps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-python-web-apps">10.5. Building Python Web Apps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-voila-to-deploy-web-apps">10.6. Using Voila to deploy web apps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-streamlit-web-apps">10.7. Building Streamlit web apps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-solara-web-apps">10.8. Building Solara web apps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deploying-web-apps-on-hugging-face">10.9. Deploying web apps on Hugging Face</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">10.10. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.1. مدخل</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.2. المتطلبات التقنية</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#javascript">10.3. بناء تطبيق ويب بأستخدام JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#javasctipt">10.4. نشر تطبيق ويب JavaSctipt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">10.5. بناء تطبيق ويب بأستخدام Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voila">10.6. استخدام Voila في نشر تطبيق الويب</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#streamlit">10.7. بناء تطبيق ويب باستخدام مكتبة Streamlit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solara">10.8. بناء تطبيق ويب باستخدام مكتبة Solara</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hugging-face">10.9. نشر تطبيق ويب على منصة  Hugging Face</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.10. الخلاصة</a></li>
 </ul>
             </nav>
         </div>
@@ -406,27 +406,27 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="building-interactive-web-apps">
-<h1><span class="section-number">10. </span>Building Interactive Web Apps<a class="headerlink" href="#building-interactive-web-apps" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1><span class="section-number">10. </span>بناء تطبيق ويب تفاعلي<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#introduction" id="id1">Introduction</a></p></li>
-<li><p><a class="reference internal" href="#technical-requirements" id="id2">Technical requirements</a></p></li>
-<li><p><a class="reference internal" href="#building-javascript-web-apps" id="id3">Building JavaScript web apps</a></p></li>
-<li><p><a class="reference internal" href="#publishing-javascript-web-apps" id="id4">Publishing JavaScript web apps</a></p></li>
-<li><p><a class="reference internal" href="#building-python-web-apps" id="id5">Building Python Web Apps</a></p></li>
-<li><p><a class="reference internal" href="#using-voila-to-deploy-web-apps" id="id6">Using Voila to deploy web apps</a></p></li>
-<li><p><a class="reference internal" href="#building-streamlit-web-apps" id="id7">Building Streamlit web apps</a></p></li>
-<li><p><a class="reference internal" href="#building-solara-web-apps" id="id8">Building Solara web apps</a></p></li>
-<li><p><a class="reference internal" href="#deploying-web-apps-on-hugging-face" id="id9">Deploying web apps on Hugging Face</a></p></li>
-<li><p><a class="reference internal" href="#summary" id="id10">Summary</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id5">مدخل</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id6">المتطلبات التقنية</a></p></li>
+<li><p><a class="reference internal" href="#javascript" id="id7">بناء تطبيق ويب بأستخدام JavaScript</a></p></li>
+<li><p><a class="reference internal" href="#javasctipt" id="id8">نشر تطبيق ويب JavaSctipt</a></p></li>
+<li><p><a class="reference internal" href="#python" id="id9">بناء تطبيق ويب بأستخدام Python</a></p></li>
+<li><p><a class="reference internal" href="#voila" id="id10">استخدام Voila في نشر تطبيق الويب</a></p></li>
+<li><p><a class="reference internal" href="#streamlit" id="id11">بناء تطبيق ويب باستخدام مكتبة Streamlit</a></p></li>
+<li><p><a class="reference internal" href="#solara" id="id12">بناء تطبيق ويب باستخدام مكتبة Solara</a></p></li>
+<li><p><a class="reference internal" href="#hugging-face" id="id13">نشر تطبيق ويب على منصة  Hugging Face</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id14">الخلاصة</a></p></li>
 </ul>
 </nav>
-<section id="introduction">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink"><span class="section-number">10.1. </span>Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">10.1. </span>مدخل</a><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="technical-requirements">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink"><span class="section-number">10.2. </span>Technical requirements</a><a class="headerlink" href="#technical-requirements" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink"><span class="section-number">10.2. </span>المتطلبات التقنية</a><a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>gee<span class="w"> </span>python
 conda<span class="w"> </span>activate<span class="w"> </span>gee
 conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>mamba
@@ -462,8 +462,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="building-javascript-web-apps">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">10.3. </span>Building JavaScript web apps</a><a class="headerlink" href="#building-javascript-web-apps" title="Permalink to this heading">#</a></h2>
+<section id="javascript">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink"><span class="section-number">10.3. </span>بناء تطبيق ويب بأستخدام JavaScript</a><a class="headerlink" href="#javascript" title="Permalink to this heading">#</a></h2>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">getNLCD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">year</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">dataset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s2">&quot;USGS/NLCD_RELEASES/2019_REL/NLCD&quot;</span><span class="p">);</span>
 <span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">nlcd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dataset</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s2">&quot;system:index&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">year</span><span class="p">)).</span><span class="nx">first</span><span class="p">();</span>
@@ -630,11 +630,11 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </pre></div>
 </div>
 </section>
-<section id="publishing-javascript-web-apps">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">10.4. </span>Publishing JavaScript web apps</a><a class="headerlink" href="#publishing-javascript-web-apps" title="Permalink to this heading">#</a></h2>
+<section id="javasctipt">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">10.4. </span>نشر تطبيق ويب JavaSctipt</a><a class="headerlink" href="#javasctipt" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="building-python-web-apps">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">10.5. </span>Building Python Web Apps</a><a class="headerlink" href="#building-python-web-apps" title="Permalink to this heading">#</a></h2>
+<section id="python">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink"><span class="section-number">10.5. </span>بناء تطبيق ويب بأستخدام Python</a><a class="headerlink" href="#python" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ee</span>
@@ -723,8 +723,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="using-voila-to-deploy-web-apps">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink"><span class="section-number">10.6. </span>Using Voila to deploy web apps</a><a class="headerlink" href="#using-voila-to-deploy-web-apps" title="Permalink to this heading">#</a></h2>
+<section id="voila">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">10.6. </span>استخدام Voila في نشر تطبيق الويب</a><a class="headerlink" href="#voila" title="Permalink to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/ngrok/dir
 ngrok<span class="w"> </span>config<span class="w"> </span>add-authtoken<span class="w"> </span>&lt;token&gt;
 </pre></div>
@@ -747,8 +747,8 @@ ngrok<span class="w"> </span>http<span class="w"> </span><span class="m">8866</s
 </pre></div>
 </div>
 </section>
-<section id="building-streamlit-web-apps">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink"><span class="section-number">10.7. </span>Building Streamlit web apps</a><a class="headerlink" href="#building-streamlit-web-apps" title="Permalink to this heading">#</a></h2>
+<section id="streamlit">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">10.7. </span>بناء تطبيق ويب باستخدام مكتبة Streamlit</a><a class="headerlink" href="#streamlit" title="Permalink to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>streamlit<span class="w"> </span>hello
 </pre></div>
 </div>
@@ -811,8 +811,8 @@ streamlit<span class="w"> </span>run<span class="w"> </span>app.py
 </pre></div>
 </div>
 </section>
-<section id="building-solara-web-apps">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">10.8. </span>Building Solara web apps</a><a class="headerlink" href="#building-solara-web-apps" title="Permalink to this heading">#</a></h2>
+<section id="solara">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">10.8. </span>بناء تطبيق ويب باستخدام مكتبة Solara</a><a class="headerlink" href="#solara" title="Permalink to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>solara
 </pre></div>
 </div>
@@ -867,8 +867,8 @@ solara<span class="w"> </span>run<span class="w"> </span>./pages
 </pre></div>
 </div>
 </section>
-<section id="deploying-web-apps-on-hugging-face">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink"><span class="section-number">10.9. </span>Deploying web apps on Hugging Face</a><a class="headerlink" href="#deploying-web-apps-on-hugging-face" title="Permalink to this heading">#</a></h2>
+<section id="hugging-face">
+<h2><a class="toc-backref" href="#id13" role="doc-backlink"><span class="section-number">10.9. </span>نشر تطبيق ويب على منصة  Hugging Face</a><a class="headerlink" href="#hugging-face" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geemap</span>
@@ -878,8 +878,8 @@ solara<span class="w"> </span>run<span class="w"> </span>./pages
 </div>
 </div>
 </section>
-<section id="summary">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">10.10. </span>Summary</a><a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<section id="id4">
+<h2><a class="toc-backref" href="#id14" role="doc-backlink"><span class="section-number">10.10. </span>الخلاصة</a><a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -950,16 +950,16 @@ solara<span class="w"> </span>run<span class="w"> </span>./pages
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">10.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-requirements">10.2. Technical requirements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-javascript-web-apps">10.3. Building JavaScript web apps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing-javascript-web-apps">10.4. Publishing JavaScript web apps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-python-web-apps">10.5. Building Python Web Apps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-voila-to-deploy-web-apps">10.6. Using Voila to deploy web apps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-streamlit-web-apps">10.7. Building Streamlit web apps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-solara-web-apps">10.8. Building Solara web apps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deploying-web-apps-on-hugging-face">10.9. Deploying web apps on Hugging Face</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">10.10. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.1. مدخل</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.2. المتطلبات التقنية</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#javascript">10.3. بناء تطبيق ويب بأستخدام JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#javasctipt">10.4. نشر تطبيق ويب JavaSctipt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">10.5. بناء تطبيق ويب بأستخدام Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voila">10.6. استخدام Voila في نشر تطبيق الويب</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#streamlit">10.7. بناء تطبيق ويب باستخدام مكتبة Streamlit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solara">10.8. بناء تطبيق ويب باستخدام مكتبة Solara</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hugging-face">10.9. نشر تطبيق ويب على منصة  Hugging Face</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.10. الخلاصة</a></li>
 </ul>
   </nav></div>
 
