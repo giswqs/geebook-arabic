@@ -11,16 +11,16 @@ kernelspec:
   name: python3
 ---
 
-# Analyzing Geospatial Data
+# تحليل البيانات المكانية
 
 ```{contents}
 :local:
 :depth: 2
 ```
 
-## Introduction
+## مدخل
 
-## Technical requirements
+## المتطلبات التقنية
 
 ```bash
 conda create -n gee python
@@ -46,9 +46,9 @@ import geemap
 geemap.ee_initialize()
 ```
 
-## Earth Engine data reductions
+## مخفض بيانات Earth Engine
 
-### List reductions
+### مخفض بيانات هيكل القائمة
 
 ```{code-cell} ipython3
 values = ee.List.sequence(1, 10)
@@ -95,7 +95,7 @@ std_value = values.reduce(ee.Reducer.stdDev())
 print(std_value.getInfo())  # 2.8723
 ```
 
-### ImageCollection reductions
+### مخفض بيانات هيكل تجميع المرئيات 
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -124,7 +124,7 @@ median = collection.median()
 print(median.bandNames().getInfo())
 ```
 
-### Image reductions
+### مخفض بيانات المرئية
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -136,7 +136,7 @@ Map.addLayer(maxValue, {'max': 13000}, 'Maximum value image')
 Map
 ```
 
-### FeatureCollection reductions
+### مخفض بيانات هيكل تجميع الخصائص
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -167,7 +167,7 @@ print(benton.aggregate_sum('housing10'))  # 36245
 benton.aggregate_stats('pop10')
 ```
 
-## Image descriptive statistics
+## الاحصائيات الوصفيه على المرئيات
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -199,9 +199,9 @@ stats = geemap.image_stats(image, scale=30)
 stats
 ```
 
-## Zonal statistics with Earth Engine
+## الاحصائيات النطاقية على بيانات Earth Engine
 
-### Zonal statistics
+### الاحصائيات النطاقية
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=[40, -100], zoom=4)
@@ -246,7 +246,7 @@ geemap.zonal_stats(
 )
 ```
 
-### Zonal statistics by group
+### الاحصائيات النطاقية حسب المجموعات
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=[40, -100], zoom=4)
@@ -292,7 +292,7 @@ geemap.zonal_stats_by_group(
 )
 ```
 
-### Zonal statistics with two images
+### الاحصائيات النطاقية على منطقة معينة في صورتين
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=[40, -100], zoom=4)
@@ -321,9 +321,9 @@ stats.to_csv('mean.csv', index=False)
 geemap.image_stats_by_zone(dem, landcover, out_csv="std.csv", reducer='STD')
 ```
 
-## Coordinate grids and fishnets
+## شبكة الاحداثيات و شبكة خلايا المربعات
 
-### Creating coordinate grids
+### خلق شبكة أحداثيات
 
 ```{code-cell} ipython3
 lat_grid = geemap.latitude_grid(step=5.0, west=-180, east=180, south=-85, north=85)
@@ -365,7 +365,7 @@ Map.addLayer(grid.style(**style), {}, 'Coordinate Grid')
 Map
 ```
 
-### Creating fishnets
+### خلق شبكة خلايا المربعات
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -424,9 +424,9 @@ style = {'color': 'blue', 'fillColor': '00000000'}
 Map.addLayer(fishnet.style(**style), {}, 'Fishnet')
 ```
 
-## Extracting pixel values
+## استخلاص قيم البكسلات من المرئيات
 
-### Extracting values to points
+### استخلاص بيانات المتجه النقطي
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=[40, -100], zoom=4)
@@ -476,7 +476,7 @@ geemap.extract_values_to_points(in_fc, landsat7, 'landsat.csv')
 geemap.csv_to_df('landsat.csv')
 ```
 
-### Extracting pixel values along a transect
+### استخلاص بيانات البكسلات لمقطع معين
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=[40, -100], zoom=4)
@@ -526,7 +526,7 @@ geemap.line_chart(
 transect.to_csv('transect.csv')
 ```
 
-### Interactive region reduction
+### مخفض مساحة المناطق التفاعلي
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -570,7 +570,7 @@ Map
 Map.extract_values_to_points('ndvi.csv')
 ```
 
-## Mapping available image count
+## رسم الاسم التمييزي للمرئيات
 
 ```{code-cell} ipython3
 collection = ee.ImageCollection("LANDSAT/LC08/C02/T1_L2")
@@ -591,7 +591,7 @@ Map.addLayer(countries.style(**style), {}, "Countries")
 Map
 ```
 
-## Cloud-free composites
+## تركيب تجميع مرئيات خالي من الغيوم
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -648,7 +648,7 @@ geemap.linked_maps(
 )
 ```
 
-## Quality mosaicking
+## دقة تنوع السطح في عملية الموزاييك
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=[40, -100], zoom=4)
@@ -737,11 +737,11 @@ Map.addLayer(greenest.select('doy'), vis_doy, 'Greenest doy')
 Map.add_colorbar(vis_doy, label='Day of year', layer_name='Greenest doy')
 ```
 
-## Interactive charts
+## المخططات التفاعلية
 
-### Chart Overview
+### نظره عامة على المخططات
 
-### Data table charts
+### مخططات جداول البيانات
 
 ```{code-cell} ipython3
 data = geemap.examples.get_path('countries.geojson')
@@ -798,7 +798,7 @@ geemap.line_chart(
 )
 ```
 
-### Earth Engine object charts
+### كائن المخططات في Earth Engine
 
 ```{code-cell} ipython3
 import geemap.chart as chart
@@ -811,7 +811,7 @@ Map.addLayer(collection, {}, "Ecoregions")
 Map
 ```
 
-#### Chart by feature
+#### رسم مخططات اعتمادا على المميزات الخاصة للبيانات
 
 ```{code-cell} ipython3
 features = collection.select('[0-9][0-9]_tmean|label')
@@ -872,7 +872,7 @@ options = {
 chart.feature_byFeature(features, xProperty, yProperties, **options)
 ```
 
-#### Chart by property
+#### رسم المخططات أعتمادا على الخصائص العامة للبيانات
 
 ```{code-cell} ipython3
 features = collection.select('[0-9][0-9]_ppt|label')
@@ -915,7 +915,7 @@ options = {
 chart.feature_byProperty(features, xProperties, seriesProperty, **options)
 ```
 
-#### Feature histograms
+#### المخطط التكراري Histogram
 
 ```{code-cell} ipython3
 source = ee.ImageCollection('OREGONSTATE/PRISM/Norm81m').toBands()
@@ -949,7 +949,7 @@ chart.feature_histogram(samples, prop, minBucketWidth=0.5, **options)
 chart.feature_histogram(samples, prop, minBucketWidth=3, maxBuckets=30, **options)
 ```
 
-## Unsupervised classification
+## التصنيف الغير موجه للبيانات
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -1039,7 +1039,7 @@ Map
 geemap.download_ee_image(image, filename='unsupervised.tif', region=region, scale=90)
 ```
 
-## Supervised classification
+## التصنيف الموجه للبيانات
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -1156,7 +1156,7 @@ geemap.download_ee_image(
     )
 ```
 
-## Accuracy assessment
+## دقة التقييم للنتائج
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -1277,7 +1277,7 @@ Map.centerObject(img)
 Map
 ```
 
-## Using locally trained machine learning models
+## استخدام نماذج التعلم الالي المدربة محليا
 
 ```{code-cell} ipython3
 import pandas as pd
@@ -1285,7 +1285,7 @@ from geemap import ml
 from sklearn import ensemble
 ```
 
-### Train a model locally using scikit-learn
+### تدريب نموذج التعلم الالي بأستخدام scikit-learn  
 
 ```{code-cell} ipython3
 url = "https://raw.githubusercontent.com/gee-community/geemap/master/examples/data/rf_example.csv"
@@ -1305,7 +1305,7 @@ n_trees = 10
 rf = ensemble.RandomForestClassifier(n_trees).fit(X, y)
 ```
 
-### Convert a sklearn classifier object to a list of strings
+### تحويل كائن نموذج تصنيف في sklearn الى قائمة من النصوص
 
 ```{code-cell} ipython3
 trees = ml.rf_to_strings(rf, feature_names)
@@ -1319,14 +1319,14 @@ print(len(trees))
 print(trees[0])
 ```
 
-### Convert sklearn classifier to GEE classifier
+### تحويل نموذج مصنف sklearn الى مصنف GEE 
 
 ```{code-cell} ipython3
 ee_classifier = ml.strings_to_classifier(trees)
 ee_classifier.getInfo()
 ```
 
-### Classify image using GEE classifier
+### تصنيف المرئيات باستخدام مصنف GEE
 
 ```{code-cell} ipython3
 # Make a cloud-free Landsat 8 TOA composite (from raw imagery).
@@ -1357,7 +1357,7 @@ Map.addLayer(
 Map
 ```
 
-### Save trees to the cloud
+### خزن البيانات على المساحة السحابية
 
 ```{code-cell} ipython3
 user_id = geemap.ee_user_id()
@@ -1375,7 +1375,7 @@ another_classifier = ml.fc_to_classifier(rf_fc)
 classified = image.select(feature_names).classify(another_classifier)
 ```
 
-### Save trees locally
+### خزن البيانات على الكومبيوتر الخاص
 
 ```{code-cell} ipython3
 out_csv = "trees.csv"
@@ -1384,7 +1384,7 @@ another_classifier = ml.csv_to_classifier(out_csv)
 classified = image.select(feature_names).classify(another_classifier)
 ```
 
-## Sankey diagrams
+## مخططات Sankey
 
 ```{code-cell} ipython3
 import sankee
@@ -1402,5 +1402,5 @@ Map = geemap.Map(height=650)
 Map
 ```
 
-## Summary
+## الخلاصة
 
