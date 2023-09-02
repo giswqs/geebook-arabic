@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>5. Visualizing Geospatial Data &#8212; Geospatial Data Science with Earth Engine and Geemap</title>
+    <title>5. استعراض و تمثيل البيانات الجغرافية-المكانية &#8212; Geospatial Data Science with Earth Engine and Geemap</title>
   
   
   
@@ -162,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="02_maps.html">2. خلق الخارطة التفاعليه Interactive Map</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_gee_data.html">3. إستخدام بيانات Earth Engine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_local_data.html">4. أستخدام البيانات الجغرافية المكانية المحلية</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Visualizing Geospatial Data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. استعراض و تمثيل البيانات الجغرافية-المكانية</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_data_analysis.html">6. Analyzing Geospatial Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_data_export.html">7. Exporting Earth Engine Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_cartoee.html">8. Making Maps with Cartoee</a></li>
@@ -375,7 +375,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Visualizing Geospatial Data</h1>
+    <h1>استعراض و تمثيل البيانات الجغرافية-المكانية</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -385,46 +385,46 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">5.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-requirements">5.2. Technical requirements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-plotting-tool">5.3. Using the plotting tool</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-layer-opacity">5.4. Changing layer opacity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-raster-data">5.5. Visualizing raster data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-band-images">5.5.1. Single-band images</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-band-images">5.5.2. Multi-band images</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">5.1. مدخل</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">5.2. المتطلبات التقنية</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">5.3. استخدام ادوات الرسم</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5.4. تغيير شفافية طبقات البيانات</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">5.5. أستعراض و تمثيل البيانات في المرئيات</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">5.5.1. استعراض و تمثيل المرئيات ذات الطيف الواحد</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">5.5.2. أستعراض و تمثيل المرئيات ذات الطيف المتعدد</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-vector-data">5.6. Visualizing vector data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-legends">5.7. Creating legends</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-legends">5.7.1. Built-in legends</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-legends">5.7.2. Custom legends</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#earth-engine-class-table">5.7.3. Earth Engine class table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">5.6. أستعراض و تمثيل المتجة</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">5.7. خلق مفتاح للخارطه</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">5.7.1. مفاتيح الخرائط الافتراضية</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">5.7.2. كيفية تخصيص مفتاح الخارطة</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#earth-engine">5.7.3. جدول الفئات في Earth Engine</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-color-bars">5.8. Creating color bars</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#displaying-labels">5.9. Displaying labels</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-overlay">5.10. Image overlay</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-overlay">5.11. Video overlay</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-panel-maps">5.12. Split-panel maps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linked-maps">5.13. Linked maps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timeseries-inspector">5.14. Timeseries inspector</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-image-collections">5.14.1. Visualizing image collections</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-planet-com-imagery">5.14.2. Visualizing planet.com imagery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">5.8. خلق مفتاح شريط ألوان</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">5.9. أستعراض الجداول</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">5.10. التداخل في الصور</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">5.11. التداخل في الفيديو</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">5.12. استعراض الخرائط المنفصلة</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">5.13. ربط الخرائط المنفصلة</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">5.14. مستعرض بيانات السلسلة الزمنية</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">5.14.1. استعراض و تمثيل كائنات تجميعة الصور (المرئيات)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#planet-com">5.14.2. استعراض و تمثيل مرئيات planet.com</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-slider">5.15. Time slider</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-vegetation-data">5.15.1. Visualizing vegetation data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-weather-data">5.15.2. Visualizing weather data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-sentinel-2-imagery">5.15.3. Visualizing Sentinel-2 imagery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">5.15. شريط المنزلق حسب الترتيب الزمني</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">5.15.1. استعراض و تمثيل بيانات الغطاء النباتي</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">5.15.2. استعراض و تمثيل بيانات الاحوال الجوية</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentinel-2">5.15.3. استعراض و تمثيل مرئيات Sentinel-2</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shaded-relief-maps">5.16. Shaded relief maps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elevation-contours">5.17. Elevation contours</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-netcdf-data">5.18. Visualizing NetCDF data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-lidar-data">5.19. Visualizing LiDAR data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-raster-data-in-3d">5.20. Visualizing raster data in 3D</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-choropleth-maps">5.21. Creating choropleth maps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">5.22. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">5.16. خرائط التضاريس المضللة</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">5.17. خطوط الارتفاع الكنتورية</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#netcdf">5.18. استعراض و تمثيل بيانات NetCDF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lidar">5.19. أستعراض و تمثيل بيانات LiDAR</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">5.20. استعراض و تمثيل المرئيات الثلاثي الابعداد</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">5.21. رسم الخرائط بألألوان المستعارة</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">5.22. الخلاصة</a></li>
 </ul>
             </nav>
         </div>
@@ -436,61 +436,61 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="visualizing-geospatial-data">
-<h1><span class="section-number">5. </span>Visualizing Geospatial Data<a class="headerlink" href="#visualizing-geospatial-data" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1><span class="section-number">5. </span>استعراض و تمثيل البيانات الجغرافية-المكانية<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#introduction" id="id1">Introduction</a></p></li>
-<li><p><a class="reference internal" href="#technical-requirements" id="id2">Technical requirements</a></p></li>
-<li><p><a class="reference internal" href="#using-the-plotting-tool" id="id3">Using the plotting tool</a></p></li>
-<li><p><a class="reference internal" href="#changing-layer-opacity" id="id4">Changing layer opacity</a></p></li>
-<li><p><a class="reference internal" href="#visualizing-raster-data" id="id5">Visualizing raster data</a></p>
+<li><p><a class="reference internal" href="#id2" id="id29">مدخل</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id30">المتطلبات التقنية</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id31">استخدام ادوات الرسم</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id32">تغيير شفافية طبقات البيانات</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id33">أستعراض و تمثيل البيانات في المرئيات</a></p>
 <ul>
-<li><p><a class="reference internal" href="#single-band-images" id="id6">Single-band images</a></p></li>
-<li><p><a class="reference internal" href="#multi-band-images" id="id7">Multi-band images</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id34">استعراض و تمثيل المرئيات ذات الطيف الواحد</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id35">أستعراض و تمثيل المرئيات ذات الطيف المتعدد</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#visualizing-vector-data" id="id8">Visualizing vector data</a></p></li>
-<li><p><a class="reference internal" href="#creating-legends" id="id9">Creating legends</a></p>
+<li><p><a class="reference internal" href="#id9" id="id36">أستعراض و تمثيل المتجة</a></p></li>
+<li><p><a class="reference internal" href="#id10" id="id37">خلق مفتاح للخارطه</a></p>
 <ul>
-<li><p><a class="reference internal" href="#built-in-legends" id="id10">Built-in legends</a></p></li>
-<li><p><a class="reference internal" href="#custom-legends" id="id11">Custom legends</a></p></li>
-<li><p><a class="reference internal" href="#earth-engine-class-table" id="id12">Earth Engine class table</a></p></li>
+<li><p><a class="reference internal" href="#id11" id="id38">مفاتيح الخرائط الافتراضية</a></p></li>
+<li><p><a class="reference internal" href="#id12" id="id39">كيفية تخصيص مفتاح الخارطة</a></p></li>
+<li><p><a class="reference internal" href="#earth-engine" id="id40">جدول الفئات في Earth Engine</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#creating-color-bars" id="id13">Creating color bars</a></p></li>
-<li><p><a class="reference internal" href="#displaying-labels" id="id14">Displaying labels</a></p></li>
-<li><p><a class="reference internal" href="#image-overlay" id="id15">Image overlay</a></p></li>
-<li><p><a class="reference internal" href="#video-overlay" id="id16">Video overlay</a></p></li>
-<li><p><a class="reference internal" href="#split-panel-maps" id="id17">Split-panel maps</a></p></li>
-<li><p><a class="reference internal" href="#linked-maps" id="id18">Linked maps</a></p></li>
-<li><p><a class="reference internal" href="#timeseries-inspector" id="id19">Timeseries inspector</a></p>
+<li><p><a class="reference internal" href="#id13" id="id41">خلق مفتاح شريط ألوان</a></p></li>
+<li><p><a class="reference internal" href="#id14" id="id42">أستعراض الجداول</a></p></li>
+<li><p><a class="reference internal" href="#id15" id="id43">التداخل في الصور</a></p></li>
+<li><p><a class="reference internal" href="#id16" id="id44">التداخل في الفيديو</a></p></li>
+<li><p><a class="reference internal" href="#id17" id="id45">استعراض الخرائط المنفصلة</a></p></li>
+<li><p><a class="reference internal" href="#id18" id="id46">ربط الخرائط المنفصلة</a></p></li>
+<li><p><a class="reference internal" href="#id19" id="id47">مستعرض بيانات السلسلة الزمنية</a></p>
 <ul>
-<li><p><a class="reference internal" href="#visualizing-image-collections" id="id20">Visualizing image collections</a></p></li>
-<li><p><a class="reference internal" href="#visualizing-planet-com-imagery" id="id21">Visualizing planet.com imagery</a></p></li>
+<li><p><a class="reference internal" href="#id20" id="id48">استعراض و تمثيل كائنات تجميعة الصور (المرئيات)</a></p></li>
+<li><p><a class="reference internal" href="#planet-com" id="id49">استعراض و تمثيل مرئيات planet.com</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#time-slider" id="id22">Time slider</a></p>
+<li><p><a class="reference internal" href="#id21" id="id50">شريط المنزلق حسب الترتيب الزمني</a></p>
 <ul>
-<li><p><a class="reference internal" href="#visualizing-vegetation-data" id="id23">Visualizing vegetation data</a></p></li>
-<li><p><a class="reference internal" href="#visualizing-weather-data" id="id24">Visualizing weather data</a></p></li>
-<li><p><a class="reference internal" href="#visualizing-sentinel-2-imagery" id="id25">Visualizing Sentinel-2 imagery</a></p></li>
+<li><p><a class="reference internal" href="#id22" id="id51">استعراض و تمثيل بيانات الغطاء النباتي</a></p></li>
+<li><p><a class="reference internal" href="#id23" id="id52">استعراض و تمثيل بيانات الاحوال الجوية</a></p></li>
+<li><p><a class="reference internal" href="#sentinel-2" id="id53">استعراض و تمثيل مرئيات Sentinel-2</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#shaded-relief-maps" id="id26">Shaded relief maps</a></p></li>
-<li><p><a class="reference internal" href="#elevation-contours" id="id27">Elevation contours</a></p></li>
-<li><p><a class="reference internal" href="#visualizing-netcdf-data" id="id28">Visualizing NetCDF data</a></p></li>
-<li><p><a class="reference internal" href="#visualizing-lidar-data" id="id29">Visualizing LiDAR data</a></p></li>
-<li><p><a class="reference internal" href="#visualizing-raster-data-in-3d" id="id30">Visualizing raster data in 3D</a></p></li>
-<li><p><a class="reference internal" href="#creating-choropleth-maps" id="id31">Creating choropleth maps</a></p></li>
-<li><p><a class="reference internal" href="#summary" id="id32">Summary</a></p></li>
+<li><p><a class="reference internal" href="#id24" id="id54">خرائط التضاريس المضللة</a></p></li>
+<li><p><a class="reference internal" href="#id25" id="id55">خطوط الارتفاع الكنتورية</a></p></li>
+<li><p><a class="reference internal" href="#netcdf" id="id56">استعراض و تمثيل بيانات NetCDF</a></p></li>
+<li><p><a class="reference internal" href="#lidar" id="id57">أستعراض و تمثيل بيانات LiDAR</a></p></li>
+<li><p><a class="reference internal" href="#id26" id="id58">استعراض و تمثيل المرئيات الثلاثي الابعداد</a></p></li>
+<li><p><a class="reference internal" href="#id27" id="id59">رسم الخرائط بألألوان المستعارة</a></p></li>
+<li><p><a class="reference internal" href="#id28" id="id60">الخلاصة</a></p></li>
 </ul>
 </nav>
-<section id="introduction">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink"><span class="section-number">5.1. </span>Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h2><a class="toc-backref" href="#id29" role="doc-backlink"><span class="section-number">5.1. </span>مدخل</a><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="technical-requirements">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink"><span class="section-number">5.2. </span>Technical requirements</a><a class="headerlink" href="#technical-requirements" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h2><a class="toc-backref" href="#id30" role="doc-backlink"><span class="section-number">5.2. </span>المتطلبات التقنية</a><a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>gee<span class="w"> </span>python
 conda<span class="w"> </span>activate<span class="w"> </span>gee
 conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>mamba
@@ -523,8 +523,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="using-the-plotting-tool">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">5.3. </span>Using the plotting tool</a><a class="headerlink" href="#using-the-plotting-tool" title="Permalink to this heading">#</a></h2>
+<section id="id4">
+<h2><a class="toc-backref" href="#id31" role="doc-backlink"><span class="section-number">5.3. </span>استخدام ادوات الرسم</a><a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -559,8 +559,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="changing-layer-opacity">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">5.4. </span>Changing layer opacity</a><a class="headerlink" href="#changing-layer-opacity" title="Permalink to this heading">#</a></h2>
+<section id="id5">
+<h2><a class="toc-backref" href="#id32" role="doc-backlink"><span class="section-number">5.4. </span>تغيير شفافية طبقات البيانات</a><a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">),</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -583,10 +583,10 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="visualizing-raster-data">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">5.5. </span>Visualizing raster data</a><a class="headerlink" href="#visualizing-raster-data" title="Permalink to this heading">#</a></h2>
-<section id="single-band-images">
-<h3><a class="toc-backref" href="#id6" role="doc-backlink"><span class="section-number">5.5.1. </span>Single-band images</a><a class="headerlink" href="#single-band-images" title="Permalink to this heading">#</a></h3>
+<section id="id6">
+<h2><a class="toc-backref" href="#id33" role="doc-backlink"><span class="section-number">5.5. </span>أستعراض و تمثيل البيانات في المرئيات</a><a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<section id="id7">
+<h3><a class="toc-backref" href="#id34" role="doc-backlink"><span class="section-number">5.5.1. </span>استعراض و تمثيل المرئيات ذات الطيف الواحد</a><a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">69</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -617,8 +617,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="multi-band-images">
-<h3><a class="toc-backref" href="#id7" role="doc-backlink"><span class="section-number">5.5.2. </span>Multi-band images</a><a class="headerlink" href="#multi-band-images" title="Permalink to this heading">#</a></h3>
+<section id="id8">
+<h3><a class="toc-backref" href="#id35" role="doc-backlink"><span class="section-number">5.5.2. </span>أستعراض و تمثيل المرئيات ذات الطيف المتعدد</a><a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -637,8 +637,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 </section>
-<section id="visualizing-vector-data">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">5.6. </span>Visualizing vector data</a><a class="headerlink" href="#visualizing-vector-data" title="Permalink to this heading">#</a></h2>
+<section id="id9">
+<h2><a class="toc-backref" href="#id36" role="doc-backlink"><span class="section-number">5.6. </span>أستعراض و تمثيل المتجة</a><a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -672,10 +672,10 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="creating-legends">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink"><span class="section-number">5.7. </span>Creating legends</a><a class="headerlink" href="#creating-legends" title="Permalink to this heading">#</a></h2>
-<section id="built-in-legends">
-<h3><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">5.7.1. </span>Built-in legends</a><a class="headerlink" href="#built-in-legends" title="Permalink to this heading">#</a></h3>
+<section id="id10">
+<h2><a class="toc-backref" href="#id37" role="doc-backlink"><span class="section-number">5.7. </span>خلق مفتاح للخارطه</a><a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<section id="id11">
+<h3><a class="toc-backref" href="#id38" role="doc-backlink"><span class="section-number">5.7.1. </span>مفاتيح الخرائط الافتراضية</a><a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">geemap.legends</span> <span class="kn">import</span> <span class="n">builtin_legends</span>
@@ -711,8 +711,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="custom-legends">
-<h3><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">5.7.2. </span>Custom legends</a><a class="headerlink" href="#custom-legends" title="Permalink to this heading">#</a></h3>
+<section id="id12">
+<h3><a class="toc-backref" href="#id39" role="doc-backlink"><span class="section-number">5.7.2. </span>كيفية تخصيص مفتاح الخارطة</a><a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">add_google_map</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -769,8 +769,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="earth-engine-class-table">
-<h3><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">5.7.3. </span>Earth Engine class table</a><a class="headerlink" href="#earth-engine-class-table" title="Permalink to this heading">#</a></h3>
+<section id="earth-engine">
+<h3><a class="toc-backref" href="#id40" role="doc-backlink"><span class="section-number">5.7.3. </span>جدول الفئات في Earth Engine</a><a class="headerlink" href="#earth-engine" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -802,8 +802,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 </section>
-<section id="creating-color-bars">
-<h2><a class="toc-backref" href="#id13" role="doc-backlink"><span class="section-number">5.8. </span>Creating color bars</a><a class="headerlink" href="#creating-color-bars" title="Permalink to this heading">#</a></h2>
+<section id="id13">
+<h2><a class="toc-backref" href="#id41" role="doc-backlink"><span class="section-number">5.8. </span>خلق مفتاح شريط ألوان</a><a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -850,8 +850,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="displaying-labels">
-<h2><a class="toc-backref" href="#id14" role="doc-backlink"><span class="section-number">5.9. </span>Displaying labels</a><a class="headerlink" href="#displaying-labels" title="Permalink to this heading">#</a></h2>
+<section id="id14">
+<h2><a class="toc-backref" href="#id42" role="doc-backlink"><span class="section-number">5.9. </span>أستعراض الجداول</a><a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">add_google_map</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -912,8 +912,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="image-overlay">
-<h2><a class="toc-backref" href="#id15" role="doc-backlink"><span class="section-number">5.10. </span>Image overlay</a><a class="headerlink" href="#image-overlay" title="Permalink to this heading">#</a></h2>
+<section id="id15">
+<h2><a class="toc-backref" href="#id43" role="doc-backlink"><span class="section-number">5.10. </span>التداخل في الصور</a><a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">115</span><span class="p">),</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -953,8 +953,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="video-overlay">
-<h2><a class="toc-backref" href="#id16" role="doc-backlink"><span class="section-number">5.11. </span>Video overlay</a><a class="headerlink" href="#video-overlay" title="Permalink to this heading">#</a></h2>
+<section id="id16">
+<h2><a class="toc-backref" href="#id44" role="doc-backlink"><span class="section-number">5.11. </span>التداخل في الفيديو</a><a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">115</span><span class="p">),</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -967,8 +967,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="split-panel-maps">
-<h2><a class="toc-backref" href="#id17" role="doc-backlink"><span class="section-number">5.12. </span>Split-panel maps</a><a class="headerlink" href="#split-panel-maps" title="Permalink to this heading">#</a></h2>
+<section id="id17">
+<h2><a class="toc-backref" href="#id45" role="doc-backlink"><span class="section-number">5.12. </span>استعراض الخرائط المنفصلة</a><a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -1002,8 +1002,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="linked-maps">
-<h2><a class="toc-backref" href="#id18" role="doc-backlink"><span class="section-number">5.13. </span>Linked maps</a><a class="headerlink" href="#linked-maps" title="Permalink to this heading">#</a></h2>
+<section id="id18">
+<h2><a class="toc-backref" href="#id46" role="doc-backlink"><span class="section-number">5.13. </span>ربط الخرائط المنفصلة</a><a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="p">(</span>
@@ -1043,10 +1043,10 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="timeseries-inspector">
-<h2><a class="toc-backref" href="#id19" role="doc-backlink"><span class="section-number">5.14. </span>Timeseries inspector</a><a class="headerlink" href="#timeseries-inspector" title="Permalink to this heading">#</a></h2>
-<section id="visualizing-image-collections">
-<h3><a class="toc-backref" href="#id20" role="doc-backlink"><span class="section-number">5.14.1. </span>Visualizing image collections</a><a class="headerlink" href="#visualizing-image-collections" title="Permalink to this heading">#</a></h3>
+<section id="id19">
+<h2><a class="toc-backref" href="#id47" role="doc-backlink"><span class="section-number">5.14. </span>مستعرض بيانات السلسلة الزمنية</a><a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h2>
+<section id="id20">
+<h3><a class="toc-backref" href="#id48" role="doc-backlink"><span class="section-number">5.14.1. </span>استعراض و تمثيل كائنات تجميعة الصور (المرئيات)</a><a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -1075,8 +1075,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="visualizing-planet-com-imagery">
-<h3><span class="section-number">5.14.2. </span>Visualizing <a class="reference external" href="http://planet.com">planet.com</a> imagery<a class="headerlink" href="#visualizing-planet-com-imagery" title="Permalink to this heading">#</a></h3>
+<section id="planet-com">
+<h3><span class="section-number">5.14.2. </span>استعراض و تمثيل مرئيات <a class="reference external" href="http://planet.com">planet.com</a><a class="headerlink" href="#planet-com" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -1120,10 +1120,10 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 </section>
-<section id="time-slider">
-<h2><a class="toc-backref" href="#id22" role="doc-backlink"><span class="section-number">5.15. </span>Time slider</a><a class="headerlink" href="#time-slider" title="Permalink to this heading">#</a></h2>
-<section id="visualizing-vegetation-data">
-<h3><a class="toc-backref" href="#id23" role="doc-backlink"><span class="section-number">5.15.1. </span>Visualizing vegetation data</a><a class="headerlink" href="#visualizing-vegetation-data" title="Permalink to this heading">#</a></h3>
+<section id="id21">
+<h2><a class="toc-backref" href="#id50" role="doc-backlink"><span class="section-number">5.15. </span>شريط المنزلق حسب الترتيب الزمني</a><a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h2>
+<section id="id22">
+<h3><a class="toc-backref" href="#id51" role="doc-backlink"><span class="section-number">5.15.1. </span>استعراض و تمثيل بيانات الغطاء النباتي</a><a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -1146,8 +1146,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="visualizing-weather-data">
-<h3><a class="toc-backref" href="#id24" role="doc-backlink"><span class="section-number">5.15.2. </span>Visualizing weather data</a><a class="headerlink" href="#visualizing-weather-data" title="Permalink to this heading">#</a></h3>
+<section id="id23">
+<h3><a class="toc-backref" href="#id52" role="doc-backlink"><span class="section-number">5.15.2. </span>استعراض و تمثيل بيانات الاحوال الجوية</a><a class="headerlink" href="#id23" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -1173,8 +1173,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="visualizing-sentinel-2-imagery">
-<h3><a class="toc-backref" href="#id25" role="doc-backlink"><span class="section-number">5.15.3. </span>Visualizing Sentinel-2 imagery</a><a class="headerlink" href="#visualizing-sentinel-2-imagery" title="Permalink to this heading">#</a></h3>
+<section id="sentinel-2">
+<h3><a class="toc-backref" href="#id53" role="doc-backlink"><span class="section-number">5.15.3. </span>استعراض و تمثيل مرئيات Sentinel-2</a><a class="headerlink" href="#sentinel-2" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mf">37.75</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.45</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
@@ -1195,8 +1195,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 </section>
-<section id="shaded-relief-maps">
-<h2><a class="toc-backref" href="#id26" role="doc-backlink"><span class="section-number">5.16. </span>Shaded relief maps</a><a class="headerlink" href="#shaded-relief-maps" title="Permalink to this heading">#</a></h2>
+<section id="id24">
+<h2><a class="toc-backref" href="#id54" role="doc-backlink"><span class="section-number">5.16. </span>خرائط التضاريس المضللة</a><a class="headerlink" href="#id24" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geemap.colormaps</span> <span class="k">as</span> <span class="nn">cm</span>
@@ -1243,8 +1243,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="elevation-contours">
-<h2><a class="toc-backref" href="#id27" role="doc-backlink"><span class="section-number">5.17. </span>Elevation contours</a><a class="headerlink" href="#elevation-contours" title="Permalink to this heading">#</a></h2>
+<section id="id25">
+<h2><a class="toc-backref" href="#id55" role="doc-backlink"><span class="section-number">5.17. </span>خطوط الارتفاع الكنتورية</a><a class="headerlink" href="#id25" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geemap.colormaps</span> <span class="k">as</span> <span class="nn">cm</span>
@@ -1282,8 +1282,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="visualizing-netcdf-data">
-<h2><a class="toc-backref" href="#id28" role="doc-backlink"><span class="section-number">5.18. </span>Visualizing NetCDF data</a><a class="headerlink" href="#visualizing-netcdf-data" title="Permalink to this heading">#</a></h2>
+<section id="netcdf">
+<h2><a class="toc-backref" href="#id56" role="doc-backlink"><span class="section-number">5.18. </span>استعراض و تمثيل بيانات NetCDF</a><a class="headerlink" href="#netcdf" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/gee-community/geemap/raw/master/examples/data/wind_global.nc&#39;</span>
@@ -1330,8 +1330,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="visualizing-lidar-data">
-<h2><a class="toc-backref" href="#id29" role="doc-backlink"><span class="section-number">5.19. </span>Visualizing LiDAR data</a><a class="headerlink" href="#visualizing-lidar-data" title="Permalink to this heading">#</a></h2>
+<section id="lidar">
+<h2><a class="toc-backref" href="#id57" role="doc-backlink"><span class="section-number">5.19. </span>أستعراض و تمثيل بيانات LiDAR</a><a class="headerlink" href="#lidar" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;geemap[lidar]&quot;</span>
@@ -1411,8 +1411,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="visualizing-raster-data-in-3d">
-<h2><a class="toc-backref" href="#id30" role="doc-backlink"><span class="section-number">5.20. </span>Visualizing raster data in 3D</a><a class="headerlink" href="#visualizing-raster-data-in-3d" title="Permalink to this heading">#</a></h2>
+<section id="id26">
+<h2><a class="toc-backref" href="#id58" role="doc-backlink"><span class="section-number">5.20. </span>استعراض و تمثيل المرئيات الثلاثي الابعداد</a><a class="headerlink" href="#id26" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/giswqs/data/raw/main/raster/srtm90.tif&#39;</span>
@@ -1438,8 +1438,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="creating-choropleth-maps">
-<h2><a class="toc-backref" href="#id31" role="doc-backlink"><span class="section-number">5.21. </span>Creating choropleth maps</a><a class="headerlink" href="#creating-choropleth-maps" title="Permalink to this heading">#</a></h2>
+<section id="id27">
+<h2><a class="toc-backref" href="#id59" role="doc-backlink"><span class="section-number">5.21. </span>رسم الخرائط بألألوان المستعارة</a><a class="headerlink" href="#id27" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">countries_geojson</span>
@@ -1504,8 +1504,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="summary">
-<h2><a class="toc-backref" href="#id32" role="doc-backlink"><span class="section-number">5.22. </span>Summary</a><a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<section id="id28">
+<h2><a class="toc-backref" href="#id60" role="doc-backlink"><span class="section-number">5.22. </span>الخلاصة</a><a class="headerlink" href="#id28" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -1576,46 +1576,46 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">5.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-requirements">5.2. Technical requirements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-plotting-tool">5.3. Using the plotting tool</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-layer-opacity">5.4. Changing layer opacity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-raster-data">5.5. Visualizing raster data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-band-images">5.5.1. Single-band images</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-band-images">5.5.2. Multi-band images</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">5.1. مدخل</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">5.2. المتطلبات التقنية</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">5.3. استخدام ادوات الرسم</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5.4. تغيير شفافية طبقات البيانات</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">5.5. أستعراض و تمثيل البيانات في المرئيات</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">5.5.1. استعراض و تمثيل المرئيات ذات الطيف الواحد</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">5.5.2. أستعراض و تمثيل المرئيات ذات الطيف المتعدد</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-vector-data">5.6. Visualizing vector data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-legends">5.7. Creating legends</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-legends">5.7.1. Built-in legends</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-legends">5.7.2. Custom legends</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#earth-engine-class-table">5.7.3. Earth Engine class table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">5.6. أستعراض و تمثيل المتجة</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">5.7. خلق مفتاح للخارطه</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">5.7.1. مفاتيح الخرائط الافتراضية</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">5.7.2. كيفية تخصيص مفتاح الخارطة</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#earth-engine">5.7.3. جدول الفئات في Earth Engine</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-color-bars">5.8. Creating color bars</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#displaying-labels">5.9. Displaying labels</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-overlay">5.10. Image overlay</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-overlay">5.11. Video overlay</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-panel-maps">5.12. Split-panel maps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linked-maps">5.13. Linked maps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timeseries-inspector">5.14. Timeseries inspector</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-image-collections">5.14.1. Visualizing image collections</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-planet-com-imagery">5.14.2. Visualizing planet.com imagery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">5.8. خلق مفتاح شريط ألوان</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">5.9. أستعراض الجداول</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">5.10. التداخل في الصور</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">5.11. التداخل في الفيديو</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">5.12. استعراض الخرائط المنفصلة</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">5.13. ربط الخرائط المنفصلة</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">5.14. مستعرض بيانات السلسلة الزمنية</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">5.14.1. استعراض و تمثيل كائنات تجميعة الصور (المرئيات)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#planet-com">5.14.2. استعراض و تمثيل مرئيات planet.com</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-slider">5.15. Time slider</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-vegetation-data">5.15.1. Visualizing vegetation data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-weather-data">5.15.2. Visualizing weather data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-sentinel-2-imagery">5.15.3. Visualizing Sentinel-2 imagery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">5.15. شريط المنزلق حسب الترتيب الزمني</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">5.15.1. استعراض و تمثيل بيانات الغطاء النباتي</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">5.15.2. استعراض و تمثيل بيانات الاحوال الجوية</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentinel-2">5.15.3. استعراض و تمثيل مرئيات Sentinel-2</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shaded-relief-maps">5.16. Shaded relief maps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elevation-contours">5.17. Elevation contours</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-netcdf-data">5.18. Visualizing NetCDF data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-lidar-data">5.19. Visualizing LiDAR data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-raster-data-in-3d">5.20. Visualizing raster data in 3D</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-choropleth-maps">5.21. Creating choropleth maps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">5.22. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">5.16. خرائط التضاريس المضللة</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">5.17. خطوط الارتفاع الكنتورية</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#netcdf">5.18. استعراض و تمثيل بيانات NetCDF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lidar">5.19. أستعراض و تمثيل بيانات LiDAR</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">5.20. استعراض و تمثيل المرئيات الثلاثي الابعداد</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">5.21. رسم الخرائط بألألوان المستعارة</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">5.22. الخلاصة</a></li>
 </ul>
   </nav></div>
 

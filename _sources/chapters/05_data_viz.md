@@ -11,18 +11,18 @@ kernelspec:
   name: python3
 ---
 
-# Visualizing Geospatial Data
+# استعراض و تمثيل البيانات الجغرافية-المكانية
 
 ```{contents}
 :local:
 :depth: 2
 ```
 
-## Introduction
+## مدخل 
 
 +++
 
-## Technical requirements
+## المتطلبات التقنية
 
 ```bash
 conda create -n gee python
@@ -48,7 +48,7 @@ import geemap
 geemap.ee_initialize()
 ```
 
-## Using the plotting tool
+## استخدام ادوات الرسم
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=[40, -100], zoom=4)
@@ -79,7 +79,7 @@ Map.set_plot_options(add_marker_cluster=True, overlay=True)
 
 +++
 
-## Changing layer opacity
+## تغيير شفافية طبقات البيانات
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=(40, -100), zoom=4)
@@ -101,9 +101,9 @@ Map
 
 +++
 
-## Visualizing raster data
+## أستعراض و تمثيل البيانات في المرئيات
 
-### Single-band images
+### استعراض و تمثيل المرئيات ذات الطيف الواحد
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=[12, 69], zoom=3)
@@ -128,7 +128,7 @@ vis_params = {
 }
 ```
 
-### Multi-band images
+### أستعراض و تمثيل المرئيات ذات الطيف المتعدد
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -145,7 +145,7 @@ Map
 
 +++
 
-## Visualizing vector data
+## أستعراض و تمثيل المتجة
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -170,9 +170,9 @@ Map.addLayer(states.style(**vis_params), {}, "US States")
 Map
 ```
 
-## Creating legends
+## خلق مفتاح للخارطه
 
-### Built-in legends
+### مفاتيح الخرائط الافتراضية
 
 ```{code-cell} ipython3
 from geemap.legends import builtin_legends
@@ -199,7 +199,7 @@ Map.add_legend(
 Map
 ```
 
-### Custom legends
+### كيفية تخصيص مفتاح الخارطة
 
 ```{code-cell} ipython3
 Map = geemap.Map(add_google_map=False)
@@ -250,7 +250,7 @@ Map.add_legend(title="NLCD Land Cover Classification", legend_dict=legend_dict)
 Map
 ```
 
-### Earth Engine class table
+### جدول الفئات في Earth Engine
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -278,7 +278,7 @@ Map.add_legend(title="ESA Land Cover", legend_dict=legend_dict)
 Map
 ```
 
-## Creating color bars
+## خلق مفتاح شريط ألوان
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -313,7 +313,7 @@ Map.add_colorbar(
 )
 ```
 
-## Displaying labels
+## أستعراض الجداول
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=[40, -100], zoom=4, add_google_map=False)
@@ -359,7 +359,7 @@ Map.add_labels(
 Map
 ```
 
-## Image overlay
+## التداخل في الصور
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=(25, -115), zoom=5)
@@ -387,7 +387,7 @@ Map.add_layer(image)
 Map
 ```
 
-## Video overlay
+## التداخل في الفيديو
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=(25, -115), zoom=5)
@@ -397,7 +397,7 @@ Map.video_overlay(url, bounds)
 Map
 ```
 
-## Split-panel maps
+## استعراض الخرائط المنفصلة 
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -424,7 +424,7 @@ Map
 
 +++
 
-## Linked maps
+## ربط الخرائط المنفصلة
 
 ```{code-cell} ipython3
 image = (
@@ -463,9 +463,9 @@ geemap.linked_maps(
 
 +++
 
-## Timeseries inspector
+## مستعرض بيانات السلسلة الزمنية
 
-### Visualizing image collections
+### استعراض و تمثيل كائنات تجميعة الصور (المرئيات)
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=[40, -100], zoom=4)
@@ -488,7 +488,7 @@ Map.ts_inspector(
 Map
 ```
 
-### Visualizing planet.com imagery
+### استعراض و تمثيل مرئيات planet.com
 
 ```{code-cell} ipython3
 import os
@@ -516,9 +516,9 @@ Map = geemap.Map()
 Map
 ```
 
-## Time slider
+## شريط المنزلق حسب الترتيب الزمني
 
-### Visualizing vegetation data
+### استعراض و تمثيل بيانات الغطاء النباتي
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -538,7 +538,7 @@ Map.add_time_slider(collection, vis_params, time_interval=2)
 Map
 ```
 
-### Visualizing weather data
+### استعراض و تمثيل بيانات الاحوال الجوية
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -561,7 +561,7 @@ Map.add_time_slider(collection, vis_params, labels=labels, time_interval=1, opac
 Map
 ```
 
-### Visualizing Sentinel-2 imagery
+### استعراض و تمثيل مرئيات Sentinel-2
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=[37.75, -122.45], zoom=12)
@@ -580,7 +580,7 @@ Map
 
 +++
 
-## Shaded relief maps
+## خرائط التضاريس المضللة
 
 ```{code-cell} ipython3
 import geemap.colormaps as cm
@@ -618,7 +618,7 @@ Map.setCenter(-118.1310, 35.6816, 10)
 Map
 ```
 
-## Elevation contours
+## خطوط الارتفاع الكنتورية
 
 ```{code-cell} ipython3
 import geemap.colormaps as cm
@@ -644,7 +644,7 @@ Map.addLayer(contours, {'palette': 'black'}, 'contours')
 Map.setCenter(-119.3678, 37.1671, 12)
 ```
 
-## Visualizing NetCDF data
+## استعراض و تمثيل بيانات NetCDF
 
 ```{code-cell} ipython3
 url = 'https://github.com/gee-community/geemap/raw/master/examples/data/wind_global.nc'
@@ -681,7 +681,7 @@ Map
 
 +++
 
-## Visualizing LiDAR data
+## أستعراض و تمثيل بيانات LiDAR
 
 ```{code-cell} ipython3
 %pip install "geemap[lidar]"
@@ -731,7 +731,7 @@ geemap.view_lidar(filename, cmap='terrain', backend='pyvista', background='gray'
 geemap.view_lidar(filename, backend='ipygany', background='white')
 ```
 
-## Visualizing raster data in 3D
+## استعراض و تمثيل المرئيات الثلاثي الابعداد
 
 ```{code-cell} ipython3
 url = 'https://github.com/giswqs/data/raw/main/raster/srtm90.tif'
@@ -748,7 +748,7 @@ geemap.plot_raster(image, cmap='terrain', figsize=(15, 10))
 geemap.plot_raster_3d('srtm90.tif', factor=2, cmap='terrain', background='gray')
 ```
 
-## Creating choropleth maps
+## رسم الخرائط بألألوان المستعارة
 
 ```{code-cell} ipython3
 data = geemap.examples.datasets.countries_geojson
@@ -798,5 +798,5 @@ Map.add_data(
 Map
 ```
 
-## Summary
+## الخلاصة
 
