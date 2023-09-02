@@ -11,18 +11,18 @@ kernelspec:
   name: python3
 ---
 
-# Exporting Earth Engine Data
+# تصدير بيانات Earth Engine
 
 ```{contents}
 :local:
 :depth: 2
 ```
 
-## Introduction
+## مدخل
 
 +++
 
-## Technical requirements
+## المتطلبات التقنية
 
 ```bash
 conda create -n gee python
@@ -48,7 +48,7 @@ import geemap
 geemap.ee_initialize()
 ```
 
-## Exporting images
+## تصدير المرئيات
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -72,7 +72,7 @@ Map.addLayer(fc.style(**style), {}, 'ROI')
 Map
 ```
 
-### To local drive
+### تصدير البيانات الى المساحة الخزنية الخاصة في جهاز الكومبيوتر
 
 ```{code-cell} ipython3
 geemap.ee_export_image(image, filename="landsat.tif", scale=30, region=region)
@@ -116,7 +116,7 @@ geemap.download_ee_image_tiles(
 )
 ```
 
-### To Google Drive
+### خزن المرئيات في المساحة الخزنيه على Google
 
 ```{code-cell} ipython3
 geemap.ee_export_image_to_drive(
@@ -124,7 +124,7 @@ geemap.ee_export_image_to_drive(
 )
 ```
 
-### To Asset
+### خزن المرئيات الى البيانات الاصول في GEE
 
 ```{code-cell} ipython3
 assetId = 'landsat_sfo'
@@ -133,7 +133,7 @@ geemap.ee_export_image_to_asset(
 )
 ```
 
-### To Cloud Storage
+### خزن المرئيات الى المساحة السحابية الخاصة
 
 ```{code-cell} ipython3
 bucket = 'your-bucket'
@@ -142,7 +142,7 @@ geemap.ee_export_image_to_cloud_storage(
 )
 ```
 
-### To NumPy array
+### خزن البيانات في مصفوفة NumPy
 
 ```{code-cell} ipython3
 region = ee.Geometry.BBox(-122.5003, 37.7233, -122.3410, 37.8026)
@@ -161,7 +161,7 @@ plt.imshow(rgb_img_test)
 plt.show()
 ```
 
-## Exporting image collections
+## تصدير تجميع المرئيات
 
 ```{code-cell} ipython3
 point = ee.Geometry.Point(-99.2222, 46.7816)
@@ -177,26 +177,26 @@ collection = (
 collection.aggregate_array('system:index').getInfo()
 ```
 
-### To local drive
+### تصدير تجميع مرئيات الى المساحة الخزنية الخاصة في جهاز الكومبيوتر
 
 ```{code-cell} ipython3
 out_dir = 'Downloads'
 geemap.ee_export_image_collection(collection, out_dir=out_dir, scale=10)
 ```
 
-### To Google Drive
+### تصدير تجميع مرئيات الى Google
 
 ```{code-cell} ipython3
 geemap.ee_export_image_collection_to_drive(collection, folder='export', scale=10)
 ```
 
-### To Assets
+### تصدير تجميع مرئيات الى أصول البيانات في GEE
 
 ```{code-cell} ipython3
 geemap.ee_export_image_collection_to_asset(collection, scale=10)
 ```
 
-## Exporting videos
+## تصدير الفيديو
 
 ```{code-cell} ipython3
 collection = (
@@ -217,7 +217,7 @@ geemap.ee_export_video_to_drive(
 )
 ```
 
-## Exporting image thumbnails
+## تصدير الصور المصغرة
 
 ```{code-cell} ipython3
 roi = ee.Geometry.Point([-122.44, 37.75])
@@ -267,7 +267,7 @@ geemap.get_image_collection_thumbnails(
 )
 ```
 
-## Exporting feature collections
+## تصدير تجميع الخصائص
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -282,7 +282,7 @@ Map
 
 +++
 
-### To local drive
+### تصدير تجميع الخصائص الى المساحة الخزنية الخاصة في جهاز الكومبيوتر
 
 ```{code-cell} ipython3
 geemap.ee_to_shp(fc, filename='europe.shp', selectors=None)
@@ -310,7 +310,7 @@ df = geemap.ee_to_df(fc)
 df
 ```
 
-### To Google Drive
+### تصدير تجميع الخصائص الى Google
 
 ```{code-cell} ipython3
 geemap.ee_export_vector_to_drive(
@@ -318,13 +318,13 @@ geemap.ee_export_vector_to_drive(
 )
 ```
 
-### To Asset
+### تصدير تجميع البيانات الى أصول البيانات في GEE
 
 ```{code-cell} ipython3
 geemap.ee_export_vector_to_asset(fc, description='Exporting Europe', assetId='europe')
 ```
 
-## Exporting maps
+## تصدير الخرائط
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -344,7 +344,7 @@ Map.to_html(
 )
 ```
 
-## Using the high-volume endpoint
+## استخدام مفهوم  high-volume endpoint لاستعلام المتعدد
 
 ```{code-cell} ipython3
 import ee
@@ -488,5 +488,5 @@ Map
 geemap.ee_to_shp(Map.data, filename='points.shp')
 ```
 
-## Summary
+## الخلاصة
 
