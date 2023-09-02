@@ -11,16 +11,16 @@ kernelspec:
   name: python3
 ---
 
-# Building Interactive Web Apps
+# بناء تطبيق ويب تفاعلي
 
 ```{contents}
 :local:
 :depth: 2
 ```
 
-## Introduction
+## مدخل
 
-## Technical requirements
+## المتطلبات التقنية
 
 ```bash
 conda create -n gee python
@@ -50,7 +50,7 @@ import geemap
 geemap.ee_initialize()
 ```
 
-## Building JavaScript web apps
+## بناء تطبيق ويب بأستخدام JavaScript
 
 ```javascript
 var getNLCD = function (year) {
@@ -223,9 +223,9 @@ var linker = ui.Map.Linker([leftMap, rightMap]);
 leftMap.setCenter(-100, 40, 4);
 ```
 
-## Publishing JavaScript web apps
+## نشر تطبيق ويب JavaSctipt
 
-## Building Python Web Apps
+## بناء تطبيق ويب بأستخدام Python
 
 ```{code-cell} ipython3
 import ee
@@ -284,7 +284,7 @@ Map.ts_inspector(
 Map
 ```
 
-## Using Voila to deploy web apps
+## استخدام Voila في نشر تطبيق الويب
 
 ```bash
 cd /path/to/ngrok/dir
@@ -313,7 +313,7 @@ voila --no-browser --strip_sources=False nlcd_app.ipynb
 ngrok http -auth="username:password" 8866
 ```
 
-## Building Streamlit web apps
+## بناء تطبيق ويب باستخدام مكتبة Streamlit 
 
 ```bash
 streamlit hello
@@ -372,7 +372,7 @@ conda activate gee
 streamlit run app.py
 ```
 
-## Building Solara web apps
+## بناء تطبيق ويب باستخدام مكتبة Solara
 
 ```bash
 pip install solara
@@ -426,12 +426,12 @@ conda activate gee
 solara run ./pages
 ```
 
-## Deploying web apps on Hugging Face
+## نشر تطبيق ويب على منصة  Hugging Face
 
 ```{code-cell} ipython3
 import geemap
 geemap.get_ee_token()
 ```
 
-## Summary
+## الخلاصة
 
