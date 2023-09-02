@@ -391,25 +391,25 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.4. خلق تجميع صور خالي من الغيوم</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">9.5. خلق السلسلة الزمنية</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naip">9.6. استخدام الفاصل الزمني نوع NAIP</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">9.7. الفاصل الزمني لاندسات</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#landsat">9.7. الفاصل الزمني Landsat</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sentinel-1">9.8. الفاصل الزمني  Sentinel-1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sentinel-2">9.9. الفاصل الزمني Sentinel-2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modis">9.10. الفاصل الزمني  MODIS</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">9.10.1. مؤشرات الغطاء النباتي من MODIS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">9.10.2. بيانات الحراة من  MODIS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">9.10.1. مؤشرات الغطاء النباتي من MODIS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">9.10.2. بيانات الحراة من  MODIS</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goes">9.11. الفاصل الزمني نوع  GOES</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">9.12. اخفاء التأثيرات</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">9.13. اضافة نصوص متحركه حسب الفاصل الزمني</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">9.14. أضافة صور و شريط ألوان الى الفاصل الزمني</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">9.14.1. تهيئة البيانات</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">9.14.2. أضافة النصوص المتحركة</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">9.14.3. أضافة العلامات</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">9.14.4. أضافة شريط الالوان</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">9.12. اخفاء التأثيرات</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">9.13. اضافة نصوص متحركه حسب الفاصل الزمني</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">9.14. أضافة صور و شريط ألوان الى الفاصل الزمني</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">9.14.1. تهيئة البيانات</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">9.14.2. أضافة النصوص المتحركة</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">9.14.3. أضافة العلامات</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">9.14.4. أضافة شريط الالوان</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">9.15. الخلاصة</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">9.15. الخلاصة</a></li>
 </ul>
             </nav>
         </div>
@@ -425,40 +425,40 @@ document.write(`
 <h1><span class="section-number">9. </span>خلق صور متحركة حسب الفاصل الزمني<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#id2" id="id18">مدخل</a></p></li>
-<li><p><a class="reference internal" href="#id3" id="id19">المتطلبات التقنية</a></p></li>
-<li><p><a class="reference internal" href="#id4" id="id20">دالة الخرائط</a></p></li>
-<li><p><a class="reference internal" href="#id5" id="id21">خلق تجميع صور خالي من الغيوم</a></p></li>
-<li><p><a class="reference internal" href="#id6" id="id22">خلق السلسلة الزمنية</a></p></li>
-<li><p><a class="reference internal" href="#naip" id="id23">استخدام الفاصل الزمني نوع NAIP</a></p></li>
-<li><p><a class="reference internal" href="#id7" id="id24">الفاصل الزمني لاندسات</a></p></li>
-<li><p><a class="reference internal" href="#sentinel-1" id="id25">الفاصل الزمني  Sentinel-1</a></p></li>
-<li><p><a class="reference internal" href="#sentinel-2" id="id26">الفاصل الزمني Sentinel-2</a></p></li>
-<li><p><a class="reference internal" href="#modis" id="id27">الفاصل الزمني  MODIS</a></p>
+<li><p><a class="reference internal" href="#id2" id="id17">مدخل</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id18">المتطلبات التقنية</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id19">دالة الخرائط</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id20">خلق تجميع صور خالي من الغيوم</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id21">خلق السلسلة الزمنية</a></p></li>
+<li><p><a class="reference internal" href="#naip" id="id22">استخدام الفاصل الزمني نوع NAIP</a></p></li>
+<li><p><a class="reference internal" href="#landsat" id="id23">الفاصل الزمني Landsat</a></p></li>
+<li><p><a class="reference internal" href="#sentinel-1" id="id24">الفاصل الزمني  Sentinel-1</a></p></li>
+<li><p><a class="reference internal" href="#sentinel-2" id="id25">الفاصل الزمني Sentinel-2</a></p></li>
+<li><p><a class="reference internal" href="#modis" id="id26">الفاصل الزمني  MODIS</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id8" id="id28">مؤشرات الغطاء النباتي من MODIS</a></p></li>
-<li><p><a class="reference internal" href="#id9" id="id29">بيانات الحراة من  MODIS</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id27">مؤشرات الغطاء النباتي من MODIS</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id28">بيانات الحراة من  MODIS</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#goes" id="id30">الفاصل الزمني نوع  GOES</a></p></li>
-<li><p><a class="reference internal" href="#id10" id="id31">اخفاء التأثيرات</a></p></li>
-<li><p><a class="reference internal" href="#id11" id="id32">اضافة نصوص متحركه حسب الفاصل الزمني</a></p></li>
-<li><p><a class="reference internal" href="#id12" id="id33">أضافة صور و شريط ألوان الى الفاصل الزمني</a></p>
+<li><p><a class="reference internal" href="#goes" id="id29">الفاصل الزمني نوع  GOES</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id30">اخفاء التأثيرات</a></p></li>
+<li><p><a class="reference internal" href="#id10" id="id31">اضافة نصوص متحركه حسب الفاصل الزمني</a></p></li>
+<li><p><a class="reference internal" href="#id11" id="id32">أضافة صور و شريط ألوان الى الفاصل الزمني</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id13" id="id34">تهيئة البيانات</a></p></li>
-<li><p><a class="reference internal" href="#id14" id="id35">أضافة النصوص المتحركة</a></p></li>
-<li><p><a class="reference internal" href="#id15" id="id36">أضافة العلامات</a></p></li>
-<li><p><a class="reference internal" href="#id16" id="id37">أضافة شريط الالوان</a></p></li>
+<li><p><a class="reference internal" href="#id12" id="id33">تهيئة البيانات</a></p></li>
+<li><p><a class="reference internal" href="#id13" id="id34">أضافة النصوص المتحركة</a></p></li>
+<li><p><a class="reference internal" href="#id14" id="id35">أضافة العلامات</a></p></li>
+<li><p><a class="reference internal" href="#id15" id="id36">أضافة شريط الالوان</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#id17" id="id38">الخلاصة</a></p></li>
+<li><p><a class="reference internal" href="#id16" id="id37">الخلاصة</a></p></li>
 </ul>
 </nav>
 <section id="id2">
-<h2><a class="toc-backref" href="#id18" role="doc-backlink"><span class="section-number">9.1. </span>مدخل</a><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id17" role="doc-backlink"><span class="section-number">9.1. </span>مدخل</a><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="id3">
-<h2><a class="toc-backref" href="#id19" role="doc-backlink"><span class="section-number">9.2. </span>المتطلبات التقنية</a><a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id18" role="doc-backlink"><span class="section-number">9.2. </span>المتطلبات التقنية</a><a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>gee<span class="w"> </span>python
 conda<span class="w"> </span>activate<span class="w"> </span>gee
 conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>mamba
@@ -492,7 +492,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="id4">
-<h2><a class="toc-backref" href="#id20" role="doc-backlink"><span class="section-number">9.3. </span>دالة الخرائط</a><a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id19" role="doc-backlink"><span class="section-number">9.3. </span>دالة الخرائط</a><a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">myList</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">List</span><span class="o">.</span><span class="n">sequence</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -523,7 +523,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="id5">
-<h2><a class="toc-backref" href="#id21" role="doc-backlink"><span class="section-number">9.4. </span>خلق تجميع صور خالي من الغيوم</a><a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id20" role="doc-backlink"><span class="section-number">9.4. </span>خلق تجميع صور خالي من الغيوم</a><a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -586,7 +586,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="id6">
-<h2><a class="toc-backref" href="#id22" role="doc-backlink"><span class="section-number">9.5. </span>خلق السلسلة الزمنية</a><a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id21" role="doc-backlink"><span class="section-number">9.5. </span>خلق السلسلة الزمنية</a><a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">collection</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">ImageCollection</span><span class="p">(</span><span class="s2">&quot;COPERNICUS/S2_HARMONIZED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">filterMetadata</span><span class="p">(</span>
@@ -632,7 +632,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="naip">
-<h2><a class="toc-backref" href="#id23" role="doc-backlink"><span class="section-number">9.6. </span>استخدام الفاصل الزمني نوع NAIP</a><a class="headerlink" href="#naip" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id22" role="doc-backlink"><span class="section-number">9.6. </span>استخدام الفاصل الزمني نوع NAIP</a><a class="headerlink" href="#naip" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -694,8 +694,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="id7">
-<h2><a class="toc-backref" href="#id24" role="doc-backlink"><span class="section-number">9.7. </span>الفاصل الزمني لاندسات</a><a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<section id="landsat">
+<h2><a class="toc-backref" href="#id23" role="doc-backlink"><span class="section-number">9.7. </span>الفاصل الزمني Landsat</a><a class="headerlink" href="#landsat" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -794,7 +794,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="sentinel-1">
-<h2><a class="toc-backref" href="#id25" role="doc-backlink"><span class="section-number">9.8. </span>الفاصل الزمني  Sentinel-1</a><a class="headerlink" href="#sentinel-1" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id24" role="doc-backlink"><span class="section-number">9.8. </span>الفاصل الزمني  Sentinel-1</a><a class="headerlink" href="#sentinel-1" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -839,7 +839,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="sentinel-2">
-<h2><a class="toc-backref" href="#id26" role="doc-backlink"><span class="section-number">9.9. </span>الفاصل الزمني Sentinel-2</a><a class="headerlink" href="#sentinel-2" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id25" role="doc-backlink"><span class="section-number">9.9. </span>الفاصل الزمني Sentinel-2</a><a class="headerlink" href="#sentinel-2" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -880,9 +880,9 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="modis">
-<h2><a class="toc-backref" href="#id27" role="doc-backlink"><span class="section-number">9.10. </span>الفاصل الزمني  MODIS</a><a class="headerlink" href="#modis" title="Permalink to this heading">#</a></h2>
-<section id="id8">
-<h3><a class="toc-backref" href="#id28" role="doc-backlink"><span class="section-number">9.10.1. </span>مؤشرات الغطاء النباتي من MODIS</a><a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h2><a class="toc-backref" href="#id26" role="doc-backlink"><span class="section-number">9.10. </span>الفاصل الزمني  MODIS</a><a class="headerlink" href="#modis" title="Permalink to this heading">#</a></h2>
+<section id="id7">
+<h3><a class="toc-backref" href="#id27" role="doc-backlink"><span class="section-number">9.10.1. </span>مؤشرات الغطاء النباتي من MODIS</a><a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -921,8 +921,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="id9">
-<h3><a class="toc-backref" href="#id29" role="doc-backlink"><span class="section-number">9.10.2. </span>بيانات الحراة من  MODIS</a><a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<section id="id8">
+<h3><a class="toc-backref" href="#id28" role="doc-backlink"><span class="section-number">9.10.2. </span>بيانات الحراة من  MODIS</a><a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -963,7 +963,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </section>
 </section>
 <section id="goes">
-<h2><a class="toc-backref" href="#id30" role="doc-backlink"><span class="section-number">9.11. </span>الفاصل الزمني نوع  GOES</a><a class="headerlink" href="#goes" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id29" role="doc-backlink"><span class="section-number">9.11. </span>الفاصل الزمني نوع  GOES</a><a class="headerlink" href="#goes" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">roi</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">Geometry</span><span class="o">.</span><span class="n">BBox</span><span class="p">(</span><span class="mf">167.1898</span><span class="p">,</span> <span class="o">-</span><span class="mf">28.5757</span><span class="p">,</span> <span class="mf">202.6258</span><span class="p">,</span> <span class="o">-</span><span class="mf">12.4411</span><span class="p">)</span>
@@ -1028,8 +1028,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="id10">
-<h2><a class="toc-backref" href="#id31" role="doc-backlink"><span class="section-number">9.12. </span>اخفاء التأثيرات</a><a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<section id="id9">
+<h2><a class="toc-backref" href="#id30" role="doc-backlink"><span class="section-number">9.12. </span>اخفاء التأثيرات</a><a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">in_gif</span> <span class="o">=</span> <span class="s2">&quot;https://i.imgur.com/ZWSZC5z.gif&quot;</span>
@@ -1065,8 +1065,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="id11">
-<h2><a class="toc-backref" href="#id32" role="doc-backlink"><span class="section-number">9.13. </span>اضافة نصوص متحركه حسب الفاصل الزمني</a><a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
+<section id="id10">
+<h2><a class="toc-backref" href="#id31" role="doc-backlink"><span class="section-number">9.13. </span>اضافة نصوص متحركه حسب الفاصل الزمني</a><a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://i.imgur.com/Rx0wjSw.gif&#39;</span>
@@ -1109,10 +1109,10 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
+<section id="id11">
+<h2><a class="toc-backref" href="#id32" role="doc-backlink"><span class="section-number">9.14. </span>أضافة صور و شريط ألوان الى الفاصل الزمني</a><a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
 <section id="id12">
-<h2><a class="toc-backref" href="#id33" role="doc-backlink"><span class="section-number">9.14. </span>أضافة صور و شريط ألوان الى الفاصل الزمني</a><a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
-<section id="id13">
-<h3><a class="toc-backref" href="#id34" role="doc-backlink"><span class="section-number">9.14.1. </span>تهيئة البيانات</a><a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id33" role="doc-backlink"><span class="section-number">9.14.1. </span>تهيئة البيانات</a><a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">aoi</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">Geometry</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span>
@@ -1144,8 +1144,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="id14">
-<h3><a class="toc-backref" href="#id35" role="doc-backlink"><span class="section-number">9.14.2. </span>أضافة النصوص المتحركة</a><a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<section id="id13">
+<h3><a class="toc-backref" href="#id34" role="doc-backlink"><span class="section-number">9.14.2. </span>أضافة النصوص المتحركة</a><a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;:00&quot;</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">24</span><span class="p">)]</span>
@@ -1172,8 +1172,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="id15">
-<h3><a class="toc-backref" href="#id36" role="doc-backlink"><span class="section-number">9.14.3. </span>أضافة العلامات</a><a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
+<section id="id14">
+<h3><a class="toc-backref" href="#id35" role="doc-backlink"><span class="section-number">9.14.3. </span>أضافة العلامات</a><a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">noaa_logo</span> <span class="o">=</span> <span class="s1">&#39;https://i.imgur.com/gZ6BYZB.png&#39;</span>
@@ -1191,8 +1191,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="id16">
-<h3><a class="toc-backref" href="#id37" role="doc-backlink"><span class="section-number">9.14.4. </span>أضافة شريط الالوان</a><a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
+<section id="id15">
+<h3><a class="toc-backref" href="#id36" role="doc-backlink"><span class="section-number">9.14.4. </span>أضافة شريط الالوان</a><a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">palette</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="s1">&#39;cyan&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">]</span>
@@ -1214,8 +1214,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 </section>
-<section id="id17">
-<h2><a class="toc-backref" href="#id38" role="doc-backlink"><span class="section-number">9.15. </span>الخلاصة</a><a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h2>
+<section id="id16">
+<h2><a class="toc-backref" href="#id37" role="doc-backlink"><span class="section-number">9.15. </span>الخلاصة</a><a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -1292,25 +1292,25 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.4. خلق تجميع صور خالي من الغيوم</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">9.5. خلق السلسلة الزمنية</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naip">9.6. استخدام الفاصل الزمني نوع NAIP</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">9.7. الفاصل الزمني لاندسات</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#landsat">9.7. الفاصل الزمني Landsat</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sentinel-1">9.8. الفاصل الزمني  Sentinel-1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sentinel-2">9.9. الفاصل الزمني Sentinel-2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modis">9.10. الفاصل الزمني  MODIS</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">9.10.1. مؤشرات الغطاء النباتي من MODIS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">9.10.2. بيانات الحراة من  MODIS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">9.10.1. مؤشرات الغطاء النباتي من MODIS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">9.10.2. بيانات الحراة من  MODIS</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goes">9.11. الفاصل الزمني نوع  GOES</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">9.12. اخفاء التأثيرات</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">9.13. اضافة نصوص متحركه حسب الفاصل الزمني</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">9.14. أضافة صور و شريط ألوان الى الفاصل الزمني</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">9.14.1. تهيئة البيانات</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">9.14.2. أضافة النصوص المتحركة</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">9.14.3. أضافة العلامات</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">9.14.4. أضافة شريط الالوان</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">9.12. اخفاء التأثيرات</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">9.13. اضافة نصوص متحركه حسب الفاصل الزمني</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">9.14. أضافة صور و شريط ألوان الى الفاصل الزمني</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">9.14.1. تهيئة البيانات</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">9.14.2. أضافة النصوص المتحركة</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">9.14.3. أضافة العلامات</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">9.14.4. أضافة شريط الالوان</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">9.15. الخلاصة</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">9.15. الخلاصة</a></li>
 </ul>
   </nav></div>
 
