@@ -201,7 +201,7 @@ timelapse = geemap.naip_timelapse(
 geemap.show_image(timelapse)
 ```
 
-## الفاصل الزمني لاندسات
+## الفاصل الزمني Landsat
 
 ```{code-cell} ipython3
 Map = geemap.Map()
