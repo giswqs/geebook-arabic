@@ -1156,7 +1156,7 @@ geemap.download_ee_image(
     )
 ```
 
-## دقة التقييم للنتائج
+## تقييم دقة النتائج
 
 ```{code-cell} ipython3
 Map = geemap.Map()
