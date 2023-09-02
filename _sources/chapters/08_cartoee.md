@@ -56,7 +56,7 @@ from geemap import cartoee
 import matplotlib.pyplot as plt
 ```
 
-## Plotting single-band images
+## رسم مرئيات ذات الطيف الموجي الواحد
 
 ```{code-cell} ipython3
 srtm = ee.Image("CGIAR/SRTM90_V4")
@@ -362,7 +362,7 @@ plt.show()
 cartoee.savefig(fig, 'SST.jpg', dpi=300)
 ```
 
-### اسقاط الخرائط المخصص
+### استخدام الاسقاط المخصص للخرائط
 
 ```{code-cell} ipython3
 import cartopy.crs as ccrs
@@ -448,7 +448,7 @@ ax.coastlines()
 plt.show()
 ```
 
-### The warping artifacts
+### أخفاء الاثار
 
 ```{code-cell} ipython3
 fig = plt.figure(figsize=(11, 10))
@@ -489,9 +489,9 @@ ax.set_extent(zoom_extent, ccrs.PlateCarree())
 plt.show()
 ```
 
-## Plotting multiple Earth Engine layers
+## رسم طبفات بيانات Earth Engine
 
-### Creating a blended image
+### خلق مرئية مدمجة
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -518,7 +518,7 @@ Map.addLayer(blend, {}, "Blend")
 Map
 ```
 
-### Plotting a blended image with the default projection
+### رسم الصور المدمجة باستخدام الأسقاطات الافتراضية
 
 ```{code-cell} ipython3
 fig = plt.figure(figsize=(15, 10))
@@ -531,7 +531,7 @@ ax.set_title(label='MODIS NDVI (May 2022)', fontsize=15)
 plt.show()
 ```
 
-### Plotting a blended image with a custom projection
+### رسم الصور المدمجة باستخدام الأسقاطات المخصصة
 
 ```{code-cell} ipython3
 import cartopy.crs as ccrs
@@ -548,9 +548,9 @@ ax.set_title(label='MODIS NDVI (May 2022)', fontsize=15)
 plt.show()
 ```
 
-## Creating timelapse animations
+## خلق صور متحركه بفاصل زمني
 
-### Creating an ImageCollection
+### خلق تجميع مرئيات
 
 ```{code-cell} ipython3
 lon = -115.1585
@@ -582,7 +582,7 @@ def get_best_image(year):
 collection = ee.ImageCollection(years.map(get_best_image))
 ```
 
-### Displaying a sample image
+### استعراض عينة من الصور
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -595,7 +595,7 @@ Map.setCenter(lon, lat, 8)
 Map
 ```
 
-### Getting a sample output image
+### تصدير عينة صور 
 
 ```{code-cell} ipython3
 w = 0.4
@@ -639,7 +639,7 @@ ax.set_title(label='Las Vegas, NV', fontsize=15)
 plt.show()
 ```
 
-### Creating timelapse
+### خلق بيانات متحركة حسب الفاصل الزمني
 
 ```{code-cell} ipython3
 cartoee.get_image_collection_gif(
@@ -663,5 +663,5 @@ cartoee.get_image_collection_gif(
 geemap.show_image('timelapse/animation.gif')
 ```
 
-## Summary
+## الخلاصة
 
