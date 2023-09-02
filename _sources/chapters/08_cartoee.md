@@ -11,16 +11,16 @@ kernelspec:
   name: python3
 ---
 
-# Making Maps with Cartoee
+# رسم خارطة بأستخدام مفهوم كارتوي
 
 ```{contents}
 :local:
 :depth: 2
 ```
 
-## Introduction
+## مدخل
 
-## Technical requirements
+## المتطلبات التقنية
 
 ```bash
 conda create -n gee python
@@ -105,7 +105,7 @@ plt.show()
 cartoee.savefig(fig, fname="srtm.jpg", dpi=300, bbox_inches='tight')
 ```
 
-## Plotting multi-band images
+## رسم مرئيات متعددة الطيف الموجي
 
 ```{code-cell} ipython3
 image = ee.Image('LANDSAT/LC08/C01/T1_SR/LC08_044034_20140318')
@@ -134,7 +134,7 @@ ax.coastlines(color="yellow")
 plt.show()
 ```
 
-## Adding north arrows and scale bars
+## أضافة سهم الشمال و مقياس الرسم
 
 ```{code-cell} ipython3
 fig = plt.figure(figsize=(15, 10))
@@ -203,7 +203,7 @@ plt.show()
 cartoee.savefig(fig, fname="landsat.jpg")
 ```
 
-## Adding legends
+## أضافة دليل الخريطة
 
 ```{code-cell} ipython3
 fuels = [
@@ -284,7 +284,7 @@ plt.show()
 cartoee.savefig(fig, 'ch08_power_plants.jpg', dpi=150)
 ```
 
-## Adding basemaps
+## أضافة الخارطة الأساس
 
 ```{code-cell} ipython3
 image = ee.Image('LANDSAT/LC08/C01/T1_SR/LC08_044034_20140318')
@@ -328,9 +328,9 @@ ax.coastlines(color="yellow")
 plt.show()
 ```
 
-## Using custom projections
+## استخدام الاسقاطات المخصصة
 
-### The PlateCarree projection
+###  اسقاطات PlateCarree
 
 ```{code-cell} ipython3
 ocean = (
@@ -362,7 +362,7 @@ plt.show()
 cartoee.savefig(fig, 'SST.jpg', dpi=300)
 ```
 
-### Custom projections
+### اسقاط الخرائط المخصص
 
 ```{code-cell} ipython3
 import cartopy.crs as ccrs

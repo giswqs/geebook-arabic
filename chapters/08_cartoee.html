@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>8. Making Maps with Cartoee &#8212; Geospatial Data Science with Earth Engine and Geemap</title>
+    <title>8. رسم خارطة بأستخدام مفهوم كارتوي &#8212; Geospatial Data Science with Earth Engine and Geemap</title>
   
   
   
@@ -165,7 +165,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="05_data_viz.html">5. استعراض و تمثيل البيانات الجغرافية-المكانية</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_data_analysis.html">6. تحليل البيانات المكانية</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_data_export.html">7. تصدير بيانات Earth Engine</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Making Maps with Cartoee</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. رسم خارطة بأستخدام مفهوم كارتوي</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09_timelapse.html">9. Creating Timelapse Animations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_webapps.html">10. Building Interactive Web Apps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11_applications.html">11. Earth Engine Applications</a></li>
@@ -375,7 +375,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Making Maps with Cartoee</h1>
+    <h1>رسم خارطة بأستخدام مفهوم كارتوي</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -385,16 +385,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">8.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-requirements">8.2. Technical requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.1. مدخل</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.2. المتطلبات التقنية</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-single-band-images">8.3. Plotting single-band images</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-multi-band-images">8.4. Plotting multi-band images</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-north-arrows-and-scale-bars">8.5. Adding north arrows and scale bars</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-legends">8.6. Adding legends</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-basemaps">8.7. Adding basemaps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-custom-projections">8.8. Using custom projections</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-platecarree-projection">8.8.1. The PlateCarree projection</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-projections">8.8.2. Custom projections</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.4. رسم مرئيات متعددة الطيف الموجي</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">8.5. أضافة سهم الشمال و مقياس الرسم</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">8.6. أضافة دليل الخريطة</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">8.7. أضافة الخارطة الأساس</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">8.8. استخدام الاسقاطات المخصصة</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#platecarree">8.8.1. اسقاطات PlateCarree</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">8.8.2. اسقاط الخرائط المخصص</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-warping-artifacts">8.8.3. The warping artifacts</a></li>
 </ul>
 </li>
@@ -423,47 +423,47 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="making-maps-with-cartoee">
-<h1><span class="section-number">8. </span>Making Maps with Cartoee<a class="headerlink" href="#making-maps-with-cartoee" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1><span class="section-number">8. </span>رسم خارطة بأستخدام مفهوم كارتوي<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#introduction" id="id1">Introduction</a></p></li>
-<li><p><a class="reference internal" href="#technical-requirements" id="id2">Technical requirements</a></p></li>
-<li><p><a class="reference internal" href="#plotting-single-band-images" id="id3">Plotting single-band images</a></p></li>
-<li><p><a class="reference internal" href="#plotting-multi-band-images" id="id4">Plotting multi-band images</a></p></li>
-<li><p><a class="reference internal" href="#adding-north-arrows-and-scale-bars" id="id5">Adding north arrows and scale bars</a></p></li>
-<li><p><a class="reference internal" href="#adding-legends" id="id6">Adding legends</a></p></li>
-<li><p><a class="reference internal" href="#adding-basemaps" id="id7">Adding basemaps</a></p></li>
-<li><p><a class="reference internal" href="#using-custom-projections" id="id8">Using custom projections</a></p>
+<li><p><a class="reference internal" href="#id2" id="id10">مدخل</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id11">المتطلبات التقنية</a></p></li>
+<li><p><a class="reference internal" href="#plotting-single-band-images" id="id12">Plotting single-band images</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id13">رسم مرئيات متعددة الطيف الموجي</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id14">أضافة سهم الشمال و مقياس الرسم</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id15">أضافة دليل الخريطة</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id16">أضافة الخارطة الأساس</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id17">استخدام الاسقاطات المخصصة</a></p>
 <ul>
-<li><p><a class="reference internal" href="#the-platecarree-projection" id="id9">The PlateCarree projection</a></p></li>
-<li><p><a class="reference internal" href="#custom-projections" id="id10">Custom projections</a></p></li>
-<li><p><a class="reference internal" href="#the-warping-artifacts" id="id11">The warping artifacts</a></p></li>
+<li><p><a class="reference internal" href="#platecarree" id="id18">اسقاطات PlateCarree</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id19">اسقاط الخرائط المخصص</a></p></li>
+<li><p><a class="reference internal" href="#the-warping-artifacts" id="id20">The warping artifacts</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#plotting-multiple-earth-engine-layers" id="id12">Plotting multiple Earth Engine layers</a></p>
+<li><p><a class="reference internal" href="#plotting-multiple-earth-engine-layers" id="id21">Plotting multiple Earth Engine layers</a></p>
 <ul>
-<li><p><a class="reference internal" href="#creating-a-blended-image" id="id13">Creating a blended image</a></p></li>
-<li><p><a class="reference internal" href="#plotting-a-blended-image-with-the-default-projection" id="id14">Plotting a blended image with the default projection</a></p></li>
-<li><p><a class="reference internal" href="#plotting-a-blended-image-with-a-custom-projection" id="id15">Plotting a blended image with a custom projection</a></p></li>
+<li><p><a class="reference internal" href="#creating-a-blended-image" id="id22">Creating a blended image</a></p></li>
+<li><p><a class="reference internal" href="#plotting-a-blended-image-with-the-default-projection" id="id23">Plotting a blended image with the default projection</a></p></li>
+<li><p><a class="reference internal" href="#plotting-a-blended-image-with-a-custom-projection" id="id24">Plotting a blended image with a custom projection</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#creating-timelapse-animations" id="id16">Creating timelapse animations</a></p>
+<li><p><a class="reference internal" href="#creating-timelapse-animations" id="id25">Creating timelapse animations</a></p>
 <ul>
-<li><p><a class="reference internal" href="#creating-an-imagecollection" id="id17">Creating an ImageCollection</a></p></li>
-<li><p><a class="reference internal" href="#displaying-a-sample-image" id="id18">Displaying a sample image</a></p></li>
-<li><p><a class="reference internal" href="#getting-a-sample-output-image" id="id19">Getting a sample output image</a></p></li>
-<li><p><a class="reference internal" href="#creating-timelapse" id="id20">Creating timelapse</a></p></li>
+<li><p><a class="reference internal" href="#creating-an-imagecollection" id="id26">Creating an ImageCollection</a></p></li>
+<li><p><a class="reference internal" href="#displaying-a-sample-image" id="id27">Displaying a sample image</a></p></li>
+<li><p><a class="reference internal" href="#getting-a-sample-output-image" id="id28">Getting a sample output image</a></p></li>
+<li><p><a class="reference internal" href="#creating-timelapse" id="id29">Creating timelapse</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#summary" id="id21">Summary</a></p></li>
+<li><p><a class="reference internal" href="#summary" id="id30">Summary</a></p></li>
 </ul>
 </nav>
-<section id="introduction">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink"><span class="section-number">8.1. </span>Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">8.1. </span>مدخل</a><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="technical-requirements">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink"><span class="section-number">8.2. </span>Technical requirements</a><a class="headerlink" href="#technical-requirements" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">8.2. </span>المتطلبات التقنية</a><a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>gee<span class="w"> </span>python
 conda<span class="w"> </span>activate<span class="w"> </span>gee
 conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>mamba
@@ -513,7 +513,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="plotting-single-band-images">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">8.3. </span>Plotting single-band images</a><a class="headerlink" href="#plotting-single-band-images" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">8.3. </span>Plotting single-band images</a><a class="headerlink" href="#plotting-single-band-images" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">srtm</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;CGIAR/SRTM90_V4&quot;</span><span class="p">)</span>
@@ -574,8 +574,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="plotting-multi-band-images">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">8.4. </span>Plotting multi-band images</a><a class="headerlink" href="#plotting-multi-band-images" title="Permalink to this heading">#</a></h2>
+<section id="id4">
+<h2><a class="toc-backref" href="#id13" role="doc-backlink"><span class="section-number">8.4. </span>رسم مرئيات متعددة الطيف الموجي</a><a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="s1">&#39;LANDSAT/LC08/C01/T1_SR/LC08_044034_20140318&#39;</span><span class="p">)</span>
@@ -613,8 +613,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="adding-north-arrows-and-scale-bars">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">8.5. </span>Adding north arrows and scale bars</a><a class="headerlink" href="#adding-north-arrows-and-scale-bars" title="Permalink to this heading">#</a></h2>
+<section id="id5">
+<h2><a class="toc-backref" href="#id14" role="doc-backlink"><span class="section-number">8.5. </span>أضافة سهم الشمال و مقياس الرسم</a><a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
@@ -692,8 +692,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="adding-legends">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink"><span class="section-number">8.6. </span>Adding legends</a><a class="headerlink" href="#adding-legends" title="Permalink to this heading">#</a></h2>
+<section id="id6">
+<h2><a class="toc-backref" href="#id15" role="doc-backlink"><span class="section-number">8.6. </span>أضافة دليل الخريطة</a><a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fuels</span> <span class="o">=</span> <span class="p">[</span>
@@ -792,8 +792,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="adding-basemaps">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink"><span class="section-number">8.7. </span>Adding basemaps</a><a class="headerlink" href="#adding-basemaps" title="Permalink to this heading">#</a></h2>
+<section id="id7">
+<h2><a class="toc-backref" href="#id16" role="doc-backlink"><span class="section-number">8.7. </span>أضافة الخارطة الأساس</a><a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="s1">&#39;LANDSAT/LC08/C01/T1_SR/LC08_044034_20140318&#39;</span><span class="p">)</span>
@@ -849,10 +849,10 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="using-custom-projections">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">8.8. </span>Using custom projections</a><a class="headerlink" href="#using-custom-projections" title="Permalink to this heading">#</a></h2>
-<section id="the-platecarree-projection">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink"><span class="section-number">8.8.1. </span>The PlateCarree projection</a><a class="headerlink" href="#the-platecarree-projection" title="Permalink to this heading">#</a></h3>
+<section id="id8">
+<h2><a class="toc-backref" href="#id17" role="doc-backlink"><span class="section-number">8.8. </span>استخدام الاسقاطات المخصصة</a><a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<section id="platecarree">
+<h3><a class="toc-backref" href="#id18" role="doc-backlink"><span class="section-number">8.8.1. </span>اسقاطات PlateCarree</a><a class="headerlink" href="#platecarree" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ocean</span> <span class="o">=</span> <span class="p">(</span>
@@ -896,8 +896,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="custom-projections">
-<h3><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">8.8.2. </span>Custom projections</a><a class="headerlink" href="#custom-projections" title="Permalink to this heading">#</a></h3>
+<section id="id9">
+<h3><a class="toc-backref" href="#id19" role="doc-backlink"><span class="section-number">8.8.2. </span>اسقاط الخرائط المخصص</a><a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
@@ -1002,7 +1002,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="the-warping-artifacts">
-<h3><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">8.8.3. </span>The warping artifacts</a><a class="headerlink" href="#the-warping-artifacts" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id20" role="doc-backlink"><span class="section-number">8.8.3. </span>The warping artifacts</a><a class="headerlink" href="#the-warping-artifacts" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
@@ -1051,9 +1051,9 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </section>
 </section>
 <section id="plotting-multiple-earth-engine-layers">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">8.9. </span>Plotting multiple Earth Engine layers</a><a class="headerlink" href="#plotting-multiple-earth-engine-layers" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id21" role="doc-backlink"><span class="section-number">8.9. </span>Plotting multiple Earth Engine layers</a><a class="headerlink" href="#plotting-multiple-earth-engine-layers" title="Permalink to this heading">#</a></h2>
 <section id="creating-a-blended-image">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink"><span class="section-number">8.9.1. </span>Creating a blended image</a><a class="headerlink" href="#creating-a-blended-image" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id22" role="doc-backlink"><span class="section-number">8.9.1. </span>Creating a blended image</a><a class="headerlink" href="#creating-a-blended-image" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -1084,7 +1084,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="plotting-a-blended-image-with-the-default-projection">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink"><span class="section-number">8.9.2. </span>Plotting a blended image with the default projection</a><a class="headerlink" href="#plotting-a-blended-image-with-the-default-projection" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id23" role="doc-backlink"><span class="section-number">8.9.2. </span>Plotting a blended image with the default projection</a><a class="headerlink" href="#plotting-a-blended-image-with-the-default-projection" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
@@ -1101,7 +1101,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="plotting-a-blended-image-with-a-custom-projection">
-<h3><a class="toc-backref" href="#id15" role="doc-backlink"><span class="section-number">8.9.3. </span>Plotting a blended image with a custom projection</a><a class="headerlink" href="#plotting-a-blended-image-with-a-custom-projection" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id24" role="doc-backlink"><span class="section-number">8.9.3. </span>Plotting a blended image with a custom projection</a><a class="headerlink" href="#plotting-a-blended-image-with-a-custom-projection" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
@@ -1126,9 +1126,9 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </section>
 </section>
 <section id="creating-timelapse-animations">
-<h2><a class="toc-backref" href="#id16" role="doc-backlink"><span class="section-number">8.10. </span>Creating timelapse animations</a><a class="headerlink" href="#creating-timelapse-animations" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id25" role="doc-backlink"><span class="section-number">8.10. </span>Creating timelapse animations</a><a class="headerlink" href="#creating-timelapse-animations" title="Permalink to this heading">#</a></h2>
 <section id="creating-an-imagecollection">
-<h3><a class="toc-backref" href="#id17" role="doc-backlink"><span class="section-number">8.10.1. </span>Creating an ImageCollection</a><a class="headerlink" href="#creating-an-imagecollection" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id26" role="doc-backlink"><span class="section-number">8.10.1. </span>Creating an ImageCollection</a><a class="headerlink" href="#creating-an-imagecollection" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lon</span> <span class="o">=</span> <span class="o">-</span><span class="mf">115.1585</span>
@@ -1164,7 +1164,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="displaying-a-sample-image">
-<h3><a class="toc-backref" href="#id18" role="doc-backlink"><span class="section-number">8.10.2. </span>Displaying a sample image</a><a class="headerlink" href="#displaying-a-sample-image" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id27" role="doc-backlink"><span class="section-number">8.10.2. </span>Displaying a sample image</a><a class="headerlink" href="#displaying-a-sample-image" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -1181,7 +1181,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="getting-a-sample-output-image">
-<h3><a class="toc-backref" href="#id19" role="doc-backlink"><span class="section-number">8.10.3. </span>Getting a sample output image</a><a class="headerlink" href="#getting-a-sample-output-image" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id28" role="doc-backlink"><span class="section-number">8.10.3. </span>Getting a sample output image</a><a class="headerlink" href="#getting-a-sample-output-image" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="mf">0.4</span>
@@ -1229,7 +1229,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="creating-timelapse">
-<h3><a class="toc-backref" href="#id20" role="doc-backlink"><span class="section-number">8.10.4. </span>Creating timelapse</a><a class="headerlink" href="#creating-timelapse" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id29" role="doc-backlink"><span class="section-number">8.10.4. </span>Creating timelapse</a><a class="headerlink" href="#creating-timelapse" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cartoee</span><span class="o">.</span><span class="n">get_image_collection_gif</span><span class="p">(</span>
@@ -1258,7 +1258,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </section>
 </section>
 <section id="summary">
-<h2><a class="toc-backref" href="#id21" role="doc-backlink"><span class="section-number">8.11. </span>Summary</a><a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id30" role="doc-backlink"><span class="section-number">8.11. </span>Summary</a><a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -1329,16 +1329,16 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">8.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-requirements">8.2. Technical requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.1. مدخل</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.2. المتطلبات التقنية</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-single-band-images">8.3. Plotting single-band images</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-multi-band-images">8.4. Plotting multi-band images</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-north-arrows-and-scale-bars">8.5. Adding north arrows and scale bars</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-legends">8.6. Adding legends</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-basemaps">8.7. Adding basemaps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-custom-projections">8.8. Using custom projections</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-platecarree-projection">8.8.1. The PlateCarree projection</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-projections">8.8.2. Custom projections</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.4. رسم مرئيات متعددة الطيف الموجي</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">8.5. أضافة سهم الشمال و مقياس الرسم</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">8.6. أضافة دليل الخريطة</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">8.7. أضافة الخارطة الأساس</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">8.8. استخدام الاسقاطات المخصصة</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#platecarree">8.8.1. اسقاطات PlateCarree</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">8.8.2. اسقاط الخرائط المخصص</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-warping-artifacts">8.8.3. The warping artifacts</a></li>
 </ul>
 </li>
