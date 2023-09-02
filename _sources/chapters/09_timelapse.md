@@ -11,18 +11,18 @@ kernelspec:
   name: python3
 ---
 
-# Creating Timelapse Animations
+# خلق صور متحركة حسب الفاصل الزمني
 
 ```{contents}
 :local:
 :depth: 2
 ```
 
-## Introduction
+## مدخل
 
 +++
 
-## Technical requirements
+## المتطلبات التقنية
 
 ```bash
 conda create -n gee python
@@ -48,7 +48,7 @@ import geemap
 geemap.ee_initialize()
 ```
 
-## The map function
+## دالة الخرائط
 
 ```{code-cell} ipython3
 myList = ee.List.sequence(1, 10)
@@ -71,7 +71,7 @@ squares
 
 +++
 
-## Creating cloud-free composites
+## خلق تجميع صور خالي من الغيوم
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -120,7 +120,7 @@ Map
 
 +++
 
-## Creating time series
+## خلق السلسلة الزمنية
 
 ```{code-cell} ipython3
 collection = ee.ImageCollection("COPERNICUS/S2_HARMONIZED").filterMetadata(
@@ -157,7 +157,7 @@ Map
 
 +++
 
-## NAIP timelapse
+## استخدام الفاصل الزمني نوع NAIP
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=[40, -100], zoom=4)
@@ -201,7 +201,7 @@ timelapse = geemap.naip_timelapse(
 geemap.show_image(timelapse)
 ```
 
-## Landsat timelapse
+## الفاصل الزمني لاندسات
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -278,7 +278,7 @@ timelapse = geemap.landsat_timelapse(
 geemap.show_image(timelapse)
 ```
 
-## Sentinel-1 timelapse
+## الفاصل الزمني  Sentinel-1
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -313,7 +313,7 @@ timelapse = geemap.sentinel1_timelapse(
 geemap.show_image(timelapse)
 ```
 
-## Sentinel-2 timelapse
+## الفاصل الزمني Sentinel-2  
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -344,9 +344,9 @@ timelapse = geemap.sentinel2_timelapse(
 geemap.show_image(timelapse)
 ```
 
-## MODIS timelapse
+## الفاصل الزمني  MODIS
 
-### MODIS vegetation indices
+### مؤشرات الغطاء النباتي من MODIS 
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -376,7 +376,7 @@ timelapse = geemap.modis_ndvi_timelapse(
 geemap.show_image(timelapse)
 ```
 
-### MODIS temperature
+### بيانات الحراة من  MODIS
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -406,7 +406,7 @@ timelapse = geemap.modis_ocean_color_timelapse(
 geemap.show_image(timelapse)
 ```
 
-## GOES timelapse
+## الفاصل الزمني نوع  GOES 
 
 ```{code-cell} ipython3
 roi = ee.Geometry.BBox(167.1898, -28.5757, 202.6258, -12.4411)
@@ -453,7 +453,7 @@ timelapse = geemap.goes_fire_timelapse(
 geemap.show_image(timelapse)
 ```
 
-## Fading effects
+## اخفاء التأثيرات
 
 ```{code-cell} ipython3
 in_gif = "https://i.imgur.com/ZWSZC5z.gif"
@@ -482,7 +482,7 @@ geemap.show_image(timelapse)
 
 +++
 
-## Adding text to timelapse
+## اضافة نصوص متحركه حسب الفاصل الزمني
 
 ```{code-cell} ipython3
 url = 'https://i.imgur.com/Rx0wjSw.gif'
@@ -518,9 +518,9 @@ geemap.show_image(out_gif)
 
 +++
 
-## Adding image and colorbar to timelapse
+## أضافة صور و شريط ألوان الى الفاصل الزمني
 
-### Preparing data
+### تهيئة البيانات
 
 ```{code-cell} ipython3
 aoi = ee.Geometry.Polygon(
@@ -549,7 +549,7 @@ geemap.download_ee_video(collection, video_args, saved_gif)
 geemap.show_image(saved_gif)
 ```
 
-### Adding animated text
+### أضافة النصوص المتحركة
 
 ```{code-cell} ipython3
 text = [str(n).zfill(2) + ":00" for n in range(0, 24)]
@@ -573,7 +573,7 @@ geemap.add_text_to_gif(
 geemap.show_image(out_gif)
 ```
 
-### Adding logo
+### أضافة العلامات
 
 ```{code-cell} ipython3
 noaa_logo = 'https://i.imgur.com/gZ6BYZB.png'
@@ -588,7 +588,7 @@ geemap.add_image_to_gif(
 )
 ```
 
-### Adding colorbar
+### أضافة شريط الالوان
 
 ```{code-cell} ipython3
 palette = ['blue', 'purple', 'cyan', 'green', 'yellow', 'red']
@@ -605,5 +605,5 @@ geemap.show_image(out_gif)
 
 +++
 
-## Summary
+## الخلاصة
 
