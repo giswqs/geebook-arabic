@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>6. Analyzing Geospatial Data &#8212; Geospatial Data Science with Earth Engine and Geemap</title>
+    <title>6. تحليل البيانات المكانية &#8212; Geospatial Data Science with Earth Engine and Geemap</title>
   
   
   
@@ -163,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="03_gee_data.html">3. إستخدام بيانات Earth Engine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_local_data.html">4. أستخدام البيانات الجغرافية المكانية المحلية</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_data_viz.html">5. استعراض و تمثيل البيانات الجغرافية-المكانية</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Analyzing Geospatial Data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. تحليل البيانات المكانية</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_data_export.html">7. Exporting Earth Engine Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_cartoee.html">8. Making Maps with Cartoee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09_timelapse.html">9. Creating Timelapse Animations</a></li>
@@ -375,7 +375,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Analyzing Geospatial Data</h1>
+    <h1>تحليل البيانات المكانية</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -385,61 +385,61 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">6.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-requirements">6.2. Technical requirements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#earth-engine-data-reductions">6.3. Earth Engine data reductions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-reductions">6.3.1. List reductions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imagecollection-reductions">6.3.2. ImageCollection reductions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-reductions">6.3.3. Image reductions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#featurecollection-reductions">6.3.4. FeatureCollection reductions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.1. مدخل</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.2. المتطلبات التقنية</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#earth-engine">6.3. مخفض بيانات Earth Engine</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">6.3.1. مخفض بيانات هيكل القائمة</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">6.3.2. مخفض بيانات هيكل تجميع المرئيات</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6.3.3. مخفض بيانات المرئية</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">6.3.4. مخفض بيانات هيكل تجميع الخصائص</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-descriptive-statistics">6.4. Image descriptive statistics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zonal-statistics-with-earth-engine">6.5. Zonal statistics with Earth Engine</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zonal-statistics">6.5.1. Zonal statistics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zonal-statistics-by-group">6.5.2. Zonal statistics by group</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zonal-statistics-with-two-images">6.5.3. Zonal statistics with two images</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">6.4. الاحصائيات الوصفيه على المرئيات</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">6.5. الاحصائيات النطاقية على بيانات Earth Engine</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">6.5.1. الاحصائيات النطاقية</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">6.5.2. الاحصائيات النطاقية حسب المجموعات</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">6.5.3. الاحصائيات النطاقية على منطقة معينة في صورتين</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-grids-and-fishnets">6.6. Coordinate grids and fishnets</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-coordinate-grids">6.6.1. Creating coordinate grids</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-fishnets">6.6.2. Creating fishnets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">6.6. شبكة الاحداثيات و شبكة خلايا المربعات</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">6.6.1. خلق شبكة أحداثيات</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">6.6.2. خلق شبكة خلايا المربعات</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-pixel-values">6.7. Extracting pixel values</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-values-to-points">6.7.1. Extracting values to points</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-pixel-values-along-a-transect">6.7.2. Extracting pixel values along a transect</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-region-reduction">6.7.3. Interactive region reduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">6.7. استخلاص قيم البكسلات من المرئيات</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">6.7.1. استخلاص بيانات المتجه النقطي</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">6.7.2. استخلاص بيانات البكسلات لمقطع معين</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">6.7.3. مخفض مساحة المناطق التفاعلي</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-available-image-count">6.8. Mapping available image count</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-free-composites">6.9. Cloud-free composites</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-mosaicking">6.10. Quality mosaicking</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-charts">6.11. Interactive charts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chart-overview">6.11.1. Chart Overview</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-table-charts">6.11.2. Data table charts</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#earth-engine-object-charts">6.11.3. Earth Engine object charts</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#chart-by-feature">6.11.3.1. Chart by feature</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#chart-by-property">6.11.3.2. Chart by property</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-histograms">6.11.3.3. Feature histograms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">6.8. رسم الاسم التمييزي للمرئيات</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">6.9. تركيب تجميع مرئيات خالي من الغيوم</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">6.10. دقة تنوع السطح في عملية الموزاييك</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">6.11. المخططات التفاعلية</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">6.11.1. نظره عامة على المخططات</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">6.11.2. مخططات جداول البيانات</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">6.11.3. كائن المخططات في Earth Engine</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">6.11.3.1. رسم مخططات اعتمادا على المميزات الخاصة للبيانات</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">6.11.3.2. رسم المخططات أعتمادا على الخصائص العامة للبيانات</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram">6.11.3.3. المخطط التكراري Histogram</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised-classification">6.12. Unsupervised classification</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-classification">6.13. Supervised classification</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-assessment">6.14. Accuracy assessment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-locally-trained-machine-learning-models">6.15. Using locally trained machine learning models</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-a-model-locally-using-scikit-learn">6.15.1. Train a model locally using scikit-learn</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-a-sklearn-classifier-object-to-a-list-of-strings">6.15.2. Convert a sklearn classifier object to a list of strings</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-sklearn-classifier-to-gee-classifier">6.15.3. Convert sklearn classifier to GEE classifier</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classify-image-using-gee-classifier">6.15.4. Classify image using GEE classifier</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-trees-to-the-cloud">6.15.5. Save trees to the cloud</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-trees-locally">6.15.6. Save trees locally</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">6.12. التصنيف الغير موجه للبيانات</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">6.13. التصنيف الموجه للبيانات</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">6.14. دقة التقييم للنتائج</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">6.15. استخدام نماذج التعلم الالي المدربة محليا</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scikit-learn">6.15.1. تدريب نموذج التعلم الالي بأستخدام scikit-learn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn">6.15.2. تحويل كائن نموذج تصنيف في sklearn الى قائمة من النصوص</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn-gee">6.15.3. تحويل نموذج مصنف sklearn الى مصنف GEE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gee">6.15.4. تصنيف المرئيات باستخدام مصنف GEE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id33">6.15.5. خزن البيانات على المساحة السحابية</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id34">6.15.6. خزن البيانات على الكومبيوتر الخاص</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sankey-diagrams">6.16. Sankey diagrams</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">6.17. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sankey">6.16. مخططات Sankey</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id35">6.17. الخلاصة</a></li>
 </ul>
             </nav>
         </div>
@@ -451,73 +451,73 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="analyzing-geospatial-data">
-<h1><span class="section-number">6. </span>Analyzing Geospatial Data<a class="headerlink" href="#analyzing-geospatial-data" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1><span class="section-number">6. </span>تحليل البيانات المكانية<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#introduction" id="id1">Introduction</a></p></li>
-<li><p><a class="reference internal" href="#technical-requirements" id="id2">Technical requirements</a></p></li>
-<li><p><a class="reference internal" href="#earth-engine-data-reductions" id="id3">Earth Engine data reductions</a></p>
+<li><p><a class="reference internal" href="#id2" id="id36">مدخل</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id37">المتطلبات التقنية</a></p></li>
+<li><p><a class="reference internal" href="#earth-engine" id="id38">مخفض بيانات Earth Engine</a></p>
 <ul>
-<li><p><a class="reference internal" href="#list-reductions" id="id4">List reductions</a></p></li>
-<li><p><a class="reference internal" href="#imagecollection-reductions" id="id5">ImageCollection reductions</a></p></li>
-<li><p><a class="reference internal" href="#image-reductions" id="id6">Image reductions</a></p></li>
-<li><p><a class="reference internal" href="#featurecollection-reductions" id="id7">FeatureCollection reductions</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id39">مخفض بيانات هيكل القائمة</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id40">مخفض بيانات هيكل تجميع المرئيات</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id41">مخفض بيانات المرئية</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id42">مخفض بيانات هيكل تجميع الخصائص</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#image-descriptive-statistics" id="id8">Image descriptive statistics</a></p></li>
-<li><p><a class="reference internal" href="#zonal-statistics-with-earth-engine" id="id9">Zonal statistics with Earth Engine</a></p>
+<li><p><a class="reference internal" href="#id8" id="id43">الاحصائيات الوصفيه على المرئيات</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id44">الاحصائيات النطاقية على بيانات Earth Engine</a></p>
 <ul>
-<li><p><a class="reference internal" href="#zonal-statistics" id="id10">Zonal statistics</a></p></li>
-<li><p><a class="reference internal" href="#zonal-statistics-by-group" id="id11">Zonal statistics by group</a></p></li>
-<li><p><a class="reference internal" href="#zonal-statistics-with-two-images" id="id12">Zonal statistics with two images</a></p></li>
+<li><p><a class="reference internal" href="#id10" id="id45">الاحصائيات النطاقية</a></p></li>
+<li><p><a class="reference internal" href="#id11" id="id46">الاحصائيات النطاقية حسب المجموعات</a></p></li>
+<li><p><a class="reference internal" href="#id12" id="id47">الاحصائيات النطاقية على منطقة معينة في صورتين</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#coordinate-grids-and-fishnets" id="id13">Coordinate grids and fishnets</a></p>
+<li><p><a class="reference internal" href="#id13" id="id48">شبكة الاحداثيات و شبكة خلايا المربعات</a></p>
 <ul>
-<li><p><a class="reference internal" href="#creating-coordinate-grids" id="id14">Creating coordinate grids</a></p></li>
-<li><p><a class="reference internal" href="#creating-fishnets" id="id15">Creating fishnets</a></p></li>
+<li><p><a class="reference internal" href="#id14" id="id49">خلق شبكة أحداثيات</a></p></li>
+<li><p><a class="reference internal" href="#id15" id="id50">خلق شبكة خلايا المربعات</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#extracting-pixel-values" id="id16">Extracting pixel values</a></p>
+<li><p><a class="reference internal" href="#id16" id="id51">استخلاص قيم البكسلات من المرئيات</a></p>
 <ul>
-<li><p><a class="reference internal" href="#extracting-values-to-points" id="id17">Extracting values to points</a></p></li>
-<li><p><a class="reference internal" href="#extracting-pixel-values-along-a-transect" id="id18">Extracting pixel values along a transect</a></p></li>
-<li><p><a class="reference internal" href="#interactive-region-reduction" id="id19">Interactive region reduction</a></p></li>
+<li><p><a class="reference internal" href="#id17" id="id52">استخلاص بيانات المتجه النقطي</a></p></li>
+<li><p><a class="reference internal" href="#id18" id="id53">استخلاص بيانات البكسلات لمقطع معين</a></p></li>
+<li><p><a class="reference internal" href="#id19" id="id54">مخفض مساحة المناطق التفاعلي</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#mapping-available-image-count" id="id20">Mapping available image count</a></p></li>
-<li><p><a class="reference internal" href="#cloud-free-composites" id="id21">Cloud-free composites</a></p></li>
-<li><p><a class="reference internal" href="#quality-mosaicking" id="id22">Quality mosaicking</a></p></li>
-<li><p><a class="reference internal" href="#interactive-charts" id="id23">Interactive charts</a></p>
+<li><p><a class="reference internal" href="#id20" id="id55">رسم الاسم التمييزي للمرئيات</a></p></li>
+<li><p><a class="reference internal" href="#id21" id="id56">تركيب تجميع مرئيات خالي من الغيوم</a></p></li>
+<li><p><a class="reference internal" href="#id22" id="id57">دقة تنوع السطح في عملية الموزاييك</a></p></li>
+<li><p><a class="reference internal" href="#id23" id="id58">المخططات التفاعلية</a></p>
 <ul>
-<li><p><a class="reference internal" href="#chart-overview" id="id24">Chart Overview</a></p></li>
-<li><p><a class="reference internal" href="#data-table-charts" id="id25">Data table charts</a></p></li>
-<li><p><a class="reference internal" href="#earth-engine-object-charts" id="id26">Earth Engine object charts</a></p></li>
+<li><p><a class="reference internal" href="#id24" id="id59">نظره عامة على المخططات</a></p></li>
+<li><p><a class="reference internal" href="#id25" id="id60">مخططات جداول البيانات</a></p></li>
+<li><p><a class="reference internal" href="#id26" id="id61">كائن المخططات في Earth Engine</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#unsupervised-classification" id="id27">Unsupervised classification</a></p></li>
-<li><p><a class="reference internal" href="#supervised-classification" id="id28">Supervised classification</a></p></li>
-<li><p><a class="reference internal" href="#accuracy-assessment" id="id29">Accuracy assessment</a></p></li>
-<li><p><a class="reference internal" href="#using-locally-trained-machine-learning-models" id="id30">Using locally trained machine learning models</a></p>
+<li><p><a class="reference internal" href="#id29" id="id62">التصنيف الغير موجه للبيانات</a></p></li>
+<li><p><a class="reference internal" href="#id30" id="id63">التصنيف الموجه للبيانات</a></p></li>
+<li><p><a class="reference internal" href="#id31" id="id64">دقة التقييم للنتائج</a></p></li>
+<li><p><a class="reference internal" href="#id32" id="id65">استخدام نماذج التعلم الالي المدربة محليا</a></p>
 <ul>
-<li><p><a class="reference internal" href="#train-a-model-locally-using-scikit-learn" id="id31">Train a model locally using scikit-learn</a></p></li>
-<li><p><a class="reference internal" href="#convert-a-sklearn-classifier-object-to-a-list-of-strings" id="id32">Convert a sklearn classifier object to a list of strings</a></p></li>
-<li><p><a class="reference internal" href="#convert-sklearn-classifier-to-gee-classifier" id="id33">Convert sklearn classifier to GEE classifier</a></p></li>
-<li><p><a class="reference internal" href="#classify-image-using-gee-classifier" id="id34">Classify image using GEE classifier</a></p></li>
-<li><p><a class="reference internal" href="#save-trees-to-the-cloud" id="id35">Save trees to the cloud</a></p></li>
-<li><p><a class="reference internal" href="#save-trees-locally" id="id36">Save trees locally</a></p></li>
+<li><p><a class="reference internal" href="#scikit-learn" id="id66">تدريب نموذج التعلم الالي بأستخدام scikit-learn</a></p></li>
+<li><p><a class="reference internal" href="#sklearn" id="id67">تحويل كائن نموذج تصنيف في sklearn الى قائمة من النصوص</a></p></li>
+<li><p><a class="reference internal" href="#sklearn-gee" id="id68">تحويل نموذج مصنف sklearn الى مصنف GEE</a></p></li>
+<li><p><a class="reference internal" href="#gee" id="id69">تصنيف المرئيات باستخدام مصنف GEE</a></p></li>
+<li><p><a class="reference internal" href="#id33" id="id70">خزن البيانات على المساحة السحابية</a></p></li>
+<li><p><a class="reference internal" href="#id34" id="id71">خزن البيانات على الكومبيوتر الخاص</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#sankey-diagrams" id="id37">Sankey diagrams</a></p></li>
-<li><p><a class="reference internal" href="#summary" id="id38">Summary</a></p></li>
+<li><p><a class="reference internal" href="#sankey" id="id72">مخططات Sankey</a></p></li>
+<li><p><a class="reference internal" href="#id35" id="id73">الخلاصة</a></p></li>
 </ul>
 </nav>
-<section id="introduction">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink"><span class="section-number">6.1. </span>Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h2><a class="toc-backref" href="#id36" role="doc-backlink"><span class="section-number">6.1. </span>مدخل</a><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="technical-requirements">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink"><span class="section-number">6.2. </span>Technical requirements</a><a class="headerlink" href="#technical-requirements" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h2><a class="toc-backref" href="#id37" role="doc-backlink"><span class="section-number">6.2. </span>المتطلبات التقنية</a><a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>gee<span class="w"> </span>python
 conda<span class="w"> </span>activate<span class="w"> </span>gee
 conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>mamba
@@ -550,10 +550,10 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="earth-engine-data-reductions">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">6.3. </span>Earth Engine data reductions</a><a class="headerlink" href="#earth-engine-data-reductions" title="Permalink to this heading">#</a></h2>
-<section id="list-reductions">
-<h3><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">6.3.1. </span>List reductions</a><a class="headerlink" href="#list-reductions" title="Permalink to this heading">#</a></h3>
+<section id="earth-engine">
+<h2><a class="toc-backref" href="#id38" role="doc-backlink"><span class="section-number">6.3. </span>مخفض بيانات Earth Engine</a><a class="headerlink" href="#earth-engine" title="Permalink to this heading">#</a></h2>
+<section id="id4">
+<h3><a class="toc-backref" href="#id39" role="doc-backlink"><span class="section-number">6.3.1. </span>مخفض بيانات هيكل القائمة</a><a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">List</span><span class="o">.</span><span class="n">sequence</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -627,8 +627,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="imagecollection-reductions">
-<h3><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">6.3.2. </span>ImageCollection reductions</a><a class="headerlink" href="#imagecollection-reductions" title="Permalink to this heading">#</a></h3>
+<section id="id5">
+<h3><a class="toc-backref" href="#id40" role="doc-backlink"><span class="section-number">6.3.2. </span>مخفض بيانات هيكل تجميع المرئيات</a><a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -663,8 +663,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="image-reductions">
-<h3><a class="toc-backref" href="#id6" role="doc-backlink"><span class="section-number">6.3.3. </span>Image reductions</a><a class="headerlink" href="#image-reductions" title="Permalink to this heading">#</a></h3>
+<section id="id6">
+<h3><a class="toc-backref" href="#id41" role="doc-backlink"><span class="section-number">6.3.3. </span>مخفض بيانات المرئية</a><a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -679,8 +679,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="featurecollection-reductions">
-<h3><a class="toc-backref" href="#id7" role="doc-backlink"><span class="section-number">6.3.4. </span>FeatureCollection reductions</a><a class="headerlink" href="#featurecollection-reductions" title="Permalink to this heading">#</a></h3>
+<section id="id7">
+<h3><a class="toc-backref" href="#id42" role="doc-backlink"><span class="section-number">6.3.4. </span>مخفض بيانات هيكل تجميع الخصائص</a><a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -724,8 +724,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 </section>
-<section id="image-descriptive-statistics">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">6.4. </span>Image descriptive statistics</a><a class="headerlink" href="#image-descriptive-statistics" title="Permalink to this heading">#</a></h2>
+<section id="id8">
+<h2><a class="toc-backref" href="#id43" role="doc-backlink"><span class="section-number">6.4. </span>الاحصائيات الوصفيه على المرئيات</a><a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -772,10 +772,10 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="zonal-statistics-with-earth-engine">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink"><span class="section-number">6.5. </span>Zonal statistics with Earth Engine</a><a class="headerlink" href="#zonal-statistics-with-earth-engine" title="Permalink to this heading">#</a></h2>
-<section id="zonal-statistics">
-<h3><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">6.5.1. </span>Zonal statistics</a><a class="headerlink" href="#zonal-statistics" title="Permalink to this heading">#</a></h3>
+<section id="id9">
+<h2><a class="toc-backref" href="#id44" role="doc-backlink"><span class="section-number">6.5. </span>الاحصائيات النطاقية على بيانات Earth Engine</a><a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<section id="id10">
+<h3><a class="toc-backref" href="#id45" role="doc-backlink"><span class="section-number">6.5.1. </span>الاحصائيات النطاقية</a><a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -829,8 +829,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="zonal-statistics-by-group">
-<h3><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">6.5.2. </span>Zonal statistics by group</a><a class="headerlink" href="#zonal-statistics-by-group" title="Permalink to this heading">#</a></h3>
+<section id="id11">
+<h3><a class="toc-backref" href="#id46" role="doc-backlink"><span class="section-number">6.5.2. </span>الاحصائيات النطاقية حسب المجموعات</a><a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -885,8 +885,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="zonal-statistics-with-two-images">
-<h3><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">6.5.3. </span>Zonal statistics with two images</a><a class="headerlink" href="#zonal-statistics-with-two-images" title="Permalink to this heading">#</a></h3>
+<section id="id12">
+<h3><a class="toc-backref" href="#id47" role="doc-backlink"><span class="section-number">6.5.3. </span>الاحصائيات النطاقية على منطقة معينة في صورتين</a><a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -931,10 +931,10 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 </section>
-<section id="coordinate-grids-and-fishnets">
-<h2><a class="toc-backref" href="#id13" role="doc-backlink"><span class="section-number">6.6. </span>Coordinate grids and fishnets</a><a class="headerlink" href="#coordinate-grids-and-fishnets" title="Permalink to this heading">#</a></h2>
-<section id="creating-coordinate-grids">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink"><span class="section-number">6.6.1. </span>Creating coordinate grids</a><a class="headerlink" href="#creating-coordinate-grids" title="Permalink to this heading">#</a></h3>
+<section id="id13">
+<h2><a class="toc-backref" href="#id48" role="doc-backlink"><span class="section-number">6.6. </span>شبكة الاحداثيات و شبكة خلايا المربعات</a><a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h2>
+<section id="id14">
+<h3><a class="toc-backref" href="#id49" role="doc-backlink"><span class="section-number">6.6.1. </span>خلق شبكة أحداثيات</a><a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lat_grid</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">latitude_grid</span><span class="p">(</span><span class="n">step</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">west</span><span class="o">=-</span><span class="mi">180</span><span class="p">,</span> <span class="n">east</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">south</span><span class="o">=-</span><span class="mi">85</span><span class="p">,</span> <span class="n">north</span><span class="o">=</span><span class="mi">85</span><span class="p">)</span>
@@ -997,8 +997,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="creating-fishnets">
-<h3><a class="toc-backref" href="#id15" role="doc-backlink"><span class="section-number">6.6.2. </span>Creating fishnets</a><a class="headerlink" href="#creating-fishnets" title="Permalink to this heading">#</a></h3>
+<section id="id15">
+<h3><a class="toc-backref" href="#id50" role="doc-backlink"><span class="section-number">6.6.2. </span>خلق شبكة خلايا المربعات</a><a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -1076,10 +1076,10 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 </section>
-<section id="extracting-pixel-values">
-<h2><a class="toc-backref" href="#id16" role="doc-backlink"><span class="section-number">6.7. </span>Extracting pixel values</a><a class="headerlink" href="#extracting-pixel-values" title="Permalink to this heading">#</a></h2>
-<section id="extracting-values-to-points">
-<h3><a class="toc-backref" href="#id17" role="doc-backlink"><span class="section-number">6.7.1. </span>Extracting values to points</a><a class="headerlink" href="#extracting-values-to-points" title="Permalink to this heading">#</a></h3>
+<section id="id16">
+<h2><a class="toc-backref" href="#id51" role="doc-backlink"><span class="section-number">6.7. </span>استخلاص قيم البكسلات من المرئيات</a><a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h2>
+<section id="id17">
+<h3><a class="toc-backref" href="#id52" role="doc-backlink"><span class="section-number">6.7.1. </span>استخلاص بيانات المتجه النقطي</a><a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -1150,8 +1150,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="extracting-pixel-values-along-a-transect">
-<h3><a class="toc-backref" href="#id18" role="doc-backlink"><span class="section-number">6.7.2. </span>Extracting pixel values along a transect</a><a class="headerlink" href="#extracting-pixel-values-along-a-transect" title="Permalink to this heading">#</a></h3>
+<section id="id18">
+<h3><a class="toc-backref" href="#id53" role="doc-backlink"><span class="section-number">6.7.2. </span>استخلاص بيانات البكسلات لمقطع معين</a><a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -1216,8 +1216,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="interactive-region-reduction">
-<h3><a class="toc-backref" href="#id19" role="doc-backlink"><span class="section-number">6.7.3. </span>Interactive region reduction</a><a class="headerlink" href="#interactive-region-reduction" title="Permalink to this heading">#</a></h3>
+<section id="id19">
+<h3><a class="toc-backref" href="#id54" role="doc-backlink"><span class="section-number">6.7.3. </span>مخفض مساحة المناطق التفاعلي</a><a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -1277,8 +1277,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 </section>
-<section id="mapping-available-image-count">
-<h2><a class="toc-backref" href="#id20" role="doc-backlink"><span class="section-number">6.8. </span>Mapping available image count</a><a class="headerlink" href="#mapping-available-image-count" title="Permalink to this heading">#</a></h2>
+<section id="id20">
+<h2><a class="toc-backref" href="#id55" role="doc-backlink"><span class="section-number">6.8. </span>رسم الاسم التمييزي للمرئيات</a><a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">collection</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">ImageCollection</span><span class="p">(</span><span class="s2">&quot;LANDSAT/LC08/C02/T1_L2&quot;</span><span class="p">)</span>
@@ -1305,8 +1305,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="cloud-free-composites">
-<h2><a class="toc-backref" href="#id21" role="doc-backlink"><span class="section-number">6.9. </span>Cloud-free composites</a><a class="headerlink" href="#cloud-free-composites" title="Permalink to this heading">#</a></h2>
+<section id="id21">
+<h2><a class="toc-backref" href="#id56" role="doc-backlink"><span class="section-number">6.9. </span>تركيب تجميع مرئيات خالي من الغيوم</a><a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -1375,8 +1375,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="quality-mosaicking">
-<h2><a class="toc-backref" href="#id22" role="doc-backlink"><span class="section-number">6.10. </span>Quality mosaicking</a><a class="headerlink" href="#quality-mosaicking" title="Permalink to this heading">#</a></h2>
+<section id="id22">
+<h2><a class="toc-backref" href="#id57" role="doc-backlink"><span class="section-number">6.10. </span>دقة تنوع السطح في عملية الموزاييك</a><a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -1501,13 +1501,13 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="interactive-charts">
-<h2><a class="toc-backref" href="#id23" role="doc-backlink"><span class="section-number">6.11. </span>Interactive charts</a><a class="headerlink" href="#interactive-charts" title="Permalink to this heading">#</a></h2>
-<section id="chart-overview">
-<h3><a class="toc-backref" href="#id24" role="doc-backlink"><span class="section-number">6.11.1. </span>Chart Overview</a><a class="headerlink" href="#chart-overview" title="Permalink to this heading">#</a></h3>
+<section id="id23">
+<h2><a class="toc-backref" href="#id58" role="doc-backlink"><span class="section-number">6.11. </span>المخططات التفاعلية</a><a class="headerlink" href="#id23" title="Permalink to this heading">#</a></h2>
+<section id="id24">
+<h3><a class="toc-backref" href="#id59" role="doc-backlink"><span class="section-number">6.11.1. </span>نظره عامة على المخططات</a><a class="headerlink" href="#id24" title="Permalink to this heading">#</a></h3>
 </section>
-<section id="data-table-charts">
-<h3><a class="toc-backref" href="#id25" role="doc-backlink"><span class="section-number">6.11.2. </span>Data table charts</a><a class="headerlink" href="#data-table-charts" title="Permalink to this heading">#</a></h3>
+<section id="id25">
+<h3><a class="toc-backref" href="#id60" role="doc-backlink"><span class="section-number">6.11.2. </span>مخططات جداول البيانات</a><a class="headerlink" href="#id25" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s1">&#39;countries.geojson&#39;</span><span class="p">)</span>
@@ -1579,8 +1579,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="earth-engine-object-charts">
-<h3><a class="toc-backref" href="#id26" role="doc-backlink"><span class="section-number">6.11.3. </span>Earth Engine object charts</a><a class="headerlink" href="#earth-engine-object-charts" title="Permalink to this heading">#</a></h3>
+<section id="id26">
+<h3><a class="toc-backref" href="#id61" role="doc-backlink"><span class="section-number">6.11.3. </span>كائن المخططات في Earth Engine</a><a class="headerlink" href="#id26" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geemap.chart</span> <span class="k">as</span> <span class="nn">chart</span>
@@ -1598,8 +1598,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </div>
-<section id="chart-by-feature">
-<h4><span class="section-number">6.11.3.1. </span>Chart by feature<a class="headerlink" href="#chart-by-feature" title="Permalink to this heading">#</a></h4>
+<section id="id27">
+<h4><span class="section-number">6.11.3.1. </span>رسم مخططات اعتمادا على المميزات الخاصة للبيانات<a class="headerlink" href="#id27" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;[0-9][0-9]_tmean|label&#39;</span><span class="p">)</span>
@@ -1672,8 +1672,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="chart-by-property">
-<h4><span class="section-number">6.11.3.2. </span>Chart by property<a class="headerlink" href="#chart-by-property" title="Permalink to this heading">#</a></h4>
+<section id="id28">
+<h4><span class="section-number">6.11.3.2. </span>رسم المخططات أعتمادا على الخصائص العامة للبيانات<a class="headerlink" href="#id28" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;[0-9][0-9]_ppt|label&#39;</span><span class="p">)</span>
@@ -1728,8 +1728,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="feature-histograms">
-<h4><span class="section-number">6.11.3.3. </span>Feature histograms<a class="headerlink" href="#feature-histograms" title="Permalink to this heading">#</a></h4>
+<section id="histogram">
+<h4><span class="section-number">6.11.3.3. </span>المخطط التكراري Histogram<a class="headerlink" href="#histogram" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">ImageCollection</span><span class="p">(</span><span class="s1">&#39;OREGONSTATE/PRISM/Norm81m&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">toBands</span><span class="p">()</span>
@@ -1783,8 +1783,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </section>
 </section>
 </section>
-<section id="unsupervised-classification">
-<h2><a class="toc-backref" href="#id27" role="doc-backlink"><span class="section-number">6.12. </span>Unsupervised classification</a><a class="headerlink" href="#unsupervised-classification" title="Permalink to this heading">#</a></h2>
+<section id="id29">
+<h2><a class="toc-backref" href="#id62" role="doc-backlink"><span class="section-number">6.12. </span>التصنيف الغير موجه للبيانات</a><a class="headerlink" href="#id29" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -1904,8 +1904,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="supervised-classification">
-<h2><a class="toc-backref" href="#id28" role="doc-backlink"><span class="section-number">6.13. </span>Supervised classification</a><a class="headerlink" href="#supervised-classification" title="Permalink to this heading">#</a></h2>
+<section id="id30">
+<h2><a class="toc-backref" href="#id63" role="doc-backlink"><span class="section-number">6.13. </span>التصنيف الموجه للبيانات</a><a class="headerlink" href="#id30" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -2067,8 +2067,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="accuracy-assessment">
-<h2><a class="toc-backref" href="#id29" role="doc-backlink"><span class="section-number">6.14. </span>Accuracy assessment</a><a class="headerlink" href="#accuracy-assessment" title="Permalink to this heading">#</a></h2>
+<section id="id31">
+<h2><a class="toc-backref" href="#id64" role="doc-backlink"><span class="section-number">6.14. </span>دقة التقييم للنتائج</a><a class="headerlink" href="#id31" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -2237,8 +2237,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="using-locally-trained-machine-learning-models">
-<h2><a class="toc-backref" href="#id30" role="doc-backlink"><span class="section-number">6.15. </span>Using locally trained machine learning models</a><a class="headerlink" href="#using-locally-trained-machine-learning-models" title="Permalink to this heading">#</a></h2>
+<section id="id32">
+<h2><a class="toc-backref" href="#id65" role="doc-backlink"><span class="section-number">6.15. </span>استخدام نماذج التعلم الالي المدربة محليا</a><a class="headerlink" href="#id32" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -2248,8 +2248,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </div>
-<section id="train-a-model-locally-using-scikit-learn">
-<h3><a class="toc-backref" href="#id31" role="doc-backlink"><span class="section-number">6.15.1. </span>Train a model locally using scikit-learn</a><a class="headerlink" href="#train-a-model-locally-using-scikit-learn" title="Permalink to this heading">#</a></h3>
+<section id="scikit-learn">
+<h3><a class="toc-backref" href="#id66" role="doc-backlink"><span class="section-number">6.15.1. </span>تدريب نموذج التعلم الالي بأستخدام scikit-learn</a><a class="headerlink" href="#scikit-learn" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/gee-community/geemap/master/examples/data/rf_example.csv&quot;</span>
@@ -2278,8 +2278,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="convert-a-sklearn-classifier-object-to-a-list-of-strings">
-<h3><a class="toc-backref" href="#id32" role="doc-backlink"><span class="section-number">6.15.2. </span>Convert a sklearn classifier object to a list of strings</a><a class="headerlink" href="#convert-a-sklearn-classifier-object-to-a-list-of-strings" title="Permalink to this heading">#</a></h3>
+<section id="sklearn">
+<h3><a class="toc-backref" href="#id67" role="doc-backlink"><span class="section-number">6.15.2. </span>تحويل كائن نموذج تصنيف في sklearn الى قائمة من النصوص</a><a class="headerlink" href="#sklearn" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trees</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">rf_to_strings</span><span class="p">(</span><span class="n">rf</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">)</span>
@@ -2302,8 +2302,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="convert-sklearn-classifier-to-gee-classifier">
-<h3><a class="toc-backref" href="#id33" role="doc-backlink"><span class="section-number">6.15.3. </span>Convert sklearn classifier to GEE classifier</a><a class="headerlink" href="#convert-sklearn-classifier-to-gee-classifier" title="Permalink to this heading">#</a></h3>
+<section id="sklearn-gee">
+<h3><a class="toc-backref" href="#id68" role="doc-backlink"><span class="section-number">6.15.3. </span>تحويل نموذج مصنف sklearn الى مصنف GEE</a><a class="headerlink" href="#sklearn-gee" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ee_classifier</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">strings_to_classifier</span><span class="p">(</span><span class="n">trees</span><span class="p">)</span>
@@ -2313,8 +2313,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="classify-image-using-gee-classifier">
-<h3><a class="toc-backref" href="#id34" role="doc-backlink"><span class="section-number">6.15.4. </span>Classify image using GEE classifier</a><a class="headerlink" href="#classify-image-using-gee-classifier" title="Permalink to this heading">#</a></h3>
+<section id="gee">
+<h3><a class="toc-backref" href="#id69" role="doc-backlink"><span class="section-number">6.15.4. </span>تصنيف المرئيات باستخدام مصنف GEE</a><a class="headerlink" href="#gee" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make a cloud-free Landsat 8 TOA composite (from raw imagery).</span>
@@ -2354,8 +2354,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="save-trees-to-the-cloud">
-<h3><a class="toc-backref" href="#id35" role="doc-backlink"><span class="section-number">6.15.5. </span>Save trees to the cloud</a><a class="headerlink" href="#save-trees-to-the-cloud" title="Permalink to this heading">#</a></h3>
+<section id="id33">
+<h3><a class="toc-backref" href="#id70" role="doc-backlink"><span class="section-number">6.15.5. </span>خزن البيانات على المساحة السحابية</a><a class="headerlink" href="#id33" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">user_id</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">ee_user_id</span><span class="p">()</span>
@@ -2382,8 +2382,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="save-trees-locally">
-<h3><a class="toc-backref" href="#id36" role="doc-backlink"><span class="section-number">6.15.6. </span>Save trees locally</a><a class="headerlink" href="#save-trees-locally" title="Permalink to this heading">#</a></h3>
+<section id="id34">
+<h3><a class="toc-backref" href="#id71" role="doc-backlink"><span class="section-number">6.15.6. </span>خزن البيانات على الكومبيوتر الخاص</a><a class="headerlink" href="#id34" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">out_csv</span> <span class="o">=</span> <span class="s2">&quot;trees.csv&quot;</span>
@@ -2396,8 +2396,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 </section>
-<section id="sankey-diagrams">
-<h2><a class="toc-backref" href="#id37" role="doc-backlink"><span class="section-number">6.16. </span>Sankey diagrams</a><a class="headerlink" href="#sankey-diagrams" title="Permalink to this heading">#</a></h2>
+<section id="sankey">
+<h2><a class="toc-backref" href="#id72" role="doc-backlink"><span class="section-number">6.16. </span>مخططات Sankey</a><a class="headerlink" href="#sankey" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sankee</span>
@@ -2421,8 +2421,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="summary">
-<h2><a class="toc-backref" href="#id38" role="doc-backlink"><span class="section-number">6.17. </span>Summary</a><a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<section id="id35">
+<h2><a class="toc-backref" href="#id73" role="doc-backlink"><span class="section-number">6.17. </span>الخلاصة</a><a class="headerlink" href="#id35" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -2493,61 +2493,61 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">6.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-requirements">6.2. Technical requirements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#earth-engine-data-reductions">6.3. Earth Engine data reductions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-reductions">6.3.1. List reductions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imagecollection-reductions">6.3.2. ImageCollection reductions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-reductions">6.3.3. Image reductions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#featurecollection-reductions">6.3.4. FeatureCollection reductions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.1. مدخل</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.2. المتطلبات التقنية</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#earth-engine">6.3. مخفض بيانات Earth Engine</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">6.3.1. مخفض بيانات هيكل القائمة</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">6.3.2. مخفض بيانات هيكل تجميع المرئيات</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6.3.3. مخفض بيانات المرئية</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">6.3.4. مخفض بيانات هيكل تجميع الخصائص</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-descriptive-statistics">6.4. Image descriptive statistics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zonal-statistics-with-earth-engine">6.5. Zonal statistics with Earth Engine</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zonal-statistics">6.5.1. Zonal statistics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zonal-statistics-by-group">6.5.2. Zonal statistics by group</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zonal-statistics-with-two-images">6.5.3. Zonal statistics with two images</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">6.4. الاحصائيات الوصفيه على المرئيات</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">6.5. الاحصائيات النطاقية على بيانات Earth Engine</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">6.5.1. الاحصائيات النطاقية</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">6.5.2. الاحصائيات النطاقية حسب المجموعات</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">6.5.3. الاحصائيات النطاقية على منطقة معينة في صورتين</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-grids-and-fishnets">6.6. Coordinate grids and fishnets</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-coordinate-grids">6.6.1. Creating coordinate grids</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-fishnets">6.6.2. Creating fishnets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">6.6. شبكة الاحداثيات و شبكة خلايا المربعات</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">6.6.1. خلق شبكة أحداثيات</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">6.6.2. خلق شبكة خلايا المربعات</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-pixel-values">6.7. Extracting pixel values</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-values-to-points">6.7.1. Extracting values to points</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-pixel-values-along-a-transect">6.7.2. Extracting pixel values along a transect</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-region-reduction">6.7.3. Interactive region reduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">6.7. استخلاص قيم البكسلات من المرئيات</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">6.7.1. استخلاص بيانات المتجه النقطي</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">6.7.2. استخلاص بيانات البكسلات لمقطع معين</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">6.7.3. مخفض مساحة المناطق التفاعلي</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-available-image-count">6.8. Mapping available image count</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-free-composites">6.9. Cloud-free composites</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-mosaicking">6.10. Quality mosaicking</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-charts">6.11. Interactive charts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chart-overview">6.11.1. Chart Overview</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-table-charts">6.11.2. Data table charts</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#earth-engine-object-charts">6.11.3. Earth Engine object charts</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#chart-by-feature">6.11.3.1. Chart by feature</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#chart-by-property">6.11.3.2. Chart by property</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-histograms">6.11.3.3. Feature histograms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">6.8. رسم الاسم التمييزي للمرئيات</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">6.9. تركيب تجميع مرئيات خالي من الغيوم</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">6.10. دقة تنوع السطح في عملية الموزاييك</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">6.11. المخططات التفاعلية</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">6.11.1. نظره عامة على المخططات</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">6.11.2. مخططات جداول البيانات</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">6.11.3. كائن المخططات في Earth Engine</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">6.11.3.1. رسم مخططات اعتمادا على المميزات الخاصة للبيانات</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">6.11.3.2. رسم المخططات أعتمادا على الخصائص العامة للبيانات</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram">6.11.3.3. المخطط التكراري Histogram</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised-classification">6.12. Unsupervised classification</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-classification">6.13. Supervised classification</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-assessment">6.14. Accuracy assessment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-locally-trained-machine-learning-models">6.15. Using locally trained machine learning models</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-a-model-locally-using-scikit-learn">6.15.1. Train a model locally using scikit-learn</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-a-sklearn-classifier-object-to-a-list-of-strings">6.15.2. Convert a sklearn classifier object to a list of strings</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-sklearn-classifier-to-gee-classifier">6.15.3. Convert sklearn classifier to GEE classifier</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classify-image-using-gee-classifier">6.15.4. Classify image using GEE classifier</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-trees-to-the-cloud">6.15.5. Save trees to the cloud</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-trees-locally">6.15.6. Save trees locally</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">6.12. التصنيف الغير موجه للبيانات</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">6.13. التصنيف الموجه للبيانات</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">6.14. دقة التقييم للنتائج</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">6.15. استخدام نماذج التعلم الالي المدربة محليا</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scikit-learn">6.15.1. تدريب نموذج التعلم الالي بأستخدام scikit-learn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn">6.15.2. تحويل كائن نموذج تصنيف في sklearn الى قائمة من النصوص</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn-gee">6.15.3. تحويل نموذج مصنف sklearn الى مصنف GEE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gee">6.15.4. تصنيف المرئيات باستخدام مصنف GEE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id33">6.15.5. خزن البيانات على المساحة السحابية</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id34">6.15.6. خزن البيانات على الكومبيوتر الخاص</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sankey-diagrams">6.16. Sankey diagrams</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">6.17. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sankey">6.16. مخططات Sankey</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id35">6.17. الخلاصة</a></li>
 </ul>
   </nav></div>
 
