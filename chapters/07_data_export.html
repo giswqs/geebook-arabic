@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>7. Exporting Earth Engine Data &#8212; Geospatial Data Science with Earth Engine and Geemap</title>
+    <title>7. تصدير بيانات Earth Engine &#8212; Geospatial Data Science with Earth Engine and Geemap</title>
   
   
   
@@ -164,7 +164,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="04_local_data.html">4. أستخدام البيانات الجغرافية المكانية المحلية</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_data_viz.html">5. استعراض و تمثيل البيانات الجغرافية-المكانية</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_data_analysis.html">6. تحليل البيانات المكانية</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Exporting Earth Engine Data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. تصدير بيانات Earth Engine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_cartoee.html">8. Making Maps with Cartoee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09_timelapse.html">9. Creating Timelapse Animations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_webapps.html">10. Building Interactive Web Apps</a></li>
@@ -375,7 +375,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exporting Earth Engine Data</h1>
+    <h1>تصدير بيانات Earth Engine</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -385,33 +385,33 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">7.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-requirements">7.2. Technical requirements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-images">7.3. Exporting images</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-local-drive">7.3.1. To local drive</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-google-drive">7.3.2. To Google Drive</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-asset">7.3.3. To Asset</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-cloud-storage">7.3.4. To Cloud Storage</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-numpy-array">7.3.5. To NumPy array</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.1. مدخل</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.2. المتطلبات التقنية</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.3. تصدير المرئيات</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.3.1. تصدير البيانات الى المساحة الخزنية الخاصة في جهاز الكومبيوتر</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google">7.3.2. خزن المرئيات في المساحة الخزنيه على Google</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gee">7.3.3. خزن المرئيات الى البيانات الاصول في GEE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.3.4. خزن المرئيات الى المساحة السحابية الخاصة</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">7.3.5. خزن البيانات في مصفوفة NumPy</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-image-collections">7.4. Exporting image collections</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.4.1. To local drive</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.4.2. To Google Drive</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-assets">7.4.3. To Assets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.4. تصدير تجميع المرئيات</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">7.4.1. تصدير تجميع مرئيات الى المساحة الخزنية الخاصة في جهاز الكومبيوتر</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">7.4.2. تصدير تجميع مرئيات الى Google</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">7.4.3. تصدير تجميع مرئيات الى أصول البيانات في GEE</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-videos">7.5. Exporting videos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-image-thumbnails">7.6. Exporting image thumbnails</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-feature-collections">7.7. Exporting feature collections</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.7.1. To local drive</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.7.2. To Google Drive</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.7.3. To Asset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">7.5. تصدير الفيديو</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">7.6. تصدير الصور المصغرة</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">7.7. تصدير تجميع الخصائص</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">7.7.1. تصدير تجميع الخصائص الى المساحة الخزنية الخاصة في جهاز الكومبيوتر</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">7.7.2. تصدير تجميع الخصائص الى Google</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">7.7.3. تصدير تجميع البيانات الى أصول البيانات في GEE</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-maps">7.8. Exporting maps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-high-volume-endpoint">7.9. Using the high-volume endpoint</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">7.10. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">7.8. تصدير الخرائط</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-volume-endpoint">7.9. استخدام مفهوم  high-volume endpoint لاستعلام المتعدد</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">7.10. الخلاصة</a></li>
 </ul>
             </nav>
         </div>
@@ -423,47 +423,47 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="exporting-earth-engine-data">
-<h1><span class="section-number">7. </span>Exporting Earth Engine Data<a class="headerlink" href="#exporting-earth-engine-data" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="earth-engine">
+<h1><span class="section-number">7. </span>تصدير بيانات Earth Engine<a class="headerlink" href="#earth-engine" title="Permalink to this heading">#</a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#introduction" id="id6">Introduction</a></p></li>
-<li><p><a class="reference internal" href="#technical-requirements" id="id7">Technical requirements</a></p></li>
-<li><p><a class="reference internal" href="#exporting-images" id="id8">Exporting images</a></p>
+<li><p><a class="reference internal" href="#id1" id="id18">مدخل</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id19">المتطلبات التقنية</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id20">تصدير المرئيات</a></p>
 <ul>
-<li><p><a class="reference internal" href="#to-local-drive" id="id9">To local drive</a></p></li>
-<li><p><a class="reference internal" href="#to-google-drive" id="id10">To Google Drive</a></p></li>
-<li><p><a class="reference internal" href="#to-asset" id="id11">To Asset</a></p></li>
-<li><p><a class="reference internal" href="#to-cloud-storage" id="id12">To Cloud Storage</a></p></li>
-<li><p><a class="reference internal" href="#to-numpy-array" id="id13">To NumPy array</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id21">تصدير البيانات الى المساحة الخزنية الخاصة في جهاز الكومبيوتر</a></p></li>
+<li><p><a class="reference internal" href="#google" id="id22">خزن المرئيات في المساحة الخزنيه على Google</a></p></li>
+<li><p><a class="reference internal" href="#gee" id="id23">خزن المرئيات الى البيانات الاصول في GEE</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id24">خزن المرئيات الى المساحة السحابية الخاصة</a></p></li>
+<li><p><a class="reference internal" href="#numpy" id="id25">خزن البيانات في مصفوفة NumPy</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#exporting-image-collections" id="id14">Exporting image collections</a></p>
+<li><p><a class="reference internal" href="#id6" id="id26">تصدير تجميع المرئيات</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id1" id="id15">To local drive</a></p></li>
-<li><p><a class="reference internal" href="#id2" id="id16">To Google Drive</a></p></li>
-<li><p><a class="reference internal" href="#to-assets" id="id17">To Assets</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id27">تصدير تجميع مرئيات الى المساحة الخزنية الخاصة في جهاز الكومبيوتر</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id28">تصدير تجميع مرئيات الى Google</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id29">تصدير تجميع مرئيات الى أصول البيانات في GEE</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#exporting-videos" id="id18">Exporting videos</a></p></li>
-<li><p><a class="reference internal" href="#exporting-image-thumbnails" id="id19">Exporting image thumbnails</a></p></li>
-<li><p><a class="reference internal" href="#exporting-feature-collections" id="id20">Exporting feature collections</a></p>
+<li><p><a class="reference internal" href="#id10" id="id30">تصدير الفيديو</a></p></li>
+<li><p><a class="reference internal" href="#id11" id="id31">تصدير الصور المصغرة</a></p></li>
+<li><p><a class="reference internal" href="#id12" id="id32">تصدير تجميع الخصائص</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id3" id="id21">To local drive</a></p></li>
-<li><p><a class="reference internal" href="#id4" id="id22">To Google Drive</a></p></li>
-<li><p><a class="reference internal" href="#id5" id="id23">To Asset</a></p></li>
+<li><p><a class="reference internal" href="#id13" id="id33">تصدير تجميع الخصائص الى المساحة الخزنية الخاصة في جهاز الكومبيوتر</a></p></li>
+<li><p><a class="reference internal" href="#id14" id="id34">تصدير تجميع الخصائص الى Google</a></p></li>
+<li><p><a class="reference internal" href="#id15" id="id35">تصدير تجميع البيانات الى أصول البيانات في GEE</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#exporting-maps" id="id24">Exporting maps</a></p></li>
-<li><p><a class="reference internal" href="#using-the-high-volume-endpoint" id="id25">Using the high-volume endpoint</a></p></li>
-<li><p><a class="reference internal" href="#summary" id="id26">Summary</a></p></li>
+<li><p><a class="reference internal" href="#id16" id="id36">تصدير الخرائط</a></p></li>
+<li><p><a class="reference internal" href="#high-volume-endpoint" id="id37">استخدام مفهوم  high-volume endpoint لاستعلام المتعدد</a></p></li>
+<li><p><a class="reference internal" href="#id17" id="id38">الخلاصة</a></p></li>
 </ul>
 </nav>
-<section id="introduction">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink"><span class="section-number">7.1. </span>Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h2><a class="toc-backref" href="#id18" role="doc-backlink"><span class="section-number">7.1. </span>مدخل</a><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="technical-requirements">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink"><span class="section-number">7.2. </span>Technical requirements</a><a class="headerlink" href="#technical-requirements" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h2><a class="toc-backref" href="#id19" role="doc-backlink"><span class="section-number">7.2. </span>المتطلبات التقنية</a><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>gee<span class="w"> </span>python
 conda<span class="w"> </span>activate<span class="w"> </span>gee
 conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>mamba
@@ -496,8 +496,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="exporting-images">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">7.3. </span>Exporting images</a><a class="headerlink" href="#exporting-images" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h2><a class="toc-backref" href="#id20" role="doc-backlink"><span class="section-number">7.3. </span>تصدير المرئيات</a><a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -526,8 +526,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </div>
-<section id="to-local-drive">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink"><span class="section-number">7.3.1. </span>To local drive</a><a class="headerlink" href="#to-local-drive" title="Permalink to this heading">#</a></h3>
+<section id="id4">
+<h3><a class="toc-backref" href="#id21" role="doc-backlink"><span class="section-number">7.3.1. </span>تصدير البيانات الى المساحة الخزنية الخاصة في جهاز الكومبيوتر</a><a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geemap</span><span class="o">.</span><span class="n">ee_export_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;landsat.tif&quot;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">)</span>
@@ -592,8 +592,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="to-google-drive">
-<h3><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">7.3.2. </span>To Google Drive</a><a class="headerlink" href="#to-google-drive" title="Permalink to this heading">#</a></h3>
+<section id="google">
+<h3><a class="toc-backref" href="#id22" role="doc-backlink"><span class="section-number">7.3.2. </span>خزن المرئيات في المساحة الخزنيه على Google</a><a class="headerlink" href="#google" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geemap</span><span class="o">.</span><span class="n">ee_export_image_to_drive</span><span class="p">(</span>
@@ -604,8 +604,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="to-asset">
-<h3><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">7.3.3. </span>To Asset</a><a class="headerlink" href="#to-asset" title="Permalink to this heading">#</a></h3>
+<section id="gee">
+<h3><a class="toc-backref" href="#id23" role="doc-backlink"><span class="section-number">7.3.3. </span>خزن المرئيات الى البيانات الاصول في GEE</a><a class="headerlink" href="#gee" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">assetId</span> <span class="o">=</span> <span class="s1">&#39;landsat_sfo&#39;</span>
@@ -617,8 +617,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="to-cloud-storage">
-<h3><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">7.3.4. </span>To Cloud Storage</a><a class="headerlink" href="#to-cloud-storage" title="Permalink to this heading">#</a></h3>
+<section id="id5">
+<h3><a class="toc-backref" href="#id24" role="doc-backlink"><span class="section-number">7.3.4. </span>خزن المرئيات الى المساحة السحابية الخاصة</a><a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bucket</span> <span class="o">=</span> <span class="s1">&#39;your-bucket&#39;</span>
@@ -630,8 +630,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="to-numpy-array">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink"><span class="section-number">7.3.5. </span>To NumPy array</a><a class="headerlink" href="#to-numpy-array" title="Permalink to this heading">#</a></h3>
+<section id="numpy">
+<h3><a class="toc-backref" href="#id25" role="doc-backlink"><span class="section-number">7.3.5. </span>خزن البيانات في مصفوفة NumPy</a><a class="headerlink" href="#numpy" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">region</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">Geometry</span><span class="o">.</span><span class="n">BBox</span><span class="p">(</span><span class="o">-</span><span class="mf">122.5003</span><span class="p">,</span> <span class="mf">37.7233</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.3410</span><span class="p">,</span> <span class="mf">37.8026</span><span class="p">)</span>
@@ -660,8 +660,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 </section>
-<section id="exporting-image-collections">
-<h2><a class="toc-backref" href="#id14" role="doc-backlink"><span class="section-number">7.4. </span>Exporting image collections</a><a class="headerlink" href="#exporting-image-collections" title="Permalink to this heading">#</a></h2>
+<section id="id6">
+<h2><a class="toc-backref" href="#id26" role="doc-backlink"><span class="section-number">7.4. </span>تصدير تجميع المرئيات</a><a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">point</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">Geometry</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="o">-</span><span class="mf">99.2222</span><span class="p">,</span> <span class="mf">46.7816</span><span class="p">)</span>
@@ -682,8 +682,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </div>
-<section id="id1">
-<h3><a class="toc-backref" href="#id15" role="doc-backlink"><span class="section-number">7.4.1. </span>To local drive</a><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<section id="id7">
+<h3><a class="toc-backref" href="#id27" role="doc-backlink"><span class="section-number">7.4.1. </span>تصدير تجميع مرئيات الى المساحة الخزنية الخاصة في جهاز الكومبيوتر</a><a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">out_dir</span> <span class="o">=</span> <span class="s1">&#39;Downloads&#39;</span>
@@ -693,8 +693,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="id2">
-<h3><a class="toc-backref" href="#id16" role="doc-backlink"><span class="section-number">7.4.2. </span>To Google Drive</a><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<section id="id8">
+<h3><a class="toc-backref" href="#id28" role="doc-backlink"><span class="section-number">7.4.2. </span>تصدير تجميع مرئيات الى Google</a><a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geemap</span><span class="o">.</span><span class="n">ee_export_image_collection_to_drive</span><span class="p">(</span><span class="n">collection</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="s1">&#39;export&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
@@ -703,8 +703,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="to-assets">
-<h3><a class="toc-backref" href="#id17" role="doc-backlink"><span class="section-number">7.4.3. </span>To Assets</a><a class="headerlink" href="#to-assets" title="Permalink to this heading">#</a></h3>
+<section id="id9">
+<h3><a class="toc-backref" href="#id29" role="doc-backlink"><span class="section-number">7.4.3. </span>تصدير تجميع مرئيات الى أصول البيانات في GEE</a><a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geemap</span><span class="o">.</span><span class="n">ee_export_image_collection_to_asset</span><span class="p">(</span><span class="n">collection</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
@@ -714,8 +714,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 </section>
-<section id="exporting-videos">
-<h2><a class="toc-backref" href="#id18" role="doc-backlink"><span class="section-number">7.5. </span>Exporting videos</a><a class="headerlink" href="#exporting-videos" title="Permalink to this heading">#</a></h2>
+<section id="id10">
+<h2><a class="toc-backref" href="#id30" role="doc-backlink"><span class="section-number">7.5. </span>تصدير الفيديو</a><a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">collection</span> <span class="o">=</span> <span class="p">(</span>
@@ -742,8 +742,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="exporting-image-thumbnails">
-<h2><a class="toc-backref" href="#id19" role="doc-backlink"><span class="section-number">7.6. </span>Exporting image thumbnails</a><a class="headerlink" href="#exporting-image-thumbnails" title="Permalink to this heading">#</a></h2>
+<section id="id11">
+<h2><a class="toc-backref" href="#id31" role="doc-backlink"><span class="section-number">7.6. </span>تصدير الصور المصغرة</a><a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">roi</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">Geometry</span><span class="o">.</span><span class="n">Point</span><span class="p">([</span><span class="o">-</span><span class="mf">122.44</span><span class="p">,</span> <span class="mf">37.75</span><span class="p">])</span>
@@ -808,8 +808,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="exporting-feature-collections">
-<h2><a class="toc-backref" href="#id20" role="doc-backlink"><span class="section-number">7.7. </span>Exporting feature collections</a><a class="headerlink" href="#exporting-feature-collections" title="Permalink to this heading">#</a></h2>
+<section id="id12">
+<h2><a class="toc-backref" href="#id32" role="doc-backlink"><span class="section-number">7.7. </span>تصدير تجميع الخصائص</a><a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -824,8 +824,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </div>
-<section id="id3">
-<h3><a class="toc-backref" href="#id21" role="doc-backlink"><span class="section-number">7.7.1. </span>To local drive</a><a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<section id="id13">
+<h3><a class="toc-backref" href="#id33" role="doc-backlink"><span class="section-number">7.7.1. </span>تصدير تجميع الخصائص الى المساحة الخزنية الخاصة في جهاز الكومبيوتر</a><a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geemap</span><span class="o">.</span><span class="n">ee_to_shp</span><span class="p">(</span><span class="n">fc</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;europe.shp&#39;</span><span class="p">,</span> <span class="n">selectors</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
@@ -871,8 +871,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="id4">
-<h3><a class="toc-backref" href="#id22" role="doc-backlink"><span class="section-number">7.7.2. </span>To Google Drive</a><a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<section id="id14">
+<h3><a class="toc-backref" href="#id34" role="doc-backlink"><span class="section-number">7.7.2. </span>تصدير تجميع الخصائص الى Google</a><a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geemap</span><span class="o">.</span><span class="n">ee_export_vector_to_drive</span><span class="p">(</span>
@@ -883,8 +883,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="id5">
-<h3><a class="toc-backref" href="#id23" role="doc-backlink"><span class="section-number">7.7.3. </span>To Asset</a><a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<section id="id15">
+<h3><a class="toc-backref" href="#id35" role="doc-backlink"><span class="section-number">7.7.3. </span>تصدير تجميع البيانات الى أصول البيانات في GEE</a><a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geemap</span><span class="o">.</span><span class="n">ee_export_vector_to_asset</span><span class="p">(</span><span class="n">fc</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Exporting Europe&#39;</span><span class="p">,</span> <span class="n">assetId</span><span class="o">=</span><span class="s1">&#39;europe&#39;</span><span class="p">)</span>
@@ -894,8 +894,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 </section>
-<section id="exporting-maps">
-<h2><a class="toc-backref" href="#id24" role="doc-backlink"><span class="section-number">7.8. </span>Exporting maps</a><a class="headerlink" href="#exporting-maps" title="Permalink to this heading">#</a></h2>
+<section id="id16">
+<h2><a class="toc-backref" href="#id36" role="doc-backlink"><span class="section-number">7.8. </span>تصدير الخرائط</a><a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -921,8 +921,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="using-the-high-volume-endpoint">
-<h2><a class="toc-backref" href="#id25" role="doc-backlink"><span class="section-number">7.9. </span>Using the high-volume endpoint</a><a class="headerlink" href="#using-the-high-volume-endpoint" title="Permalink to this heading">#</a></h2>
+<section id="high-volume-endpoint">
+<h2><a class="toc-backref" href="#id37" role="doc-backlink"><span class="section-number">7.9. </span>استخدام مفهوم  high-volume endpoint لاستعلام المتعدد</a><a class="headerlink" href="#high-volume-endpoint" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ee</span>
@@ -1099,8 +1099,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </section>
-<section id="summary">
-<h2><a class="toc-backref" href="#id26" role="doc-backlink"><span class="section-number">7.10. </span>Summary</a><a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<section id="id17">
+<h2><a class="toc-backref" href="#id38" role="doc-backlink"><span class="section-number">7.10. </span>الخلاصة</a><a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -1171,33 +1171,33 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">7.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-requirements">7.2. Technical requirements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-images">7.3. Exporting images</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-local-drive">7.3.1. To local drive</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-google-drive">7.3.2. To Google Drive</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-asset">7.3.3. To Asset</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-cloud-storage">7.3.4. To Cloud Storage</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-numpy-array">7.3.5. To NumPy array</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.1. مدخل</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.2. المتطلبات التقنية</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.3. تصدير المرئيات</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.3.1. تصدير البيانات الى المساحة الخزنية الخاصة في جهاز الكومبيوتر</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google">7.3.2. خزن المرئيات في المساحة الخزنيه على Google</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gee">7.3.3. خزن المرئيات الى البيانات الاصول في GEE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.3.4. خزن المرئيات الى المساحة السحابية الخاصة</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">7.3.5. خزن البيانات في مصفوفة NumPy</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-image-collections">7.4. Exporting image collections</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.4.1. To local drive</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.4.2. To Google Drive</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-assets">7.4.3. To Assets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.4. تصدير تجميع المرئيات</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">7.4.1. تصدير تجميع مرئيات الى المساحة الخزنية الخاصة في جهاز الكومبيوتر</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">7.4.2. تصدير تجميع مرئيات الى Google</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">7.4.3. تصدير تجميع مرئيات الى أصول البيانات في GEE</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-videos">7.5. Exporting videos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-image-thumbnails">7.6. Exporting image thumbnails</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-feature-collections">7.7. Exporting feature collections</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.7.1. To local drive</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.7.2. To Google Drive</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.7.3. To Asset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">7.5. تصدير الفيديو</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">7.6. تصدير الصور المصغرة</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">7.7. تصدير تجميع الخصائص</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">7.7.1. تصدير تجميع الخصائص الى المساحة الخزنية الخاصة في جهاز الكومبيوتر</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">7.7.2. تصدير تجميع الخصائص الى Google</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">7.7.3. تصدير تجميع البيانات الى أصول البيانات في GEE</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-maps">7.8. Exporting maps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-high-volume-endpoint">7.9. Using the high-volume endpoint</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">7.10. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">7.8. تصدير الخرائط</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-volume-endpoint">7.9. استخدام مفهوم  high-volume endpoint لاستعلام المتعدد</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">7.10. الخلاصة</a></li>
 </ul>
   </nav></div>
 
