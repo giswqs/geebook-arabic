@@ -11,16 +11,16 @@ kernelspec:
   name: python3
 ---
 
-# Earth Engine Applications
+# تطبيقات Earth Engine
 
 ```{contents}
 :local:
 :depth: 2
 ```
 
-## Introduction
+## مدخل
 
-## Technical requirements
+## المتطلبات التقنية
 
 ```bash
 conda create -n gee python
@@ -46,9 +46,9 @@ import geemap
 geemap.ee_initialize()
 ```
 
-## Analyzing surface water dynamics
+## تحليل ديناميكة المياة السطحية
 
-### Surface water occurrence
+### فترات حدوث المياة السحطية
 
 ```{code-cell} ipython3
 dataset = ee.Image('JRC/GSW1_4/GlobalSurfaceWater')
@@ -188,7 +188,7 @@ Map = geemap.Map(center=[29.3055, 68.9062], zoom=6)
 Map
 ```
 
-### Search datasets
+### البحث عن مجموعة بيانات معينة
 
 ```{code-cell} ipython3
 country_name = 'Pakistan'
@@ -198,7 +198,7 @@ flood_start_date = '2022-08-01'
 flood_end_date = '2022-09-30'
 ```
 
-### Visualize datasets
+### استعراض و تمثيل مجموعة البيانات
 
 ```{code-cell} ipython3
 country = ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017').filter(
@@ -210,7 +210,7 @@ Map.centerObject(country)
 Map
 ```
 
-### Create Landsat composites
+### خلق صوره تجميعة في لاندسات
 
 ```{code-cell} ipython3
 landsat_col_2021 = (
@@ -239,7 +239,7 @@ Map.centerObject(country)
 Map
 ```
 
-### Compare Landsat composites side by side
+### مقارنة الصور التجميعية في لاند سات جنبا الى جنب
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -259,7 +259,7 @@ Map.addLayer(country.style(**style), {}, country_name)
 Map
 ```
 
-### Compute Normalized Difference Water Index (NDWI)
+### احتساب مؤشر فرق المياه (NDWI)
 
 ```{code-cell} ipython3
 ndwi_2021 = landsat_2021.normalizedDifference(['B3', 'B5']).rename('NDWI')
@@ -279,7 +279,7 @@ Map.addLayer(country.style(**style), {}, country_name)
 Map
 ```
 
-### Extract Landsat water extent
+### استخراج نطاق المياة في لاندسات
 
 ```{code-cell} ipython3
 threshold = 0.1
@@ -308,7 +308,7 @@ Map.addLayer(country.style(**style), {}, country_name)
 Map
 ```
 
-### Extract Landsat flood extent
+### استخراج نطاق الفيضان في لاندسات
 
 ```{code-cell} ipython3
 flood_extent = water_2022.unmask().subtract(water_2021.unmask()).gt(0).selfMask()
@@ -337,7 +337,7 @@ Map.addLayer(country.style(**style), {}, country_name)
 Map
 ```
 
-### Calculate Landsat flood area
+### احتساب مساحة الفيضان بأستخدام مرئيات لاندسات
 
 ```{code-cell} ipython3
 area_2021 = geemap.zonal_stats(
@@ -362,7 +362,7 @@ geemap.ee_to_df(flood_area)
 
 +++
 
-### Create Sentinel-1 SAR composites
+### خلق صوره تجميعية باستخدام  Sentinel-1 SAR
 
 ```{code-cell} ipython3
 s1_col_2021 = (
@@ -401,7 +401,7 @@ Map.centerObject(country)
 Map
 ```
 
-### Apply speckle filtering
+### تطبيق فلتر  speckle
 
 ```{code-cell} ipython3
 col_2021 = s1_col_2021.map(lambda img: img.focal_median(100, 'circle', 'meters'))
@@ -417,7 +417,7 @@ Map.centerObject(country)
 Map
 ```
 
-### Compare Sentinel-1 SAR composites side by side
+### مقارنه صور Sentinel-1 SAR التجميعية جنبا الى جنب 
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -433,7 +433,7 @@ Map.addLayer(country.style(**style), {}, country_name)
 Map
 ```
 
-### Extract SAR water extent
+### استخراج نطاق المياة في SAR   
 
 ```{code-cell} ipython3
 threshold = -18
@@ -462,7 +462,7 @@ Map.addLayer(country.style(**style), {}, country_name)
 Map
 ```
 
-### Extract SAR flood extent
+### استخراج نطاق الفيضان في SAR 
 
 ```{code-cell} ipython3
 flood_extent = water_2022.unmask().subtract(water_2021.unmask()).gt(0).selfMask()
@@ -491,7 +491,7 @@ Map.addLayer(country.style(**style), {}, country_name)
 Map
 ```
 
-### Calculate SAR flood area
+### احتساب مساحة الفيضان في SAR 
 
 ```{code-cell} ipython3
 area_2021 = geemap.zonal_stats(
@@ -514,9 +514,9 @@ flood_area = geemap.zonal_stats(
 geemap.ee_to_df(flood_area)
 ```
 
-## Forest cover change analysis
+## تحليل التغيرات في الغابات
 
-### Forest cover mapping
+### رسم الغطاء الغاباتي
 
 ```{code-cell} ipython3
 dataset = ee.Image('UMD/hansen/global_forest_change_2021_v1_9')
@@ -552,7 +552,7 @@ treeVisParam = {'palette': ['green']}
 Map.addLayer(treecover_bin, treeVisParam, 'Tree cover bin')
 ```
 
-### Forest loss and gain mapping
+### رسم التزايد و التناقص في الغطاء الغاباتي
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -572,7 +572,7 @@ Map.addLayer(treegain, {'palette': 'yellow'}, 'Tree gain')
 Map
 ```
 
-### Zonal statistics by country
+### احصائيات مناطقية بأستخدام اسماء البلدان
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -638,9 +638,9 @@ geemap.bar_chart(
 )
 ```
 
-## Global land cover mapping
+## رسم الغطاء الارضي على المدى العالمي
 
-### Dynamic World
+### العالم الديناميكي
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -721,7 +721,7 @@ Map.centerObject(region)
 Map
 ```
 
-### ESA WorldCover
+### الغطاء العالمي بأستخدام  ESA
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -769,7 +769,7 @@ Map.add_legend(
 Map
 ```
 
-### Esri global land cover
+### الغطاء الارضي باستخدام Esri global 
 
 ```{code-cell} ipython3
 def esri_annual_land_cover(year):
@@ -834,5 +834,5 @@ Map.add_legend(
 Map
 ```
 
-## Concluding remarks
+## الخاتمة
 
