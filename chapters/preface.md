@@ -61,7 +61,7 @@ kernelspec:
 ## أتفاثيات الاستخدام
 
 هناك عدد من نصوص الاتفاثيات مستخدمه في هذا الكتاب.
-There are a number of text conventions used throughout this book.
+
 
 `الكود في النص`: يشير إلى كلمات التعليمات البرمجية في النص، وأسماء المجلدات، وأسماء الملفات، وامتدادات الملفات، وأسماء المسارات، وعناوين URL، وما إلى ذلك. فيما يلي مثال: قم بتعيين `EARTHENGINE_TOKEN` كمتغير بيئة نظام لمفتاح Earth Engine API الخاص بك.
 
@@ -90,11 +90,12 @@ m
 
 يستند هذا الكتاب إلى العمل المدعوم جزئيًا من قبل الإدارة الوطنية للملاحة الجوية والفضاء (NASA) بموجب المنحة رقم 1. 80NSSC22K1742  تم اصدارها على [Open Source Tools, Frameworks, and Libraries 2020 Program](https://bit.ly/3RVBRcQ).
 
+بعض النصوص و الكودات في هذا الكتاب تم تبنيا من موقع [Earth Engine User Guides](https://developers.google.com/earth-engine/guides). أن فريق EE يستحق التقدير و الثناء على هذا العمل الاستثنائي و المتميز في تطوير هذه المنصة. و لابد من تقديم الشكر الخاص الى Khalil Misbah لتصميمه اللوغو الخاص بهذه المكتبه  [geemap logo](https://github.com/gee-community/geemap/tree/master/docs/assets).
 
-Some of the text and code examples in this book are adapted from the [Earth Engine User Guides](https://developers.google.com/earth-engine/guides). The Earth Engine team deserves credit for their excellent work on developing the Earth Engine platform and comprehensive user guides. I would like to give a special thank you to Khalil Misbah for designing the [geemap logo](https://github.com/gee-community/geemap/tree/master/docs/assets).
 
-I would like to express my sincere gratitude to the reviewers who provided valuable feedback on this book, including Ellen Brock, Jake Gearon, and Emma Izquierdo-Verdiguier. Your insights and suggestions helped me to improve the quality of my work and make it more accessible to readers. Your time and effort are greatly appreciated.
 
-I also want to acknowledge the efforts of my editor and publishing team, who worked tirelessly to bring this book to fruition. Your support and guidance throughout the process were invaluable, and I could not have done it without you.
+أود أن أعرب عن خالص امتناني للمقيمين الذين قدموا تقييمات و ملاحظات قيمة على هذا الكتاب، بما في ذلك Ellen Brock,  Jake Gearon, و Emma Izquierdo-Verdiguier. ساعدتني أفكاركم واقتراحاتكم في تحسين جودة عملي وجعله في متناول القراء. وقتكم وجهدكم موضع تقدير كبير.
 
-Finally, I would like to thank my family and friends for their unwavering support and encouragement. Your love and belief in me kept me going during the challenging times, and I am forever grateful.
+و أود أيضًا أن أشيد بجهود المحرر وفريق النشر، الذين عملوا بلا كلل لإخراج هذا الكتاب إلى النور. لقد كان دعمكم وتوجيهاتكم طوال الفتره لا تقدر بثمن، ولم أكن لأتمكن من القيام بذلك بدونكم.
+
+وفي النهاية، أود أن أشكر عائلتي وأصدقائي على دعمهم وتشجيعهم الذي لا يتزعزع. حبك وإيمانك بي جعلني أستمر خلال الأوقات الصعبة، وأنا ممتن لكم إلى الأبد.
