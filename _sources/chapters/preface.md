@@ -11,17 +11,18 @@ kernelspec:
   name: python3
 ---
 
-# Preface
+# مقدمة
 
-## Introduction
+## مدخل
 
-[Google Earth Engine](https://earthengine.google.com) (GEE) is a cloud computing platform with a [multi-petabyte catalog](https://developers.google.com/earth-engine/datasets) of satellite imagery and geospatial datasets. During the past few years, GEE has become very popular in the geospatial community and it has empowered numerous environmental applications at local, regional, and global scales. GEE provides both JavaScript and Python APIs for making computational requests to the Earth Engine servers. Compared with the comprehensive [documentation](https://developers.google.com/earth-engine) and interactive IDE (i.e., [GEE JavaScript Code Editor](https://code.earthengine.google.com)) of the GEE JavaScript API, the GEE Python API has relatively little documentation and limited functionality for visualizing results interactively. The **geemap** Python package was created to fill this gap. It is built upon a number of open-source Python libraries, such as the [earthengine-api](https://pypi.org/project/earthengine-api), [folium](https://python-visualization.github.io/folium/), [ipyleaflet](https://github.com/jupyter-widgets/ipyleaflet), and [ipywidgets](https://github.com/jupyter-widgets/ipywidgets). Geemap enables users to analyze and visualize Earth Engine datasets interactively within a Jupyter environment with minimal coding.
+ان كوكل ايرت [Google Earth Engine](https://earthengine.google.com) (GEE) هو عباره عن منصة سحابية تحتوي [multi-petabyte catalog](https://developers.google.com/earth-engine/datasets) من صور الاقمار الصناعية و مجموعات البيانات المكانية. خلال السنوات السابقة اصبح GEE واسع الانتشار في الاستخدامات الجغرافية و أستخدم في دعم الكثير من التطبيقات البيئية على المدى المحلي, الاقليمي, و العالمي. و ان GEE يزود المطورين من خلال منصتين من العمل هما JavaScript و Python API و التي تقوم بتنفيذ استعلامات مباشره على خدمات EE. و بالمقارنه مع المصادر المتوفرة [documentation](https://developers.google.com/earth-engine) و البيئة التطويريه المتكاملة التفاعلية  ([GEE JavaScript Code Editor](https://code.earthengine.google.com))  لـ GEE JavaScript API, فأن Python API لها القليل من المصادر و فيها محدودية في عملية تمثيل و استعراض البيانات. ان **geemap** عبارة عن حزمة بايثون تم انشائها من اجل معالجة المشاكل انفة الذكر. لقد تم بنائها على عدد من المكتبات مفتوحة المصدر مثل [earthengine-api](https://pypi.org/project/earthengine-api), [folium](https://python-visualization.github.io/folium/), [ipyleaflet](https://github.com/jupyter-widgets/ipyleaflet), و [ipywidgets](https://github.com/jupyter-widgets/ipywidgets). أن geemap تمكن المستخدمين من تحليل و استعراض بيانات Earth Engine بشكل تفاعلي في بيئة Jupyter مع القليل من الكود.
 
-This book takes a hands-on approach to help you get started with the GEE Python API and geemap. You'll start with the fundamentals of geemap by creating and customizing interactive maps. You'll then learn how to load cloud-based Earth Engine datasets and local geospatial datasets onto the interactive maps. As you advance through the chapters, you'll walk through practical examples of using geemap to visualize and analyze Earth Engine datasets, and will learn about exporting data from Earth Engine. You will also learn about more advanced topics such as building and deploying interactive web apps with Earth Engine and geemap.
+ان هذا الكتاب يساعدك البدء خطوه خطوه في GEE و geemap , و سوت تتعلم الاساسيات في استخدام geemap لخلق و تخصيص الخرائط التفاعلية. كذلك سوف تتعلم تحميل مجاميع البيانات المتاحة في Earth Engine و كذلك مجاميع البيانات المحلية على الخرائط التفاعلية.و من المهم جدا في هذا الكتاب انك سوف تتعلم من خلال الامثلة التطبيقية في استخدام geemap و استعراض و تمثيل البيانات من EE و كذك تصديرها. و سوف تتعلم أيضا مواضيع متقدمة مثل بناء و نشر التطبيقات الويب التفاعلية مع EE و geemap.
 
-## Who this book is for
 
-This book is for students, researchers, and data scientists who want to utilize the Python ecosystem of diverse libraries and tools to explore Google Earth Engine. Whether you are a new user looking to harness the power of Earth Engine or an experienced user already familiar with the Earth Engine JavaScript API, this book is for you!
+## من يمكنه الاستفاده من هذا الكتاب
+
+هذا الكتاب للطلبة و الباحثين و العاملين في مجال علوم البيانات و جميع الراغبين في توظيف Python و مكتباتها و ادواتها المتنوعة للعمل على البيانات من Google Earth Engine. سواء كنت مستخدم جديد ترغب في تسخير امكانيات EE او مستخدم تملك الخبره في Earth Engine JavaScript API فأن هذا الكتاب يخصك.
 
 ## What this book covers
 
