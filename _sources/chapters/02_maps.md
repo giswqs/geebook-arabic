@@ -11,31 +11,26 @@ kernelspec:
   name: python3
 ---
 
-# خلق الخارطة التفاعليه Interactive Map
+(chapter02)=
+
+# Creating Interactive Maps
 
 ```{contents}
 :local:
 :depth: 2
 ```
 
-## 1. مدخل إلى الخارطة التفاعلية:
-بعد تمثيل البيانات المكانية  واحدة من اهم مميزات البرامج و التطبيقات الكفؤة, و يعرف تمثيل البيانات على أنه ترجمة المعلومات الرقمية و النصية إلى أشكال تمكن العقل البشري من فهما بسهولة و يسر و لاستخراج الأفكار و النماذج المشتركة. هناك الكثير من الصيغ التي يكمن من خلالها تمثيل البيانات منا المخططات, الرسوم البيانية, و الخرائط. و هناك الكثير من المميزات التي يجب يتمتع بها التمثيل للبيانات في الصيغة المطلوبة. حيث يجب أن تكون الصيغة التي مُثلت بها البيانات بسيطة و سهلة خاليه من التعقيد, و أن تطابق نوع البيانات, و أن تكون لها القابلية توضيح النقاط الجوهرية التي يهدف إليها المصمم. و على الرغم من وجود الكثير من البرامج و التطبيقات التي تساعد على تمثيل البيانات المكانية إلا أنها تعد مهمه ليست بالسهلة إلى حد ما, لما تحتويه من عناصر رقمية يجب إسقاطها طبقة التمثيل بدقة و التي تمثل موقع تلك المعلومات على سطح الأرض. 
+## Introduction
 
-تعتبر الخرائط من أهم الصيغ التي يحتاجها العاملون في مجال نظم المعلومات الجغرافية و الاستشعار عن بعد و كذلك بقية الحقول المعرفية لتمثيل البيانات و تحديد موقع الظواهر في موقعها الحقيقي. تمثل الخرائط طريقة سهله لتمثيل البيانات الرقمية التي تحمل إحداثيات مطابقة للواقع المكاني و تمكن من تصديرها على شكل صور, PDF, KML, أو غيرها من الصيغ, و يسمى هذا النوع من الخرائط بالخرائط الثابتة (static maps). على الرغم من ذلك هناك بعض محددات في إصدار خرائط  باستخدام الخرائط الثابتة بشكل يتلائم مع الغرض أحيانا. من هذه المحددات منها عدم إمكانية تحديد مساحات كبيره, و لا يمكن إظهار ديناميكية التفاعل مع صيغة البيانات مثل تتبع التغيرات عبر الزمن أو الارتباطات. و المهم أنها لا تستطيع إظهار مستويات مختلفة من البيانات. و من الخلال الخرائط الثابتة لا يستطيع المستخدم من تخصيص أو فلترة البيانات حسب احتياجه و بشكل ديناميكي. و لا يمكن خلالها التركيز على القيم المتطرفة أو الشذوذ أو تحديد القيم الغير واضحة.
+There are numerous Python packages available for interactive mapping and geospatial analysis {cite}`Wu2021-iv`. However, each package has its own unique API for creating maps and visualizing data, which can be difficult for beginners to navigate. Geemap simplifies the process by providing a unified API interface for creating interactive maps and visualizing data, allowing users to switch between plotting backends with only one line of code.
 
-و لأجل معالجة جميع هذه المشاكل تم طرح الخارطة التفاعلية و كذلك ربطها بقاعدة ضخمة من البيانات و التي تكون جاهزة للمستخدم مما يتيح بناء تطبيق و استخدامها و اكتشاف حقول جديدة من خلال أتاحتها إلى جميع الباحثين حول العالم. 
-الخارطة التفاعلية هي تطبيق يسمح باستعراض البيانات على متصفح الويب. تمكن الخارطة التفاعلية المستخدم من تمثيل البيانات على شكل طبقات يستطيع المستخدم تخصيصها و إدارتها بشكل مرن. من خلال الخارطة التفاعلية من زيادة و تصغير حجم مساحة التمثيل مما يتيح له الكشف عن العناصر المشتركة و الأنماط و قياس تأثير الظواهر في مديات مختلفة. أضافة الى ذلك أمكانية أضافة تطبيقات مباشرة على البيانات  من خلال بعض النوافذ و التلميحات و التي تعتبر أدوات إضافية يتحكم بها المستخدم.
+Throughout this chapter, we will explore how to create interactive maps using one of five different plotting backends. We will also provide practical examples of how to add basemaps to an interactive map. With hundreds of basemaps available, they can be easily added to an interactive map using only a single line of code.
 
-هناك الكثير من المميزات التي تجعل من الخارطة التفاعلية أكثر استخداما من غيرها منها:
+(chapter02:requirements)=
 
-•	المشاركة مع المستخدمين: عند العمل كفريق في مشروع ما فأن الخارطة التفاعلية تتيح للمستخدم أمكانية المشاركة مع الفريق و بالتالي تكامل إخراج المشروع و البيانات من قبل أكثر من وجه نظر.
-•	تغيير حجم الخارطة مساحة أنتشار البيانات في مستويات متعددة على الشاشة.
-•	تصوير البيانات على شكل طبقات قابلة للتعديل على الشاشة و التي تمثل أحيانا البيانات لفترات زمنية مختلفة مما يتيح تتبع التغيرات عبر الزمن.
+## Technical requirements
 
-
-
-## 2. المتطلبات التقنية
-كما اسلفنا في الفصل الأول فان العمل على الخارطة التفاعلية يحتاج إلى بعض من المكتب التي يجب ان يتم استيرادها للعمل على البيانات المكانية. و تتطلب هذه المكتبات  بعض أدارة لبيئة conda و تثبيت بعض الحزم الضرورية و طلب تصريح العمل على بيانات Google Earth Engine. و يأتي ملخص الخطوات التقنية التي تسبق العمل على الخارطة التفاعلية بما يلي:
+To follow along with this chapter, you will need to have geemap and several optional dependencies installed. If you have already followed {numref}`ch01:install` - _Installing geemap_, then you should already have a conda environment with all the necessary packages installed. Otherwise, you can create a new conda environment and install [pygis](https://pygis.gishub.org) with the following commands, which will automatically install geemap and all the required dependencies:
 
 ```bash
 conda create -n gee python
@@ -44,149 +39,290 @@ conda install -c conda-forge mamba
 mamba install -c conda-forge pygis
 ```
 
+Next, launch JupyterLab by typing the following commands in your terminal or Anaconda prompt:
+
 ```bash
 jupyter lab
 ```
 
+Alternatively, you can use geemap in a Google Colab cloud environment without installing anything on your local computer. Click [02_maps.ipynb](https://colab.research.google.com/github/giswqs/geebook/blob/master/chapters/02_maps.ipynb) to launch the notebook in Google Colab.
+
+Once in Colab, you can uncomment the following line and run the cell to install pygis, which includes geemap and all the necessary dependencies:
+
 ```{code-cell} ipython3
 # %pip install pygis
 ```
+
+The installation process may take 2-3 minutes. Once pygis has been installed successfully, click the **RESTART RUNTIME** button that appears at the end of the installation log or go to the **Runtime** menu and select **Restart runtime**. After that, you can start coding.
+
+To begin, import the necessary libraries that will be used in this chapter:
 
 ```{code-cell} ipython3
 import ee
 import geemap
 ```
 
+Initialize the Earth Engine Python API:
+
 ```{code-cell} ipython3
 geemap.ee_initialize()
 ```
 
-## 3. رسم القاعدة الخلفية (Plotting back-ends)
+If this is your first time running the code above, you will need to authenticate Earth Engine first. Follow the instructions in {numref}`ch01-ee-auth` - _Earth Engine authentication_ to authenticate Earth Engine.
 
-يتطلب رسم الخرائط إنشاء القاعدة الأساسية التي سوف يتم رسم الخارطة الأساس عليها و التي تحتوي على دوال تقوم بعملية إسقاط المعلومات في موقعها الحقيقي على السطح بشكل رقمي على الخارطة يتناسب حسب مقياس الرسم المعتمد. و التي تمكن المستخدم من تمثيل البيانات المكانية  بسهوله و يسر. هناك العديد من المكتبات التي تساعد في عمل الهيكل الأساس الذي يستعمل في **geemap**
-### 3.1 رسم قاعدة خلفية بأستخدام	Ipyleaflet
+## Plotting backends
 
- 
+**Geemap** has five plotting backends, including [ipyleaflet](https://github.com/jupyter-widgets/ipyleaflet), [folium](https://python-visualization.github.io/folium), [plotly](https://plotly.com), [pydeck](https://deckgl.readthedocs.io/en/latest), and [kepler.gl](https://docs.kepler.gl/docs/keplergl-jupyter). An interactive map created using one of the plotting backends can be displayed in a Jupyter environment, such as Google Colab, Jupyter Notebook, and JupyterLab. By default, `import geemap` will use the ipyleaflet plotting backend.
+
+The five plotting backends supported by geemap do not offer equal functionality. The ipyleaflet plotting backend provides the richest interactive functionality, including the interactive Graphical User Interface (GUI) for loading, analyzing, and visualizing geospatial data interactively without coding. For example, users can add vector data (e.g., GeoJSON, Shapefile, KML, GeoDataFrame) and raster data (e.g., GeoTIFF, Cloud Optimized GeoTIFF [COG]) to the map with a few clicks. Users can also perform geospatial analysis using the WhiteboxTools GUI with 500+ geoprocessing tools directly within the map interface. Other interactive functionality (e.g., split-panel map, linked map, time slider, timeseries inspector) can also be useful for visualizing geospatial data. The ipyleaflet package is built upon ipywidgets and allows bidirectional communication between the frontend and the backend, enabling the use of the map to capture user input {cite}`QuantStack2019-bd`.
+
+In contrast, folium has relatively limited interactive functionality. It is meant for displaying static data only. It can be useful for developing interactive web apps when ipyleaflet is not supported. Note that the aforementioned interactive GUI is not available for other plotting backends. Geemap provides a unified API that makes it very easy to switch from one plotting backend to another. To choose a specific plotting backend, use one of the following:
+
+- `import geemap.geemap as geemap`
+- `import geemap.foliumap as geemap`
+- `import geemap.deck as geemap`
+- `import geemap.kepler as geemap`
+- `import geemap.plotlymap as geemap`
+
+### Ipyleaflet
+
+You can simply use `geemap.Map()` to create an interactive map with the default settings. First, let's import the `geemap` package:
 
 ```{code-cell} ipython3
 import geemap
 ```
 
+Next, create an interactive map using the ipyleaflet plotting backend. The [geemap.Map](https://geemap.org/geemap/#geemap.geemap.Map) class inherits the [ipyleaflet.Map](https://ipyleaflet.readthedocs.io/en/latest/map_and_basemaps/map.html) class. Therefore, you can use the same syntax to create an interactive map as you would with `ipyleaflet.Map`.
+
 ```{code-cell} ipython3
-Map = geemap.Map()  # الطريقة الاعتيادية و التي تأخذ المدخلات الافتراضية
+Map = geemap.Map()
 ```
+
+This code creates a new map and assigns it to a new variable named `Map`. To display the map in a Jupyter notebook, simply type the variable name:
 
 ```{code-cell} ipython3
 Map
 ```
 
+Keep in mind that throughout this book, `Map` is commonly used to refer to the interactive map. It is just a variable name. You can use whatever name you want (e.g., `m`) as long as it complies with the following Python variable names rules:
+
+- A variable name must start with a letter or the underscore character
+- A variable name cannot start with a number
+- A variable name can only contain alphanumeric characters and underscores (A-z, 0-9, and \_ )
+
+In general, a Python variable name should be lowercase. The reason we use `Map` rather than `m` is because in the Earth Engine JavaScript API, `Map` is a reserved keyword referring to the interactive map. We want to be consistent with the Earth Engine JavaScript API so that users can have an easier transition to geemap. Users are by no means required to use `Map` as the variable name for the interactive map.
+
+To customize the map, you can specify various keyword arguments, such as `center` ([lat, lon]), `zoom`, `width`, and `height`. The default `width` is `100%`, which takes up the entire cell width of the Jupyter notebook. The `height` argument accepts a number or a string. If a number is provided, it represents the height of the map in pixels. If a string is provided, the string must be in the format of a number followed by `px`, e.g., `600px`.
+
 ```{code-cell} ipython3
-Map = geemap.Map(center=[40, -100], zoom=4, height=600)  #تحديد حجم و ارتفاع الخارطة و مرك أو إحداثي المنطقة المراد استعراضها
+Map = geemap.Map(center=[40, -100], zoom=4, height=600)
 Map
 ```
 
+The default map comes with all the following controls (see {numref}`ch02_ipyleaflet`):
+
+- `attribution_ctrl`
+- `data_ctrl`
+- `draw_ctrl`
+- `fullscreen_ctrl`
+- `layer_ctrl`
+- `measure_ctrl`
+- `scale_ctrl`
+- `toolbar_ctrl`
+- `zoom_ctrl`
+
+```{figure} images/ch02_ipyleaflet.jpg
+---
+name: ch02_ipyleaflet
+width: 100%
+---
+A map created using the ipyleaflet plotting backend.
+```
+
+To hide a control, set `control_name` to `False`, e.g., `draw_ctrl=False`.
+
 ```{code-cell} ipython3
-Map = geemap.Map(data_ctrl=False, toolbar_ctrl=False, draw_ctrl=False) #في حالة إضافة أشرطة الأدوات الخاصة بالبيانات و تغيير المساحة إلى الخارطة 
+Map = geemap.Map(data_ctrl=False, toolbar_ctrl=False, draw_ctrl=False)
 Map
 ```
+
+You can also set `lite_mode=True` to show only the Zoom Control.
 
 ```{code-cell} ipython3
 Map = geemap.Map(lite_mode=True)
 Map
 ```
 
+To save the map as an HTML file you can call the `save` method:
+
 ```{code-cell} ipython3
 Map.save('ipyleaflet.html')
 ```
 
-### 3.2 رسم قاعدة خلفية بأستخدام Foluim
-استخدام مكتبة **folium** مع الإعدادات الافتراضية و تحديد إحداثيات المركز و المساحة و المدى للخارطة. و تلاحظ أنها تختلف عن Ipyleaflet في عدد الأدوات المتاحة و كذلك محدودية البحث عن موقع معين.
+### Folium
 
-
+To create an interactive map using the folium plotting backend, simply import the library as follows:
 
 ```{code-cell} ipython3
 import geemap.foliumap as geemap
-Map = geemap.Map(center=[40, -100], zoom=4, height=600) 
+```
+
+Then, you can use the same line of code to create and display an interactive map ({numref}`ch02_folium`) as you would with the ipyleaflet plotting backend introduced above.
+
+```{code-cell} ipython3
+Map = geemap.Map(center=[40, -100], zoom=4, height=600)
 Map
 ```
+
+```{figure} images/ch02_folium.jpg
+---
+name: ch02_folium
+width: 100%
+---
+A map created using the folium plotting backend.
+```
+
+Folium does not support bidirectional communication {cite}`QuantStack2019-bd`. Once the map is created and displayed in a notebook cell, you can't modify the map's properties, e.g., add/remove layers, add controls, change width/height. Also, the data and toolbar controls available in ipyleaflet (see {numref}`ch02_ipyleaflet`) are not supported in folium as folium does not support ipywidgets.
+
+To save the map as an HTML file we can call the `save` method:
 
 ```{code-cell} ipython3
 Map.save('folium.html')
 ```
 
-### 3.3 رسم قاعدة خلفية بأستخدام Plotly
-تلاحظ أن **plotly** تتيح للمستخدم إمكانية رسم مخطط للبيانات للمنطقة المحددة و ضمن الطبقة المطلوبة, كذلك المباشرة بعملية تحميل المخطط 
+### Plotly
+
+To create an interactive map using the plotly plotting backend, simply import the library as follows:
 
 ```{code-cell} ipython3
 import geemap.plotlymap as geemap
 ```
 
+Then, create and display an interactive map ({numref}`ch02_plotly`).
+
 ```{code-cell} ipython3
 Map = geemap.Map()
 Map
 ```
+
+```{figure} images/ch02_plotly.jpg
+---
+name: ch02_plotly
+width: 100%
+---
+A map created using the plotly plotting backend.
+```
+
+Note that you might not see the map displayed in Colab as it does not yet support plotly FigureWidget. If you run into an error saying `FigureWidget - 'mapbox._derived' Value Error` (see [plotly issue 2570](https://github.com/plotly/plotly.py/issues/2570#issuecomment-738735816)), uncomment the following line and run it.
 
 ```{code-cell} ipython3
 # geemap.fix_widget_error()
 ```
 
-### 3.4 رسم قاعدة خلفية بأستخدام Pydeck
-تقوم pydeck باستعراض الطبقات على الخارطة الأساس CARTO, OpenStreetMap contributors.  
+### Pydeck
 
+To create an interactive map using the pydeck plotting backend, simply import the library as follows:
 
 ```{code-cell} ipython3
 import geemap.deck as geemap
+```
+
+Then, create and display an interactive map ({numref}`ch02_pydeck`).
+
+```{code-cell} ipython3
 Map = geemap.Map()
 Map
 ```
 
-مع ملاحظه أنها تحتاج إلى تنصيب في بعض الأحيان و لأجل ذلك يجب أن تنفذ الإيعاز التالي:
-```{code-cell} ipython3
-!pip install pydeck
+```{figure} images/ch02_pydeck.jpg
+---
+name: ch02_pydeck
+width: 100%
+---
+A map created using the pydeck plotting backend.
 ```
 
-### 3.5 رسم قاعدة خلفية بأستخدام KeplerGL
-على الرغم من أن kepler ملحقة بـgeemap إلا إنها تحتاج إلى تنصيب مستقل و لأجل ذلك قم بتنفيذ الإيعاز الأخير.
+### KeplerGL
+
+To create an interactive map using the [kepler.gl](https://docs.kepler.gl/docs/keplergl-jupyter) plotting backend, simply import the library as follows:
+
 ```{code-cell} ipython3
 import geemap.kepler as geemap
+```
+
+Then, create and display an interactive map ({numref}`ch02_kepler`).
+
+```{code-cell} ipython3
 Map = geemap.Map()
 Map
 ```
-```{code-cell} ipython3
-!pip install kepler
+
+```{figure} images/ch02_kepler.jpg
+---
+name: ch02_kepler
+width: 100%
+---
+A map created using the KeplerGL plotting backend.
 ```
-## 4.	إضافة الخارطة الأساس basemap
-الخارطة الأساس هي طبقة من المعلومات الجغرافية التي تعتبر أرضية متكونة من سياق يقوم بأسقاط البيانات المكانية إعتماداً على إشارات مرجعية مكانية لسمات ثابتة لا تتغير مثل الأنهار, الحدود, و الطرق, و غيرها. و تصنف الخرائط الأساس إلى خمس أنواع و التي يمكن إدراجها و حسب الإيعازات المشار إليها أدناه في كل نقطة.
 
+## Adding basemaps
 
-### 4.1 أضافة خرائط اساس نوع Built-in
-هناك حوالي 411  نوع من الخرائط الأساس التي تعتبر ضمنيه في **geemap** و الشائع منها هي  **OpenStreetMap, **ROADMAP**, **SATELLITE**, **TERRAIN**, **HYBRID**.  
+There are several ways to add basemaps to a map. You can specify the basemap to use in the `basemap` keyword argument when creating the map with the `geemap.Map()` method. Alternatively, you can add basemap layers to the map using the `Map.add_basemap()` method. Geemap has hundreds of built-in basemaps available through [xyzservices](https://github.com/geopandas/xyzservices) that can be easily added to the map with only one line of code.
 
+### Built-in basemaps
+
+Let's try out some of the built-in basemaps. First, import the geemap library as follows:
 
 ```{code-cell} ipython3
 import geemap
+```
 
-Map = geemap.Map(basemap='HYBRID') # HYBRID   إدراج خارطة أساس 
+Next, create a map by specifying the basemap to use as follows. For example, the `HYBRID` basemap represents the Google Satellite Hybrid basemap ({numref}`ch02_basemap_hybrid`).
+
+```{code-cell} ipython3
+Map = geemap.Map(basemap='HYBRID')
 Map
 ```
-في حال تغيير نوع الخارطة الأساس و في هذا المثال تم تغيير الخراطة الأساس إلى OpenTopoMap
+
+```{figure} images/ch02_basemap_hybrid.jpg
+---
+name: ch02_basemap_hybrid
+width: 100%
+---
+The Google Satellite Hybrid basemap.
+```
+
+You can add as many basemaps as you like to the map. For example, the following code adds the `OpenTopoMap` basemap to the map above ({numref}`ch02_basemap_opentopomap`):
+
 ```{code-cell} ipython3
 Map.add_basemap('OpenTopoMap')
 ```
-و لغرض طباعة أسماء خرائط الأساس (built-in basemaps) الموجودة ضمن    **geemap**
+
+```{figure} images/ch02_basemap_opentopomap.jpg
+---
+name: ch02_basemap_opentopomap
+width: 100%
+---
+The OpenTopoMap basemap.
+
+```
+
+To find out the list of available basemaps:
+
 ```{code-cell} ipython3
 for basemap in geemap.basemaps.keys():
     print(basemap)
 ```
 
-لأجل معرفة عدد الخرائط الأساس في **geemap** بعد التحديث قم بتنفيذ الإيعاز التالي:
+In total, there are 100+ basemaps available.
+
 ```{code-cell} ipython3
 len(geemap.basemaps)
 ```
 
+### XYZ tiles
 
-### 4.2 إضافة الخارطة الأساس XYZ tiles
-هناك نوع من الخرائط الأساس لا يوجد في ضمن geemap بل يتم استيراده من مصدر خارجي و هو عباره عن برتوكول يقوم بعملية إرجاع جغرافي لتشكيلات ثابته يتم تحديدها من قبل المستخدم. تعتبر XYZ tiles واحدة من هذه الأنواع و التي يتم تحميلها من رابط معين و تضاف كطبقة إلى القاعدة الخلفية. في الخطوات التالية يتم إضافة الخارطة الأساس XYZ tiles إلى الخارطة.
+You can also add XYZ tile layers to the map using the `Map.add_tile_layer()` method. For example, the following code creates an interactive map and adds the Google Terrain basemap to it:
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -198,10 +334,9 @@ Map.add_tile_layer(
 Map
 ```
 
-###  4.3 إضافة الخارطة الأساس WMS tiles
-تزود هذه الخارطة من قبل المجموعة الاتحادية استخراج خصائص الأرض من صور عالية الدقة, و التي هي عباره عن جمعية مشـــتركه لأكثر من دوله وظيفتها تحليل الغطاء الأرضــــي على مســــــتوى العالم (Global Scale). للمزيد الرابط التالي         [Multi-Resolution Land Characteristics (MRLC) Consortium](https://www.mrlc.gov/).
-قم بتنفيذ الخطوات التالية لأجل استيراد خارطة أساس WMS tiles:
+### WMS tiles
 
+Similarly, you can add WMS tile layers to the map using the `Map.add_wms_layer()` method. For example, the following code creates an interactive map and adds the National Land Cover Database (NLCD) 2019 basemap to it ({numref}`ch02_basemap_nlcd`):
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=[40, -100], zoom=4)
@@ -217,53 +352,109 @@ Map.add_wms_layer(
 Map
 ```
 
-### 4.4 إضافة الخارطة الأساس Planet basemaps
+```{figure} images/ch02_basemap_nlcd.jpg
+---
+name: ch02_basemap_nlcd
+width: 100%
+---
+The National Land Cover Database (NLCD) 2019 basemap.
+```
 
-تعتبر Planet Basemaps واحدة من اهم الخرائط الأساس التي تزود التغيرات في الغطاء النباتي على مدار السنه منذ العام 2016 . لقد قام فريق من المطورين متخصص في مجال نظم المعلومات الجغرافية ببناء هذه الخارطة الأساس و بالاستفادة من البرامج المتطورة التي تعمل على دمج صور الأقمار الصناعية على مستوى العالم و استخلاص الموزاييك الأرضي و على مديات زمنيه تتقارب لفترات ثلاثة هي شهريه, ربع سنوية, و سنوية. تزود Planet basemaps المستخدمين بالقدرة على الحصول على رؤية دقيقه لمساحات واسعة و كذلك التحليل الزمني لفترات معينه مما يتيح إمكانيه تتبع التغيرات و التنبؤ بمستقبل التنوع السطحي للبيئة.
-`ملاحظه: لأجل استخدام Planet basemaps يجب عليك تغيير مفتاح بيئة العمل و الذي يكون ضمن نظام التشغيل الخاص بـ conda.`
+Want to find out more freely available WMS basemaps? Check out the [USGS National Map Services](https://apps.nationalmap.gov/services). Once you get a WMS URL, you can follow the example above to add it to the map.
+
+### Planet basemaps
+
+[Planet Labs](https://www.planet.com) provides high-resolution global satellite imagery with a high temporal frequency. The monthly and quarterly global basemaps can be streamed via the [XYZ Basemap Tile Service](https://developers.planet.com/docs/basemaps/tile-services/xyz) for use in web mapping applications or for visualization purposes. A valid [Planet account](https://developers.planet.com/docs/apis/data/#how-to-become-a-planet-developer) is required to access the Basemap Tile Service. Once you sign up for a Planet account, you can get your API key by navigating to the [Account Settings page](https://www.planet.com/account/#/user-settings) as shown in ({numref}`ch02_planet_api_key`).
+
+```{figure} images/ch02_planet_api_key.jpg
+---
+name: ch02_planet_api_key
+width: 100%
+---
+Planet account profile page.
+```
+
+Replace `YOUR_API_KEY` below with the API key copied from your Account Settings page shown above. You can create an environment variable called `PLANET_API_KEY` and set it to the API key so that you can access the basemap tiles without having to specify the API key every time.
 
 ```{code-cell} ipython3
 import os
 
-os.environ["PLANET_API_KEY"] = "YOUR_API_KEY"  #  هنا يمكن تغير مفتاح الدخول الى بيئة العمل على الخارطة الاساس
+os.environ["PLANET_API_KEY"] = "YOUR_API_KEY"
 ```
 
+First, let's look at the list of available quarterly basemaps. Planet has quarterly basemaps going back to the first quarter of 2016. The names of the quarterly basemaps are: `Planet_2016q1`, `Planet_2016q2`, ..., `Planet_2022q1`, and so on.
+
 ```{code-cell} ipython3
-quarterly_tiles = geemap.planet_quarterly_tiles()   # هذه الخطوات تمكن من استعراض البيانات للقواعد الأساس حسب الربع السنوي
+quarterly_tiles = geemap.planet_quarterly_tiles()
 for tile in quarterly_tiles:
     print(tile)
 ```
 
+Next, let's look at the list of available monthly basemaps. Planet has monthly basemaps going back to January 2016. The names of the monthly basemaps are: `Planet_2016_01`, `Planet_2016_02`, ..., `Planet_2022_04`, and so on.
+
 ```{code-cell} ipython3
-monthly_tiles = geemap.planet_monthly_tiles()  #  هذه الخطوات تمكن من استعراض البيانات للقواعد الأساس شهريا
+monthly_tiles = geemap.planet_monthly_tiles()
 for tile in monthly_tiles:
     print(tile)
 ```
 
-```{code-cell} ipython3
-Map = geemap.Map()
-Map.add_planet_by_month(year=2020, month=8)  # لأجل إضافة خارطة أساس على المدى الشهري و المحدد للشهر الثامن لعام 2020 كما في هذا المثال
-Map
-```
+To add a monthly basemap to the map, use the `Map.add_planet_by_month()` method as follows:
 
 ```{code-cell} ipython3
 Map = geemap.Map()
-Map.add_planet_by_quarter(year=2019, quarter=2)  # لأجل إضافة خارطة أساس على المدى الربع سنوي و المحدد لربع السنه الثاني لعام  2019 كما في هذا المثال
+Map.add_planet_by_month(year=2020, month=8)
 Map
 ```
 
-### 4.5 إضافة الخارطة الأساس Basemap GUI
+To add a quarterly basemap to the map, use the `Map.add_planet_by_quarter()` method as follows:
+
+```{code-cell} ipython3
+Map = geemap.Map()
+Map.add_planet_by_quarter(year=2019, quarter=2)
+Map
+```
+
+The map should look like {numref}`ch02_basemap_planet`.
+
+```{figure} images/ch02_basemap_planet.jpg
+---
+name: ch02_basemap_planet
+width: 100%
+---
+The Planet quarterly basemap for second quarter of 2019.
+
+```
+
+### Basemap GUI
+
+Geemap makes it easy for users to add basemaps to their maps without having to write any code. By clicking the "map" icon on the toolbar, the basemap GUI is activated ({numref}`ch02_basemap_gui`). Simply click the dropdown menu to select the basemap that you want to add. Additionally, if you have created an environment variable called `PLANET_API_KEY` and set it to your Planet API key, the Planet basemaps will also be available to select from the dropdown menu.
+
+To set the Planet API key, use the following code:
 
 ```{code-cell} ipython3
 import os
 
-os.environ["PLANET_API_KEY"] = "YOUR_API_KEY"  # تغيير المفتاح
+os.environ["PLANET_API_KEY"] = "YOUR_API_KEY"
 ```
 
+Then the Planet basemaps will be available via the basemap dropdown menu.
+
 ```{code-cell} ipython3
-Map = geemap.Map()  # أضافة الخارطه
+Map = geemap.Map()
 Map
 ```
 
-## الخلاصة
-الخارطة التفاعلية هي تطبيق يسمح باستعراض البيانات على متصفح الويب. لاجل خلق خارطة تفاعليه هناك عدد من المتطلبات التقنية التي يجب تحضيرها للعمل. و كذلك يجب تحديد نوع القاعدة الخلفية التي سوف يتم رسم الخارطه الاساس عليها و كذلك بقية الطبقات للبيانات المكانية. تحتوي القاعده الخلفيه على عدد من الادوات و التلميحات التي تمكن المستخدم من العمل بشكل مباشر على استخدام تطبيقات جاهزه تجعل من العمل مرن و سهل في التبادل مع الواجهة و مصدر البيانات. و جميع ما تم تنفيذه في الفصل هذا هو واجهه للخارطة التفاعلية. 
+```{figure} images/ch02_basemap_gui.jpg
+---
+name: ch02_basemap_gui
+width: 100%
+
+---
+The basemap GUI for changing basemaps interactively without coding.
+```
+
+## Summary
+
+In this chapter, we began by introducing the fundamentals of Jupyter notebooks. We then provided hands-on examples of using the five geemap plotting backends to create interactive maps. Additionally, we explored how to incorporate various basemap layers, such as built-in basemaps, XYZ tiles, WMS tiles, and Planet basemaps, into our maps.
+
+By now, you should be proficient in using Jupyter notebook to generate interactive maps and switch between various basemaps seamlessly. That concludes this chapter. In the next chapter, we will delve into Google Earth Engine data.
