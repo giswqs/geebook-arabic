@@ -13,7 +13,7 @@ kernelspec:
 
 (chapter01)=
 
-# إِحتراف تطبيق GEE و geemap في بيئة Python API
+# Introducing GEE and Geemap
 
 ```{contents}
 :local:
@@ -22,83 +22,77 @@ kernelspec:
 
 +++
 
-## مدخل 
-## الفصل الأول:
-### 1.1 ما هو  [Google Earth Engine](https://earthengine.google.com)(GEE) ؟  
-هي منصــــة معالجه سحابيـــة واســـــعة الانتشــــــار فـــــــــــي مجتـــــمع  الجغرافيـــــة   المكانيـــــة  (Geo-Spatial community).   تعرض GEE  قائمة من البيانات تصل إلى ألاف  من تيرابايت أو مـــــا يســـــــــــمى  ulti-Petabytes من صور الأقمار الاصطنـــــاعية و البيانـــــــات  المكانيــــة و التي تمكن المستخدم من أجراء عمليات تحليل و معالجة و تمثيل النتائج بسهوله و كافأه  و باستخدام   القليل من البرمجــــــة أو دون الحاجة إلى إن تكون ذا معرفه بالبرمجة.
+## Introduction
 
-تحتوي GEE  على الكثير من المكتبات و المصادر المفتوحة ذات الأهمية في خلق أدوات و نماذج برمجيه  تخص  تطبيقات الاستشعار عن بعد و نظم المعلومات الجغرافيــــــــــــة. تعتبر geemap  و احده من اهم هذه الدوال و التي لاقت انتشاراً واسعاً منذ إطلاقها في أبريل عام 2020  و التي تم بنائها في لغة بايثون [Earth Engine Python API](https://developers.google.com/earth-engine/guides/python_install)  أعتماداً على مصادر خرائط مجانية و مكتبات مفتوحة المصدر. تمكن geemap المستــــــــــخدم من خلق تطبيقات تحليل تفاعليه (تسمى interactive map) لها القابلية على التمثيل المرن للبيانـــــــــــات في بيئة **jupyter** و إجراء تبادل ثنائي الاتجاه بين المستخدم و مصدر البيانات الممثلة على الخرائط أو المرئيات أو الطبقات. و يقصد  بـ (  interactive map) هي واجهات تمثيل البيــــــانات المكانيـــــــــــة التي تمكن المستــــــــــــخدم من إجراء عمليات تحليل و استعراض  للخصائص البيانات على مديات مختلفة. كذلك تمكن الخارطة التفاعلية من إجراء عمليات استعلام  (query) عن خصائص محددة و مؤشرات معينة مثل حالة الوضع الاجتماعي و الاقتصادي لمجموعة معينه أو مواقع محطات المســـــــــــاعدة و الدعم لعمليات الإنقاذ عند حدوث الكوارث الطبيعية, او موقع معين, او خاصية بيانات معينة. 
+[Google Earth Engine](https://earthengine.google.com) is a widely used cloud-computing platform in the geospatial community. It features a multi-petabyte data catalog of satellite imagery and geospatial datasets, enabling users to easily and efficiently visualize, manipulate, and analyze geospatial data. Built upon the [Earth Engine Python API](https://developers.google.com/earth-engine/guides/python_install) and open-source mapping libraries, [geemap](https://geemap.org) makes it much easier to analyze and visualize Earth Engine datasets in a Jupyter environment. Since its initial release in April 2020, geemap has become the most popular Python package for interactive analysis and visualization of Earth Engine data.
 
-و تُمكن الخارطة التفاعلية (  interactive map) من صناعة و استعراض البيانات و نتائج التحيل لحقول معينه في جدول البيانات, بالإضافة إلى ذلك تُمكن المستــــــــــــــخدم من تســــــــــــجيل إحداثياتٍ النقاط على الخارطة لغرض إجراء التحليل المحدد لتلك المنطقة. كما إنَ هناك العديد من المزايــــــــــا التي توفرها **geemap**  و التي سوف نستعرضها  في الفصول القادمة.
+This chapter covers the fundamentals of Geospatial Data Science, Google Earth Engine, and geemap. We will walk through the process of setting up a conda environment and installing geemap. Additionally, we will explore how to utilize geemap with Google Colab without needing to install anything on your device. Finally, we will provide some useful resources for further learning about Earth Engine and geemap beyond the scope of this book.
 
-في هذا الفصل سوف نستعرض أساسيات علوم البيانات المكانية و **GEE**  و كيفيه توظيفها في **geemap**. كذلك سوف تتعلم الخطوات المطلوبة لعملية أعداد بيئة conda  و تثبيت **geemap**  في بيئة العمل, و أيضا العمل على **geemap**  في **Google colab** من دون الحاجة إلى تثبيت أي برنامج إضافي أخر. و أخيراً سوف نقترح بعض المصادر القيمة و المفيدة في تعلم **GEE**  و **geemap**. 
+## What is Geospatial Data Science
 
-##  1.2	ما هي علوم البيانات المكانيـــــــــــة؟
-قبل البدء بعلوم البيانات المكانيـــــــــــــة  يجب إن نأخذ لحمــــة عامة عن علوم البيانات. لاقى علوم البيانات أهميه كبيرة خلال العقد المنصــــــــرم بما يشتمل عليه  من مصطلحــــــــــــات مثل **Deep Learning**, **Machine Learning** , **Data analytic**, **Big data** و طبقاً إلى موقع [Google Trend](https://trends.google.com/trends/explore?q=Data%20Science,Big%20Data,Data%20Analytics,Machine%20Learning&geo=US&date=all#TIMESERIES) فأن اهتمام الباحثين عبر الأنترنت عن علوم البيانات قد ازداد و بشكل منقطع النظير منذ العام 2016. حيث يشير الموقع إلى أن 4.1 مليون عمليه بحث مسجلـــــــــــــــة عن علوم البيانات, و 7.5 مليار عمليــــــة بحث عن Big data, و 2.6 مليار عمليــة بحث عن Machine Learning, و اكثر من مليار عن data analytic. و من المفاجئ إن نســـــــــــــــبة البحث عن Big data  تنـــــــــــــــــــاقص بشــــكل ملحوظ منذ العــــــــام 2016 مع زيادة في العمــــــليات الأخرى (كما في الشكل 1.1 أدناه). 
-
+Before introducing geospatial data science, we need to understand what **data science** is. The term "data science" has gained a lot of attention during the past decade, along with related terms such as **big data**, **data analytics**, and **machine learning**. According to [Google Trends](https://bit.ly/40lfnpW), the online search interest over time in "data science" has experienced a rapid increase since 2016 (see {numref}`ch01_google_trends`). When we googled "data science", 4.1 billion records were returned, compared to 7.6 billion on "big data", 2.6 billion on "machine learning", and 1.9 billion on "data analytics". Interestingly, the interest in "big data" has been decreasing since 2018, while the interests in "data science" and "machine learning" continue to increase.
 
 ```{figure} images/ch01_google_trends.jpg
 ---
 name: ch01_google_trends
 width: 100%
 ---
+Online search interest trends on data science-related keywords by Google as of March 28, 2022. The numbers on the vertical axis represent search interest relative to the highest point on the chart for the given region (worldwide) and time (2004-2022). A value of 100 is the peak popularity for the term. A value of 50 means that the term is half as popular. A score of 0 means there was not enough data for this term.
 ```
 
-تُعَرف علوم البيانات على أنها مصطلح واسع يشملُ عدد من المجالات في مساحة عمل واحدة, و من منظور أعلى يعرف علوم البيانات على انه العلم الذي يختص بدراسة البيانات  [Cao, 2017](https://book.geemap.org/chapters/bibliography.html#id8). من وجهة نظر المطورين يعرف علوم البيانات ذلك حقلُ المعرفة الذي يشمل مساحات متداخلة من تطبيق طرق علمية و عمليات رياضية و خوارزميات و نظم إحصاء لاستخلاص أنماط معرفية و دلالات عميقة من البيانات المنظمة أو غير المنظمة في هيكل معين [Dhar, 2013](https://book.geemap.org/chapters/bibliography.html#id9).
+Okay, so what is **data science**? Data science is a broad term that encompasses many areas of interest. From a high-level perspective, data science is the science of data or the study of data {cite}`Cao2017-eb`. From the disciplinary perspective, data science is an interdisciplinary field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from noisy, structured and unstructured data, and apply knowledge and actionable insights from data across a broad range of application domains {cite}`Dhar2013-lk`.
 
-علوم البيانات المكانية (Geospatial Data Science GDS): هو فرع علوم البيانات الذي يختص بدراسة المحتوى المكاني للبيانات. و يعرف على أنه فرع علوم البيانات الذي يجمع النظريات و المفاهيم و التطبيقات التي تختص بالبيانات الجغرافية [Hassan, 2019](https://book.geemap.org/chapters/bibliography.html#id10). مثال على علوم البيانات المكانية (GDS) هو قاعدة بيانات تحليل المعلومات الزمانية و المكانية المقدمة من مؤسسة الإدارة الوطنية للمحيطات و الغلاف الجوي [NOAA](https://www.noaa.gov/) و التي هي عبارة عن صور أقمار صناعية (راستر) و بيانات مناخ, و أرصاد جوي, و التي تزود نشرة أرصاد البراكين باستخدام التعلم الألي (**ML**) و النماذج الرياضية [Eftelioglu et al., 2017](https://book.geemap.org/chapters/bibliography.html#id10). 
+**Geospatial data science** is a discipline within data science that specifically focuses on the spatial component of data. It brings forth theories, concepts and applications that are specific to geographic data in the realm of data science {cite}`Hassan2019-ub`. A good example of geospatial data science is NOAA's analysis of spatial and temporal datasets (e.g., satellite imagery, weather data, and climate models) to provide hurricane forecasts using statistics, machine learning, and mathematical models {cite}`Eftelioglu2017-gi`.
 
+## What is Google Earth Engine
 
-
-
-###	1.3 ما هو **Google Earth Engine (GEE)**؟ 
-هو عبارة عن منصة سحابية تحتوي على كم هائل من البيانات المكانية  و صور الأقمار الصناعية [Gorelick et al., 2017](https://book.geemap.org/chapters/bibliography.html#id3) . خلال السنوات الأخيرة انتشر استخدام GEE بشكل كبير جداً في تطبيقات البيئة و على جميع المستويات حول العالم [Amani et al., 2020, Boothroyd et al., 2020, Tamiminia et al., 2020, Wu et al., 2019](https://book.geemap.org/chapters/bibliography.html#id3). في الشكل أدناه 1.2 يوضح عدد البحوث المنشورة التي تتضمن استخدام GEE.
+Google Earth Engine (GEE) is a cloud computing platform with a multi-petabyte [data catalog](https://developers.google.com/earth-engine/datasets) of satellite imagery and geospatial datasets {cite}`Gorelick2017-mz`. During the past few years, GEE has become very popular in the geospatial community, and it has empowered numerous environmental applications at local, regional, and global scales {cite}`Amani2020-vb,Boothroyd2020-fx,Tamiminia2020-df,Wu2019-at`. Since GEE became publicly available in 2010, there has been an exponential growth in the number of peer-reviewed journal publications empowered by GEE (see {numref}`ch01_gee_pubs`). Based on the most recent bibliometric analysis, there are 1,077 peer-reviewed journal publications with the word “Google Earth Engine” in the title and 2,969 publications with the word "Google Earth Engine" in either the title or abstract. In 2022, the number of publications with “Google Earth Engine” in the title or abstract reached 1,150, which is more than a 280-fold increase from the year 2014 with only 4 publications.
 
 ```{figure} images/ch01_gee_pubs.jpg
 ---
 name: ch01_gee_pubs
 width: 100%
 ---
-Google الشكل 1.2 عدد البحوث المنشورة المسجلة في
+The number of journal publications empowered by Google Earth Engine.
 ```
 
-استخدام GEE  يتطلب أن يكون لدى المستخدم حساب على منصة **Google**. يمكن الدخول إلى **GEE** من خلال محرر أكواد جافا الخاص بجوجل و الذي يسمى  **Google Earth JavaScript Code Editor** كما في الشكل 1.3.
+To use Earth Engine, you must first [sign up for an Earth Engine account](https://code.earthengine.google.com/register) ({numref}`ch01_gee_signup`). You cannot use Google Earth Engine unless your application has been approved. Once you receive the application approval email, you can log in to the [Earth Engine JavaScript Code Editor](https://code.earthengine.google.com) to get familiar with the JavaScript API.
 
 ```{figure} images/ch01_gee_signup.jpg
 ---
 name: ch01_gee_signup
 width: 100%
 ---
- تسجيل حساب على **Earth Engine**.
+Signing up for an Earth Engine account.
 ```
 
-###	1.4 ما هو **geemap** ؟
-يمكن جوجل أيرث **GEE** مستخدميه من البرمجة بيئتين برمجيتين هما **JavaScript API**  و **Python API**. تعتبر البرمجة في بيئة **JavaScript** أكفاء بكثير منها في بيئة **Python** من حيث وظائف تمثيل النتائج و بشكل فعال و ذلك لوجود مصادر متعددة و احتوائها على بيئة تطوير متكاملة تشمل برامج و تطبيقات جاهزة تزيد من قدرة المطورين في هذا المجال على تحرير و بناء و اختبار البيانات المكانية,  فضلا عن تصدير الطبقات المتعددة للبيانات. يعتبر ذلك كله نقص في بيئة **Python**, و لاجل معالة هذه المشكلة تم طرح حرزمه **geemap** من قبل الدكتور  [2020,Wu](https://book.geemap.org/chapters/bibliography.html#id3) .    لقد تم بناء **geemap** بالاعتماد على مجموعة من المكتبات مفتوحه المصدر الموجودة مسبقاً في **Python** مثل [folium](https://python-visualization.github.io/folium), [earthengine-api](https://pypi.org/project/earthengine-api) , [ipyleaflet](https://github.com/jupyter-widgets/ipyleaflet), and [ipywidgets](https://github.com/jupyter-widgets/ipywidgets).  تمكن **geemap** المستخدم من تحليل و استعراض البيانات المكانية  المتاحة من قبل **GEE** و بشكل فعال داخل بيئة **conda jupyter** مع كتابة القليل من البرمجة, كما في الشكل 1.4 أدناه.
+## What is geemap
+
+GEE provides users with both JavaScript and Python APIs for making computational requests to the Earth Engine servers. While the GEE JavaScript API has robust [documentation](https://developers.google.com/earth-engine) and an interactive IDE (i.e., [GEE JavaScript Code Editor](https://code.earthengine.google.com)), the GEE Python API has relatively limited functionality for visualizing results interactively, and there is a lack of documentation. The **geemap** Python package was created to fill this gap {cite}`Wu2020-br`. It is built upon a number of open-source Python libraries, such as the [earthengine-api](https://pypi.org/project/earthengine-api), [folium](https://python-visualization.github.io/folium), [ipyleaflet](https://github.com/jupyter-widgets/ipyleaflet), and [ipywidgets](https://github.com/jupyter-widgets/ipywidgets) packages. Geemap enables users to analyze and visualize Earth Engine datasets interactively within a Jupyter environment with minimal coding (see {numref}`ch01_geemap_gui`).
+
+**Geemap** is intended for students and researchers who would like to utilize the Python ecosystem of diverse libraries and tools to explore Google Earth Engine. It is also designed for existing GEE users who would like to transition from the GEE JavaScript API to the Python API. Geemap provides an interactive graphical user interface for converting GEE JavaScript projects to Python scripts without coding. It can save users a lot of time and effort by providing a simple interface for exploring and visualizing Earth Engine datasets.
+
 ```{figure} images/ch01_geemap_gui.jpg
 ---
 name: ch01_geemap_gui
 width: 100%
 ---
- الشكل 1.4 واجهه geemap
+The geemap graphical user interface built upon ipyleaflet and ipywidgets.
 ```
-
-إن الغرض الرئيسي من **geemap** هو تمكين المطورين من البرمجة في بيئة **Python**  لما لها من القدرة في العمل على البيانات, و كذلك الوصول و الاستفادة من الأرشيف الهائل للبيانات في **GEE**, و أيضاً سرعة تحويل البرامج من**JavaScript**  إلى **Python** و بدون الحاجة إلى جهد برمجي كبير. و بالتالي, فأن **geemap**  تقلل من الوقت المبذول في عملية البرمجة و من خلال واجهه بسيطة و قدرة على تصدير بيانات **GEE**.
-
 
 (ch01:install)=
 
-###	1.5 تثبيت **geemap**:
- تحتوي **geemap**  على العديد من المكتبات و الحزم الاختيارية و التي تفيد المطورين في مجال علوم البيانات المكانية   و تُمكنهم من العمل بشكلِ كفوءِ في هذا المجال و تقديم نماذج اكثر فهما و مطابفة للواقع الخارجي, و من امثله هذه المكتبات  [GeoPandas](https://geopandas.org) , [localtileserver](https://github.com/banesullivan/localtileserver) و التي في بعض الأحيان يُستَصعب تَنصيبها في بيئة Windows, لذلك نَصح بأتباع الخطوات التاليِ لتجنب حدوث المشاكلِ. و لحسنِ الحظ فأن تثبيت **geemap** يقوم بشكل اتوماتيكي بتثبيت الكثير من هذه الدوال بما فيها **earthengine-api** لذا فأنك غير محتاج إلى إعادة تنصيبها. 
+## Installing geemap
+
+The geemap package has some optional dependencies, such as [GeoPandas](https://geopandas.org) and [localtileserver](https://github.com/banesullivan/localtileserver). These optional dependencies can sometimes be a challenge to install, especially on Windows. Therefore, we advise you to closely follow the recommendations below to avoid installation problems. Note that installing geemap will automatically install all of its dependencies, including the earthengine-api package. Therefore, you do not need to install the earthengine-api package separately.
 
 (ch01:conda)=
 
-   1.5.1	تثبيت **geemap** في بيئة **conda**: 
-لأجل تثبيت **geemap** ينصح استخدام حزمة **Conda** و التي يمكن الحصول عليها من الموقع التالي ([conda](https://conda.io/en/latest)  و الذي هو عبارة عن موزع و مترجم **Python** مع المكتبات الأساسية للعمل على البيانات. كما و يمكن الحصول على           ذلك من خلال تنصيب  [Miniconda](https://docs.conda.io/en/latest/miniconda.html) و الذي هو عباره عن موزع يحتوي على مرتجم **Python** مع مدير بيئة **conda**.   
-توجد **geemap** عن طريق قناة **Anocanda**  التي تسمى [conda-forge](https://anaconda.org/conda-forge/geemap) و التي هي عبارة عن جهد مجاني لمجموعة محترفه تزود حزم دعم لطيف واسع من البرامج. يفضل تنصيب  **geemap** في بيئة جديدة و نظيفة لأجل تجنب حدوث التعارض مع            حزم الدوال و المكتبات الخارجية التي تتعامل مع البيانات المكانية  و التي قد تكون موجودة مسبقاً, لذا يستحسن تنصيب **geemap** في بيئة نظيفة. الخطوات التالية هي لخلق بيئة جديدة و تنصيب متكامل لـ **geemap**.
+### Installing with conda
 
-للبدء بتنصيب **geemap** في بيئة جديدة أتبع الخطوات التالية:
+To install geemap and its dependencies, we recommend you use the [conda](https://conda.io/en/latest) package and environment manager. This can be obtained by installing the [Anaconda Distribution](https://www.anaconda.com/products/distribution) (a free Python distribution for data science), or through [Miniconda](https://docs.conda.io/en/latest/miniconda.html) (minimal distribution only containing Python and the conda package manager). Also see the [installation docs](https://conda.io/docs/user-guide/install/download.html) for more information on how to install Anaconda or Miniconda locally.
 
-1-فتح **Anaconda Prompt**  أو **Terminal** ثم كتابة “**conda create –n gee**” ثم الضغط على Enter سوف يتم خلق بيئة جديدة بأسم **gee** كما في الشكل التالي رقم 1.5 ادناه:
+Geemap is available on the [conda-forge](https://anaconda.org/conda-forge/geemap) Anaconda channel, a community effort that provides conda packages for a wide range of software. Creating a new conda environment to install geemap is not strictly necessary, but given that some geemap dependencies might have a version conflict with other geospatial packages in an existing conda environment, it is a good practice to start fresh by installing geemap and its dependencies in a clean environment for your project. The following commands create a new conda environment named `gee` and install geemap in it:
 
 ```bash
 conda create -n gee python
@@ -106,86 +100,103 @@ conda activate gee
 conda install -c conda-forge geemap
 ```
 
+First, open the **Anaconda Prompt** or **Terminal** and type "conda create -n gee python". Press **Enter** to create a new conda environment named `gee` (see {numref}`ch01_conda_create`).
+
 ```{figure} images/ch01_conda_create.jpg
 ---
 name: ch01_conda_create
 ---
-gee الشكل 1.5 خلق بيئة جديدة بأسم.
+Creating a new conda environment named `gee`.
 ```
 
-2-تفعيل بيئة **gee**  من خلال كتابة الإيعاز التالي “**conda activate gee**”  ستلاحظ تحول إِمتداد بيئة العمل من (base) إلى (gee).
-
-3-تنصيب **geemap** في بيئة **gee** من خلال الإيعاز “**conda install –c conda-forge geemap**” كما في الشكل التالي (أدراج شكل 1.6).
+Next, activate the new conda environment by typing "conda activate gee" and press **Enter**. Then, install geemap into the environment we just activated by typing "conda install -c conda-forge geemap" and press **Enter** (see {numref}`ch01_conda_geemap`).
 
 ```{figure} images/ch01_conda_geemap.jpg
 ---
 name: ch01_conda_geemap
 ---
-شكل 1.6 تعفيل بيئة **gee** و تنصيب **geemap**
+Activating the new conda environment and installing geemap.
 ```
 
-كما أسلفنا أن هناك العديد من المكتبات الملحقةِ بـ **geemap** مثل GeoPandas, localtileserver, [osmnx](https://github.com/gboeing/osmnx), [rioxarray](https://github.com/corteva/rioxarray) and [rio-cogeo](https://github.com/cogeotiff/rio-cogeo) ,و للمزيد من المعلومات عن المكتبات الملحقة يمكن الدخول إلى الرابط التالي [requirements_all.txt](https://github.com/gee-community/geemap/blob/master/requirements_all.txt)  . لحسن الحظ إن هذه المكتبات متوفرة في حزمة  [pygis](https://pygis.gishub.org/)  و التي بالإمكان تنصيبها في إيعاز واحد. على الرغم من ذلك إلى إن تنصيب **geemap** يأخذ وقتاً طويلاً لتحميل جميع المكتبات الملحقة, لذا يفضل تنصيب **pygis** من خلال  حزمه [Mamba](https://github.com/mamba-org/mamba) و التي هي أسرع و أكفاء كما أنها منصة قابلة للتنصيب في بيئات مختلفة. **mamba** هي عبارة عن حزمة قابله للكتابة و التنفيذ تجعل من تنصيب الحزم الأخرى أسرع, و هي أيضا قابلة للتنصيب في بيئات Windows, Linux, MacOS و متوافقة مع جميع الحزم الأخرى. وتنصب كما في  الإيعازات التالية  في **prompt**  و كما في الشكل 1.7 ادناه:
+Geemap has a list of optional dependencies specified in the [requirements_all.txt](https://github.com/gee-community/geemap/blob/master/requirements_all.txt), such as GeoPandas, localtileserver, [osmnx](https://github.com/gboeing/osmnx), [rioxarray](https://github.com/corteva/rioxarray) and [rio-cogeo](https://github.com/cogeotiff/rio-cogeo). It can be a bit cumbersome to install these optional dependencies individually, but luckily these optional dependencies are available through the [pygis](https://pygis.gishub.org) Python package which can be installed with a single command.
+
+Since pygis has many dependencies, it might take a while for conda to resolve dependencies. Therefore, we highly recommend you to install [Mamba](https://github.com/mamba-org/mamba), a fast, robust, and cross-platform package manager. Mamba is a re-write of conda that significantly increases the speed of resolving and installing packages. It runs on Windows, macOS, and Linux, and is fully compatible with conda packages and supports most of conda’s commands. The following commands install Mamba and pygis:
 
 ```bash
 conda install -c conda-forge mamba
 mamba install -c conda-forge pygis
 ```
-.
+
+To install Mamba, type "conda install -c conda-forge mamba" and press **Enter** (see {numref}`ch01_install_mamba`).
 
 ```{figure} images/ch01_install_mamba.jpg
 ---
 name: ch01_install_mamba
 ---
-Fig. 1.7: Installing the Mamba package manager.
+Installing the Mamba package manager.
 ```
 
-#### 1.5.2 تنصيب geemap باستخدام **pip** :
-تعتبر **pip** عباره عن مدير الحزم الضرورية للموديل الذي يتم بناءه. يمكن تنصيب **geemap** باستخدام **pip**  عن طريق الإيعاز التالي _pip install geemap_ . يُمكن **pip** من تنصيب جميع الملحقات التابعة ل **geemap** بشكل منفرد و كما موضح في بعض الأمثلة أدناه:
+Once Mamba is installed in a conda environment, you can then simply replace any `conda` command with `mamba`. For example, to install pygis, type "mamba install -c conda-forge pygis" and press **Enter** (see {numref}`ch01_install_pygis`).
 
-*_ملاحظة:و حسب شكل الإيعاز التالي pip install geemap[extra]  حيث  يتم وضع اسم المكتبة الملحقة بدل كلمه extra._*
+```{figure} images/ch01_install_pygis.jpg
+---
+name: ch01_install_pygis
+---
+Installing optional dependencies of geemap through the pygis package.
+```
 
-       • pip install geemap[all]
-       • pip install geemap[backends]
-       • pip install geemap[lidar]
-       • pip install geemap[raster]
-       • pip install geemap[sql]
-       • pip install geemap[apps]
-       • pip install geemap[vector]
+Congratulations! You have successfully installed geemap and its dependencies. We will dive into geemap in the next chapter.
 
-يمكمن تنصيب **geemap** من خلال [PyPI](https://pypi.org/project/geemap) و بأستخدام **pip**
+### Installing with pip
 
+Geemap is also available on [PyPI](https://pypi.org/project/geemap). It can be installed with pip using the following command:
 
 ```bash
 pip install geemap
 ```
 
-####	1.5.3 تنصيب **geemap** باستخدام مصدر خارجي:
-يمكن تنصيب **geemap** عن طريق أحد المستودعات الموجودة في [Git](https://git-scm.com) مع pip و حسب الإيعاز التالي:
+All optional dependencies of geemap are listed in [requirements_all.txt](https://github.com/gee-community/geemap/blob/master/requirements_all.txt), which can be installed using one of the following:
+
+- `pip install geemap[extra]`: installing extra optional dependencies listed in requirements_extra.txt.
+- `pip install geemap[all]`: installing all optional dependencies listed in requirements_all.txt.
+- `pip install geemap[backends]`: installing keplergl, pydeck, and plotly.
+- `pip install geemap[lidar]`: installing ipygany, ipyvtklink, laspy, panel, pyntcloud[LAS], pyvista, pyvista-xarray, and rioxarray.
+- `pip install geemap[raster]`: installing geedim, localtileserver, rio-cogeo, rioxarray, netcdf4, and pyvista-xarray.
+- `pip install geemap[sql]`: installing psycopg2 and sqlalchemy.
+- `pip install geemap[apps]`: installing gradio, streamlit-folium, and voila
+- `pip install geemap[vector]`: installing geopandas and osmnx.
+
+### Installing from source
+
+You may install the latest development version by cloning the GitHub repository with [Git](https://git-scm.com) and using pip to install from the local directory:
 
 ```bash
 git clone https://github.com/gee-community/geemap
 cd geemap
 pip install .
 ```
-أو عن طريق الإيعاز التالي:
+
+It is also possible to install the latest development version directly from the GitHub repository with:
+
 ```bash
 pip install git+https://github.com/gee-community/geemap
 ```
 
+### Upgrading geemap
 
-و لتنصيب أخر إصدار مباشراً من داخل **Terminal** يمكن استخدام الإيعاز التالي: 
+If you have installed geemap before and want to upgrade to the latest version, you can run the following command in your terminal:
 
 ```bash
 pip install -U geemap
 ```
 
-لاجل أجراء عملية تحديث على نسخة **geemap** يمكن استخدام الايعاز التالي من داخل **conda**
+If you use conda, you can update geemap to the latest version by running the following command in your terminal:
 
 ```bash
 conda update -c conda-forge geemap
 ```
 
-ولأجل تنصيب  أخر نسخه مطوره من داخل **jupyter noteobook** و بدون **Git** يمكن تنفيذ الإيعاز التالي مع أعاده تشغيل **kernel** لأجل تفعيل الإصدار الجديد. 
+To install the development version from GitHub directly within a Jupyter notebook without using Git, run the following code in a Jupyter notebook and restart the kernel to take effect:
 
 ```{code-cell} ipython3
 import geemap
@@ -193,47 +204,49 @@ import geemap
 geemap.update_package()
 ```
 
-#### 1.5.5	تنصيب geemap من خلال Docker
-يمكن تنصيب **geemap** من خلال حاوية [Docker](https://docs.docker.com/get-docker/) ولكن يجب تنصيب **Docker** أولا, و من ثم تنفيذ الإيعاز التالي من خلال الـ **Terminal** الخاص بك:
+### Using Docker
 
+Geemap is also available on [Docker Hub](https://hub.docker.com/r/giswqs/geemap).
+
+To use geemap in a Docker container, you first need to install [Docker](https://docs.docker.com/get-docker). Once Docker is installed, you can pull the latest geemap image from Docker Hub by running the following command in your terminal:
 
 ```bash
 docker run -it -p 8888:8888 giswqs/geemap:latest
 ```
 
-###	1.6 العمل في بيئة **Jupyter notebook**:
+## Creating a Jupyter notebook
 
-العمل في بيئة **Jupyter notebook** : بعد خلق بيئة جديدة في **conda** يجب تفعيلها و من خلال الإيعاز التالي من داخل **Conda Command Prompt** 
-
+Let's activate the conda environment created in the previous section:
 
 ```bash
 conda activate gee
 ```
-بعد الدخول فأن امتداد ملف العمل في الذكرة   (Directory)  على سبيل المثال
 
-'''bash
-( cd C:\Users\'-_yourname_-'\Courses_Projects\Geographic_Data_Science
-'''
+Next, launch JupyterLab by typing the following commands in the **Terminal** or **Anaconda Prompt**:
 
-ثم كتابه **JupyterLab**. بعد ذلك سوف يقوم المتصفح الافتراضي بفتح نافذة جديدة تحتوي على بيئة **Jupyter**. عند النقر على **Python3** عند الجهة العليا على اليسار كما في الشكل 1.8 أو من خلال قائمة **File** -> **New** -> **Notebook**
+```bash
+jupyter lab
+```
+
+JupyterLab will open as a new tab in the browser. Click the **Python 3** icon in the top left corner of the JupyterLab **Launcher** window (see {numref}`ch01_jupyterlab`) or go to **File -> New -> Notebook** to create a new notebook. Select the newly created notebook in the JupyterLab File Browser tab and press **F2** to rename the notebook, e.g., **chapter01.ipynb**.
 
 ```{figure} images/ch01_jupyterlab.jpg
 ---
 name: ch01_jupyterlab
 ---
-Fig. 1.8: The JupyterLab user interface.
+The JupyterLab user interface.
 ```
-يتضمن **Jupyter notebook** واجهتين هما **command mode**  و  **Edit mode**. يختص **Edit mode**  بكتابة الكود البرمجي على شكل خلايا أشبه بمحرر النصوص, في حين إن **command mode** يسمح بكتابة الكود البرمجي على شكل رزمه كاملة. كما في الشكل 1.8 أعلاه. هناك العديد من مختصرات لوحة المفاتيح التي تساعد على سرعة إنجاز البرامج في بيئة **Jupyter** و التي بعضها تستخدم في كلا الواجهين و البعض الاخر يستخدم لواجهه معينة.
 
-تستخدم المختصرات التالية في كلا الواجهتين:
+Jupyter notebook has two modes: **Edit mode** and **Command mode**. The Edit mode allows you to type into the cells like a normal text editor. The Command mode allows you to edit the notebook as a whole, but not type into individual cells. Jupyter notebook has many keyboard shortcuts {cite}`Yordanov2017-hl`. Here are some commonly used shortcuts. Note that the shortcuts are for Windows and Linux users. For Mac users, replace `Ctrl` with `Command`.
 
+Shortcuts in both modes:
 
 - `Shift + Enter`: run the current cell, select below
 - `Ctrl + Enter`: run selected cells
 - `Alt + Enter`: run the current cell, insert below
 - `Ctrl + S`: save and checkpoint
 
-و المختصرات التالية تستخدم في بيئة  **command mode** بعد الضغط على Esc لأجل التفعيل:
+While in command mode (press `Esc` to activate):
 
 - `A`: insert cell above
 - `B`: insert cell below
@@ -244,8 +257,7 @@ Fig. 1.8: The JupyterLab user interface.
 - `M`: change the cell type to Markdown
 - `P`: open the command palette
 
-
-و في بيئة **Edit Mode** يتم استخدام المختصرات التالية مع الضغط على Enter لأجل التفعيل: 
+While in edit mode (press `Enter` to activate):
 
 - `Esc`: activate the command mode
 - `Tab`: code completion or indent
@@ -253,9 +265,9 @@ Fig. 1.8: The JupyterLab user interface.
 
 (ch01-ee-auth)=
 
- 1.7 المصادقة على الدخول إلى **GEE**:
+## Earth Engine authentication
 
- يتطلب المصادقة على الدخول إلى **GEE**  الحصول على حساب **Google** و لا يمكن الوصول إلى البيانات المكانية  في أرشيف **GEE** إلا بعد تأكيد رابط التفعيل في الأيميل المسجل لفتح الحساب. إن حزمة [earthengine-api](https://pypi.org/project/earthengine-api) هي المسؤولة عن الدخول إلى **GEE**  و التي يتم تنصيبها بشكل أتوماتيكي مع **geemap**. و بعد كتابة الإيعازات التالية ثم الضغط على shift + Enter يتم البدء بعملية الحصول على التصريح بالدخول إلى **GEE**:
+You need to authenticate Earth Engine before using it. The package for the Earth Engine Python API is called [earthengine-api](https://pypi.org/project/earthengine-api), which should have been automatically installed by the geemap package as described in {numref}`ch01:install`. Enter the following script into a code cell of a Jupyter notebook and press `Shift + Enter` to execute:
 
 ```{code-cell} ipython3
 import ee
@@ -263,57 +275,52 @@ import ee
 ee.Authenticate()
 ```
 
-سوف يتم فتح نافذة جديدة في المتصفح تطلب أدخال الحساب الذي تم تسجيله في جوجل, و بعد إدخال الحساب سوف يُطلب من المستخدم تخويل **GEE** و إجراء عمليه المصادقة, و اذا كانت لأول مره يفضل الدخول إلى  **CHOOSE PROJET** لتحديد المساحة السحابية المخصصة لتنفيذ البرنامج على **GEE** كما في الشكل 1.9:
+After running the above script, a new tab will open in the browser asking you to sign in to your Earth Engine account. After signing in, you will be asked to authorize the Google Earth Engine Authenticator. If this is the first time you are authenticating Earth Engine, click **CHOOSE PROJECT** to select a Cloud Project to use for Earth Engine (see {numref}`ch01_generate_token`).
 
 ```{figure} images/ch01_generate_token.jpg
 ---
 name: ch01_generate_token
 ---
-Fig. 1.9: Earth Engine Notebook Authenticator.
+Earth Engine Notebook Authenticator.
 ```
 
-
-يمكن اختيار مشروع سحابي جديد أو مشروع موجود أصلا في حال اختيار مشروع جديد. أدخل أسم للمشروع مثل (_ee-your-name_) ثم الضغط على تبويب **SELECT** لخلق مشروع جديد. اذا ظهرت لك رسالة تحذير باللون الأحمر أضغط على سياسة المعلومات الخصوصيه و الخدمة السحابية **Cloud Terms of Service** للموافقة ثم اختار **SELECT** كما في الشكل 1.10 التالي (see {numref}`ch01_create_project`).
+You can either choose an existing Cloud Project or create a new one. If you choose to create a new Cloud Project, enter a project name, e.g., `ee-your-username` and click the blue **SELECT** button to create a new Cloud Project. If a red warning message appears at the bottom of the page, click on the **Cloud Terms of Service** link to accept the terms of service and then click the **SELECT** button again (see {numref}`ch01_create_project`).
 
 ```{figure} images/ch01_create_project.jpg
 ---
 name: ch01_create_project
 ---
-Fig. 1.10: Creating a new Cloud Project.
+Creating a new Cloud Project.
 ```
 
-بعد تحديد أو خلق مشروع سحابي أضغط على توليد رابط مشفر **GENERATE TOKEN** سوف يتم السؤال عن حساب المستخدم في **EE** من أجلِ التسجيل في خدمة عملاء **Notebook** و كما في الشكل 1.11  التالي: (see {numref}`ch01_choose_account`).
+After selecting a Cloud Project, click the **GENERATE TOKEN** button to generate a new token. You will be asked to choose your Earth Engine account for the Notebook Client (see {numref}`ch01_choose_account`).
 
 ```{figure} images/ch01_choose_account.jpg
 ---
 name: ch01_choose_account
 ---
-Fig. 1.11: Choosing an account for the Earth Engine Notebook Client.
+Choosing an account for the Earth Engine Notebook Client.
 ```
 
-ثم أضغط على زر **Allow**  للسماح لخدمة عملاء **Notebook** للوصول إلى حساب المستخدم في **EE** كما في الشكل 1.12 أدناه:
-
+Click the **Allow** button to allow the Notebook Client to access your Earth Engine account (see {numref}`ch01_notebook_client`).
 
 ```{figure} images/ch01_notebook_client.jpg
 ---
 name: ch01_notebook_client
 ---
-Fig. 1.12: Choosing an account for the Earth Engine Notebook Client.
+Choosing an account for the Earth Engine Notebook Client.
 ```
 
-سوف يتم فتح صفحة جديدة في المتصفح تحتوي على كود المصادقة, قم بنسخ الكود ثم لصقه في تبويب خلية **Notebook** و في تبويب الظاهر اسفل الخليه الفعالة و التي تَسئلك عن رمز التحقق, ثم أضغط **Enter** وسوف تظهر عبارة **Successfully saved authorization token** كما في الشكل 1.13. إلى هنا تمت عملية المصادقة على الدخول إلى EE  عن طريق **Jupyter Notebook** و الوصول إلى أرشيف **Google** و هذه الخطوات يتم تنفيذها مره واحده فقط. 
-{numref}`ch01_auth_code`).
+An authentication code will be generated and displayed on the page. Copy the authorization code and paste it into the notebook cell asking for the verification code. Press **Enter** and the `Successfully saved authorization token` message should appear beneath the authorization code you entered (see {numref}`ch01_auth_code`).
 
 ```{figure} images/ch01_auth_code.jpg
 ---
 name: ch01_auth_code
 ---
-Fig. 1.13: Copying the authentication code.
+Copying the authentication code.
 ```
 
-إلى هنا تمت عملية المصادقة على الدخول إلى **EE**  عن طريق **Jupyter Notebook** و الوصول إلى أرشيف **Google** و هذه الخطوات يتم تنفيذها مره واحده فقط. و للوصول إلى رمز التحقق في ذاكرة الحاسوب فهو في الامتداد التالي  و حسب نوع نظام التشغيل: 
-
-
+Congratulations! You have successfully authenticated Earth Engine for use in your Jupyter notebook. In general, authentication for local installations is a one-time step that generates a persistent authorization token stored on a local computer. The token can be found in the following file path depending on your operating system. Note that you might need to show the hidden directories on your computer in order to see the `.config` folder under the home directory.
 
 ```{code-cell}
 Windows: C:\\Users\\USERNAME\\.config\\earthengine\\credentials
@@ -321,76 +328,103 @@ Linux: /home/USERNAME/.config/earthengine/credentials
 MacOS: /Users/USERNAME/.config/earthengine/credentials
 ```
 
-بعد اتمام عمليه الحصول على تخويل الوصول الى **EE**, يمكن خلق فصل جديد في **Python** من خلال الايعاز التالي:
+Once Earth Engine is authenticated, you can run the following script to initialize Earth Engine for a new Python session.
 
 ```{code-cell} ipython3
 ee.Initialize()
 ```
 
+In general, you will need to initialize Earth Engine for each new Python session, i.e., whenever you open a Jupyter notebook or Python script and want to use Earth Engine. Fortunately, geemap can automatically initialize Earth Engine for you when creating an interactive map, which will be covered in the next chapter. In other words, you rarely need to run `ee.Initialize()` explicitly.
 
-```bash
-pip install -U geemap
-```
+## Using Google Colab
 
-```bash
-ملاحظـــة: تقوم الدلة ()ee.Authenticate بعملية توجيه المستخدم الى صفحة المصادقة و الاحتفاظ ببيانات الدخول.
- و تقوم الدالة ()ee.Initialize بالسؤال عن حساب المستخدم و رمز التحقق لاعطاء المستخدم تخويل الوصول وادارة البيانات في مصدر GEE.
-```
+If you have difficulties installing geemap on your computer, you can try out geemap with [Google Colab](https://colab.research.google.com) without installing anything on your machine. Google Colab is a free Jupyter notebook environment that runs entirely in the cloud. Most importantly, it does not require a setup and the notebooks that you create can be simultaneously edited by your team members - just like the way you edit documents in Google Docs!
 
-###  1.8	استخدام Google Colab:
-اذا كان لديك مشكله في تنصيب **geemap** في جهازك يمكن استخدام **Google colab,** و الذي هو عباره عن محرر كود **Jupyter** سحابي  تم تزويده مجانياً من قبل **Google**. و من مميزاته انه لا يحتاج إلى تنصيب و يمكن لأي من أعضاء فريق العمل أن يقوم بعميلة الدخول إلى البرنامج و القيام بعملية تحرير كما هو في عمل مشــــــــاركة (Google .Doc) مع الزملاء. من خلال الرابط التالي يمكن تحرير [colab 01_introduction.ipynb ](https://colab.research.google.com/github/giswqs/geebook/blob/master/chapters/01_introduction.ipynb). 
+Click [01_introduction.ipynb](https://colab.research.google.com/github/giswqs/geebook/blob/master/chapters/01_introduction.ipynb) to launch the notebook in Google Colab.
 
-بعد إتمام عمليه التنصيب لـ **geemap**  يمكن للمستخدم من اطلاق الخارطة التفاعلية من خلال الإيعازات التالية مع ملاحظة ازله # من الايعاز.
-
+Next, press **Ctrl + /** to uncomment the following line to install geemap:
 
 ```{code-cell} ipython3
 # %pip install geemap
+```
 
+After geemap has been installed successfully, type the following code in a new cell:
+
+```{code-cell} ipython3
 import geemap
+
 Map = geemap.Map()
 Map
 ```
 
-بعد إتمام عمليه الحصول على تخويل الدخول إلى **GEE** و تنفيذ الإيعازات أعلاه سوف تظهر لك الخارطة التفاعلية كما في اشكل رقم 1.14 أدنا: 
- (see {numref}`ch01_colab`).
+Follow the on-screen instructions to authenticate Earth Engine. After that, you should be able to see the interactive map displayed beneath the code cell (see {numref}`ch01_colab`).
 
 ```{figure} images/ch01_colab.jpg
 ---
 name: ch01_colab
 width: 100%
 ---
-Fig. 1.14: The interactive map displayed in Google Colab.
+The interactive map displayed in Google Colab.
 
 ```
 
+## Using geemap with a VPN
 
-###	1.9 خصائص و مميزات **geemap**:
- قبل البدء بشرح استخدام **geemap** بشكل مفصل يجب إن تَطلع على بعض مميزاتها للتعرف على مدى أهميه العمل عليها و ما يميزها عن باقي برامج بناء تطبيقات البيانات المكانية.
+When using geemap through a VPN, it's important to use "geemap.set_proxy(port=your-port-number)" to connect to Earth Engine servers ({numref}`ch01_vpn_proxy`). Failure to do so may result in a connection timeout issue.
 
- •	القدرة على تحويل برنامج **JavaScript** إلى برنامج **Python**.  بما في ذلك دعم بعض الدوال الموجدة في **JavaScript** مثل Map.addLayer(), Map.setCenter(), Map.centerObject(), Map.setOptions(). 
-•	الوصول إلى بيانات **EE** و استـــــــعراضها على شـــــكل طبقات في الخارطة التفاعلية بما في ذلك shapefile, satellite images دون الحاجة إلى كتابة برامج كبيرة.
+```{code-cell} ipython3
+import geemap
 
-•	إمكانية الوصول إلى shapefile في **EE** و استخراج البيانات المكانية داخل الحيز المحدد للمتجه مع إجراء عمليات إحصائية جغرافية و استعراضها بطبقة خاصة.
+geemap.set_proxy(port='your-port-number')
+Map = geemap.Map()
+Map
+```
 
-•	الوصول إلى البيانات المكانية  في كل طبقة من خلال Inspector tool الموجودة في الخارطة, مع القدرة على استخلاص البيانات المكانية  في كل إحداثي من كل طبقة على شكل مصفوفه ذات أبعاد معينة في numpy.
+```{figure} images/ch01_vpn_proxy.jpg
+---
+name: ch01_vpn_proxy
+---
+Using geemap with a VPN.
+```
 
-•	تحويل البيانات المتبادل بين GeoJSON و دالة تجميع الخصائص المكانية EE.FeatureCollctioin(). 
+## Key features of geemap
 
-•	تصدير البيانات من صيغة تجميع للخصائص المستخدمة في EE.FeatureCollection() إلى صيغ أخرى shp, csv, json, kml, and  kmz . 
+Below is a partial list of geemap features. Please check the geemap [API Reference](https://geemap.org/geemap) and [tutorials](https://geemap.org/tutorials) for more details.
 
-•	تصدير مجموعة الصور في ImageCollectoin أو Image إلى صيغة GeoTIFF. 
+- Convert Earth Engine JavaScript projects to Python scripts and Jupyter notebooks.
+- Display Earth Engine data layers on interactive maps.
+- Support Earth Engine JavaScript API-styled functions in Python, such as Map.addLayer(), Map.setCenter(), Map.centerObject(), Map.setOptions().
+- Visualize Earth Engine vector and raster data without coding.
+- Retrieve Earth Engine data interactively using the Inspector tool.
+- Creating interactive plots from Earth Engine data by simply clicking on the map.
+- Convert data between the GeoJSON and Earth Engine FeatureCollection formats.
+- Use drawing tools to interact with Earth Engine data.
+- Use shapefiles with Earth Engine without having to upload data to one's GEE account.
+- Export data in the Earth Engine FeatureCollection format to other formats (i.e., shp, csv, json, kml, kmz).
+- Export Earth Engine Image and ImageCollection as GeoTIFF.
+- Extract pixels from an Earth Engine Image into a 3D numpy array.
+- Calculate zonal statistics by group.
+- Add a custom legend for Earth Engine data.
+- Convert Earth Engine JavaScript projects to Python code from directly within a Jupyter notebook.
+- Add animated text to GIF images generated from Earth Engine data.
+- Add colorbar and images to GIF animations generated from Earth Engine data.
+- Create satellite timelapse animations with animated text using Earth Engine.
+- Search places and datasets from Earth Engine Data Catalog.
+- Use the timeseries inspector to visualize landscape changes over time.
+- Export Earth Engine maps as HTML files and PNG images.
+- Search Earth Engine API documentation within Jupyter notebooks.
+- Import Earth Engine assets from personal Earth Engine accounts.
+- Publish interactive GEE maps directly within a Jupyter notebook.
+- Add local raster datasets (e.g., GeoTIFF) to the map.
+- Support Cloud Optimized GeoTIFF (COG) and SpatioTemporal Asset Catalog (STAC).
+- Perform image classification and accuracy assessment.
+- Extract pixel values interactively and export data as shapefile and CSV.
+- Visualize land cover change with Sankey diagrams.
+- Load vector data from a PostGIS server.
+- Create publication-quality maps with cartoee.
 
-•	إمكانية خلق نصوص متحركة مع شريط الألوان إلى الصور بصيغة  GIF  و التي يتم توليدها من بيانات **EE** .
+## Summary
 
-•	القدرة على خلق صور متحركة حسب التسلسل الزمني بمفهوم TimeLapse  لصور الأقمار الصناعية.
+In this chapter, we began by covering the fundamentals of Geospatial Data Science, Google Earth Engine, and geemap. We then provided guidance on setting up a conda environment for installing geemap and its dependencies. Additionally, we walked through the process of using geemap with Google Colab as a cloud-based alternative to a local installation.
 
-•	تمكين المستخدم من توظيف مستكشف السلسلة الزمنية لتمثيل التغيرات عبر الزمن.
-
-•	دعم استيــــــــراد البيـــــــانات المكانيــــــــة  من صيغة GeoTIFF و أرشيــــــــف البينــــــات الزمكانيــــــــه  ( Spatio-Temporal Asset Catalog) المعدلة سحابياً من قبل **Google**. 
-
-•	القدرة على تحميل البيانات من خادم PostGIS
-
-
-### 1.10 خلاصة:
-علوم البيانات المكانية هو ذلك الحقل الذي يقوم بتطبيق النظريات و الخوارزميات و النماذج الرياضية التي يشتقها ميدان علوم البيانات (الصرف) على المعلومات التي تقترن بإحداثيات على سطح الأرض و التي تسمى البينات المكانية. لقد تم تغطيه أساسيات علوم الجغرافيا المكانية و استراض أهمية  **Google Earth Engine GEE** في عمليه تزويد المستخدمين بأرشيف هائل من البيانات المعدلة و الجاهزة للاستخدام في جميع التطبيقات. كذلك استخدام **geemap** في **colab**  و تثبيتها في **Anaconda** و العمل في بيئة **Jupyter Notebook** و ما يميز العمل فيها. في الفصل الأحق سوف نتعمق في استخدام **geemap** و كيفية بناء بعض التطبيقات. ختام الفصل الاول.
-
+By now, you should have a fully functional conda environment that is ready for working with Earth Engine and geemap. In our next chapter, we will explore geemap in greater depth.
