@@ -107,7 +107,7 @@ hist.update_layout(
 hist.write_image('water_occurrence.jpg', scale=2)
 ```
 
-### Surface water monthly history
+### تتبع تأريخ المياة السطحية شهريا
 
 ```{code-cell} ipython3
 dataset = ee.ImageCollection('JRC/GSW1_4/MonthlyHistory')
@@ -179,9 +179,9 @@ geemap.jrc_hist_monthly_history(
 )
 ```
 
-## Mapping flood extents
+## رسم نطاق الفيضانات
 
-### Create an interactive map
+### خلق خارطة تفاعلية
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=[29.3055, 68.9062], zoom=6)
@@ -572,7 +572,7 @@ Map.addLayer(treegain, {'palette': 'yellow'}, 'Tree gain')
 Map
 ```
 
-### احصائيات مناطقية بأستخدام اسماء البلدان
+### احتساب أحصائيات مناطقية حسب البلد
 
 ```{code-cell} ipython3
 Map = geemap.Map()
