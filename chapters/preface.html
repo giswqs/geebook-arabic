@@ -389,10 +389,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">من يمكنه الاستفاده من هذا الكتاب</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">ما الذي يبحثة هذا الكتاب</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">للحصول على اكبر فائدة من هذا الكتاب</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-jupyter-notebook-examples">Download Jupyter notebook examples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conventions-used">Conventions used</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-in-touch">Get in touch</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter">تحميل أمثلة دفتر ملاحظات Jupyter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">أتفاثيات الاستخدام</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">البقاء على تواصل</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">شكر وتقدير</a></li>
 </ul>
             </nav>
         </div>
@@ -417,31 +417,32 @@ document.write(`
 </section>
 <section id="id4">
 <h2>ما الذي يبحثة هذا الكتاب<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
-<p><strong>الفصل 1</strong> <em>مدخل الى GEE و geemap</em> يوفر هذا الفصل مقدمة الى GEE Python API و كذلك أعداد بيئة بايثون و العمل على geemap.</p>
-<p><strong>الفصل 2</strong> <em>انشاء الخارطة التفاعلية</em>: يعلم هذا الفصل كيفية أنشاء الخارطة التفاعلية و تخصيصها بأستخدام واجهات التخطيط المختلفة.</p>
-<p><strong>الفصل 3</strong> <em>إستخدام بيانات Earth Engine</em> :يغطي هذا الفصل أنواع البيانات, و يعلم هذا الفصل في كيفية البحث و تحميل مجاميع البيانات من Earth Engine على الخارطة التفاعلية.</p>
-<p><strong>الفصل 4</strong> <em>أستخدام البيانات الجغرافية المكاني المحلية</em> : يعلم هذا الفصل تحميل المتجهات و المرئيات على الخارطة التفاعلية و تحميل البيانات من OpenStreetMap.</p>
-<p><strong>الفصل 5</strong> <em>إستعراض و تمثيل البيانات الجغرافية المكانية</em> : يغطي هذا الفصل مختلف الادوات و التقنيات لاستعراض و تمثيل البيانات مثل استعراض خارطتين, ربط الخرائط, متصفح البيانات عبر الزمن. و كذلك يغطي خلق عناصر اضافية مثل شريط الالوان, مفتاح الخرائط, و التسميات.</p>
-<p><strong>الفصل 6</strong> <em>تحليل البيانات الجغرافية المكانية</em> : يغطي هذا الفصل الطرق الاحصائية و التعليم الالي و تحليل البيانات الجغرافية المكانية مثل الاحصاء المناطقي, التصنيف الغير موجه, التصنيف الغير موجه, و تقييم الدقة.</p>
-<p><strong>الفصل 7</strong> <em>استعراض بيانات Earth Engine</em> : هذا الفصل يغطي تصدير المتجهات و المرئيات الى Earth Engine و تحميل ألاف رقائق الصور من Earth Engine في غضون دقائق قليلة.</p>
-<p><strong>الفصل 8</strong> <em>إنشاء خارطة بأستخدام كارتووي Cartoee</em> : يغطي هذا الفصل كيفية خلق خرائط دقة عالية بأستخدام نموذج كارتووي. و كذلك يغطي رسم بيانات Earth Engine على الخارطة و تخصيص الاسقاط على الخارطة.</p>
-<p><strong>الفصل 9</strong> <em>خلق صور  متحركه حسب الفاصل الزمني Timelapse</em> : يزود هذا الفصل امثلة تطبيقية لاستخدام geemap في خلق صور متحركة حسب الفاصل الزمني للمرئيات و صور الجوية مثل Landsat, GOES, MODIS, NAIP.</p>
-<p><strong>الفصل 10</strong> <em>خلق تطبيقات ويب تفاعلية</em> : يعلم هذا الفصل كيفية بناء تطبيقات مع Earth Engine و geemap من البداية. و كذلك يغطي نشر التطبيقات على المنصات السحابية لجميع المستخدمين.</p>
-<p><strong>الفصل 11</strong> <em>تطبيقات Earth Engine</em> : يغطي هذا الفصل تطبيق Earth Engine في مجالات مختلفة مثل خرائط المياه السطحية, الغطاء النباتي, الفيضانات, الغطاء الارضي العالمي.</p>
+<p><strong>الفصل 1</strong>   <em>مدخل الى GEE و geemap</em> يوفر هذا الفصل مقدمة الى GEE Python API و كذلك أعداد بيئة بايثون و العمل على geemap.</p>
+<p><strong>الفصل 2</strong>   <em>انشاء الخارطة التفاعلية</em>: يعلم هذا الفصل كيفية أنشاء الخارطة التفاعلية و تخصيصها بأستخدام واجهات التخطيط المختلفة.</p>
+<p><strong>الفصل 3</strong>   <em>إستخدام بيانات Earth Engine</em> :يغطي هذا الفصل أنواع البيانات, و يعلم هذا الفصل في كيفية البحث و تحميل مجاميع البيانات من Earth Engine على الخارطة التفاعلية.</p>
+<p><strong>الفصل 4</strong>   <em>أستخدام البيانات الجغرافية المكاني المحلية</em> : يعلم هذا الفصل تحميل المتجهات و المرئيات على الخارطة التفاعلية و تحميل البيانات من OpenStreetMap.</p>
+<p><strong>الفصل 5</strong>   <em>إستعراض و تمثيل البيانات الجغرافية المكانية</em> : يغطي هذا الفصل مختلف الادوات و التقنيات لاستعراض و تمثيل البيانات مثل استعراض خارطتين, ربط الخرائط, متصفح البيانات عبر الزمن. و كذلك يغطي خلق عناصر اضافية مثل شريط الالوان, مفتاح الخرائط, و التسميات.</p>
+<p><strong>الفصل 6</strong>   <em>تحليل البيانات الجغرافية المكانية</em> : يغطي هذا الفصل الطرق الاحصائية و التعليم الالي و تحليل البيانات الجغرافية المكانية مثل الاحصاء المناطقي, التصنيف الغير موجه, التصنيف الغير موجه, و تقييم الدقة.</p>
+<p><strong>الفصل 7</strong>   <em>استعراض بيانات Earth Engine</em> : هذا الفصل يغطي تصدير المتجهات و المرئيات الى Earth Engine و تحميل ألاف رقائق الصور من Earth Engine في غضون دقائق قليلة.</p>
+<p><strong>الفصل 8</strong>   <em>إنشاء خارطة بأستخدام كارتووي Cartoee</em> : يغطي هذا الفصل كيفية خلق خرائط دقة عالية بأستخدام نموذج كارتووي. و كذلك يغطي رسم بيانات Earth Engine على الخارطة و تخصيص الاسقاط على الخارطة.</p>
+<p><strong>الفصل 9</strong>   <em>خلق صور  متحركه حسب الفاصل الزمني Timelapse</em> : يزود هذا الفصل امثلة تطبيقية لاستخدام geemap في خلق صور متحركة حسب الفاصل الزمني للمرئيات و صور الجوية مثل Landsat, GOES, MODIS, NAIP.</p>
+<p><strong>الفصل 10</strong>   <em>خلق تطبيقات ويب تفاعلية</em> : يعلم هذا الفصل كيفية بناء تطبيقات مع Earth Engine و geemap من البداية. و كذلك يغطي نشر التطبيقات على المنصات السحابية لجميع المستخدمين.</p>
+<p><strong>الفصل 11</strong>   <em>تطبيقات Earth Engine</em> : يغطي هذا الفصل تطبيق Earth Engine في مجالات مختلفة مثل خرائط المياه السطحية, الغطاء النباتي, الفيضانات, الغطاء الارضي العالمي.</p>
 </section>
 <section id="id5">
 <h2>للحصول على اكبر فائدة من هذا الكتاب<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <p>لغرض الحصول على أقصى فائده من هذا الكتاب, يفترض ان يكون لديك المعلومات الاساسية للبرمجه في لغة بايثون و التي تشمل المتغيرات, المصفوفات, القواميس, القوائم, حلقات التكرار, و الدوال. و هذا كنت على دراية بهذه المواضيع فهذا يعني انه لديل المعرفه الكافية للبدء للسير في هذا الكتاب! و للحصول على اقصى قدر من المعرفة من هذا الكتاب, يستحسن ان تقوم شخصيا بكتابة الكود البرمجي في الامثلة المذكوره في بيئة Jupyter مثل (Jupyter notebook, JupyterLab, Google Colab). سوف يساعدك ذلك على فهم البرامج و المفاهيم المتضمنه في هذا الكتاب. يمكن تحميل الامثله المذكوره في هذا الكتاب في نسخته الموجوده في مستودع GitHub و الموجود عبر الرابط <a class="github reference external" href="https://github.com/giswqs/geebook">giswqs/geebook</a>. القيام بهذا الخطوات سوف يجنبك الاخطاء المحتملة في عملية النسخ و اللصف للكود البرمجي.</p>
 </section>
-<section id="download-jupyter-notebook-examples">
-<h2>Download Jupyter notebook examples<a class="headerlink" href="#download-jupyter-notebook-examples" title="Permalink to this heading">#</a></h2>
-<p>You can download the Jupyter notebook examples for this book from the book’s GitHub repository at <a class="github reference external" href="https://github.com/giswqs/geebook">giswqs/geebook</a>. If there’s an update to the code, it will be updated in this GitHub repository.</p>
+<section id="jupyter">
+<h2>تحميل أمثلة دفتر ملاحظات Jupyter<a class="headerlink" href="#jupyter" title="Permalink to this heading">#</a></h2>
+<p>بالامكان تحميل أمثلة Jupyter لهذ الكتاب من خلال الرابط <a class="github reference external" href="https://github.com/giswqs/geebook">giswqs/geebook</a>. و هذا كان هناك اي تحديث على البرامج سوف تجده في المستودع المذكور.</p>
 </section>
-<section id="conventions-used">
-<h2>Conventions used<a class="headerlink" href="#conventions-used" title="Permalink to this heading">#</a></h2>
-<p>There are a number of text conventions used throughout this book.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">in</span> <span class="pre">text</span></code>: Indicates code words in text, folder names, filenames, file extensions, pathnames, URLs, etc. Here is an example: Set <code class="docutils literal notranslate"><span class="pre">EARTHENGINE_TOKEN</span></code> as a system environment variable to your Earth Engine API key.</p>
-<p>A block of Python code is set as follows:</p>
+<section id="id6">
+<h2>أتفاثيات الاستخدام<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<p>هناك عدد من نصوص الاتفاثيات مستخدمه في هذا الكتاب.
+There are a number of text conventions used throughout this book.</p>
+<p><code class="docutils literal notranslate"><span class="pre">الكود</span> <span class="pre">في</span> <span class="pre">النص</span></code>: يشير إلى كلمات التعليمات البرمجية في النص، وأسماء المجلدات، وأسماء الملفات، وامتدادات الملفات، وأسماء المسارات، وعناوين URL، وما إلى ذلك. فيما يلي مثال: قم بتعيين <code class="docutils literal notranslate"><span class="pre">EARTHENGINE_TOKEN</span></code> كمتغير بيئة نظام لمفتاح Earth Engine API الخاص بك.</p>
+<p>يتم تعيين كتلة كود بايثون على النحو التالي:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geemap</span>
@@ -452,18 +453,18 @@ document.write(`
 </div>
 </div>
 </div>
-<p><strong>Bold</strong>: Indicates a new term, an important word, or words that you see onscreen. For
-instance, words in menus or dialog boxes appear in bold. Here is an example: Click on <strong>Advanced settings</strong> to set <code class="docutils literal notranslate"><span class="pre">EARTHENGINE_TOKEN</span></code> as an environment variable.</p>
+<p><strong>غامق</strong> (<strong>Bold</strong>): يشير إلى مصطلح جديد، أو كلمة مهمة، أو الكلمات التي تراها على الشاشة. ل
+على سبيل المثال، تظهر الكلمات الموجودة في القوائم أو مربعات الحوار بالخط العريض. فيما يلي مثال: انقر فوق <strong>الإعدادات المتقدمة</strong> لتعيين <code class="docutils literal notranslate"><span class="pre">EARTHENGINE_TOKEN</span></code> كمتغير بيئة.</p>
 </section>
-<section id="get-in-touch">
-<h2>Get in touch<a class="headerlink" href="#get-in-touch" title="Permalink to this heading">#</a></h2>
-<p>Feedback from our readers is always welcome.</p>
-<p><strong>Questions:</strong> If you have any questions about the materials covered in the book, please visit <a class="github reference external" href="https://github.com/giswqs/geebook/discussions">giswqs/geebook#discussions</a> to ask questions and share ideas.</p>
-<p><strong>Errata:</strong> Although we have tried our best to ensure the accuracy of the book content, mistakes do happen. If you find any mistake in the book, we would be grateful if you report it to us. Please visit <a class="github reference external" href="https://github.com/giswqs/geebook/issues">giswqs/geebook#issues</a> and submit an issue.</p>
+<section id="id7">
+<h2>البقاء على تواصل<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<p>ردود الفعل من القراء لدينا هو دائما موضع ترحيب.</p>
+<p><strong>الأسئلة:</strong> إذا كانت لديك أي أسئلة حول المواد التي يغطيها الكتاب، فيرجى زيارة <a class="github reference external" href="https://github.com/giswqs/geebook/discussions">giswqs/geebook#discussions</a> لطرح الأسئلة ومشاركة الأفكار.</p>
+<p><strong>خطأ:</strong> على الرغم من أننا بذلنا قصارى جهدنا لضمان دقة محتوى الكتاب، إلا أن الأخطاء تحدث. إذا وجدت أي خطأ في الكتاب، سنكون ممتنين لو أبلغتنا به. يرجى زيارة <a class="github reference external" href="https://github.com/giswqs/geebook/issues">giswqs/geebook#issues</a> وإرسال المشكلة.</p>
 </section>
-<section id="acknowledgments">
-<h2>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this heading">#</a></h2>
-<p>This book is based upon work partially supported by the National Aeronautics and Space Administration (NASA) under Grant No. 80NSSC22K1742 issued through the <a class="reference external" href="https://bit.ly/3RVBRcQ">Open Source Tools, Frameworks, and Libraries 2020 Program</a>.</p>
+<section id="id8">
+<h2>شكر وتقدير<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<p>يستند هذا الكتاب إلى العمل المدعوم جزئيًا من قبل الإدارة الوطنية للملاحة الجوية والفضاء (NASA) بموجب المنحة رقم 1. 80NSSC22K1742  تم اصدارها على <a class="reference external" href="https://bit.ly/3RVBRcQ">Open Source Tools, Frameworks, and Libraries 2020 Program</a>.</p>
 <p>Some of the text and code examples in this book are adapted from the <a class="reference external" href="https://developers.google.com/earth-engine/guides">Earth Engine User Guides</a>. The Earth Engine team deserves credit for their excellent work on developing the Earth Engine platform and comprehensive user guides. I would like to give a special thank you to Khalil Misbah for designing the <a class="reference external" href="https://github.com/gee-community/geemap/tree/master/docs/assets">geemap logo</a>.</p>
 <p>I would like to express my sincere gratitude to the reviewers who provided valuable feedback on this book, including Ellen Brock, Jake Gearon, and Emma Izquierdo-Verdiguier. Your insights and suggestions helped me to improve the quality of my work and make it more accessible to readers. Your time and effort are greatly appreciated.</p>
 <p>I also want to acknowledge the efforts of my editor and publishing team, who worked tirelessly to bring this book to fruition. Your support and guidance throughout the process were invaluable, and I could not have done it without you.</p>
@@ -542,10 +543,10 @@ instance, words in menus or dialog boxes appear in bold. Here is an example: Cli
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">من يمكنه الاستفاده من هذا الكتاب</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">ما الذي يبحثة هذا الكتاب</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">للحصول على اكبر فائدة من هذا الكتاب</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-jupyter-notebook-examples">Download Jupyter notebook examples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conventions-used">Conventions used</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-in-touch">Get in touch</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter">تحميل أمثلة دفتر ملاحظات Jupyter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">أتفاثيات الاستخدام</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">البقاء على تواصل</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">شكر وتقدير</a></li>
 </ul>
   </nav></div>
 

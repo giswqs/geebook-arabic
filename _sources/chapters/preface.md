@@ -26,27 +26,27 @@ kernelspec:
 
 ## ما الذي يبحثة هذا الكتاب
 
-**الفصل 1** _مدخل الى GEE و geemap_ يوفر هذا الفصل مقدمة الى GEE Python API و كذلك أعداد بيئة بايثون و العمل على geemap. 
+**الفصل 1**   _مدخل الى GEE و geemap_ يوفر هذا الفصل مقدمة الى GEE Python API و كذلك أعداد بيئة بايثون و العمل على geemap. 
 
-**الفصل 2** _انشاء الخارطة التفاعلية_: يعلم هذا الفصل كيفية أنشاء الخارطة التفاعلية و تخصيصها بأستخدام واجهات التخطيط المختلفة.
+**الفصل 2**   _انشاء الخارطة التفاعلية_: يعلم هذا الفصل كيفية أنشاء الخارطة التفاعلية و تخصيصها بأستخدام واجهات التخطيط المختلفة.
 
-**الفصل 3** _إستخدام بيانات Earth Engine_ :يغطي هذا الفصل أنواع البيانات, و يعلم هذا الفصل في كيفية البحث و تحميل مجاميع البيانات من Earth Engine على الخارطة التفاعلية.
+**الفصل 3**   _إستخدام بيانات Earth Engine_ :يغطي هذا الفصل أنواع البيانات, و يعلم هذا الفصل في كيفية البحث و تحميل مجاميع البيانات من Earth Engine على الخارطة التفاعلية.
 
-**الفصل 4** _أستخدام البيانات الجغرافية المكاني المحلية_ : يعلم هذا الفصل تحميل المتجهات و المرئيات على الخارطة التفاعلية و تحميل البيانات من OpenStreetMap.
+**الفصل 4**   _أستخدام البيانات الجغرافية المكاني المحلية_ : يعلم هذا الفصل تحميل المتجهات و المرئيات على الخارطة التفاعلية و تحميل البيانات من OpenStreetMap.
 
-**الفصل 5** _إستعراض و تمثيل البيانات الجغرافية المكانية_ : يغطي هذا الفصل مختلف الادوات و التقنيات لاستعراض و تمثيل البيانات مثل استعراض خارطتين, ربط الخرائط, متصفح البيانات عبر الزمن. و كذلك يغطي خلق عناصر اضافية مثل شريط الالوان, مفتاح الخرائط, و التسميات. 
+**الفصل 5**   _إستعراض و تمثيل البيانات الجغرافية المكانية_ : يغطي هذا الفصل مختلف الادوات و التقنيات لاستعراض و تمثيل البيانات مثل استعراض خارطتين, ربط الخرائط, متصفح البيانات عبر الزمن. و كذلك يغطي خلق عناصر اضافية مثل شريط الالوان, مفتاح الخرائط, و التسميات. 
 
-**الفصل 6** _تحليل البيانات الجغرافية المكانية_ : يغطي هذا الفصل الطرق الاحصائية و التعليم الالي و تحليل البيانات الجغرافية المكانية مثل الاحصاء المناطقي, التصنيف الغير موجه, التصنيف الغير موجه, و تقييم الدقة.
+**الفصل 6**   _تحليل البيانات الجغرافية المكانية_ : يغطي هذا الفصل الطرق الاحصائية و التعليم الالي و تحليل البيانات الجغرافية المكانية مثل الاحصاء المناطقي, التصنيف الغير موجه, التصنيف الغير موجه, و تقييم الدقة.
 
-**الفصل 7** _استعراض بيانات Earth Engine_ : هذا الفصل يغطي تصدير المتجهات و المرئيات الى Earth Engine و تحميل ألاف رقائق الصور من Earth Engine في غضون دقائق قليلة.
+**الفصل 7**   _استعراض بيانات Earth Engine_ : هذا الفصل يغطي تصدير المتجهات و المرئيات الى Earth Engine و تحميل ألاف رقائق الصور من Earth Engine في غضون دقائق قليلة.
 
-**الفصل 8** _إنشاء خارطة بأستخدام كارتووي Cartoee_ : يغطي هذا الفصل كيفية خلق خرائط دقة عالية بأستخدام نموذج كارتووي. و كذلك يغطي رسم بيانات Earth Engine على الخارطة و تخصيص الاسقاط على الخارطة.
+**الفصل 8**   _إنشاء خارطة بأستخدام كارتووي Cartoee_ : يغطي هذا الفصل كيفية خلق خرائط دقة عالية بأستخدام نموذج كارتووي. و كذلك يغطي رسم بيانات Earth Engine على الخارطة و تخصيص الاسقاط على الخارطة.
 
-**الفصل 9** _خلق صور  متحركه حسب الفاصل الزمني Timelapse_ : يزود هذا الفصل امثلة تطبيقية لاستخدام geemap في خلق صور متحركة حسب الفاصل الزمني للمرئيات و صور الجوية مثل Landsat, GOES, MODIS, NAIP.
+**الفصل 9**   _خلق صور  متحركه حسب الفاصل الزمني Timelapse_ : يزود هذا الفصل امثلة تطبيقية لاستخدام geemap في خلق صور متحركة حسب الفاصل الزمني للمرئيات و صور الجوية مثل Landsat, GOES, MODIS, NAIP.
 
-**الفصل 10** _خلق تطبيقات ويب تفاعلية_ : يعلم هذا الفصل كيفية بناء تطبيقات مع Earth Engine و geemap من البداية. و كذلك يغطي نشر التطبيقات على المنصات السحابية لجميع المستخدمين.
+**الفصل 10**   _خلق تطبيقات ويب تفاعلية_ : يعلم هذا الفصل كيفية بناء تطبيقات مع Earth Engine و geemap من البداية. و كذلك يغطي نشر التطبيقات على المنصات السحابية لجميع المستخدمين.
 
-**الفصل 11** _تطبيقات Earth Engine_ : يغطي هذا الفصل تطبيق Earth Engine في مجالات مختلفة مثل خرائط المياه السطحية, الغطاء النباتي, الفيضانات, الغطاء الارضي العالمي.
+**الفصل 11**   _تطبيقات Earth Engine_ : يغطي هذا الفصل تطبيق Earth Engine في مجالات مختلفة مثل خرائط المياه السطحية, الغطاء النباتي, الفيضانات, الغطاء الارضي العالمي.
 
 
 ## للحصول على اكبر فائدة من هذا الكتاب
@@ -54,17 +54,18 @@ kernelspec:
 لغرض الحصول على أقصى فائده من هذا الكتاب, يفترض ان يكون لديك المعلومات الاساسية للبرمجه في لغة بايثون و التي تشمل المتغيرات, المصفوفات, القواميس, القوائم, حلقات التكرار, و الدوال. و هذا كنت على دراية بهذه المواضيع فهذا يعني انه لديل المعرفه الكافية للبدء للسير في هذا الكتاب! و للحصول على اقصى قدر من المعرفة من هذا الكتاب, يستحسن ان تقوم شخصيا بكتابة الكود البرمجي في الامثلة المذكوره في بيئة Jupyter مثل (Jupyter notebook, JupyterLab, Google Colab). سوف يساعدك ذلك على فهم البرامج و المفاهيم المتضمنه في هذا الكتاب. يمكن تحميل الامثله المذكوره في هذا الكتاب في نسخته الموجوده في مستودع GitHub و الموجود عبر الرابط <https://github.com/giswqs/geebook>. القيام بهذا الخطوات سوف يجنبك الاخطاء المحتملة في عملية النسخ و اللصف للكود البرمجي.
 
 
-## Download Jupyter notebook examples
+## تحميل أمثلة دفتر ملاحظات Jupyter
 
-You can download the Jupyter notebook examples for this book from the book's GitHub repository at <https://github.com/giswqs/geebook>. If there's an update to the code, it will be updated in this GitHub repository.
+بالامكان تحميل أمثلة Jupyter لهذ الكتاب من خلال الرابط <https://github.com/giswqs/geebook>. و هذا كان هناك اي تحديث على البرامج سوف تجده في المستودع المذكور.
 
-## Conventions used
+## أتفاثيات الاستخدام
 
+هناك عدد من نصوص الاتفاثيات مستخدمه في هذا الكتاب.
 There are a number of text conventions used throughout this book.
 
-`Code in text`: Indicates code words in text, folder names, filenames, file extensions, pathnames, URLs, etc. Here is an example: Set `EARTHENGINE_TOKEN` as a system environment variable to your Earth Engine API key.
+`الكود في النص`: يشير إلى كلمات التعليمات البرمجية في النص، وأسماء المجلدات، وأسماء الملفات، وامتدادات الملفات، وأسماء المسارات، وعناوين URL، وما إلى ذلك. فيما يلي مثال: قم بتعيين `EARTHENGINE_TOKEN` كمتغير بيئة نظام لمفتاح Earth Engine API الخاص بك.
 
-A block of Python code is set as follows:
+يتم تعيين كتلة كود بايثون على النحو التالي:
 
 ```{code-cell}
 import geemap
@@ -73,20 +74,22 @@ m = geemap.Map(center=[40, -100], zoom=4)
 m
 ```
 
-**Bold**: Indicates a new term, an important word, or words that you see onscreen. For
-instance, words in menus or dialog boxes appear in bold. Here is an example: Click on **Advanced settings** to set `EARTHENGINE_TOKEN` as an environment variable.
+**غامق** (**Bold**): يشير إلى مصطلح جديد، أو كلمة مهمة، أو الكلمات التي تراها على الشاشة. ل
+على سبيل المثال، تظهر الكلمات الموجودة في القوائم أو مربعات الحوار بالخط العريض. فيما يلي مثال: انقر فوق **الإعدادات المتقدمة** لتعيين `EARTHENGINE_TOKEN` كمتغير بيئة.
 
-## Get in touch
+## البقاء على تواصل
 
-Feedback from our readers is always welcome.
+ردود الفعل من القراء لدينا هو دائما موضع ترحيب.
 
-**Questions:** If you have any questions about the materials covered in the book, please visit <https://github.com/giswqs/geebook/discussions> to ask questions and share ideas.
+**الأسئلة:** إذا كانت لديك أي أسئلة حول المواد التي يغطيها الكتاب، فيرجى زيارة <https://github.com/giswqs/geebook/discussions> لطرح الأسئلة ومشاركة الأفكار.
 
-**Errata:** Although we have tried our best to ensure the accuracy of the book content, mistakes do happen. If you find any mistake in the book, we would be grateful if you report it to us. Please visit <https://github.com/giswqs/geebook/issues> and submit an issue.
+**خطأ:** على الرغم من أننا بذلنا قصارى جهدنا لضمان دقة محتوى الكتاب، إلا أن الأخطاء تحدث. إذا وجدت أي خطأ في الكتاب، سنكون ممتنين لو أبلغتنا به. يرجى زيارة <https://github.com/giswqs/geebook/issues> وإرسال المشكلة.
 
-## Acknowledgments
 
-This book is based upon work partially supported by the National Aeronautics and Space Administration (NASA) under Grant No. 80NSSC22K1742 issued through the [Open Source Tools, Frameworks, and Libraries 2020 Program](https://bit.ly/3RVBRcQ).
+## شكر وتقدير
+
+يستند هذا الكتاب إلى العمل المدعوم جزئيًا من قبل الإدارة الوطنية للملاحة الجوية والفضاء (NASA) بموجب المنحة رقم 1. 80NSSC22K1742  تم اصدارها على [Open Source Tools, Frameworks, and Libraries 2020 Program](https://bit.ly/3RVBRcQ).
+
 
 Some of the text and code examples in this book are adapted from the [Earth Engine User Guides](https://developers.google.com/earth-engine/guides). The Earth Engine team deserves credit for their excellent work on developing the Earth Engine platform and comprehensive user guides. I would like to give a special thank you to Khalil Misbah for designing the [geemap logo](https://github.com/gee-community/geemap/tree/master/docs/assets).
 
