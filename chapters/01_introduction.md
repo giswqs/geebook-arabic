@@ -69,18 +69,18 @@ width: 100%
 Earth Engine تسجيل حساب على 
 ```
 
-## What is geemap
+## ما هو geemap
+يمكن GEE مستخدميه من البرمجة بيئتين برمجيتين هما JavaScript API  و Python API. تعتبر البرمجة في بيئة  JavaScript API أكفاء بكثير منها في بيئة Python من حيث وظائف تمثيل النتائج و بشكل فعال و ذلك لوجود مصادر متعددة [documentation](https://developers.google.com/earth-engine)  و أيضاَ احتوائها على بيئة تطويــر (IDE)  (i.e., [GEE JavaScript Code Editor](https://code.earthengine.google.com)) متكاملة تفاعلية, و الذي يعتبر ذلك كله نقص في بيئة Python من حيث القدرة على أستعراض و تمثيل النتائج. و لأجل معالجة هذه المشكلة تم طرح حزمة **geemap**, حسب {cite}`Wu2020-br`. لقد تم بناء **geemap** بالاعتماد على مجموعة من الحزم الموجودة مسبقاً  مثل [earthengine-api](https://pypi.org/project/earthengine-api), [folium](https://python-visualization.github.io/folium), [ipyleaflet](https://github.com/jupyter-widgets/ipyleaflet) و [ipywidgets](https://github.com/jupyter-widgets/ipywidgets).  تمكن **geemap** المستخدم من تحليل و استعراض البيانات المكانية  المتاحة من قبل GEE و بشكل فعال داخل بيئة jupyter مع كتابة القليل من البرمجة (see {numref}`ch01_geemap_gui`).
 
-GEE provides users with both JavaScript and Python APIs for making computational requests to the Earth Engine servers. While the GEE JavaScript API has robust [documentation](https://developers.google.com/earth-engine) and an interactive IDE (i.e., [GEE JavaScript Code Editor](https://code.earthengine.google.com)), the GEE Python API has relatively limited functionality for visualizing results interactively, and there is a lack of documentation. The **geemap** Python package was created to fill this gap {cite}`Wu2020-br`. It is built upon a number of open-source Python libraries, such as the [earthengine-api](https://pypi.org/project/earthengine-api), [folium](https://python-visualization.github.io/folium), [ipyleaflet](https://github.com/jupyter-widgets/ipyleaflet), and [ipywidgets](https://github.com/jupyter-widgets/ipywidgets) packages. Geemap enables users to analyze and visualize Earth Engine datasets interactively within a Jupyter environment with minimal coding (see {numref}`ch01_geemap_gui`).
+تمكن **Geemap** الباحثين و الطلاب الراغبين في توظيف تنوع المكتبات و الادوات في Python من إستعراض و تمثيل البيانات المتاحة في Google Earth Engine. و كذلك تمكن من تحويل و ترجمة برامج JavaScript API الى Pyhton API. و   تزود **geemap** و اجهه مستخدم تفاعلية لاتمام عملية التحويل من JavaScript الى Python بدون كتابة اي اكواد. و التي تحفظ للمستخدم الكثير من الوقت والجهد من خلال تزويد واجهه بسيطة لاستعراض وتمثيل البيانات من Earth Engine. 
 
-**Geemap** is intended for students and researchers who would like to utilize the Python ecosystem of diverse libraries and tools to explore Google Earth Engine. It is also designed for existing GEE users who would like to transition from the GEE JavaScript API to the Python API. Geemap provides an interactive graphical user interface for converting GEE JavaScript projects to Python scripts without coding. It can save users a lot of time and effort by providing a simple interface for exploring and visualizing Earth Engine datasets.
 
 ```{figure} images/ch01_geemap_gui.jpg
 ---
 name: ch01_geemap_gui
 width: 100%
 ---
-The geemap graphical user interface built upon ipyleaflet and ipywidgets.
+ ipywidgets  التي تم بنائها الى مكتبة Geemap واجهة
 ```
 
 (ch01:install)=
