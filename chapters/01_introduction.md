@@ -96,9 +96,8 @@ width: 100%
 توجد geemap عن طريق قناة Anocanda  التي تسمى [conda-forge](https://anaconda.org/conda-forge/geemap). و التي هي عبارة عن جهد مجاني لمجموعة محترفه تزود حزم دعم لطيف واسع من البرامج. يفضل تنصيب  geemap في بيئة جديدة و نظيفة لأجل تجنب حدوث التعارض مع حزم الدوال و المكتبات التي تتعامل مع البيانات المكانية  و التي قد تكون موجودة مسبقاً, لذا يستحسن تنصيب geemap في بيئة نظيفة. الخطوات التالية هي لخلق بيئة جديدة و تنصيب متكامل ل geemap.
 
 
+أن قناة Anaconda عبارة عن جهد لمجموعة محترفة قدمت هذه الحزمه للاستخدام في طيف واسع من البرامج. أن تنصيب **geemap** في بيئة جديدة ليس ضرورياَ, و لكن قد يتعارض مع النسخ الاخرى التي تحتوي على حزم تتعامل مع البيانات الجيومكانية, لذل يفضل تنصيبها في بيئة جديدة لاجل تجنب هذا التعارض. الايعاز التالي يقوم بخلق بيئة جديدة في conda بأسم `gee` و تنصيب geemap:
 
-
-Anaconda channel, a community effort that provides conda packages for a wide range of software. Creating a new conda environment to install geemap is not strictly necessary, but given that some geemap dependencies might have a version conflict with other geospatial packages in an existing conda environment, it is a good practice to start fresh by installing geemap and its dependencies in a clean environment for your project. The following commands create a new conda environment named `gee` and install geemap in it:
 
 ```bash
 conda create -n gee python
