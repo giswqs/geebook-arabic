@@ -59,15 +59,14 @@ width: 100%
 ---
 Google Earth Engine  عدد البحوث المنشوره في
 ```
-
-To use Earth Engine, you must first [sign up for an Earth Engine account](https://code.earthengine.google.com/register) ({numref}`ch01_gee_signup`). You cannot use Google Earth Engine unless your application has been approved. Once you receive the application approval email, you can log in to the [Earth Engine JavaScript Code Editor](https://code.earthengine.google.com) to get familiar with the JavaScript API.
+لكي تتمكن من إستخدام منصة Earth Engine, يجب التسجيل حساب و عبر الرابط [sign up for an Earth Engine account](https://code.earthengine.google.com/register) ({numref}`ch01_gee_signup`). لا يمكن استخدام Google ما لم تتم الموافقة على الطلب. و حال إستلامك بريد ألكتروني بالموافقة يمكنك الدخو الى منصة محرر كود جافا سكربت [Earth Engine JavaScript Code Editor](https://code.earthengine.google.com) و لكي تتعرف على JavaScript API.
 
 ```{figure} images/ch01_gee_signup.jpg
 ---
 name: ch01_gee_signup
 width: 100%
 ---
-Signing up for an Earth Engine account.
+Earth Engine تسجيل حساب على 
 ```
 
 ## What is geemap
