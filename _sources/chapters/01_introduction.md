@@ -50,16 +50,14 @@ width: 100%
 
 
 ## ماهو Google Earth Engine (GEE)
-هو عبارة عن منصة سحابية تحتوي على كم هائل من البيانات المكانية  و صور الأقمار الصناعية  تبلغ عشرات البيتابايت [data catalog](https://developers.google.com/earth-engine/datasets) {cite}`Gorelick2017-mz`. خلال السنوات الأخيرة انتشر استخدام GEE بشكل كبير جداً في تطبيقات البيئة و على جميع المستويات حول العالم في مجتمع المعلومات الجغرافية {cite}`Amani2020-vb,Boothroyd2020-fx,Tamiminia2020-df,Wu2019-at` . منذ العام 2010 أصبح GEE تزايد في عدد البحوث المنشوره فيما يخصها   (see {numref}`ch01_gee_pubs`). استنادا الى التحليل البايومتري, 
-
- Based on the most recent bibliometric analysis, there are 1,077 peer-reviewed journal publications with the word “Google Earth Engine” in the title and 2,969 publications with the word "Google Earth Engine" in either the title or abstract. In 2022, the number of publications with “Google Earth Engine” in the title or abstract reached 1,150, which is more than a 280-fold increase from the year 2014 with only 4 publications.
+هو عبارة عن منصة سحابية تحتوي على كم هائل من البيانات المكانية  و صور الأقمار الصناعية  تبلغ عشرات البيتابايت [data catalog](https://developers.google.com/earth-engine/datasets) {cite}`Gorelick2017-mz`. خلال السنوات الأخيرة انتشر استخدام GEE بشكل كبير جداً في تطبيقات البيئة و على جميع المستويات حول العالم في مجتمع المعلومات الجغرافية {cite}`Amani2020-vb,Boothroyd2020-fx,Tamiminia2020-df,Wu2019-at` . منذ العام 2010 أصبح GEE تزايد في عدد البحوث المنشوره فيما يخصها   (see {numref}`ch01_gee_pubs`). استنادا الى التحليل البايومتري, فان 1077 بحث منشور يتضمن كلمه Google Eearth Engine في العنوان الرئيسي و 2969 بحث يتضمنها في العنوان الرئيسي و الخلاصة. في العام 2022, ان عدد البحوث المنشوره التي تتضمن كلمه ”Google Earth Engine“ في العنوان و الخلاصة قد بلغ 1150, و التي هي 280 ضعف عن العام 2014 و الذي كان 4 بحوث في ذلك العام. 
 
 ```{figure} images/ch01_gee_pubs.jpg
 ---
 name: ch01_gee_pubs
 width: 100%
 ---
-The number of journal publications empowered by Google Earth Engine.
+Google Earth Engine  عدد البحوث المنشوره في
 ```
 
 To use Earth Engine, you must first [sign up for an Earth Engine account](https://code.earthengine.google.com/register) ({numref}`ch01_gee_signup`). You cannot use Google Earth Engine unless your application has been approved. Once you receive the application approval email, you can log in to the [Earth Engine JavaScript Code Editor](https://code.earthengine.google.com) to get familiar with the JavaScript API.
