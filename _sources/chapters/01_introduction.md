@@ -145,7 +145,7 @@ Mamba تنصيب مدير الحزم .
 ---
 name: ch01_install_pygis
 ---
- تنصيب المكتبات المعتمدة في  geemap و من خلال pygis.
+  Installing optional dependencies of geemap through the pygis package.
 ```
 مبروك, الى هنا تمت عملية تنصيب geemap مع كامل الملحقات. في الفصول القادمه سوف نشرح كيفيه استخدام geemap في التطبيقات المختلفة.
 
