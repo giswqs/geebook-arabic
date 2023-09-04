@@ -104,7 +104,7 @@ conda create -n gee python
 conda activate gee
 conda install -c conda-forge geemap
 ```
-
+أولا, فتح **Anaconda Prompt**  أو **Terminal** ثم كتابة “conda create –n gee” ثم الضغط على **Enter** سوف يتم خلق بيئة جديدة بأسم   
 First, open the **Anaconda Prompt** or **Terminal** and type "conda create -n gee python". Press **Enter** to create a new conda environment named `gee` (see {numref}`ch01_conda_create`).
 
 ```{figure} images/ch01_conda_create.jpg
