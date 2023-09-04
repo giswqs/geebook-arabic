@@ -30,7 +30,9 @@ kernelspec:
 
 ## 1.2	ما هي علوم البيانات المكانيـــــــــــة 
 
-Before introducing geospatial data science, we need to understand what **data science** is. The term "data science" has gained a lot of attention during the past decade, along with related terms such as **big data**, **data analytics**, and **machine learning**. According to [Google Trends](https://bit.ly/40lfnpW), the online search interest over time in "data science" has experienced a rapid increase since 2016 (see {numref}`ch01_google_trends`). When we googled "data science", 4.1 billion records were returned, compared to 7.6 billion on "big data", 2.6 billion on "machine learning", and 1.9 billion on "data analytics". Interestingly, the interest in "big data" has been decreasing since 2018, while the interests in "data science" and "machine learning" continue to increase.
+قبل البدء بعلوم البيانات المكانيـــــــــــــة  يجب إن نأخذ لحمــــة عامة عن علوم البيانات **data science** . لاقى علوم البيانات أهميه كبيرة خلال العقد المنصــــــــرم بما يشتمل عليه  من مصطلحــــــــــــات مثل  **machine learning** ,**data analytics** ,**big data** . و طبقاً إلى موقع [Google Trends](https://bit.ly/40lfnpW), فأن اهتمام الباحثين عبر الأنترنت عن علوم البيانات **data science** قد ازداد و بشكل منقطع النظير منذ العام 2016 (see {numref}`ch01_google_trends`). 
+
+When we googled "data science", 4.1 billion records were returned, compared to 7.6 billion on "big data", 2.6 billion on "machine learning", and 1.9 billion on "data analytics". Interestingly, the interest in "big data" has been decreasing since 2018, while the interests in "data science" and "machine learning" continue to increase.
 
 ```{figure} images/ch01_google_trends.jpg
 ---
