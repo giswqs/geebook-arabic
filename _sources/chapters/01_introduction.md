@@ -30,7 +30,7 @@ kernelspec:
 و أخيراً سوف نقترح بعض المصادر القيمة و المفيدة في تعلم GEE  و geemap.  
 
 
-## 1.2	ما هي علوم البيانات المكانيـــــــــــة 
+## ما هي علوم البيانات المكانيـــــــــــة 
 
 قبل البدء بعلوم البيانات المكانيـــــــــــــة  يجب إن نأخذ لحمــــة عامة عن علوم البيانات **data science** . لاقى علوم البيانات أهميه كبيرة خلال العقد المنصــــــــرم بما يشتمل عليه  من مصطلحــــــــــــات مثل  **machine learning** ,**data analytics** ,**big data** . و طبقاً إلى موقع [Google Trends](https://bit.ly/40lfnpW), فأن اهتمام الباحثين عبر الأنترنت عن علوم البيانات **data science** قد ازداد و بشكل منقطع النظير منذ العام 2016 (see {numref}`ch01_google_trends`). 
 حيث يشير الموقع إلى أن 4.1 مليون عمليه بحث مسجلـــــــــــــــة عن علوم البيانات "data science", و 7.5 مليار عمليــــــة بحث عن "Big data" و 2.6 مليار عمليــة بحث عن التعلم الألي "Machine Learning", و اكثر من 1.9 مليار عن "data analytic"  و من المفاجئ إن نســـــــــــــــبة البحث عن "Big data"  تنـــــــــــــــــــاقص بشــــكل ملحوظ منذ العــــــــام 2018 مع زيادة في العمــــــليات الأخرى.
@@ -113,8 +113,8 @@ name: ch01_conda_create
 ---
 Creating a new conda environment named `gee`.
 ```
-ثانيا, تفعيل بيئة conda  من خلال كتابة الإيعاز التالي "conda activate gee". بعد ذلك قم بتنصيب geemap في هذه البيئة من خلال كتابة الايعاز  "conda install -c conda-forge geemap".  و كما في الشكل                   
- (see {numref}`ch01_conda_geemap`).
+ثانيا, تفعيل بيئة conda  من خلال كتابة الإيعاز التالي "conda activate gee". بعد ذلك قم بتنصيب geemap في هذه البيئة من خلال كتابة الايعاز  "conda install -c conda-forge geemap".  و كما في الشكل (see {numref}`ch01_conda_geemap`)               
+ .
 
 ```{figure} images/ch01_conda_geemap.jpg
 ---
@@ -131,22 +131,21 @@ Activating the new conda environment and installing geemap.
 conda install -c conda-forge mamba
 mamba install -c conda-forge pygis
 ```
-لاجل تنصيب Mamba, قم بكتابة الايعاز التالي "conda install -c conda-forge mamba", ثم الشغط على **Enter** و كما في الشكل التالي  (see {numref}`ch01_install_mamba`).
+لاجل تنصيب Mamba, قم بكتابة الايعاز التالي "conda install -c conda-forge mamba", ثم الضغط على **Enter** و كما في الشكل التالي  (see {numref}`ch01_install_mamba`).
 
 ```{figure} images/ch01_install_mamba.jpg
 ---
 name: ch01_install_mamba
 ---
-Installing the Mamba package manager.
+Mamba تنصيب مدير الحزم .
 ```
-
-Once Mamba is installed in a conda environment, you can then simply replace any `conda` command with `mamba`. For example, to install pygis, type "mamba install -c conda-forge pygis" and press **Enter** (see {numref}`ch01_install_pygis`).
+في حال تم تنصيب Mamba في بيئة conda, يمكنك ببساطة تبديل اي `conda` بالايعاز `mamba`. و على سبيل المثال, لاجل تنصيب pygis أكتب الايعاز التالي "mamba install -c conda-forge pygis" ثم أضغط على **Enter** و كما في الشكل التالي  (see {numref}`ch01_install_pygis`).
 
 ```{figure} images/ch01_install_pygis.jpg
 ---
 name: ch01_install_pygis
 ---
-Installing optional dependencies of geemap through the pygis package.
+ تنصيب المكتبات المعتمدة في  geemap و من خلال pygis.
 ```
 
 Congratulations! You have successfully installed geemap and its dependencies. We will dive into geemap in the next chapter.
