@@ -13,7 +13,7 @@ kernelspec:
 
 (chapter01)=
 
-# Introducing GEE and Geemap
+# مدخل الى GEE و geemap
 
 ```{contents}
 :local:
@@ -22,13 +22,13 @@ kernelspec:
 
 +++
 
-## Introduction
+## مدخل
+ان [Google Earth Engine](https://earthengine.google.com) هي منصــــة معالجه سحابيـــة واســـــعة الانتشــــــار فـــــــــــي مجتـــــمع  الجغرافيـــــة   المكانيـــــة. تعرض GEE  قائمة من البيانات تصل إلى ألاف  من تيرابايت أو مـــــا يســـــــــــمى  multi-Petabytes من صور الأقمار الاصطنـــــاعية و البيانـــــــات  المكانيــــة و التي تمكن المستخدم من أجراء عمليات تحليل و معالجة و تمثيل نتائج بسهوله و كافأه  و باستخدام   القليل من البرمجــــــة أو دون الحاجة إلى إن تكون ذا معرفه بالبرمجة. لقد تم بناء هذه المنصة على  [Earth Engine Python API](https://developers.google.com/earth-engine/guides/python_install) على الكثير من المكتبات و المصادر المفتوحة و اهمها [geemap](https://geemap.org) ذات الأهمية في خلق أدوات و نماذج برمجيه  تخص  تطبيقات الاستشعار عن بعد و نظم المعلومات الجغرافيــــــــــــة في بية Jupyter. و التي لاقت انتشاراً واسعاً منذ إطلاقها في أبريل عام 2020, حيث اصبحت من أهم المصادر و المنصات في أجراء عمليات تحليل تفاعلية و تمثيل للبيانات في Earth Engine. 
 
-[Google Earth Engine](https://earthengine.google.com) is a widely used cloud-computing platform in the geospatial community. It features a multi-petabyte data catalog of satellite imagery and geospatial datasets, enabling users to easily and efficiently visualize, manipulate, and analyze geospatial data. Built upon the [Earth Engine Python API](https://developers.google.com/earth-engine/guides/python_install) and open-source mapping libraries, [geemap](https://geemap.org) makes it much easier to analyze and visualize Earth Engine datasets in a Jupyter environment. Since its initial release in April 2020, geemap has become the most popular Python package for interactive analysis and visualization of Earth Engine data.
+في هذا الفصل سوف نستعرض أساسيات علوم البيانات المكانية و GEE  و كذلك geemap. كذلك سوف تتعلم الخطوات المطلوبة لعملية أعداد بيئة conda  و تثبيت geemap  في بيئة العمل, و أيضا توظيف geemap  مع Google colab من دون الحاجة إلى تثبيت أي برنامج إضافي أخر. و أخيراً سوف نقترح بعض المصادر القيمة و المفيدة في تعلم GEE  و geemap.  
 
-This chapter covers the fundamentals of Geospatial Data Science, Google Earth Engine, and geemap. We will walk through the process of setting up a conda environment and installing geemap. Additionally, we will explore how to utilize geemap with Google Colab without needing to install anything on your device. Finally, we will provide some useful resources for further learning about Earth Engine and geemap beyond the scope of this book.
 
-## What is Geospatial Data Science
+## 1.2	ما هي علوم البيانات المكانيـــــــــــة 
 
 Before introducing geospatial data science, we need to understand what **data science** is. The term "data science" has gained a lot of attention during the past decade, along with related terms such as **big data**, **data analytics**, and **machine learning**. According to [Google Trends](https://bit.ly/40lfnpW), the online search interest over time in "data science" has experienced a rapid increase since 2016 (see {numref}`ch01_google_trends`). When we googled "data science", 4.1 billion records were returned, compared to 7.6 billion on "big data", 2.6 billion on "machine learning", and 1.9 billion on "data analytics". Interestingly, the interest in "big data" has been decreasing since 2018, while the interests in "data science" and "machine learning" continue to increase.
 
