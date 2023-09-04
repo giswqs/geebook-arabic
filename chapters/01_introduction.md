@@ -113,8 +113,8 @@ name: ch01_conda_create
 ---
 Creating a new conda environment named `gee`.
 ```
-
-Next, activate the new conda environment by typing "conda activate gee" and press **Enter**. Then, install geemap into the environment we just activated by typing "conda install -c conda-forge geemap" and press **Enter** (see {numref}`ch01_conda_geemap`).
+ثانيا, تفعيل بيئة conda  من خلال كتابة الإيعاز التالي "conda activate gee". بعد ذلك قم بتنصيب geemap في هذه البيئة من خلال كتابة الايعاز  "conda install -c conda-forge geemap".                            
+ (see {numref}`ch01_conda_geemap`).
 
 ```{figure} images/ch01_conda_geemap.jpg
 ---
