@@ -25,7 +25,9 @@ kernelspec:
 ## مدخل
 ان [Google Earth Engine](https://earthengine.google.com) هي منصــــة معالجه سحابيـــة واســـــعة الانتشــــــار فـــــــــــي مجتـــــمع  الجغرافيـــــة   المكانيـــــة. تعرض GEE  قائمة من البيانات تصل إلى ألاف  من تيرابايت أو مـــــا يســـــــــــمى  multi-Petabytes من صور الأقمار الاصطنـــــاعية و البيانـــــــات  المكانيــــة و التي تمكن المستخدم من أجراء عمليات تحليل و معالجة و تمثيل نتائج بسهوله و كافأه  و باستخدام   القليل من البرمجــــــة أو دون الحاجة إلى إن تكون ذا معرفه بالبرمجة. لقد تم بناء هذه المنصة على  [Earth Engine Python API](https://developers.google.com/earth-engine/guides/python_install) على الكثير من المكتبات و المصادر المفتوحة و اهمها [geemap](https://geemap.org) ذات الأهمية في خلق أدوات و نماذج برمجيه  تخص  تطبيقات الاستشعار عن بعد و نظم المعلومات الجغرافيــــــــــــة في بية Jupyter. و التي لاقت انتشاراً واسعاً منذ إطلاقها في أبريل عام 2020, حيث اصبحت من أهم المصادر و المنصات في أجراء عمليات تحليل تفاعلية و تمثيل للبيانات في Earth Engine. 
 
-في هذا الفصل سوف نستعرض أساسيات علوم البيانات المكانية و GEE  و كذلك geemap. كذلك سوف تتعلم الخطوات المطلوبة لعملية أعداد بيئة conda  و تثبيت geemap  في بيئة العمل, و أيضا توظيف geemap  مع Google colab من دون الحاجة إلى تثبيت أي برنامج إضافي أخر. و أخيراً سوف نقترح بعض المصادر القيمة و المفيدة في تعلم GEE  و geemap.  
+في هذا الفصل سوف نستعرض أساسيات علوم البيانات المكانية و GEE  و كذلك geemap. 
+كذلك سوف تتعلم الخطوات المطلوبة لعملية أعداد بيئة conda  و تثبيت geemap  في بيئة العمل, و أيضا توظيف geemap  مع Google colab من دون الحاجة إلى تثبيت أي برنامج إضافي أخر. 
+و أخيراً سوف نقترح بعض المصادر القيمة و المفيدة في تعلم GEE  و geemap.  
 
 
 ## 1.2	ما هي علوم البيانات المكانيـــــــــــة 
@@ -39,12 +41,13 @@ kernelspec:
 name: ch01_google_trends
 width: 100%
 ---
-البحث عبر الانترنت عن data science في Goolge لغاية 28-أذار-2028. يمثل المحور العمودي أعلى النقاط في المخطط للبحث عن المسطلحات المذكوره للفتره (2004-2022). القيمة 100 تمثل أعلى انتشار للمسطلح. في حين 50 تمثل نصف الاحصائيات. و 0 تمثل عدم وجود بيانات كافيه للاحصاء.
+البحث عبر الانترنت عن علوم البيانات في كوكل لغاية 28-أذار-2028. يمثل المحور العمودي أعلى النقاط في المخطط للبحث عن المسطلحات المذكوره للفتره (2004-2022). القيمة 100 تمثل أعلى انتشار للمسطلح. في حين 50 تمثل نصف الاحصائيات. و 0 تمثل عدم وجود بيانات كافيه للاحصاء.
 ```
 
-Okay, so what is **data science**? Data science is a broad term that encompasses many areas of interest. From a high-level perspective, data science is the science of data or the study of data {cite}`Cao2017-eb`. From the disciplinary perspective, data science is an interdisciplinary field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from noisy, structured and unstructured data, and apply knowledge and actionable insights from data across a broad range of application domains {cite}`Dhar2013-lk`.
+حسناَ, ماهو مصطلح علوم البيانات **data science**؟ تُعَرف علوم البيانات  على أنها مصطلح واسع يشملُ عدد من المجالات في مساحة عمل واحدة, و من منظور أعلى يعرف علوم البيانات على انه العلم الذي يختص{cite}`Cao2017-eb` بدراسة البيانات {cite}`Cao2017-eb` . من وجهة نظر المطورين يعرف علوم البيانات ذلك حقلُ المعرفة الذي يشمل مساحات متداخلة من تطبيق طرق علمية و عمليات رياضية و خوارزميات و نظم إحصاء لاستخلاص أنماط معرفية و دلالات عميقة من البيانات المنظمة أو غير المنظمة في هيكل معين {cite}`Dhar2013-lk.
 
-**Geospatial data science** is a discipline within data science that specifically focuses on the spatial component of data. It brings forth theories, concepts and applications that are specific to geographic data in the realm of data science {cite}`Hassan2019-ub`. A good example of geospatial data science is NOAA's analysis of spatial and temporal datasets (e.g., satellite imagery, weather data, and climate models) to provide hurricane forecasts using statistics, machine learning, and mathematical models {cite}`Eftelioglu2017-gi`.
+علوم البيانات الجغرافية-المكانية **Geospatial data science** هو فرع علوم البيانات الذي يختص بدراسة المحتوى المكاني للبيانات. و يعرف على أنه فرع علوم البيانات الذي يجمع النظريات و المفاهيم و التطبيقات التي تختص بالبيانات الجغرافية {cite}`Hassan2019-ub`. مثال على علوم البيانات المكانية (GDS) هو قاعدة بيانات تحليل المعلومات الزمانية و المكانية المقدمة من مؤسسة الإدارة الوطنية للمحيطات و الغلاف الجوي NOAA's و التي هي عبارة عن صور أقمار صناعية (راستر) و بيانات مناخ, و أرصاد جوي, و التي تزود نشرة أرصاد البراكين باستخدام التعلم الألي (ML) و النماذج الرياضية {cite}`Eftelioglu2017-gi`. 
+
 
 ## What is Google Earth Engine
 
