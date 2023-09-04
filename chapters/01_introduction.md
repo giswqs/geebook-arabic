@@ -31,15 +31,15 @@ kernelspec:
 ## 1.2	ما هي علوم البيانات المكانيـــــــــــة 
 
 قبل البدء بعلوم البيانات المكانيـــــــــــــة  يجب إن نأخذ لحمــــة عامة عن علوم البيانات **data science** . لاقى علوم البيانات أهميه كبيرة خلال العقد المنصــــــــرم بما يشتمل عليه  من مصطلحــــــــــــات مثل  **machine learning** ,**data analytics** ,**big data** . و طبقاً إلى موقع [Google Trends](https://bit.ly/40lfnpW), فأن اهتمام الباحثين عبر الأنترنت عن علوم البيانات **data science** قد ازداد و بشكل منقطع النظير منذ العام 2016 (see {numref}`ch01_google_trends`). 
+حيث يشير الموقع إلى أن 4.1 مليون عمليه بحث مسجلـــــــــــــــة عن علوم البيانات "data science", و 7.5 مليار عمليــــــة بحث عن "Big data" و 2.6 مليار عمليــة بحث عن التعلم الألي "Machine Learning", و اكثر من 1.9 مليار عن "data analytic"  و من المفاجئ إن نســـــــــــــــبة البحث عن "Big data"  تنـــــــــــــــــــاقص بشــــكل ملحوظ منذ العــــــــام 2018 مع زيادة في العمــــــليات الأخرى.
 
-When we googled "data science", 4.1 billion records were returned, compared to 7.6 billion on "big data", 2.6 billion on "machine learning", and 1.9 billion on "data analytics". Interestingly, the interest in "big data" has been decreasing since 2018, while the interests in "data science" and "machine learning" continue to increase.
 
 ```{figure} images/ch01_google_trends.jpg
 ---
 name: ch01_google_trends
 width: 100%
 ---
-Online search interest trends on data science-related keywords by Google as of March 28, 2022. The numbers on the vertical axis represent search interest relative to the highest point on the chart for the given region (worldwide) and time (2004-2022). A value of 100 is the peak popularity for the term. A value of 50 means that the term is half as popular. A score of 0 means there was not enough data for this term.
+البحث عبر الانترنت عن data science في Goolge لغاية 28-أذار-2028. يمثل المحور العمودي أعلى النقاط في المخطط للبحث عن المسطلحات المذكوره للفتره (2004-2022). القيمة 100 تمثل أعلى انتشار للمسطلح. في حين 50 تمثل نصف الاحصائيات. و 0 تمثل عدم وجود بيانات كافيه للاحصاء.
 ```
 
 Okay, so what is **data science**? Data science is a broad term that encompasses many areas of interest. From a high-level perspective, data science is the science of data or the study of data {cite}`Cao2017-eb`. From the disciplinary perspective, data science is an interdisciplinary field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from noisy, structured and unstructured data, and apply knowledge and actionable insights from data across a broad range of application domains {cite}`Dhar2013-lk`.
