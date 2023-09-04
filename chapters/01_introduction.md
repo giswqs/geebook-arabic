@@ -147,8 +147,8 @@ name: ch01_install_pygis
 ---
  تنصيب المكتبات المعتمدة في  geemap و من خلال pygis.
 ```
-مبروك
-Congratulations! You have successfully installed geemap and its dependencies. We will dive into geemap in the next chapter.
+مبروك, الى هنا تمت عملية تنصيب geemap مع كامل الملحقات. في الفصول القادمه سوف نشرح كيفيه استخدام geemap في التطبيقات المختلفة.
+
 
 ### Installing with pip
 
