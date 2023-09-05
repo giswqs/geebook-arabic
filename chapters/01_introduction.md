@@ -268,17 +268,19 @@ The JupyterLab user interface.
 
 (ch01-ee-auth)=
 
-## Earth Engine authentication
+##  تصريح الدخول الى Earth Engine 
 
-You need to authenticate Earth Engine before using it. The package for the Earth Engine Python API is called [earthengine-api](https://pypi.org/project/earthengine-api), which should have been automatically installed by the geemap package as described in {numref}`ch01:install`. Enter the following script into a code cell of a Jupyter notebook and press `Shift + Enter` to execute:
+
+ قبل الاستخدام يتطلب الحصو على المصادقة من Earht Engine قب الاستخدام. إن حزمة [earthengine-api](https://pypi.org/project/earthengine-api) هي المسؤولة عن الدخول إلى GEE  و التي يتم تنصيبها بشكل أتوماتيكي مع geemap كما موضح في  {numref}`ch01:install`   . و بعد كتابة الإيعازات التالية ثم الضغط على `Shift + Enter` يتم البدء بعملية الحصول على التصريح بالدخول إلى GEE:
+
+
 
 ```{code-cell} ipython3
 import ee
 
 ee.Authenticate()
 ```
-
-After running the above script, a new tab will open in the browser asking you to sign in to your Earth Engine account. After signing in, you will be asked to authorize the Google Earth Engine Authenticator. If this is the first time you are authenticating Earth Engine, click **CHOOSE PROJECT** to select a Cloud Project to use for Earth Engine (see {numref}`ch01_generate_token`).
+سوف يتم فتح نافذة جديدة في المتصفح تطلب أدخال الحساب الذي تم تسجيله في Earth Engine , و بعد إدخال الحساب سوف يُطلب من المستخدم تخويل GEE و إجراء عمليه المصادقة, و اذا كانت لأول مره يفضل الدخول إلى **CHOOSE PROJECT**  لتحديد المساحة السحابية المخصصة لتنفيذ البرنامج علىGoogle Earht Engine كما في الشكل (see {numref}`ch01_generate_token`).
 
 ```{figure} images/ch01_generate_token.jpg
 ---
@@ -286,8 +288,9 @@ name: ch01_generate_token
 ---
 Earth Engine Notebook Authenticator.
 ```
+يمكن اختيار مشروع سحابي جديد أو مشروع موجود أصلا في حال اختيار مشروع جديد. أدخل أسم للمشروع مثل `ee-your-username` ثم الضغط على تبويب **SELECT** لخلق مشروع جديد. اذا ظهرت لك رسالة تحذير باللون الأحمر أضغط على سياسة الخدمة السحابية **Cloud Terms of Service** للموافقة ثم اختيار **SELECT** كما في الشكل التالي (see {numref}`ch01_create_project`):
 
-You can either choose an existing Cloud Project or create a new one. If you choose to create a new Cloud Project, enter a project name, e.g., `ee-your-username` and click the blue **SELECT** button to create a new Cloud Project. If a red warning message appears at the bottom of the page, click on the **Cloud Terms of Service** link to accept the terms of service and then click the **SELECT** button again (see {numref}`ch01_create_project`).
+
 
 ```{figure} images/ch01_create_project.jpg
 ---
@@ -295,8 +298,8 @@ name: ch01_create_project
 ---
 Creating a new Cloud Project.
 ```
+بعد تحديد أو خلق مشروع سحابي أضغط على توليد رابط مشفر **GENERATE TOKEN**,  سوف يتم السؤال عن حساب المستخدم في EE للتسجيل في خدمة عملاء Notebook كما في الشكل ( see {numref}`ch01_choose_account`).
 
-After selecting a Cloud Project, click the **GENERATE TOKEN** button to generate a new token. You will be asked to choose your Earth Engine account for the Notebook Client (see {numref}`ch01_choose_account`).
 
 ```{figure} images/ch01_choose_account.jpg
 ---
