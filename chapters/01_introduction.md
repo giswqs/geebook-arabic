@@ -370,9 +370,8 @@ The interactive map displayed in Google Colab.
 
 ```
 
-## Using geemap with a VPN
-
-When using geemap through a VPN, it's important to use "geemap.set_proxy(port=your-port-number)" to connect to Earth Engine servers ({numref}`ch01_vpn_proxy`). Failure to do so may result in a connection timeout issue.
+## أستخدام geemap من VPN
+ان أستخدام geemap من خلال VPN هو أمر مهم لتطبيق "geemap.set_proxy(port=your-port-number)" و لخلق رابط مع خدمة Earth Engine  كما في الشكل ({numref}`ch01_vpn_proxy`). الفشل في خلق هذا الرابط يمكن ان ينتج انتهاء فتره الاتصال.
 
 ```{code-cell} ipython3
 import geemap
