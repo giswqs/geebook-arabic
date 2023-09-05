@@ -167,40 +167,39 @@ pip install geemap
 - `pip install geemap[lidar]`: ipygany, ipyvtklink, laspy, panel, pyntcloud[LAS], pyvista, pyvista-xarray, and rioxarray تنصيب المكتبات.
 - `pip install geemap[raster]`:  geedim, localtileserver, rio-cogeo, rioxarray, netcdf4, and pyvista-xarray  تنصيب المكتبات.
 - `pip install geemap[sql]`:  psycopg2 and sqlalchemy  تنصيب مكتبتي.
-- `pip install geemap[apps]`: gradio, streamlit-folium, and voila تنصيب مكتبات
+- `pip install geemap[apps]`: gradio, streamlit-folium, and voila تنصيب مكتبات.
 - `pip install geemap[vector]`: geopandas and osmnx  تنصيب مكتبتي.
 
-### Installing from source
+### تثبيت من مصادر أخرى
+يمكن تنصيب geemap عن طريق أحد المستودعات الموجودة في GitHub مع [Git](https://git-scm.com)  و استخدام pip و حسب الإيعاز التالي:
 
-You may install the latest development version by cloning the GitHub repository with [Git](https://git-scm.com) and using pip to install from the local directory:
 
 ```bash
 git clone https://github.com/gee-community/geemap
 cd geemap
 pip install .
 ```
+و يمكن تنصيب أخر اصدار مباشراَ من خلال مستودع GitHub و كما في الايعاز التالي:
 
-It is also possible to install the latest development version directly from the GitHub repository with:
 
 ```bash
 pip install git+https://github.com/gee-community/geemap
 ```
 
-### Upgrading geemap
+### تحديث geemap
+اذا تمت عملية التنصيب ل geemap و كنت ترغب في تحديث او الانتقال الى النسخه الاعلى, يمكن استخدام الايعاز التالي في terminal:
 
-If you have installed geemap before and want to upgrade to the latest version, you can run the following command in your terminal:
 
 ```bash
 pip install -U geemap
 ```
-
-If you use conda, you can update geemap to the latest version by running the following command in your terminal:
+و اذا كنت تستخدم conda, يمكنك اجراء عملية التحديث من خلال الايعاز التالي و من داخل terminal:
 
 ```bash
 conda update -c conda-forge geemap
 ```
+ولأجل تنصيب  أخر نسخه مطوره من GitHub و من داخل jupyter noteobook و بدون Git يمكن تنفيذ الإيعاز التالي في Jupyter notebook مع أعاده تشغيل kernel لأجل تفعيل الإصدار الجديد. 
 
-To install the development version from GitHub directly within a Jupyter notebook without using Git, run the following code in a Jupyter notebook and restart the kernel to take effect:
 
 ```{code-cell} ipython3
 import geemap
@@ -208,31 +207,30 @@ import geemap
 geemap.update_package()
 ```
 
-### Using Docker
+### تثبيت باستخدام Docker
 
-Geemap is also available on [Docker Hub](https://hub.docker.com/r/giswqs/geemap).
+ان geemap موجوده ايضا في [Docker Hub](https://hub.docker.com/r/giswqs/geemap).
 
-To use geemap in a Docker container, you first need to install [Docker](https://docs.docker.com/get-docker). Once Docker is installed, you can pull the latest geemap image from Docker Hub by running the following command in your terminal:
+لاجل استخدام geemap في حاويه Docker,  يجب ان تقوم بعملية تنصيب لحاويه [Docker](https://docs.docker.com/get-docker).و حال تنصيب Docker, يمكن ان يمكن تنصيب اخر اصدار من geemap من خلال حاوية Docker, و من ثم تنفيذ الإيعاز التالي:
+
 
 ```bash
 docker run -it -p 8888:8888 giswqs/geemap:latest
 ```
 
-## Creating a Jupyter notebook
-
-Let's activate the conda environment created in the previous section:
+## كيفية خلق Jupyter notebook
+اولا علينا تفعيل البيئة الجديده التي تم خلقها في conda و من خلال الايعاز التالي:
 
 ```bash
 conda activate gee
 ```
-
-Next, launch JupyterLab by typing the following commands in the **Terminal** or **Anaconda Prompt**:
+ثانيا, اطلاق Jupyter من خلال كتابة الايعاز التالي في **Terminal** or **Anaconda Prompt**:
 
 ```bash
 jupyter lab
 ```
+ان Jupyter سوف يقوم بفتح صفحه جديده في متصفح الانترنت الخاص بجهازك. أضغط ايقونه **Python 3** على الجهه العاليا من الزاويه اليسرى لمنصه  JupyterLab **Launcher** يمكنك ملاحظه ذلك في (see {numref}`ch01_jupyterlab`)  أو الذهاب الى  **File -> New -> Notebook** لاجل ان تخلق صفحه ملاحظات notebook جديدة. اختر صفحة الملاحظات الجديده في JupyterLab File Browser ثم قم بالضغط على **F2** لاجل أعادة التسميه للصفحة, مثل **chapter01.ipynb**. 
 
-JupyterLab will open as a new tab in the browser. Click the **Python 3** icon in the top left corner of the JupyterLab **Launcher** window (see {numref}`ch01_jupyterlab`) or go to **File -> New -> Notebook** to create a new notebook. Select the newly created notebook in the JupyterLab File Browser tab and press **F2** to rename the notebook, e.g., **chapter01.ipynb**.
 
 ```{figure} images/ch01_jupyterlab.jpg
 ---
@@ -240,32 +238,33 @@ name: ch01_jupyterlab
 ---
 The JupyterLab user interface.
 ```
+يتضمن Jupyter notebook واجهتين هما **Edit mode**  و  **Command mode**. يختص Edit mode  بكتابة الكود البرمجي على شكل خلايا أشبه بمحرر النصوص, في حين إن command mode يسمح بكتابة الكود البرمجي على شكل رزمه كاملة و لكن لا يمكن كتابة الكود البرمجي بشكل خلايا منفصلة. يحتوي Jupyter notebook على عدد من مختصرات لوحه المفاتيح {cite}`Yordanov2017-hl`. في ادناه مجموعة من هذه المختصرات. مع ملاحظه انها لمستخدمي Windows و Linux. و لمستخدمي Mac, استبدل `Ctrl` ب `Command`. 
 
-Jupyter notebook has two modes: **Edit mode** and **Command mode**. The Edit mode allows you to type into the cells like a normal text editor. The Command mode allows you to edit the notebook as a whole, but not type into individual cells. Jupyter notebook has many keyboard shortcuts {cite}`Yordanov2017-hl`. Here are some commonly used shortcuts. Note that the shortcuts are for Windows and Linux users. For Mac users, replace `Ctrl` with `Command`.
+ 
 
-Shortcuts in both modes:
+مختصارت في كلا الواجهتين :
 
-- `Shift + Enter`: run the current cell, select below
-- `Ctrl + Enter`: run selected cells
-- `Alt + Enter`: run the current cell, insert below
-- `Ctrl + S`: save and checkpoint
+- `Shift + Enter`: تنفيذ الخلية الحالية, و الانتقال الى الاخرى السفلى
+- `Ctrl + Enter`:تنفيذ الخلية المختارها او الحالية 
+- `Alt + Enter`: تنفيذ الخلية الحالية, و ادخال خلية جديدة 
+- `Ctrl + S`: حفظ و تدقيق
 
-While in command mode (press `Esc` to activate):
+في بيئة command  يجب عليك (press `Esc` to activate):
 
-- `A`: insert cell above
-- `B`: insert cell below
-- `X`: cut selected cells
-- `C`: copy selected cells
-- `V`: paste cells below
-- `Y`: change the cell type to Code
-- `M`: change the cell type to Markdown
-- `P`: open the command palette
+- `A`: ادخال خلية الى الاعلى
+- `B`: ادخال خلية الى الاسفل
+- `X`: استقطاع الخلية المختارة
+- `C`: نسخ الخلية
+- `V`: لصق الخلية
+- `Y`: تغيير الخلية الى كود
+- `M`: تغيير الخلية الى نص
+- `P`: فتح لوحة الايعازات
 
-While in edit mode (press `Enter` to activate):
+في حين في بيئة Edit يجب  (press `Enter` to activate):
 
-- `Esc`: activate the command mode
-- `Tab`: code completion or indent
-- `Shift + Tab`: show tooltip
+- `Esc`: تفعيل command mode
+- `Tab`: الانتهاء من الايعاز او المسافة البادئة
+- `Shift + Tab`: لا ظهار tooltip
 
 (ch01-ee-auth)=
 
