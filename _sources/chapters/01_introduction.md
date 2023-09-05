@@ -150,24 +150,25 @@ name: ch01_install_pygis
 مبروك, الى هنا تمت عملية تنصيب geemap مع كامل الملحقات. في الفصول القادمه سوف نشرح كيفيه استخدام geemap في التطبيقات المختلفة.
 
 
-### Installing with pip
+### تثبيت باستخدام pip
+أن geemap كذلك موجوده في [PyPI](https://pypi.org/project/geemap). و التي يمكن تنصيبها من خلال الايعاز التالي:
 
-Geemap is also available on [PyPI](https://pypi.org/project/geemap). It can be installed with pip using the following command:
+
 
 ```bash
 pip install geemap
 ```
+جميع الملحقات الضروريه في geemap موجوده في القائمة [requirements_all.txt](https://github.com/gee-community/geemap/blob/master/requirements_all.txt) و التي يمكن تنصيبها من خلال واحده من الايعازات التالية:
 
-All optional dependencies of geemap are listed in [requirements_all.txt](https://github.com/gee-community/geemap/blob/master/requirements_all.txt), which can be installed using one of the following:
 
-- `pip install geemap[extra]`: installing extra optional dependencies listed in requirements_extra.txt.
-- `pip install geemap[all]`: installing all optional dependencies listed in requirements_all.txt.
-- `pip install geemap[backends]`: installing keplergl, pydeck, and plotly.
-- `pip install geemap[lidar]`: installing ipygany, ipyvtklink, laspy, panel, pyntcloud[LAS], pyvista, pyvista-xarray, and rioxarray.
-- `pip install geemap[raster]`: installing geedim, localtileserver, rio-cogeo, rioxarray, netcdf4, and pyvista-xarray.
-- `pip install geemap[sql]`: installing psycopg2 and sqlalchemy.
-- `pip install geemap[apps]`: installing gradio, streamlit-folium, and voila
-- `pip install geemap[vector]`: installing geopandas and osmnx.
+- `pip install geemap[extra]`: requirements_extra.txt تنصيب اختيارات اخرى من القائمه .
+- `pip install geemap[all]`: requirements_all.txt تنصيب جميع الاختيارات من القائمة .
+- `pip install geemap[backends]`: keplergl, pydeck, and plotly  تنصيب مكتبتي.
+- `pip install geemap[lidar]`: ipygany, ipyvtklink, laspy, panel, pyntcloud[LAS], pyvista, pyvista-xarray, and rioxarray تنصيب المكتبات.
+- `pip install geemap[raster]`:  geedim, localtileserver, rio-cogeo, rioxarray, netcdf4, and pyvista-xarray  تنصيب المكتبات.
+- `pip install geemap[sql]`:  psycopg2 and sqlalchemy  تنصيب مكتبتي.
+- `pip install geemap[apps]`: gradio, streamlit-folium, and voila تنصيب مكتبات
+- `pip install geemap[vector]`: geopandas and osmnx  تنصيب مكتبتي.
 
 ### Installing from source
 

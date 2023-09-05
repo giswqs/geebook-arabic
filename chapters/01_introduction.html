@@ -391,7 +391,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geemap">1.4. ما هو geemap</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ch01-install">1.5. تثبيت geemap</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda">1.5.1. التثبيت في conda</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-with-pip">1.5.2. Installing with pip</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pip">1.5.2. تثبيت باستخدام pip</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-from-source">1.5.3. Installing from source</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upgrading-geemap">1.5.4. Upgrading geemap</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-docker">1.5.5. Using Docker</a></li>
@@ -425,7 +425,7 @@ document.write(`
 <li><p><a class="reference internal" href="#ch01-install" id="id16">تثبيت geemap</a></p>
 <ul>
 <li><p><a class="reference internal" href="#conda" id="id17">التثبيت في conda</a></p></li>
-<li><p><a class="reference internal" href="#installing-with-pip" id="id18">Installing with pip</a></p></li>
+<li><p><a class="reference internal" href="#pip" id="id18">تثبيت باستخدام pip</a></p></li>
 <li><p><a class="reference internal" href="#installing-from-source" id="id19">Installing from source</a></p></li>
 <li><p><a class="reference internal" href="#upgrading-geemap" id="id20">Upgrading geemap</a></p></li>
 <li><p><a class="reference internal" href="#using-docker" id="id21">Using Docker</a></p></li>
@@ -538,22 +538,22 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </figure>
 <p>مبروك, الى هنا تمت عملية تنصيب geemap مع كامل الملحقات. في الفصول القادمه سوف نشرح كيفيه استخدام geemap في التطبيقات المختلفة.</p>
 </section>
-<section id="installing-with-pip">
-<h3><a class="toc-backref" href="#id18" role="doc-backlink"><span class="section-number">1.5.2. </span>Installing with pip</a><a class="headerlink" href="#installing-with-pip" title="Permalink to this heading">#</a></h3>
-<p>Geemap is also available on <a class="reference external" href="https://pypi.org/project/geemap">PyPI</a>. It can be installed with pip using the following command:</p>
+<section id="pip">
+<h3><a class="toc-backref" href="#id18" role="doc-backlink"><span class="section-number">1.5.2. </span>تثبيت باستخدام pip</a><a class="headerlink" href="#pip" title="Permalink to this heading">#</a></h3>
+<p>أن geemap كذلك موجوده في <a class="reference external" href="https://pypi.org/project/geemap">PyPI</a>. و التي يمكن تنصيبها من خلال الايعاز التالي:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>geemap
 </pre></div>
 </div>
-<p>All optional dependencies of geemap are listed in <a class="reference external" href="https://github.com/gee-community/geemap/blob/master/requirements_all.txt">requirements_all.txt</a>, which can be installed using one of the following:</p>
+<p>جميع الملحقات الضروريه في geemap موجوده في القائمة <a class="reference external" href="https://github.com/gee-community/geemap/blob/master/requirements_all.txt">requirements_all.txt</a> و التي يمكن تنصيبها من خلال واحده من الايعازات التالية:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">geemap[extra]</span></code>: installing extra optional dependencies listed in requirements_extra.txt.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">geemap[all]</span></code>: installing all optional dependencies listed in requirements_all.txt.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">geemap[backends]</span></code>: installing keplergl, pydeck, and plotly.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">geemap[lidar]</span></code>: installing ipygany, ipyvtklink, laspy, panel, pyntcloud[LAS], pyvista, pyvista-xarray, and rioxarray.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">geemap[raster]</span></code>: installing geedim, localtileserver, rio-cogeo, rioxarray, netcdf4, and pyvista-xarray.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">geemap[sql]</span></code>: installing psycopg2 and sqlalchemy.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">geemap[apps]</span></code>: installing gradio, streamlit-folium, and voila</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">geemap[vector]</span></code>: installing geopandas and osmnx.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">geemap[extra]</span></code>: requirements_extra.txt تنصيب اختيارات اخرى من القائمه .</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">geemap[all]</span></code>: requirements_all.txt تنصيب جميع الاختيارات من القائمة .</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">geemap[backends]</span></code>: keplergl, pydeck, and plotly  تنصيب مكتبتي.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">geemap[lidar]</span></code>: ipygany, ipyvtklink, laspy, panel, pyntcloud[LAS], pyvista, pyvista-xarray, and rioxarray تنصيب المكتبات.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">geemap[raster]</span></code>:  geedim, localtileserver, rio-cogeo, rioxarray, netcdf4, and pyvista-xarray  تنصيب المكتبات.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">geemap[sql]</span></code>:  psycopg2 and sqlalchemy  تنصيب مكتبتي.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">geemap[apps]</span></code>: gradio, streamlit-folium, and voila تنصيب مكتبات</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">geemap[vector]</span></code>: geopandas and osmnx  تنصيب مكتبتي.</p></li>
 </ul>
 </section>
 <section id="installing-from-source">
@@ -878,7 +878,7 @@ pip<span class="w"> </span>install<span class="w"> </span>.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geemap">1.4. ما هو geemap</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ch01-install">1.5. تثبيت geemap</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda">1.5.1. التثبيت في conda</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-with-pip">1.5.2. Installing with pip</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pip">1.5.2. تثبيت باستخدام pip</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-from-source">1.5.3. Installing from source</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upgrading-geemap">1.5.4. Upgrading geemap</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-docker">1.5.5. Using Docker</a></li>
