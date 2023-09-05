@@ -307,8 +307,8 @@ name: ch01_choose_account
 ---
 Choosing an account for the Earth Engine Notebook Client.
 ```
-
-Click the **Allow** button to allow the Notebook Client to access your Earth Engine account (see {numref}`ch01_notebook_client`).
+ثم أضغط على زر Allow  للسماح لخدمة عملاء Notebook للوصول إلى حساب المستخدم في EE كما في الشكل 
+ (see {numref}`ch01_notebook_client`).
 
 ```{figure} images/ch01_notebook_client.jpg
 ---
@@ -317,7 +317,7 @@ name: ch01_notebook_client
 Choosing an account for the Earth Engine Notebook Client.
 ```
 
-An authentication code will be generated and displayed on the page. Copy the authorization code and paste it into the notebook cell asking for the verification code. Press **Enter** and the `Successfully saved authorization token` message should appear beneath the authorization code you entered (see {numref}`ch01_auth_code`).
+سوف يتم فتح صفحة جديدة في المتصفح تحتوي على كود المصادقة, قم بنسخ الكود ثم لصقه في تبويب خلية Notebook و التي تَسئلك عن رمز التحقق, ثم أضغط **Enter**  وسوف تظهر عبارة  `Successfully saved authorization token` أسفل الرمز الذي تم ادخالة كما في الشكل (see {numref}`ch01_auth_code`).
 
 ```{figure} images/ch01_auth_code.jpg
 ---
@@ -325,8 +325,7 @@ name: ch01_auth_code
 ---
 Copying the authentication code.
 ```
-
-Congratulations! You have successfully authenticated Earth Engine for use in your Jupyter notebook. In general, authentication for local installations is a one-time step that generates a persistent authorization token stored on a local computer. The token can be found in the following file path depending on your operating system. Note that you might need to show the hidden directories on your computer in order to see the `.config` folder under the home directory.
+إلى هنا تمت عملية المصادقة على الدخول إلى EE  عن طريق jupyter Notebook و الوصول إلى أرشيف Google و هذه الخطوات يتم تنفيذها مره واحده فقط. و للوصول إلى رمز التحقق في ذاكرة الحاسوب فهو في الامتداد التالي  و حسب نوع نظام التشغيل. و للملاحظة, ربما تحتاج الى اظار الملفات المخفية في جهازك لكي ترى الملفات ذات الامتداد  `config.` 
 
 ```{code-cell}
 Windows: C:\\Users\\USERNAME\\.config\\earthengine\\credentials
@@ -334,13 +333,13 @@ Linux: /home/USERNAME/.config/earthengine/credentials
 MacOS: /Users/USERNAME/.config/earthengine/credentials
 ```
 
-Once Earth Engine is authenticated, you can run the following script to initialize Earth Engine for a new Python session.
+بعد إتمام العملية الحصول على تخويل الدخول, يمكن تنفيذ الإيعاز التالي لأنشاء رابط مع Earth ENgine لأجل أنشاء فصل Python جديد. 
 
 ```{code-cell} ipython3
 ee.Initialize()
 ```
+بشكل عام, تحتاج الى انشاء فصل جديد من Python, و كلما تفتح Jupyter notebook او Python و تستخدم Earth Engine. و لحسن الحظ, geemap بشكل اوتماتيكي تنشاء Earth Engine عند خلث خارطة تفاعلية, و التي سوف تغطى في الفصل القادم. و من النادر تنفيذها `()ee.Initialize` .
 
-In general, you will need to initialize Earth Engine for each new Python session, i.e., whenever you open a Jupyter notebook or Python script and want to use Earth Engine. Fortunately, geemap can automatically initialize Earth Engine for you when creating an interactive map, which will be covered in the next chapter. In other words, you rarely need to run `ee.Initialize()` explicitly.
 
 ## Using Google Colab
 
