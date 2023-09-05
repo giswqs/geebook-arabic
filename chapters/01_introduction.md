@@ -410,23 +410,24 @@ Using geemap with a VPN.
 - تحويل مشاريع Earth Engine JavaScript إلى كود Python مباشرة من داخل دفتر ملاحظات Jupyter.
 - أضافة نصًا متحركًا إلى صور GIF التي تم إنشاؤها من بيانات Earth Engine.
 -أضفافة شريط الألوان والصور إلى رسوم GIF المتحركة التي تم إنشاؤها من بيانات Earth Engine.
-- Create satellite timelapse animations with animated text using Earth Engine.
-- Search places and datasets from Earth Engine Data Catalog.
-- Use the timeseries inspector to visualize landscape changes over time.
-- Export Earth Engine maps as HTML files and PNG images.
-- Search Earth Engine API documentation within Jupyter notebooks.
-- Import Earth Engine assets from personal Earth Engine accounts.
-- Publish interactive GEE maps directly within a Jupyter notebook.
-- Add local raster datasets (e.g., GeoTIFF) to the map.
-- Support Cloud Optimized GeoTIFF (COG) and SpatioTemporal Asset Catalog (STAC).
-- Perform image classification and accuracy assessment.
-- Extract pixel values interactively and export data as shapefile and CSV.
-- Visualize land cover change with Sankey diagrams.
-- Load vector data from a PostGIS server.
-- Create publication-quality maps with cartoee.
+- إنشاء رسوم متحركة بفاصل زمني عبر القمر الصناعي باستخدام نص متحرك باستخدام Earth Engine.
+- بحث عن الأماكن ومجموعات البيانات من Earth Engine Data Catalog.
+- استخدم فاحص السلاسل الزمنية لتصور التغيرات عبر بمرور الوقت.
+- تصدير خرائط Earth Engine كملفات HTML وصور PNG.
+- بحث في وثائق Earth Engine API داخل  Jupyter.
+- استيراد ملفات مخزونه في Earth Engine من حسابات Earth Engine الشخصية.
+- نشر خرائط GEE التفاعلية مباشرة داخل دفتر ملاحظات Jupyter.
+- أضافة مجموعات البيانات للمرئيات المحلية (على سبيل المثال، GeoTIFF) إلى الخريطة.
+- دعم GeoTIFF العدل سحابيا (COGSupport Cloud Optimized GeoTIFF (COG)) قائمة الملفات الزمانية المكانية (STACSpatioTemporal Asset Catalog (STAC)).
+- إجراء تصنيف الصور وتقييم الدقة.
+- استخراج قيم البكسل بشكل تفاعلي وتصدير البيانات كملف بصيغة CSV.
+- تصور تغير الغطاء الأرضي باستخدام مخططات Sankey .
+-تحميل بيانات المتجهات من خادم PostGIS.
+- نشاء خرائط  عالية الجودة للنشر باستخدام cartoee.
 
-## Summary
+## الخلاصة
+علوم البيانات المكانية هو ذلك الحقل الذي يقوم بتطبيق النظريات و الخوارزميات و النماذج الرياضية التي يشتقها ميدان علوم البيانات على المعلومات التي تقترن إحداثيات على سطح الأرض و التي تسمى البينات المكانية. لقد تم تغطيه أساسيات علوم الجغرافيا المكانية و استراض أهمية  Google Earth Engine GEE في عمليه تزويد المستخدمين بأرشيف هائل من البيانات المعدلة و الجاهزة للاستخدام في جميع التطبيقات. كذلك استخدام geemap في colab  و تثبيتها في anaconda و العمل في بيئة jupyter Notebook و ما يميز العمل فيها. 
 
-In this chapter, we began by covering the fundamentals of Geospatial Data Science, Google Earth Engine, and geemap. We then provided guidance on setting up a conda environment for installing geemap and its dependencies. Additionally, we walked through the process of using geemap with Google Colab as a cloud-based alternative to a local installation.
+الى الان, يجب ان تكون اطلعت على توظيف بئة conda و التي تكون جاهزه للاستخدام في Earth Engine  و كذلك تطبيق geemap.  في الفصل الأحق سوف نتعمق في استخدام geemap و كيفية بناء بعض التطبيقات.
 
-By now, you should have a fully functional conda environment that is ready for working with Earth Engine and geemap. In our next chapter, we will explore geemap in greater depth.
+
