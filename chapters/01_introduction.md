@@ -341,19 +341,17 @@ ee.Initialize()
 بشكل عام, تحتاج الى انشاء فصل جديد من Python, و كلما تفتح Jupyter notebook او Python و تستخدم Earth Engine. و لحسن الحظ, geemap بشكل اوتماتيكي تنشاء Earth Engine عند خلث خارطة تفاعلية, و التي سوف تغطى في الفصل القادم. و من النادر تنفيذها `()ee.Initialize` .
 
 
-## Using Google Colab
+## استخدام Google Colab
 
-If you have difficulties installing geemap on your computer, you can try out geemap with [Google Colab](https://colab.research.google.com) without installing anything on your machine. Google Colab is a free Jupyter notebook environment that runs entirely in the cloud. Most importantly, it does not require a setup and the notebooks that you create can be simultaneously edited by your team members - just like the way you edit documents in Google Docs!
+اذا كان لديك مشكله في تنصيب geemap في جهازك يمكن استخدام [Google Colab](https://colab.research.google.com) و دون الحاجه الى تنصيب. و الذي هو عباره عن محرر كود Jupyter سحابي  تم تزويده مجانياً من قبل Google. و من مميزاته انه لا يحتاج إلى تنصيب و يمكن لأي من أعضاء فريق العمل أن يقوم بعميلة الدخول إلى البرنامج و القيام بعملية تحرير كما هو في عمل مشــــــــاركة (Google Doc.) مع الزملاء. للمزيد اضغط على الرابط التالي [01_introduction.ipynb](https://colab.research.google.com/github/giswqs/geebook/blob/master/chapters/01_introduction.ipynb) لاطلاق منصه colab.
 
-Click [01_introduction.ipynb](https://colab.research.google.com/github/giswqs/geebook/blob/master/chapters/01_introduction.ipynb) to launch the notebook in Google Colab.
-
-Next, press **Ctrl + /** to uncomment the following line to install geemap:
-
+ أضغط على **Ctrl + /** لازالة التعليق ثم قم بعملية التنصيب لـ geemap:
+ 
 ```{code-cell} ipython3
 # %pip install geemap
 ```
 
-After geemap has been installed successfully, type the following code in a new cell:
+بعد إتمام عمليه التنصيب لـgeemap  يمكن للمستخدم من اطلاق الخارطة التفاعلية من خلال الإيعازات التالية:
 
 ```{code-cell} ipython3
 import geemap
@@ -361,8 +359,7 @@ import geemap
 Map = geemap.Map()
 Map
 ```
-
-Follow the on-screen instructions to authenticate Earth Engine. After that, you should be able to see the interactive map displayed beneath the code cell (see {numref}`ch01_colab`).
+بعد إتمام عمليه الحصول على تخويل الدخول إلى GEE و تنفيذ الإيعازات أعلاه سوف تظهر لك الخارطة التفاعلية, و كما في الشكل (see {numref}`ch01_colab`).
 
 ```{figure} images/ch01_colab.jpg
 ---
