@@ -401,7 +401,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#earth-engine">1.7. تصريح الدخول الى Earth Engine</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-colab">1.8. استخدام Google Colab</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geemap-vpn">1.9. أستخدام geemap من VPN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features-of-geemap">1.10. Key features of geemap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">1.10. بعض مميزات geemap</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">1.11. Summary</a></li>
 </ul>
             </nav>
@@ -418,36 +418,36 @@ document.write(`
 <span id="chapter01"></span><h1><span class="section-number">1. </span>مدخل الى GEE و geemap<a class="headerlink" href="#gee-geemap" title="Permalink to this heading">#</a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#id1" id="id14">مدخل</a></p></li>
-<li><p><a class="reference internal" href="#id2" id="id15">ما هي علوم البيانات المكانيـــــــــــة</a></p></li>
-<li><p><a class="reference internal" href="#google-earth-engine-gee" id="id16">ماهو Google Earth Engine (GEE)</a></p></li>
-<li><p><a class="reference internal" href="#geemap" id="id17">ما هو geemap</a></p></li>
-<li><p><a class="reference internal" href="#ch01-install" id="id18">تثبيت geemap</a></p>
+<li><p><a class="reference internal" href="#id1" id="id15">مدخل</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id16">ما هي علوم البيانات المكانيـــــــــــة</a></p></li>
+<li><p><a class="reference internal" href="#google-earth-engine-gee" id="id17">ماهو Google Earth Engine (GEE)</a></p></li>
+<li><p><a class="reference internal" href="#geemap" id="id18">ما هو geemap</a></p></li>
+<li><p><a class="reference internal" href="#ch01-install" id="id19">تثبيت geemap</a></p>
 <ul>
-<li><p><a class="reference internal" href="#conda" id="id19">التثبيت في conda</a></p></li>
-<li><p><a class="reference internal" href="#pip" id="id20">تثبيت باستخدام pip</a></p></li>
-<li><p><a class="reference internal" href="#id11" id="id21">تثبيت من مصادر أخرى</a></p></li>
-<li><p><a class="reference internal" href="#id12" id="id22">تحديث geemap</a></p></li>
-<li><p><a class="reference internal" href="#docker" id="id23">تثبيت باستخدام Docker</a></p></li>
+<li><p><a class="reference internal" href="#conda" id="id20">التثبيت في conda</a></p></li>
+<li><p><a class="reference internal" href="#pip" id="id21">تثبيت باستخدام pip</a></p></li>
+<li><p><a class="reference internal" href="#id11" id="id22">تثبيت من مصادر أخرى</a></p></li>
+<li><p><a class="reference internal" href="#id12" id="id23">تحديث geemap</a></p></li>
+<li><p><a class="reference internal" href="#docker" id="id24">تثبيت باستخدام Docker</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#jupyter-notebook" id="id24">كيفية خلق Jupyter notebook</a></p></li>
-<li><p><a class="reference internal" href="#earth-engine" id="id25">تصريح الدخول الى Earth Engine</a></p></li>
-<li><p><a class="reference internal" href="#google-colab" id="id26">استخدام Google Colab</a></p></li>
-<li><p><a class="reference internal" href="#geemap-vpn" id="id27">أستخدام geemap من VPN</a></p></li>
-<li><p><a class="reference internal" href="#key-features-of-geemap" id="id28">Key features of geemap</a></p></li>
-<li><p><a class="reference internal" href="#summary" id="id29">Summary</a></p></li>
+<li><p><a class="reference internal" href="#jupyter-notebook" id="id25">كيفية خلق Jupyter notebook</a></p></li>
+<li><p><a class="reference internal" href="#earth-engine" id="id26">تصريح الدخول الى Earth Engine</a></p></li>
+<li><p><a class="reference internal" href="#google-colab" id="id27">استخدام Google Colab</a></p></li>
+<li><p><a class="reference internal" href="#geemap-vpn" id="id28">أستخدام geemap من VPN</a></p></li>
+<li><p><a class="reference internal" href="#id14" id="id29">بعض مميزات geemap</a></p></li>
+<li><p><a class="reference internal" href="#summary" id="id30">Summary</a></p></li>
 </ul>
 </nav>
 <section id="id1">
-<h2><a class="toc-backref" href="#id14" role="doc-backlink"><span class="section-number">1.1. </span>مدخل</a><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id15" role="doc-backlink"><span class="section-number">1.1. </span>مدخل</a><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>ان <a class="reference external" href="https://earthengine.google.com">Google Earth Engine</a> هي منصــــة معالجه سحابيـــة واســـــعة الانتشــــــار فـــــــــــي مجتـــــمع  الجغرافيـــــة   المكانيـــــة. تعرض GEE  قائمة من البيانات تصل إلى ألاف  من تيرابايت أو مـــــا يســـــــــــمى  multi-Petabytes من صور الأقمار الاصطنـــــاعية و البيانـــــــات  المكانيــــة و التي تمكن المستخدم من أجراء عمليات تحليل و معالجة و تمثيل نتائج بسهوله و كافأه  و باستخدام   القليل من البرمجــــــة أو دون الحاجة إلى إن تكون ذا معرفه بالبرمجة. لقد تم بناء هذه المنصة على  <a class="reference external" href="https://developers.google.com/earth-engine/guides/python_install">Earth Engine Python API</a> على الكثير من المكتبات و المصادر المفتوحة و اهمها <a class="reference external" href="https://geemap.org">geemap</a> ذات الأهمية في خلق أدوات و نماذج برمجيه  تخص  تطبيقات الاستشعار عن بعد و نظم المعلومات الجغرافيــــــــــــة في بية Jupyter. و التي لاقت انتشاراً واسعاً منذ إطلاقها في أبريل عام 2020, حيث اصبحت من أهم المصادر و المنصات في أجراء عمليات تحليل تفاعلية و تمثيل للبيانات في Earth Engine.</p>
 <p>في هذا الفصل سوف نستعرض أساسيات علوم البيانات المكانية و GEE  و كذلك geemap.
 كذلك سوف تتعلم الخطوات المطلوبة لعملية أعداد بيئة conda  و تثبيت geemap  في بيئة العمل, و أيضا توظيف geemap  مع Google colab من دون الحاجة إلى تثبيت أي برنامج إضافي أخر.
 و أخيراً سوف نقترح بعض المصادر القيمة و المفيدة في تعلم GEE  و geemap.</p>
 </section>
 <section id="id2">
-<h2><a class="toc-backref" href="#id15" role="doc-backlink"><span class="section-number">1.2. </span>ما هي علوم البيانات المكانيـــــــــــة</a><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id16" role="doc-backlink"><span class="section-number">1.2. </span>ما هي علوم البيانات المكانيـــــــــــة</a><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>قبل البدء بعلوم البيانات المكانيـــــــــــــة  يجب إن نأخذ لحمــــة عامة عن علوم البيانات <strong>data science</strong> . لاقى علوم البيانات أهميه كبيرة خلال العقد المنصــــــــرم بما يشتمل عليه  من مصطلحــــــــــــات مثل  <strong>machine learning</strong> ,<strong>data analytics</strong> ,<strong>big data</strong> . و طبقاً إلى موقع <a class="reference external" href="https://bit.ly/40lfnpW">Google Trends</a>, فأن اهتمام الباحثين عبر الأنترنت عن علوم البيانات <strong>data science</strong> قد ازداد و بشكل منقطع النظير منذ العام 2016 (see <a class="reference internal" href="#ch01-google-trends"><span class="std std-numref">Fig. 1.1</span></a>).
 حيث يشير الموقع إلى أن 4.1 مليون عمليه بحث مسجلـــــــــــــــة عن علوم البيانات “data science”, و 7.5 مليار عمليــــــة بحث عن “Big data” و 2.6 مليار عمليــة بحث عن التعلم الألي “Machine Learning”, و اكثر من 1.9 مليار عن “data analytic”  و من المفاجئ إن نســـــــــــــــبة البحث عن “Big data”  تنـــــــــــــــــــاقص بشــــكل ملحوظ منذ العــــــــام 2018 مع زيادة في العمــــــليات الأخرى.</p>
 <figure class="align-default" id="ch01-google-trends">
@@ -460,7 +460,7 @@ document.write(`
 <p>علوم البيانات الجغرافية-المكانية <strong>Geospatial data science</strong> هو فرع علوم البيانات الذي يختص بدراسة المحتوى المكاني للبيانات. و يعرف على أنه فرع علوم البيانات الذي يجمع النظريات و المفاهيم و التطبيقات التي تختص بالبيانات الجغرافية <span id="id5">[<a class="reference internal" href="bibliography.html#id11" title="Abdishakur Hassan. Location, Location, Location! in data science. 29 October 2019. Accessed: 2022-3-28. URL: https://towardsdatascience.com/location-location-location-in-data-science-fa9ebc046c95.">Hassan, 2019</a>]</span>. مثال على علوم البيانات المكانية (GDS) هو قاعدة بيانات تحليل المعلومات الزمانية و المكانية المقدمة من مؤسسة الإدارة الوطنية للمحيطات و الغلاف الجوي NOAA’s و التي هي عبارة عن صور أقمار صناعية (راستر) و بيانات مناخ, و أرصاد جوي, و التي تزود نشرة أرصاد البراكين باستخدام التعلم الألي (ML) و النماذج الرياضية <span id="id6">[<a class="reference internal" href="bibliography.html#id12" title="Emre Eftelioglu, Reem Y Ali, Xun Tang, Yiqun Xie, Yan Li, and Shashi Shekhar. Geospatial Data Science: A Transdisciplinary Approach. Geospatial Data Science Techniques and Applications, pages 1, 2017. URL: https://bit.ly/36OYoVX.">Eftelioglu <em>et al.</em>, 2017</a>]</span>.</p>
 </section>
 <section id="google-earth-engine-gee">
-<h2><a class="toc-backref" href="#id16" role="doc-backlink"><span class="section-number">1.3. </span>ماهو Google Earth Engine (GEE)</a><a class="headerlink" href="#google-earth-engine-gee" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id17" role="doc-backlink"><span class="section-number">1.3. </span>ماهو Google Earth Engine (GEE)</a><a class="headerlink" href="#google-earth-engine-gee" title="Permalink to this heading">#</a></h2>
 <p>هو عبارة عن منصة سحابية تحتوي على كم هائل من البيانات المكانية  و صور الأقمار الصناعية  تبلغ عشرات البيتابايت <a class="reference external" href="https://developers.google.com/earth-engine/datasets">data catalog</a> <span id="id7">[<a class="reference internal" href="bibliography.html#id4" title="Noel Gorelick, Matt Hancher, Mike Dixon, Simon Ilyushchenko, David Thau, and Rebecca Moore. Google Earth Engine: Planetary-scale geospatial analysis for everyone. Remote Sensing of Environment, 202:18–27, 1 December 2017. doi:10.1016/j.rse.2017.06.031.">Gorelick <em>et al.</em>, 2017</a>]</span>. خلال السنوات الأخيرة انتشر استخدام GEE بشكل كبير جداً في تطبيقات البيئة و على جميع المستويات حول العالم في مجتمع المعلومات الجغرافية <span id="id8">[<a class="reference internal" href="bibliography.html#id6" title="M Amani, A Ghorbanian, S A Ahmadi, M Kakooei, A Moghimi, S M Mirmazloumi, S H A Moghaddam, S Mahdavi, M Ghahremanloo, S Parsian, Q Wu, and B Brisco. Google Earth Engine Cloud Computing Platform for Remote Sensing Big Data Applications: A Comprehensive Review. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 13:5326–5350, 2020. doi:10.1109/JSTARS.2020.3021052.">Amani <em>et al.</em>, 2020</a>, <a class="reference internal" href="bibliography.html#id8" title="Richard Boothroyd, Richard Williams, Trevor Hoey, Brian Barrett, and Octria Prasojo. Applications of Google Earth Engine in fluvial geomorphology for detecting river channel change. WIREs Water, 1 December 2020. doi:10.1002/wat2.1496.">Boothroyd <em>et al.</em>, 2020</a>, <a class="reference internal" href="bibliography.html#id7" title="Haifa Tamiminia, Bahram Salehi, Masoud Mahdianpari, Lindi Quackenbush, Sarina Adeli, and Brian Brisco. Google Earth Engine for geo-big data applications: A meta-analysis and systematic review. ISPRS Journal of Photogrammetry and Remote Sensing, 164:152–170, 1 June 2020. doi:10.1016/j.isprsjprs.2020.04.001.">Tamiminia <em>et al.</em>, 2020</a>, <a class="reference internal" href="bibliography.html#id5" title="Qiusheng Wu, Charles R Lane, Xuecao Li, Kaiguang Zhao, Yuyu Zhou, Nicholas Clinton, Ben DeVries, Heather E Golden, and Megan W Lang. Integrating LiDAR data and multi-temporal aerial imagery to map wetland inundation dynamics using Google Earth Engine. Remote Sensing of Environment, 228:1–13, 1 July 2019. doi:10.1016/j.rse.2019.04.015.">Wu <em>et al.</em>, 2019</a>]</span> . منذ العام 2010 أصبح GEE تزايد في عدد البحوث المنشوره فيما يخصها   (see <a class="reference internal" href="#ch01-gee-pubs"><span class="std std-numref">Fig. 1.2</span></a>). استنادا الى التحليل البايومتري, فان 1077 بحث منشور يتضمن كلمه Google Eearth Engine في العنوان الرئيسي و 2969 بحث يتضمنها في العنوان الرئيسي و الخلاصة. في العام 2022, ان عدد البحوث المنشوره التي تتضمن كلمه ”Google Earth Engine“ في العنوان و الخلاصة قد بلغ 1150, و التي هي 280 ضعف عن العام 2014 و الذي كان 4 بحوث في ذلك العام.</p>
 <figure class="align-default" id="ch01-gee-pubs">
 <a class="reference internal image-reference" href="../_images/ch01_gee_pubs.jpg"><img alt="../_images/ch01_gee_pubs.jpg" src="../_images/ch01_gee_pubs.jpg" style="width: 100%;" /></a>
@@ -477,7 +477,7 @@ document.write(`
 </figure>
 </section>
 <section id="geemap">
-<h2><a class="toc-backref" href="#id17" role="doc-backlink"><span class="section-number">1.4. </span>ما هو geemap</a><a class="headerlink" href="#geemap" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id18" role="doc-backlink"><span class="section-number">1.4. </span>ما هو geemap</a><a class="headerlink" href="#geemap" title="Permalink to this heading">#</a></h2>
 <p>يمكن GEE مستخدميه من البرمجة بيئتين برمجيتين هما JavaScript API  و Python API. تعتبر البرمجة في بيئة  JavaScript API أكفاء بكثير منها في بيئة Python من حيث وظائف تمثيل النتائج و بشكل فعال و ذلك لوجود مصادر متعددة <a class="reference external" href="https://developers.google.com/earth-engine">documentation</a>  و أيضاَ احتوائها على بيئة تطويــر (IDE)  (i.e., <a class="reference external" href="https://code.earthengine.google.com">GEE JavaScript Code Editor</a>) متكاملة تفاعلية, و الذي يعتبر ذلك كله نقص في بيئة Python من حيث القدرة على أستعراض و تمثيل النتائج. و لأجل معالجة هذه المشكلة تم طرح حزمة <strong>geemap</strong>, حسب <span id="id9">[<a class="reference internal" href="bibliography.html#id3" title="Qiusheng Wu. geemap: A Python package for interactive mapping with Google Earth Engine. The Journal of Open Source Software, 5(51):2272, 3 July 2020. doi:10.21105/joss.02272.">Wu, 2020</a>]</span>. لقد تم بناء <strong>geemap</strong> بالاعتماد على مجموعة من الحزم الموجودة مسبقاً  مثل <a class="reference external" href="https://pypi.org/project/earthengine-api">earthengine-api</a>, <a class="reference external" href="https://python-visualization.github.io/folium">folium</a>, <a class="reference external" href="https://github.com/jupyter-widgets/ipyleaflet">ipyleaflet</a> و <a class="reference external" href="https://github.com/jupyter-widgets/ipywidgets">ipywidgets</a>.  تمكن <strong>geemap</strong> المستخدم من تحليل و استعراض البيانات المكانية  المتاحة من قبل GEE و بشكل فعال داخل بيئة jupyter مع كتابة القليل من البرمجة (see <a class="reference internal" href="#ch01-geemap-gui"><span class="std std-numref">Fig. 1.4</span></a>).</p>
 <p>تمكن <strong>Geemap</strong> الباحثين و الطلاب الراغبين في توظيف تنوع المكتبات و الادوات في Python من إستعراض و تمثيل البيانات المتاحة في Google Earth Engine. و كذلك تمكن من تحويل و ترجمة برامج JavaScript API الى Pyhton API. و   تزود <strong>geemap</strong> و اجهه مستخدم تفاعلية لاتمام عملية التحويل من JavaScript الى Python بدون كتابة اي اكواد. و التي تحفظ للمستخدم الكثير من الوقت والجهد من خلال تزويد واجهه بسيطة لاستعراض وتمثيل البيانات من Earth Engine.</p>
 <figure class="align-default" id="ch01-geemap-gui">
@@ -488,10 +488,10 @@ document.write(`
 </figure>
 </section>
 <section id="ch01-install">
-<span id="id10"></span><h2><a class="toc-backref" href="#id18" role="doc-backlink"><span class="section-number">1.5. </span>تثبيت geemap</a><a class="headerlink" href="#ch01-install" title="Permalink to this heading">#</a></h2>
+<span id="id10"></span><h2><a class="toc-backref" href="#id19" role="doc-backlink"><span class="section-number">1.5. </span>تثبيت geemap</a><a class="headerlink" href="#ch01-install" title="Permalink to this heading">#</a></h2>
 <p>تحتوي geemap  على العديد من المكتبات و الحزم الاختيارية مثل <a class="reference external" href="https://geopandas.org">GeoPandas</a> و <a class="reference external" href="https://github.com/banesullivan/localtileserver">localtileserver</a>. و التي في بعض الأحيان يستصعب تنصيبها في بيئة Windows, لذلك ننصح بأتباع الخطوات التالي لتجنب حدوث المشاكل. و لحسن الحظ فأن تثبيت geemap يقوم بشكل اتوماتيكي بتثبيت هذه الدوال بما فيها earthengine-api لذا فأنك غير محتاج إلى إعادة تنصيبها.</p>
 <section id="conda">
-<span id="ch01-conda"></span><h3><a class="toc-backref" href="#id19" role="doc-backlink"><span class="section-number">1.5.1. </span>التثبيت في conda</a><a class="headerlink" href="#conda" title="Permalink to this heading">#</a></h3>
+<span id="ch01-conda"></span><h3><a class="toc-backref" href="#id20" role="doc-backlink"><span class="section-number">1.5.1. </span>التثبيت في conda</a><a class="headerlink" href="#conda" title="Permalink to this heading">#</a></h3>
 <p>لأجل تثبيت geemap ينصح استخدام حزمة و مدير بيئة <a class="reference external" href="https://conda.io/en/latest">conda</a>. و  التي يمكن الحصول عليها من الموقع التالي <a class="reference external" href="https://www.anaconda.com/products/distribution">Anaconda Distribution</a>   (و الذي هو عبارة عن موزع و مترجم Python مع المكتبات الأساسية للعمل على البيانات), أو كما و يمكن الحصول على ذلك من خلال تنصيب  <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> (و الذي هو عباره عن موزع يحتوي على مرتجم Python مع مدير بيئة conda). يمكن الاطلاع على شرح في الموقع <a class="reference external" href="https://conda.io/docs/user-guide/install/download.html">installation docs</a> حول المزيد من ذلك.
 توجد geemap عن طريق قناة Anocanda  التي تسمى <a class="reference external" href="https://anaconda.org/conda-forge/geemap">conda-forge</a>. و التي هي عبارة عن جهد مجاني لمجموعة محترفه تزود حزم دعم لطيف واسع من البرامج. يفضل تنصيب  geemap في بيئة جديدة و نظيفة لأجل تجنب حدوث التعارض مع حزم الدوال و المكتبات التي تتعامل مع البيانات المكانية  و التي قد تكون موجودة مسبقاً, لذا يستحسن تنصيب geemap في بيئة نظيفة. الخطوات التالية هي لخلق بيئة جديدة و تنصيب متكامل ل geemap.</p>
 <p>أن قناة Anaconda عبارة عن جهد لمجموعة محترفة قدمت هذه الحزمه للاستخدام في طيف واسع من البرامج. أن تنصيب <strong>geemap</strong> في بيئة جديدة ليس ضرورياَ, و لكن قد يتعارض مع النسخ الاخرى التي تحتوي على حزم تتعامل مع البيانات الجيومكانية, لذل يفضل تنصيبها في بيئة جديدة لاجل تجنب هذا التعارض. الايعاز التالي يقوم بخلق بيئة جديدة في conda بأسم <code class="docutils literal notranslate"><span class="pre">gee</span></code> و تنصيب geemap:</p>
@@ -539,7 +539,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 <p>مبروك, الى هنا تمت عملية تنصيب geemap مع كامل الملحقات. في الفصول القادمه سوف نشرح كيفيه استخدام geemap في التطبيقات المختلفة.</p>
 </section>
 <section id="pip">
-<h3><a class="toc-backref" href="#id20" role="doc-backlink"><span class="section-number">1.5.2. </span>تثبيت باستخدام pip</a><a class="headerlink" href="#pip" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id21" role="doc-backlink"><span class="section-number">1.5.2. </span>تثبيت باستخدام pip</a><a class="headerlink" href="#pip" title="Permalink to this heading">#</a></h3>
 <p>أن geemap كذلك موجوده في <a class="reference external" href="https://pypi.org/project/geemap">PyPI</a>. و التي يمكن تنصيبها من خلال الايعاز التالي:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>geemap
 </pre></div>
@@ -557,7 +557,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </ul>
 </section>
 <section id="id11">
-<h3><a class="toc-backref" href="#id21" role="doc-backlink"><span class="section-number">1.5.3. </span>تثبيت من مصادر أخرى</a><a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id22" role="doc-backlink"><span class="section-number">1.5.3. </span>تثبيت من مصادر أخرى</a><a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p>يمكن تنصيب geemap عن طريق أحد المستودعات الموجودة في GitHub مع <a class="reference external" href="https://git-scm.com">Git</a>  و استخدام pip و حسب الإيعاز التالي:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/gee-community/geemap
 <span class="nb">cd</span><span class="w"> </span>geemap
@@ -570,7 +570,7 @@ pip<span class="w"> </span>install<span class="w"> </span>.
 </div>
 </section>
 <section id="id12">
-<h3><a class="toc-backref" href="#id22" role="doc-backlink"><span class="section-number">1.5.4. </span>تحديث geemap</a><a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id23" role="doc-backlink"><span class="section-number">1.5.4. </span>تحديث geemap</a><a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <p>اذا تمت عملية التنصيب ل geemap و كنت ترغب في تحديث او الانتقال الى النسخه الاعلى, يمكن استخدام الايعاز التالي في terminal:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>geemap
 </pre></div>
@@ -591,7 +591,7 @@ pip<span class="w"> </span>install<span class="w"> </span>.
 </div>
 </section>
 <section id="docker">
-<h3><a class="toc-backref" href="#id23" role="doc-backlink"><span class="section-number">1.5.5. </span>تثبيت باستخدام Docker</a><a class="headerlink" href="#docker" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id24" role="doc-backlink"><span class="section-number">1.5.5. </span>تثبيت باستخدام Docker</a><a class="headerlink" href="#docker" title="Permalink to this heading">#</a></h3>
 <p>ان geemap موجوده ايضا في <a class="reference external" href="https://hub.docker.com/r/giswqs/geemap">Docker Hub</a>.</p>
 <p>لاجل استخدام geemap في حاويه Docker,  يجب ان تقوم بعملية تنصيب لحاويه <a class="reference external" href="https://docs.docker.com/get-docker">Docker</a>.و حال تنصيب Docker, يمكن ان يمكن تنصيب اخر اصدار من geemap من خلال حاوية Docker, و من ثم تنفيذ الإيعاز التالي:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>-p<span class="w"> </span><span class="m">8888</span>:8888<span class="w"> </span>giswqs/geemap:latest
@@ -600,7 +600,7 @@ pip<span class="w"> </span>install<span class="w"> </span>.
 </section>
 </section>
 <section id="jupyter-notebook">
-<h2><a class="toc-backref" href="#id24" role="doc-backlink"><span class="section-number">1.6. </span>كيفية خلق Jupyter notebook</a><a class="headerlink" href="#jupyter-notebook" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id25" role="doc-backlink"><span class="section-number">1.6. </span>كيفية خلق Jupyter notebook</a><a class="headerlink" href="#jupyter-notebook" title="Permalink to this heading">#</a></h2>
 <p>اولا علينا تفعيل البيئة الجديده التي تم خلقها في conda و من خلال الايعاز التالي:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>gee
 </pre></div>
@@ -643,7 +643,7 @@ pip<span class="w"> </span>install<span class="w"> </span>.
 </ul>
 </section>
 <section id="earth-engine">
-<span id="ch01-ee-auth"></span><h2><a class="toc-backref" href="#id25" role="doc-backlink"><span class="section-number">1.7. </span>تصريح الدخول الى Earth Engine</a><a class="headerlink" href="#earth-engine" title="Permalink to this heading">#</a></h2>
+<span id="ch01-ee-auth"></span><h2><a class="toc-backref" href="#id26" role="doc-backlink"><span class="section-number">1.7. </span>تصريح الدخول الى Earth Engine</a><a class="headerlink" href="#earth-engine" title="Permalink to this heading">#</a></h2>
 <p>قبل الاستخدام يتطلب الحصو على المصادقة من Earht Engine قب الاستخدام. إن حزمة <a class="reference external" href="https://pypi.org/project/earthengine-api">earthengine-api</a> هي المسؤولة عن الدخول إلى GEE  و التي يتم تنصيبها بشكل أتوماتيكي مع geemap كما موضح في  <a class="reference internal" href="#ch01-install"><span class="std std-numref">Section 1.5</span></a>   . و بعد كتابة الإيعازات التالية ثم الضغط على <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code> يتم البدء بعملية الحصول على التصريح بالدخول إلى GEE:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -711,7 +711,7 @@ pip<span class="w"> </span>install<span class="w"> </span>.
 <p>بشكل عام, تحتاج الى انشاء فصل جديد من Python, و كلما تفتح Jupyter notebook او Python و تستخدم Earth Engine. و لحسن الحظ, geemap بشكل اوتماتيكي تنشاء Earth Engine عند خلث خارطة تفاعلية, و التي سوف تغطى في الفصل القادم. و من النادر تنفيذها <code class="docutils literal notranslate"><span class="pre">()ee.Initialize</span></code> .</p>
 </section>
 <section id="google-colab">
-<h2><a class="toc-backref" href="#id26" role="doc-backlink"><span class="section-number">1.8. </span>استخدام Google Colab</a><a class="headerlink" href="#google-colab" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id27" role="doc-backlink"><span class="section-number">1.8. </span>استخدام Google Colab</a><a class="headerlink" href="#google-colab" title="Permalink to this heading">#</a></h2>
 <p>اذا كان لديك مشكله في تنصيب geemap في جهازك يمكن استخدام <a class="reference external" href="https://colab.research.google.com">Google Colab</a> و دون الحاجه الى تنصيب. و الذي هو عباره عن محرر كود Jupyter سحابي  تم تزويده مجانياً من قبل Google. و من مميزاته انه لا يحتاج إلى تنصيب و يمكن لأي من أعضاء فريق العمل أن يقوم بعميلة الدخول إلى البرنامج و القيام بعملية تحرير كما هو في عمل مشــــــــاركة (Google Doc.) مع الزملاء. للمزيد اضغط على الرابط التالي <a class="reference external" href="https://colab.research.google.com/github/giswqs/geebook/blob/master/chapters/01_introduction.ipynb">01_introduction.ipynb</a> لاطلاق منصه colab.</p>
 <p>أضغط على <strong>Ctrl + /</strong> لازالة التعليق ثم قم بعملية التنصيب لـ geemap:</p>
 <div class="cell docutils container">
@@ -741,7 +741,7 @@ pip<span class="w"> </span>install<span class="w"> </span>.
 </figure>
 </section>
 <section id="geemap-vpn">
-<h2><a class="toc-backref" href="#id27" role="doc-backlink"><span class="section-number">1.9. </span>أستخدام geemap من VPN</a><a class="headerlink" href="#geemap-vpn" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id28" role="doc-backlink"><span class="section-number">1.9. </span>أستخدام geemap من VPN</a><a class="headerlink" href="#geemap-vpn" title="Permalink to this heading">#</a></h2>
 <p>ان أستخدام geemap من خلال VPN هو أمر مهم لتطبيق “geemap.set_proxy(port=your-port-number)” و لخلق رابط مع خدمة Earth Engine  كما في الشكل (<a class="reference internal" href="#ch01-vpn-proxy"><span class="std std-numref">Fig. 1.16</span></a>). الفشل في خلق هذا الرابط يمكن ان ينتج انتهاء فتره الاتصال.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -761,27 +761,28 @@ pip<span class="w"> </span>install<span class="w"> </span>.
 </figcaption>
 </figure>
 </section>
-<section id="key-features-of-geemap">
-<h2><a class="toc-backref" href="#id28" role="doc-backlink"><span class="section-number">1.10. </span>Key features of geemap</a><a class="headerlink" href="#key-features-of-geemap" title="Permalink to this heading">#</a></h2>
-<p>Below is a partial list of geemap features. Please check the geemap <a class="reference external" href="https://geemap.org/geemap">API Reference</a> and <a class="reference external" href="https://geemap.org/tutorials">tutorials</a> for more details.</p>
+<section id="id14">
+<h2><a class="toc-backref" href="#id29" role="doc-backlink"><span class="section-number">1.10. </span>بعض مميزات geemap</a><a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
+<p>في الاسفل مجموعة خصائص مميزه لـ geemap. و للمزيد من المعلومات <a class="reference external" href="https://geemap.org/geemap">API Reference</a> و كذلك <a class="reference external" href="https://geemap.org/tutorials">tutorials</a> يمكن الاطلاع.
+قبل البدء بشرح استخدام geemap بشكل مفصل يجب إن نطلع على بعض مميزاتها للتعرف على مدى أهميه العمل عليها و ما يميزها عن باقي برامج بناء تطبيقات البيانات المكانية</p>
 <ul class="simple">
-<li><p>Convert Earth Engine JavaScript projects to Python scripts and Jupyter notebooks.</p></li>
-<li><p>Display Earth Engine data layers on interactive maps.</p></li>
-<li><p>Support Earth Engine JavaScript API-styled functions in Python, such as Map.addLayer(), Map.setCenter(), Map.centerObject(), Map.setOptions().</p></li>
-<li><p>Visualize Earth Engine vector and raster data without coding.</p></li>
-<li><p>Retrieve Earth Engine data interactively using the Inspector tool.</p></li>
-<li><p>Creating interactive plots from Earth Engine data by simply clicking on the map.</p></li>
-<li><p>Convert data between the GeoJSON and Earth Engine FeatureCollection formats.</p></li>
-<li><p>Use drawing tools to interact with Earth Engine data.</p></li>
-<li><p>Use shapefiles with Earth Engine without having to upload data to one’s GEE account.</p></li>
-<li><p>Export data in the Earth Engine FeatureCollection format to other formats (i.e., shp, csv, json, kml, kmz).</p></li>
-<li><p>Export Earth Engine Image and ImageCollection as GeoTIFF.</p></li>
-<li><p>Extract pixels from an Earth Engine Image into a 3D numpy array.</p></li>
-<li><p>Calculate zonal statistics by group.</p></li>
-<li><p>Add a custom legend for Earth Engine data.</p></li>
-<li><p>Convert Earth Engine JavaScript projects to Python code from directly within a Jupyter notebook.</p></li>
-<li><p>Add animated text to GIF images generated from Earth Engine data.</p></li>
-<li><p>Add colorbar and images to GIF animations generated from Earth Engine data.</p></li>
+<li><p>تحويل مشاريع Earth Engine JavaScript إلى برامج Python النصية ودفاتر Jupyter.</p></li>
+<li><p>عرض طبقات بيانات Earth Engine على الخرائط التفاعلية.</p></li>
+<li><p>دعم وظائف Earth Engine JavaScript API في Python، مثل Map.addLayer()، Map.setCenter()، Map.centerObject()، Map.setOptions().</p></li>
+<li><p>تصور البيانات النقطية والمتجهة لـ Earth Engine دون الحاجة إلى برمجة.</p></li>
+<li><p>يمكنك استرداد بيانات Earth Engine بشكل تفاعلي باستخدام أداة Inspector.</p></li>
+<li><p>إنشاء مخططات تفاعلية من بيانات Earth Engine بمجرد النقر على الخريطة.</p></li>
+<li><p>تحويل البيانات بين تنسيقات GeoJSON وEarth Engine FeaturesCollection.</p></li>
+<li><p>استخدم أدوات الرسم للتفاعل مع بيانات Earth Engine.</p></li>
+<li><p>استخدم ملفات الأشكال مع Earth Engine دون الحاجة إلى تحميل البيانات إلى حساب GEE الخاص بك.</p></li>
+<li><p>بتصدير البيانات بتنسيق Earth Engine FeaturesCollection إلى تنسيقات أخرى (مثل shp وcsv وjson وkml وkmz).</p></li>
+<li><p>تصدير صورة Earth Engine الى ImageCollectionبصيغة GeoTIFF.
+-استخراج قيم البكسل من صورة Earth Engine إلى مصفوفة ثلاثية الأبعاد.</p></li>
+<li><p>حساب إحصائيات النطاقية حسب المجموعة.</p></li>
+<li><p>أضافة وسيلة إيضاح مخصصة لبيانات Earth Engine.</p></li>
+<li><p>تحويل مشاريع Earth Engine JavaScript إلى كود Python مباشرة من داخل دفتر ملاحظات Jupyter.</p></li>
+<li><p>أضافة نصًا متحركًا إلى صور GIF التي تم إنشاؤها من بيانات Earth Engine.
+-أضفافة شريط الألوان والصور إلى رسوم GIF المتحركة التي تم إنشاؤها من بيانات Earth Engine.</p></li>
 <li><p>Create satellite timelapse animations with animated text using Earth Engine.</p></li>
 <li><p>Search places and datasets from Earth Engine Data Catalog.</p></li>
 <li><p>Use the timeseries inspector to visualize landscape changes over time.</p></li>
@@ -799,7 +800,7 @@ pip<span class="w"> </span>install<span class="w"> </span>.
 </ul>
 </section>
 <section id="summary">
-<h2><a class="toc-backref" href="#id29" role="doc-backlink"><span class="section-number">1.11. </span>Summary</a><a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id30" role="doc-backlink"><span class="section-number">1.11. </span>Summary</a><a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
 <p>In this chapter, we began by covering the fundamentals of Geospatial Data Science, Google Earth Engine, and geemap. We then provided guidance on setting up a conda environment for installing geemap and its dependencies. Additionally, we walked through the process of using geemap with Google Colab as a cloud-based alternative to a local installation.</p>
 <p>By now, you should have a fully functional conda environment that is ready for working with Earth Engine and geemap. In our next chapter, we will explore geemap in greater depth.</p>
 </section>
@@ -888,7 +889,7 @@ pip<span class="w"> </span>install<span class="w"> </span>.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#earth-engine">1.7. تصريح الدخول الى Earth Engine</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-colab">1.8. استخدام Google Colab</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geemap-vpn">1.9. أستخدام geemap من VPN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features-of-geemap">1.10. Key features of geemap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">1.10. بعض مميزات geemap</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">1.11. Summary</a></li>
 </ul>
   </nav></div>

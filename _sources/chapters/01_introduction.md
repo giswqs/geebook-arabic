@@ -388,27 +388,28 @@ name: ch01_vpn_proxy
 Using geemap with a VPN.
 ```
 
-## Key features of geemap
+## بعض مميزات geemap
+في الاسفل مجموعة خصائص مميزه لـ geemap. و للمزيد من المعلومات [API Reference](https://geemap.org/geemap) و كذلك [tutorials](https://geemap.org/tutorials) يمكن الاطلاع.
+قبل البدء بشرح استخدام geemap بشكل مفصل يجب إن نطلع على بعض مميزاتها للتعرف على مدى أهميه العمل عليها و ما يميزها عن باقي برامج بناء تطبيقات البيانات المكانية
 
-Below is a partial list of geemap features. Please check the geemap [API Reference](https://geemap.org/geemap) and [tutorials](https://geemap.org/tutorials) for more details.
 
-- Convert Earth Engine JavaScript projects to Python scripts and Jupyter notebooks.
-- Display Earth Engine data layers on interactive maps.
-- Support Earth Engine JavaScript API-styled functions in Python, such as Map.addLayer(), Map.setCenter(), Map.centerObject(), Map.setOptions().
-- Visualize Earth Engine vector and raster data without coding.
-- Retrieve Earth Engine data interactively using the Inspector tool.
-- Creating interactive plots from Earth Engine data by simply clicking on the map.
-- Convert data between the GeoJSON and Earth Engine FeatureCollection formats.
-- Use drawing tools to interact with Earth Engine data.
-- Use shapefiles with Earth Engine without having to upload data to one's GEE account.
-- Export data in the Earth Engine FeatureCollection format to other formats (i.e., shp, csv, json, kml, kmz).
-- Export Earth Engine Image and ImageCollection as GeoTIFF.
-- Extract pixels from an Earth Engine Image into a 3D numpy array.
-- Calculate zonal statistics by group.
-- Add a custom legend for Earth Engine data.
-- Convert Earth Engine JavaScript projects to Python code from directly within a Jupyter notebook.
-- Add animated text to GIF images generated from Earth Engine data.
-- Add colorbar and images to GIF animations generated from Earth Engine data.
+- تحويل مشاريع Earth Engine JavaScript إلى برامج Python النصية ودفاتر Jupyter.
+- عرض طبقات بيانات Earth Engine على الخرائط التفاعلية.
+- دعم وظائف Earth Engine JavaScript API في Python، مثل Map.addLayer()، Map.setCenter()، Map.centerObject()، Map.setOptions().
+- تصور البيانات النقطية والمتجهة لـ Earth Engine دون الحاجة إلى برمجة.
+- يمكنك استرداد بيانات Earth Engine بشكل تفاعلي باستخدام أداة Inspector.
+- إنشاء مخططات تفاعلية من بيانات Earth Engine بمجرد النقر على الخريطة.
+- تحويل البيانات بين تنسيقات GeoJSON وEarth Engine FeaturesCollection.
+- استخدم أدوات الرسم للتفاعل مع بيانات Earth Engine.
+- استخدم ملفات الأشكال مع Earth Engine دون الحاجة إلى تحميل البيانات إلى حساب GEE الخاص بك.
+- بتصدير البيانات بتنسيق Earth Engine FeaturesCollection إلى تنسيقات أخرى (مثل shp وcsv وjson وkml وkmz).
+- تصدير صورة Earth Engine الى ImageCollectionبصيغة GeoTIFF.
+-استخراج قيم البكسل من صورة Earth Engine إلى مصفوفة ثلاثية الأبعاد.
+- حساب إحصائيات النطاقية حسب المجموعة.
+- أضافة وسيلة إيضاح مخصصة لبيانات Earth Engine.
+- تحويل مشاريع Earth Engine JavaScript إلى كود Python مباشرة من داخل دفتر ملاحظات Jupyter.
+- أضافة نصًا متحركًا إلى صور GIF التي تم إنشاؤها من بيانات Earth Engine.
+-أضفافة شريط الألوان والصور إلى رسوم GIF المتحركة التي تم إنشاؤها من بيانات Earth Engine.
 - Create satellite timelapse animations with animated text using Earth Engine.
 - Search places and datasets from Earth Engine Data Catalog.
 - Use the timeseries inspector to visualize landscape changes over time.
