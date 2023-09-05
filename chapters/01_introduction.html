@@ -675,21 +675,22 @@ pip<span class="w"> </span>install<span class="w"> </span>.
 <p><span class="caption-number">Fig. 1.12 </span><span class="caption-text">Choosing an account for the Earth Engine Notebook Client.</span><a class="headerlink" href="#ch01-choose-account" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Click the <strong>Allow</strong> button to allow the Notebook Client to access your Earth Engine account (see <a class="reference internal" href="#ch01-notebook-client"><span class="std std-numref">Fig. 1.13</span></a>).</p>
+<p>ثم أضغط على زر Allow  للسماح لخدمة عملاء Notebook للوصول إلى حساب المستخدم في EE كما في الشكل
+(see <a class="reference internal" href="#ch01-notebook-client"><span class="std std-numref">Fig. 1.13</span></a>).</p>
 <figure class="align-default" id="ch01-notebook-client">
 <img alt="../_images/ch01_notebook_client.jpg" src="../_images/ch01_notebook_client.jpg" />
 <figcaption>
 <p><span class="caption-number">Fig. 1.13 </span><span class="caption-text">Choosing an account for the Earth Engine Notebook Client.</span><a class="headerlink" href="#ch01-notebook-client" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>An authentication code will be generated and displayed on the page. Copy the authorization code and paste it into the notebook cell asking for the verification code. Press <strong>Enter</strong> and the <code class="docutils literal notranslate"><span class="pre">Successfully</span> <span class="pre">saved</span> <span class="pre">authorization</span> <span class="pre">token</span></code> message should appear beneath the authorization code you entered (see <a class="reference internal" href="#ch01-auth-code"><span class="std std-numref">Fig. 1.14</span></a>).</p>
+<p>سوف يتم فتح صفحة جديدة في المتصفح تحتوي على كود المصادقة, قم بنسخ الكود ثم لصقه في تبويب خلية Notebook و التي تَسئلك عن رمز التحقق, ثم أضغط <strong>Enter</strong>  وسوف تظهر عبارة  <code class="docutils literal notranslate"><span class="pre">Successfully</span> <span class="pre">saved</span> <span class="pre">authorization</span> <span class="pre">token</span></code> أسفل الرمز الذي تم ادخالة كما في الشكل (see <a class="reference internal" href="#ch01-auth-code"><span class="std std-numref">Fig. 1.14</span></a>).</p>
 <figure class="align-default" id="ch01-auth-code">
 <img alt="../_images/ch01_auth_code.jpg" src="../_images/ch01_auth_code.jpg" />
 <figcaption>
 <p><span class="caption-number">Fig. 1.14 </span><span class="caption-text">Copying the authentication code.</span><a class="headerlink" href="#ch01-auth-code" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Congratulations! You have successfully authenticated Earth Engine for use in your Jupyter notebook. In general, authentication for local installations is a one-time step that generates a persistent authorization token stored on a local computer. The token can be found in the following file path depending on your operating system. Note that you might need to show the hidden directories on your computer in order to see the <code class="docutils literal notranslate"><span class="pre">.config</span></code> folder under the home directory.</p>
+<p>إلى هنا تمت عملية المصادقة على الدخول إلى EE  عن طريق jupyter Notebook و الوصول إلى أرشيف Google و هذه الخطوات يتم تنفيذها مره واحده فقط. و للوصول إلى رمز التحقق في ذاكرة الحاسوب فهو في الامتداد التالي  و حسب نوع نظام التشغيل. و للملاحظة, ربما تحتاج الى اظار الملفات المخفية في جهازك لكي ترى الملفات ذات الامتداد  <code class="docutils literal notranslate"><span class="pre">config.</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Windows</span><span class="p">:</span> <span class="n">C</span><span class="p">:</span>\\<span class="n">Users</span>\\<span class="n">USERNAME</span>\\<span class="o">.</span><span class="n">config</span>\\<span class="n">earthengine</span>\\<span class="n">credentials</span>
@@ -699,7 +700,7 @@ pip<span class="w"> </span>install<span class="w"> </span>.
 </div>
 </div>
 </div>
-<p>Once Earth Engine is authenticated, you can run the following script to initialize Earth Engine for a new Python session.</p>
+<p>بعد إتمام العملية الحصول على تخويل الدخول, يمكن تنفيذ الإيعاز التالي لأنشاء رابط مع Earth ENgine لأجل أنشاء فصل Python جديد.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ee</span><span class="o">.</span><span class="n">Initialize</span><span class="p">()</span>
@@ -707,7 +708,7 @@ pip<span class="w"> </span>install<span class="w"> </span>.
 </div>
 </div>
 </div>
-<p>In general, you will need to initialize Earth Engine for each new Python session, i.e., whenever you open a Jupyter notebook or Python script and want to use Earth Engine. Fortunately, geemap can automatically initialize Earth Engine for you when creating an interactive map, which will be covered in the next chapter. In other words, you rarely need to run <code class="docutils literal notranslate"><span class="pre">ee.Initialize()</span></code> explicitly.</p>
+<p>بشكل عام, تحتاج الى انشاء فصل جديد من Python, و كلما تفتح Jupyter notebook او Python و تستخدم Earth Engine. و لحسن الحظ, geemap بشكل اوتماتيكي تنشاء Earth Engine عند خلث خارطة تفاعلية, و التي سوف تغطى في الفصل القادم. و من النادر تنفيذها <code class="docutils literal notranslate"><span class="pre">()ee.Initialize</span></code> .</p>
 </section>
 <section id="using-google-colab">
 <h2><a class="toc-backref" href="#id26" role="doc-backlink"><span class="section-number">1.8. </span>Using Google Colab</a><a class="headerlink" href="#using-google-colab" title="Permalink to this heading">#</a></h2>
