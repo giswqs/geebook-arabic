@@ -13,24 +13,24 @@ kernelspec:
 
 (chapter02)=
 
-# Creating Interactive Maps
+# خلق خارطة تفاعلية
 
 ```{contents}
 :local:
 :depth: 2
 ```
 
-## Introduction
+## مدخل
+هناك العديد من الحزم و المكتبات التي تتعامل مع رسم الخرائط تفاعلية او تحليل المعلومات الجيومكانية {cite}`Wu2021-iv`. على الرغم من ذلك, كل حزمه لها وجه تطبيق(API) خاصه لخلق الخرائط و استعراض البيانات, و التي قد تكون صعبة على المبتدئين للتصفح. ان geemap تبسط العملية من خلال واجهه تطبيقية (API) تجمع بين خلق الخارطه التفاعلية و أستعراض البيانات, و كذلك تمكين المستخدمن من رسم خلفية الخارطة بسطر برمجي واحد. 
 
-There are numerous Python packages available for interactive mapping and geospatial analysis {cite}`Wu2021-iv`. However, each package has its own unique API for creating maps and visualizing data, which can be difficult for beginners to navigate. Geemap simplifies the process by providing a unified API interface for creating interactive maps and visualizing data, allowing users to switch between plotting backends with only one line of code.
+من خلال هذا الفصل, سوف تتعرف على كيفية خلق الخارطة التفاعلية بأستخدام واحدة من خمس طرق لرسم خلفيات الخرائط. كذلك, سوف نعطيك بعض الامثلة التطبيقية حول كيفية اضافة و اختيار الخارطة الاساس الى الخارطة من بين المئات من خرائط الاساس الموجوده و باستخدام ايعاز واحد.
 
-Throughout this chapter, we will explore how to create interactive maps using one of five different plotting backends. We will also provide practical examples of how to add basemaps to an interactive map. With hundreds of basemaps available, they can be easily added to an interactive map using only a single line of code.
 
 (chapter02:requirements)=
 
-## Technical requirements
-
-To follow along with this chapter, you will need to have geemap and several optional dependencies installed. If you have already followed {numref}`ch01:install` - _Installing geemap_, then you should already have a conda environment with all the necessary packages installed. Otherwise, you can create a new conda environment and install [pygis](https://pygis.gishub.org) with the following commands, which will automatically install geemap and all the required dependencies:
+## المتطلبات التقنية
+للسير في هذا الفصل, يجب ان قمت بتثبيت geemap مع الملحقات الاضافية لها. و اذا قت بأتباع الخطوات التاليه في الشكل 
+كما اسلفنا في الفصل الأول فان العمل على الخارطة التفاعلية يحتاج إلى بعض من المكتب التي يجب ان يتم استيرادها للعمل على البيانات المكانية. و تتطلب هذه المكتبات  بعض أدارة لبيئة conda و تثبيت بعض الحزم الضرورية و طلب تصريح العمل على بيانات Google Earth Engine. و يأتي ملخص الخطوات التقنية التي تسبق العمل على الخارطة التفاعلية بما يلي {numref}`ch01:install` - باسم _Installing geemap_, و بالضروره ان تكون قد قمت بعملية بية conda مع الحزم الضرورية. عدى ذلك يمكن خلق بيئة جديدة من conda و تنصيب [pygis](https://pygis.gishub.org) بواسطة الايعازات التالية, و التي تقوم بتنصيب geemap و جميع متطلباتها:
 
 ```bash
 conda create -n gee python
@@ -38,16 +38,14 @@ conda activate gee
 conda install -c conda-forge mamba
 mamba install -c conda-forge pygis
 ```
-
-Next, launch JupyterLab by typing the following commands in your terminal or Anaconda prompt:
+ثانيا, اطلاق Jupyter من خلال الايعاز التالي في terminal او Anaconda prompt:
 
 ```bash
 jupyter lab
 ```
+او من خلال استخدام geemap في البيئة السحابية Google Colab بدون الحاجة الى تنصيب اي حزم على الكومبيوتر الخاص بيك. أضغط على [02_maps.ipynb](https://colab.research.google.com/github/giswqs/geebook/blob/master/chapters/02_maps.ipynb) لكي يتم اطلاق اطلاق Google Colab.
 
-Alternatively, you can use geemap in a Google Colab cloud environment without installing anything on your local computer. Click [02_maps.ipynb](https://colab.research.google.com/github/giswqs/geebook/blob/master/chapters/02_maps.ipynb) to launch the notebook in Google Colab.
-
-Once in Colab, you can uncomment the following line and run the cell to install pygis, which includes geemap and all the necessary dependencies:
+حال اطلاق Colab, يمكنك رفع التعليق من الايعاز التالي و تنفيذه لكي تتمكن من تنصيب pygis, و التي تتضمن geemap و جميع الملحقات الضمنية فيها:
 
 ```{code-cell} ipython3
 # %pip install pygis
