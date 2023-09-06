@@ -51,22 +51,24 @@ jupyter lab
 # %pip install pygis
 ```
 
-The installation process may take 2-3 minutes. Once pygis has been installed successfully, click the **RESTART RUNTIME** button that appears at the end of the installation log or go to the **Runtime** menu and select **Restart runtime**. After that, you can start coding.
+أن عملية التنصيب تأخذ اكثر من 2-3 دقائق. و حال تم تصيب pygis, أضغط على زر **RESTART RUNTIME** الذي يظهر أخر خطوه تنصيب أو قائمة **Runtime** ثم اختيار  **Restart runtime**. بعد ذلك, يمكن كتابة الكود الخاص.
 
-To begin, import the necessary libraries that will be used in this chapter:
+للبدء, يجب استيراد المكتبات الضرورية التي تستخدم في هذا الفصل:
+
 
 ```{code-cell} ipython3
 import ee
 import geemap
 ```
 
-Initialize the Earth Engine Python API:
+تنصيب واجه تطبيق Earth Engine Pyhton:
+
 
 ```{code-cell} ipython3
 geemap.ee_initialize()
 ```
-
-If this is your first time running the code above, you will need to authenticate Earth Engine first. Follow the instructions in {numref}`ch01-ee-auth` - _Earth Engine authentication_ to authenticate Earth Engine.
+أذا كان هذا اول تنفيذ للايعازات اعلاه, سوف تحتاج الى طلب تصريح دخول الى Earth Engine. الايعازات التالية في  {numref}`ch01-ee-auth` لـطلب _Earth Engine authentication_ لتنصيب Earth Engine.
+ 
 
 ## Plotting backends
 
