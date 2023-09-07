@@ -158,15 +158,13 @@ Map.save('ipyleaflet.html')
 ```
 
 
-### Folium
-
-To create an interactive map using the folium plotting backend, simply import the library as follows:
+### استخدام حزمة Folium
+لكي تحلق خارطة تفاعلية باستخدام حزمه folium لرسم خلفية اساسية ببساطه علىك استخدام المكتبة الخاصة كما في الايعاز التالي:
 
 ```{code-cell} ipython3
 import geemap.foliumap as geemap
 ```
-
-Then, you can use the same line of code to create and display an interactive map ({numref}`ch02_folium`) as you would with the ipyleaflet plotting backend introduced above.
+بعد ذلك, يمكن استخدام نفس الايعاز اعلاه لخلق و استعراض الخارطة التفاعلية ({numref}`ch02_folium`) حيث فعلت في استخدام بناء حزمه ipyleaflet.
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=[40, -100], zoom=4, height=600)
@@ -180,24 +178,24 @@ width: 100%
 ---
 A map created using the folium plotting backend.
 ```
+ان folium لا تدعم التواصل الثنائي بين القاعدة الخلفية و الواجهه الامامية {cite}`QuantStack2019-bd`. حال خلق و استعراض الخارطة في خلية notebook, لا يمكن تعديل خصائص الخارطة, مثل اضافة/ازالة, اضافة ازرار, تغيير الارتفاع/العرض. كذلك التحكم بالبيانات و شريط الادوات الموجود في ipyleaflet  في (see {numref}`ch02_ipyleaflet`) ليست مدعومه في folium حيث انها لاتدعم ipywidgets. 
 
-Folium does not support bidirectional communication {cite}`QuantStack2019-bd`. Once the map is created and displayed in a notebook cell, you can't modify the map's properties, e.g., add/remove layers, add controls, change width/height. Also, the data and toolbar controls available in ipyleaflet (see {numref}`ch02_ipyleaflet`) are not supported in folium as folium does not support ipywidgets.
 
-To save the map as an HTML file we can call the `save` method:
+و لاجل حفط الخارطة في HTML يحب استخدام او ستدعاء الايعاز `sav` كما في الشكل الأتي:
 
 ```{code-cell} ipython3
 Map.save('folium.html')
 ```
 
-### Plotly
+### استخدام حزمة Plotly
 
-To create an interactive map using the plotly plotting backend, simply import the library as follows:
+لاجل خلق خارطة تفاعلية باستخدام حزمة plotly ببساطة عليك استيراد المكتبة الخاصة كما في الايعاز التالي:
 
 ```{code-cell} ipython3
 import geemap.plotlymap as geemap
 ```
+بعد ذلك, يمكنك خلق الخارطة التفاعلية  ({numref}`ch02_plotly`) بأستخدام الايعاز التالي. 
 
-Then, create and display an interactive map ({numref}`ch02_plotly`).
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -211,22 +209,23 @@ width: 100%
 ---
 A map created using the plotly plotting backend.
 ```
-
-Note that you might not see the map displayed in Colab as it does not yet support plotly FigureWidget. If you run into an error saying `FigureWidget - 'mapbox._derived' Value Error` (see [plotly issue 2570](https://github.com/plotly/plotly.py/issues/2570#issuecomment-738735816)), uncomment the following line and run it.
+ملاحظة لا يمكن قد لا ترى الخارطة عند استعراضعا في Colab حيث انه لا يدعم حزمة plotly FigureWidget. و اذا جاءت رسالة تخبرك `FigureWidget - 'mapbox._derived' Value Error` (see [plotly issue 2570](https://github.com/plotly/plotly.py/issues/2570#issuecomment-738735816)), احذف التعليق من الايعاز التالي ثم قم بتنفيذه.
 
 ```{code-cell} ipython3
 # geemap.fix_widget_error()
 ```
 
-### Pydeck
+### استخدام حزمه Pydeck
 
-To create an interactive map using the pydeck plotting backend, simply import the library as follows:
+اجل خلق خارطة تفاعلية باستخدام حزمة pydeck ببساطة عليك استيراد المكتبة الخاصة كما في الايعاز التالي:
+
+
 
 ```{code-cell} ipython3
 import geemap.deck as geemap
 ```
+بعد ذلك, يمكنك خلق الخارطة التفاعلية  ({numref}`ch02_pydeck`) بأستخدام الايعاز التالي.
 
-Then, create and display an interactive map ({numref}`ch02_pydeck`).
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -241,15 +240,15 @@ width: 100%
 A map created using the pydeck plotting backend.
 ```
 
-### KeplerGL
+### استخدام حزمة KeplerGL
+جل خلق خارطة تفاعلية باستخدام حزمة [kepler.gl](https://docs.kepler.gl/docs/keplergl-jupyter) ببساطة عليك استيراد المكتبة الخاصة كما في الايعاز التالي:
 
-To create an interactive map using the [kepler.gl](https://docs.kepler.gl/docs/keplergl-jupyter) plotting backend, simply import the library as follows:
 
 ```{code-cell} ipython3
 import geemap.kepler as geemap
 ```
+بعد ذلك, يمكنك خلق الخارطة التفاعلية  ({numref}`ch02_kepler`) بأستخدام الايعاز التالي.
 
-Then, create and display an interactive map ({numref}`ch02_kepler`).
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -264,9 +263,9 @@ width: 100%
 A map created using the KeplerGL plotting backend.
 ```
 
-## Adding basemaps
+## أضافة الخارطة التفاعلية Adding basemaps
+هناك عدة طرق لاخراج الخارطة الاساسية الى القاعدة الاساس في الخارطة. يمكن تخصيص الخراطة الاساس باستخدام المفتاح الادخال `basemap` عند خلقها مع استخدام طريقة `()geemap.Map`.بديلا عن ذلك, يمكن إضافة طبقة القاعدة الاساس بأسخدام  `()Map.add_basemap`, ان geemap تتضمن المئات من خرائط الاساس الموجوده اساسا من خلال  [xyzservices](https://github.com/geopandas/xyzservices) و التي من اسهل اضافتها الى بأيعاز واحد. 
 
-There are several ways to add basemaps to a map. You can specify the basemap to use in the `basemap` keyword argument when creating the map with the `geemap.Map()` method. Alternatively, you can add basemap layers to the map using the `Map.add_basemap()` method. Geemap has hundreds of built-in basemaps available through [xyzservices](https://github.com/geopandas/xyzservices) that can be easily added to the map with only one line of code.
 
 ### Built-in basemaps
 
