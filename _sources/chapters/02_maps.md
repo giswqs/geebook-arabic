@@ -157,6 +157,7 @@ Map
 Map.save('ipyleaflet.html')
 ```
 
+
 ### Folium
 
 To create an interactive map using the folium plotting backend, simply import the library as follows:
