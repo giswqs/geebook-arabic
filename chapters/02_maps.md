@@ -85,42 +85,41 @@ geemap.ee_initialize()
 - `import geemap.kepler as geemap`
 - `import geemap.plotlymap as geemap`
 
-### Ipyleaflet
-
-You can simply use `geemap.Map()` to create an interactive map with the default settings. First, let's import the `geemap` package:
+### استخدام حزمه Ipyleaflet
+ببساطة يمكنك استخدام `geemap.Map()` لخلق خارطة تفاعلية مع الاعدادات الافتراضية. أولا عليك استيراد مكتبة  `geemap` :
 
 ```{code-cell} ipython3
 import geemap
 ```
+ثانياَ, خلق خارطة تفاعلية باستخدام دالة رسم الخلفية الاساسية ipyleaflet. ان مكتبة [geemap.Map](https://geemap.org/geemap/#geemap.geemap.Map) تفوم بأستيراد دالة [ipyleaflet.Map](https://ipyleaflet.readthedocs.io/en/latest/map_and_basemaps/map.html). لذلك يمكنك استخدام نفس السياق لخلق خارطة تفاعلية كما ترغب مع الايعاز `ipyleaflet.Map`.
 
-Next, create an interactive map using the ipyleaflet plotting backend. The [geemap.Map](https://geemap.org/geemap/#geemap.geemap.Map) class inherits the [ipyleaflet.Map](https://ipyleaflet.readthedocs.io/en/latest/map_and_basemaps/map.html) class. Therefore, you can use the same syntax to create an interactive map as you would with `ipyleaflet.Map`.
 
 ```{code-cell} ipython3
 Map = geemap.Map()
 ```
-
-This code creates a new map and assigns it to a new variable named `Map`. To display the map in a Jupyter notebook, simply type the variable name:
+هذا السطر من الكود  يخلق خارطة جديدة و يسجلها الى متغير جديد اسمه `Map`. لاجل استغراض الخارطه في بيئة Jupyter notebook, ببساطة اكتب الاسم كما في الايعاز التالي:
 
 ```{code-cell} ipython3
 Map
 ```
+اجعل في ذهنك ان خلال هذا الكتاب,  `Map` بشكل عام يشير الى كائن الخارطه التفاعلية. انها فقط عباره عن اسم متغير لاغير. يمكنك استخدام اي اسم ترغب فيه مثل (e.g., `m`) طالما يتم ترجمته من قبل معالج لغة Python ضمن القواعد لاختيار الاسماء:
 
 Keep in mind that throughout this book, `Map` is commonly used to refer to the interactive map. It is just a variable name. You can use whatever name you want (e.g., `m`) as long as it complies with the following Python variable names rules:
 
-- A variable name must start with a letter or the underscore character
-- A variable name cannot start with a number
-- A variable name can only contain alphanumeric characters and underscores (A-z, 0-9, and \_ )
+- الاسم يجب ان يبداء بحرف او رمز مسطر
+- الاسم يجب ان لا يبداء برقم variable name cannot start with a number
+- الاسم فقط يحتوي على حروف و شارحة سفلى (A-z, 0-9, و \_ )
 
-In general, a Python variable name should be lowercase. The reason we use `Map` rather than `m` is because in the Earth Engine JavaScript API, `Map` is a reserved keyword referring to the interactive map. We want to be consistent with the Earth Engine JavaScript API so that users can have an easier transition to geemap. Users are by no means required to use `Map` as the variable name for the interactive map.
+بشكل عام, ان المتغيرات في  Python يجب ان تكون في شكل الحروف الصغيرة. و السبب في استخدام `Map` بدلا من `m` ان في Earth Engine JavaScript API يعتبر `Map` اسم محجوز الى الخارطة التفاعلية, و لاجل الحفاط على التوحد مع Earth Engine JavaScript API فان المستخدم بذلك يحافط على الانتفال السهل الى geemap. على أي حال فان المستخدم يتطلب ان يستخدم `Map` كمتغير يشغير الى الخارطة التفاعلية.
 
-To customize the map, you can specify various keyword arguments, such as `center` ([lat, lon]), `zoom`, `width`, and `height`. The default `width` is `100%`, which takes up the entire cell width of the Jupyter notebook. The `height` argument accepts a number or a string. If a number is provided, it represents the height of the map in pixels. If a string is provided, the string must be in the format of a number followed by `px`, e.g., `600px`.
+لاجل تخصيص الخارطة, بالامكان تخصيص مختلف المدخلات مثل `center` ([lat, lon]), `zoom`, `width` و `height`. ان العرض الافتراضي `width` هو `100%`, و الذي ياخذ كل عرض الخلية في Jupyter. أما الارتفاع `height` يقبل رقم او نص. اذا كان المدخل رقم فانه يمثل ارتفاع الخارطه بوحده قياس البكسل. أما اذا كان المدخل نص فان النص يجب ان يكون بصيغة رقم متبوع بـ `px`, e.g., `600px`. 
+
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=[40, -100], zoom=4, height=600)
 Map
 ```
-
-The default map comes with all the following controls (see {numref}`ch02_ipyleaflet`):
+ان الاعدادات الافتراضية للخراطة تأتي مع الظوابط التالية (see {numref}`ch02_ipyleaflet`):
 
 - `attribution_ctrl`
 - `data_ctrl`
@@ -139,22 +138,20 @@ width: 100%
 ---
 A map created using the ipyleaflet plotting backend.
 ```
-
-To hide a control, set `control_name` to `False`, e.g., `draw_ctrl=False`.
+لاجل اخفاء اي من الادوات يجب تغير الاعداد الى الحالة السلبية كما في `control_name` الى `False`, `draw_ctrl=False`. 
 
 ```{code-cell} ipython3
 Map = geemap.Map(data_ctrl=False, toolbar_ctrl=False, draw_ctrl=False)
 Map
 ```
-
-You can also set `lite_mode=True` to show only the Zoom Control.
+و ايضا بالامكان تخصيص اعداد  `lite_mode=True` لاظهار زر التكبير و التصغير فقط: 
 
 ```{code-cell} ipython3
 Map = geemap.Map(lite_mode=True)
 Map
 ```
+لاجل حفط الخارطة بصيغة HTML يجب تنفيذ الايعاز `save` كما في التالي:
 
-To save the map as an HTML file you can call the `save` method:
 
 ```{code-cell} ipython3
 Map.save('ipyleaflet.html')
