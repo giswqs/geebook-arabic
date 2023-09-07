@@ -267,15 +267,13 @@ A map created using the KeplerGL plotting backend.
 هناك عدة طرق لاخراج الخارطة الاساسية الى القاعدة الاساس في الخارطة. يمكن تخصيص الخراطة الاساس باستخدام المفتاح الادخال `basemap` عند خلقها مع استخدام طريقة `()geemap.Map`.بديلا عن ذلك, يمكن إضافة طبقة القاعدة الاساس بأسخدام  `()Map.add_basemap`, ان geemap تتضمن المئات من خرائط الاساس الموجوده اساسا من خلال  [xyzservices](https://github.com/geopandas/xyzservices) و التي من اسهل اضافتها الى بأيعاز واحد. 
 
 
-### Built-in basemaps
-
-Let's try out some of the built-in basemaps. First, import the geemap library as follows:
+### استخدام الخرائط الاساس المتضمنه Built-in basemaps
+دعنا استخدام الخرائط الاساس built-in الموجوده اصلا في مكتبة geemap من خلال استدعائها اولا:
 
 ```{code-cell} ipython3
 import geemap
 ```
-
-Next, create a map by specifying the basemap to use as follows. For example, the `HYBRID` basemap represents the Google Satellite Hybrid basemap ({numref}`ch02_basemap_hybrid`).
+بعد ذلك, خلق الخارطة التفاعلية من خلال تخصيصها باتباع التالي. مثلا على ذلك استخدام `HYBRID` التي تمثل الخارطة الاساس المدعومه من Google Satellite Hybrid كما في ({numref}`ch02_basemap_hybrid`).
 
 ```{code-cell} ipython3
 Map = geemap.Map(basemap='HYBRID')
@@ -289,8 +287,7 @@ width: 100%
 ---
 The Google Satellite Hybrid basemap.
 ```
-
-You can add as many basemaps as you like to the map. For example, the following code adds the `OpenTopoMap` basemap to the map above ({numref}`ch02_basemap_opentopomap`):
+يمكن اضافة خراطة اساس كما ترغب. على سبيل المثال, الايعاز التالي يمكن من اضافة خراطة اساس `OpenTopoMap` الى الخارطة ({numref}`ch02_basemap_opentopomap`):
 
 ```{code-cell} ipython3
 Map.add_basemap('OpenTopoMap')
@@ -304,15 +301,14 @@ width: 100%
 The OpenTopoMap basemap.
 
 ```
+لأيجاد قائمه الخرائط الاساس الموجوده ضمنا: 
 
-To find out the list of available basemaps:
 
 ```{code-cell} ipython3
 for basemap in geemap.basemaps.keys():
     print(basemap)
 ```
-
-In total, there are 100+ basemaps available.
+كلياَ, هناك اكثر من 100 خراطة اساس كما يستعرض الايعاز التالي.
 
 ```{code-cell} ipython3
 len(geemap.basemaps)
