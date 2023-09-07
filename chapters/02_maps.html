@@ -388,7 +388,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.1. مدخل</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter02-requirements">2.2. المتطلبات التقنية</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2.3. رسم الخلفيات الاساسية</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyleaflet">2.3.1. Ipyleaflet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyleaflet">2.3.1. استخدام حزمه Ipyleaflet</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#folium">2.3.2. Folium</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotly">2.3.3. Plotly</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydeck">2.3.4. Pydeck</a></li>
@@ -423,7 +423,7 @@ document.write(`
 <li><p><a class="reference internal" href="#chapter02-requirements" id="id9">المتطلبات التقنية</a></p></li>
 <li><p><a class="reference internal" href="#id5" id="id10">رسم الخلفيات الاساسية</a></p>
 <ul>
-<li><p><a class="reference internal" href="#ipyleaflet" id="id11">Ipyleaflet</a></p></li>
+<li><p><a class="reference internal" href="#ipyleaflet" id="id11">استخدام حزمه Ipyleaflet</a></p></li>
 <li><p><a class="reference internal" href="#folium" id="id12">Folium</a></p></li>
 <li><p><a class="reference internal" href="#plotly" id="id13">Plotly</a></p></li>
 <li><p><a class="reference internal" href="#pydeck" id="id14">Pydeck</a></p></li>
@@ -503,8 +503,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 <li><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">geemap.plotlymap</span> <span class="pre">as</span> <span class="pre">geemap</span></code></p></li>
 </ul>
 <section id="ipyleaflet">
-<h3><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">2.3.1. </span>Ipyleaflet</a><a class="headerlink" href="#ipyleaflet" title="Permalink to this heading">#</a></h3>
-<p>You can simply use <code class="docutils literal notranslate"><span class="pre">geemap.Map()</span></code> to create an interactive map with the default settings. First, let’s import the <code class="docutils literal notranslate"><span class="pre">geemap</span></code> package:</p>
+<h3><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">2.3.1. </span>استخدام حزمه Ipyleaflet</a><a class="headerlink" href="#ipyleaflet" title="Permalink to this heading">#</a></h3>
+<p>ببساطة يمكنك استخدام <code class="docutils literal notranslate"><span class="pre">geemap.Map()</span></code> لخلق خارطة تفاعلية مع الاعدادات الافتراضية. أولا عليك استيراد مكتبة  <code class="docutils literal notranslate"><span class="pre">geemap</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geemap</span>
@@ -512,7 +512,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </div>
-<p>Next, create an interactive map using the ipyleaflet plotting backend. The <a class="reference external" href="https://geemap.org/geemap/#geemap.geemap.Map">geemap.Map</a> class inherits the <a class="reference external" href="https://ipyleaflet.readthedocs.io/en/latest/map_and_basemaps/map.html">ipyleaflet.Map</a> class. Therefore, you can use the same syntax to create an interactive map as you would with <code class="docutils literal notranslate"><span class="pre">ipyleaflet.Map</span></code>.</p>
+<p>ثانياَ, خلق خارطة تفاعلية باستخدام دالة رسم الخلفية الاساسية ipyleaflet. ان مكتبة <a class="reference external" href="https://geemap.org/geemap/#geemap.geemap.Map">geemap.Map</a> تفوم بأستيراد دالة <a class="reference external" href="https://ipyleaflet.readthedocs.io/en/latest/map_and_basemaps/map.html">ipyleaflet.Map</a>. لذلك يمكنك استخدام نفس السياق لخلق خارطة تفاعلية كما ترغب مع الايعاز <code class="docutils literal notranslate"><span class="pre">ipyleaflet.Map</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -520,7 +520,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </div>
-<p>This code creates a new map and assigns it to a new variable named <code class="docutils literal notranslate"><span class="pre">Map</span></code>. To display the map in a Jupyter notebook, simply type the variable name:</p>
+<p>هذا السطر من الكود  يخلق خارطة جديدة و يسجلها الى متغير جديد اسمه <code class="docutils literal notranslate"><span class="pre">Map</span></code>. لاجل استغراض الخارطه في بيئة Jupyter notebook, ببساطة اكتب الاسم كما في الايعاز التالي:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span>
@@ -528,14 +528,15 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </div>
+<p>اجعل في ذهنك ان خلال هذا الكتاب,  <code class="docutils literal notranslate"><span class="pre">Map</span></code> بشكل عام يشير الى كائن الخارطه التفاعلية. انها فقط عباره عن اسم متغير لاغير. يمكنك استخدام اي اسم ترغب فيه مثل (e.g., <code class="docutils literal notranslate"><span class="pre">m</span></code>) طالما يتم ترجمته من قبل معالج لغة Python ضمن القواعد لاختيار الاسماء:</p>
 <p>Keep in mind that throughout this book, <code class="docutils literal notranslate"><span class="pre">Map</span></code> is commonly used to refer to the interactive map. It is just a variable name. You can use whatever name you want (e.g., <code class="docutils literal notranslate"><span class="pre">m</span></code>) as long as it complies with the following Python variable names rules:</p>
 <ul class="simple">
-<li><p>A variable name must start with a letter or the underscore character</p></li>
-<li><p>A variable name cannot start with a number</p></li>
-<li><p>A variable name can only contain alphanumeric characters and underscores (A-z, 0-9, and _ )</p></li>
+<li><p>الاسم يجب ان يبداء بحرف او رمز مسطر</p></li>
+<li><p>الاسم يجب ان لا يبداء برقم variable name cannot start with a number</p></li>
+<li><p>الاسم فقط يحتوي على حروف و شارحة سفلى (A-z, 0-9, و _ )</p></li>
 </ul>
-<p>In general, a Python variable name should be lowercase. The reason we use <code class="docutils literal notranslate"><span class="pre">Map</span></code> rather than <code class="docutils literal notranslate"><span class="pre">m</span></code> is because in the Earth Engine JavaScript API, <code class="docutils literal notranslate"><span class="pre">Map</span></code> is a reserved keyword referring to the interactive map. We want to be consistent with the Earth Engine JavaScript API so that users can have an easier transition to geemap. Users are by no means required to use <code class="docutils literal notranslate"><span class="pre">Map</span></code> as the variable name for the interactive map.</p>
-<p>To customize the map, you can specify various keyword arguments, such as <code class="docutils literal notranslate"><span class="pre">center</span></code> ([lat, lon]), <code class="docutils literal notranslate"><span class="pre">zoom</span></code>, <code class="docutils literal notranslate"><span class="pre">width</span></code>, and <code class="docutils literal notranslate"><span class="pre">height</span></code>. The default <code class="docutils literal notranslate"><span class="pre">width</span></code> is <code class="docutils literal notranslate"><span class="pre">100%</span></code>, which takes up the entire cell width of the Jupyter notebook. The <code class="docutils literal notranslate"><span class="pre">height</span></code> argument accepts a number or a string. If a number is provided, it represents the height of the map in pixels. If a string is provided, the string must be in the format of a number followed by <code class="docutils literal notranslate"><span class="pre">px</span></code>, e.g., <code class="docutils literal notranslate"><span class="pre">600px</span></code>.</p>
+<p>بشكل عام, ان المتغيرات في  Python يجب ان تكون في شكل الحروف الصغيرة. و السبب في استخدام <code class="docutils literal notranslate"><span class="pre">Map</span></code> بدلا من <code class="docutils literal notranslate"><span class="pre">m</span></code> ان في Earth Engine JavaScript API يعتبر <code class="docutils literal notranslate"><span class="pre">Map</span></code> اسم محجوز الى الخارطة التفاعلية, و لاجل الحفاط على التوحد مع Earth Engine JavaScript API فان المستخدم بذلك يحافط على الانتفال السهل الى geemap. على أي حال فان المستخدم يتطلب ان يستخدم <code class="docutils literal notranslate"><span class="pre">Map</span></code> كمتغير يشغير الى الخارطة التفاعلية.</p>
+<p>لاجل تخصيص الخارطة, بالامكان تخصيص مختلف المدخلات مثل <code class="docutils literal notranslate"><span class="pre">center</span></code> ([lat, lon]), <code class="docutils literal notranslate"><span class="pre">zoom</span></code>, <code class="docutils literal notranslate"><span class="pre">width</span></code> و <code class="docutils literal notranslate"><span class="pre">height</span></code>. ان العرض الافتراضي <code class="docutils literal notranslate"><span class="pre">width</span></code> هو <code class="docutils literal notranslate"><span class="pre">100%</span></code>, و الذي ياخذ كل عرض الخلية في Jupyter. أما الارتفاع <code class="docutils literal notranslate"><span class="pre">height</span></code> يقبل رقم او نص. اذا كان المدخل رقم فانه يمثل ارتفاع الخارطه بوحده قياس البكسل. أما اذا كان المدخل نص فان النص يجب ان يكون بصيغة رقم متبوع بـ <code class="docutils literal notranslate"><span class="pre">px</span></code>, e.g., <code class="docutils literal notranslate"><span class="pre">600px</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
@@ -544,7 +545,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </div>
-<p>The default map comes with all the following controls (see <a class="reference internal" href="#ch02-ipyleaflet"><span class="std std-numref">Fig. 2.1</span></a>):</p>
+<p>ان الاعدادات الافتراضية للخراطة تأتي مع الظوابط التالية (see <a class="reference internal" href="#ch02-ipyleaflet"><span class="std std-numref">Fig. 2.1</span></a>):</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">attribution_ctrl</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">data_ctrl</span></code></p></li>
@@ -562,7 +563,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 <p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">A map created using the ipyleaflet plotting backend.</span><a class="headerlink" href="#ch02-ipyleaflet" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>To hide a control, set <code class="docutils literal notranslate"><span class="pre">control_name</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code>, e.g., <code class="docutils literal notranslate"><span class="pre">draw_ctrl=False</span></code>.</p>
+<p>لاجل اخفاء اي من الادوات يجب تغير الاعداد الى الحالة السلبية كما في <code class="docutils literal notranslate"><span class="pre">control_name</span></code> الى <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">draw_ctrl=False</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">data_ctrl</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">toolbar_ctrl</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">draw_ctrl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -571,7 +572,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </div>
-<p>You can also set <code class="docutils literal notranslate"><span class="pre">lite_mode=True</span></code> to show only the Zoom Control.</p>
+<p>و ايضا بالامكان تخصيص اعداد  <code class="docutils literal notranslate"><span class="pre">lite_mode=True</span></code> لاظهار زر التكبير و التصغير فقط:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">lite_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -580,7 +581,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </div>
-<p>To save the map as an HTML file you can call the <code class="docutils literal notranslate"><span class="pre">save</span></code> method:</p>
+<p>لاجل حفط الخارطة بصيغة HTML يجب تنفيذ الايعاز <code class="docutils literal notranslate"><span class="pre">save</span></code> كما في التالي:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;ipyleaflet.html&#39;</span><span class="p">)</span>
@@ -990,7 +991,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.1. مدخل</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter02-requirements">2.2. المتطلبات التقنية</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2.3. رسم الخلفيات الاساسية</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyleaflet">2.3.1. Ipyleaflet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyleaflet">2.3.1. استخدام حزمه Ipyleaflet</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#folium">2.3.2. Folium</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotly">2.3.3. Plotly</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydeck">2.3.4. Pydeck</a></li>
