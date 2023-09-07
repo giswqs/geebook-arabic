@@ -107,7 +107,7 @@ Map
 Keep in mind that throughout this book, `Map` is commonly used to refer to the interactive map. It is just a variable name. You can use whatever name you want (e.g., `m`) as long as it complies with the following Python variable names rules:
 
 - الاسم يجب ان يبداء بحرف او رمز مسطر
-- الاسم يجب ان لا يبداء برقم variable name cannot start with a number
+- الاسم يجب ان لا يبداء برقم
 - الاسم فقط يحتوي على حروف و شارحة سفلى (A-z, 0-9, و \_ )
 
 بشكل عام, ان المتغيرات في  Python يجب ان تكون في شكل الحروف الصغيرة. و السبب في استخدام `Map` بدلا من `m` ان في Earth Engine JavaScript API يعتبر `Map` اسم محجوز الى الخارطة التفاعلية, و لاجل الحفاط على التوحد مع Earth Engine JavaScript API فان المستخدم بذلك يحافط على الانتفال السهل الى geemap. على أي حال فان المستخدم يتطلب ان يستخدم `Map` كمتغير يشغير الى الخارطة التفاعلية.
