@@ -389,13 +389,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter02-requirements">2.2. المتطلبات التقنية</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2.3. رسم الخلفيات الاساسية</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyleaflet">2.3.1. استخدام حزمه Ipyleaflet</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#folium">2.3.2. Folium</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotly">2.3.3. Plotly</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydeck">2.3.4. Pydeck</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keplergl">2.3.5. KeplerGL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#folium">2.3.2. استخدام حزمة Folium</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotly">2.3.3. استخدام حزمة Plotly</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydeck">2.3.4. استخدام حزمه Pydeck</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keplergl">2.3.5. استخدام حزمة KeplerGL</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-basemaps">2.4. Adding basemaps</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-basemaps">2.4. أضافة الخارطة التفاعلية Adding basemaps</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-basemaps">2.4.1. Built-in basemaps</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xyz-tiles">2.4.2. XYZ tiles</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wms-tiles">2.4.3. WMS tiles</a></li>
@@ -424,13 +424,13 @@ document.write(`
 <li><p><a class="reference internal" href="#id5" id="id10">رسم الخلفيات الاساسية</a></p>
 <ul>
 <li><p><a class="reference internal" href="#ipyleaflet" id="id11">استخدام حزمه Ipyleaflet</a></p></li>
-<li><p><a class="reference internal" href="#folium" id="id12">Folium</a></p></li>
-<li><p><a class="reference internal" href="#plotly" id="id13">Plotly</a></p></li>
-<li><p><a class="reference internal" href="#pydeck" id="id14">Pydeck</a></p></li>
-<li><p><a class="reference internal" href="#keplergl" id="id15">KeplerGL</a></p></li>
+<li><p><a class="reference internal" href="#folium" id="id12">استخدام حزمة Folium</a></p></li>
+<li><p><a class="reference internal" href="#plotly" id="id13">استخدام حزمة Plotly</a></p></li>
+<li><p><a class="reference internal" href="#pydeck" id="id14">استخدام حزمه Pydeck</a></p></li>
+<li><p><a class="reference internal" href="#keplergl" id="id15">استخدام حزمة KeplerGL</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#adding-basemaps" id="id16">Adding basemaps</a></p>
+<li><p><a class="reference internal" href="#adding-basemaps" id="id16">أضافة الخارطة التفاعلية Adding basemaps</a></p>
 <ul>
 <li><p><a class="reference internal" href="#built-in-basemaps" id="id17">Built-in basemaps</a></p></li>
 <li><p><a class="reference internal" href="#xyz-tiles" id="id18">XYZ tiles</a></p></li>
@@ -591,8 +591,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="folium">
-<h3><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">2.3.2. </span>Folium</a><a class="headerlink" href="#folium" title="Permalink to this heading">#</a></h3>
-<p>To create an interactive map using the folium plotting backend, simply import the library as follows:</p>
+<h3><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">2.3.2. </span>استخدام حزمة Folium</a><a class="headerlink" href="#folium" title="Permalink to this heading">#</a></h3>
+<p>لكي تحلق خارطة تفاعلية باستخدام حزمه folium لرسم خلفية اساسية ببساطه علىك استخدام المكتبة الخاصة كما في الايعاز التالي:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geemap.foliumap</span> <span class="k">as</span> <span class="nn">geemap</span>
@@ -600,7 +600,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </div>
-<p>Then, you can use the same line of code to create and display an interactive map (<a class="reference internal" href="#ch02-folium"><span class="std std-numref">Fig. 2.2</span></a>) as you would with the ipyleaflet plotting backend introduced above.</p>
+<p>بعد ذلك, يمكن استخدام نفس الايعاز اعلاه لخلق و استعراض الخارطة التفاعلية (<a class="reference internal" href="#ch02-folium"><span class="std std-numref">Fig. 2.2</span></a>) حيث فعلت في استخدام بناء حزمه ipyleaflet.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
@@ -615,8 +615,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 <p><span class="caption-number">Fig. 2.2 </span><span class="caption-text">A map created using the folium plotting backend.</span><a class="headerlink" href="#ch02-folium" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Folium does not support bidirectional communication <span id="id7">[<a class="reference internal" href="bibliography.html#id13" title="QuantStack. Interactive GIS in Jupyter with ipyleaflet. 24 September 2019. Accessed: 2022-3-29. URL: https://blog.jupyter.org/interactive-gis-in-jupyter-with-ipyleaflet-52f9657fa7a.">QuantStack, 2019</a>]</span>. Once the map is created and displayed in a notebook cell, you can’t modify the map’s properties, e.g., add/remove layers, add controls, change width/height. Also, the data and toolbar controls available in ipyleaflet (see <a class="reference internal" href="#ch02-ipyleaflet"><span class="std std-numref">Fig. 2.1</span></a>) are not supported in folium as folium does not support ipywidgets.</p>
-<p>To save the map as an HTML file we can call the <code class="docutils literal notranslate"><span class="pre">save</span></code> method:</p>
+<p>ان folium لا تدعم التواصل الثنائي بين القاعدة الخلفية و الواجهه الامامية <span id="id7">[<a class="reference internal" href="bibliography.html#id13" title="QuantStack. Interactive GIS in Jupyter with ipyleaflet. 24 September 2019. Accessed: 2022-3-29. URL: https://blog.jupyter.org/interactive-gis-in-jupyter-with-ipyleaflet-52f9657fa7a.">QuantStack, 2019</a>]</span>. حال خلق و استعراض الخارطة في خلية notebook, لا يمكن تعديل خصائص الخارطة, مثل اضافة/ازالة, اضافة ازرار, تغيير الارتفاع/العرض. كذلك التحكم بالبيانات و شريط الادوات الموجود في ipyleaflet  في (see <a class="reference internal" href="#ch02-ipyleaflet"><span class="std std-numref">Fig. 2.1</span></a>) ليست مدعومه في folium حيث انها لاتدعم ipywidgets.</p>
+<p>و لاجل حفط الخارطة في HTML يحب استخدام او ستدعاء الايعاز <code class="docutils literal notranslate"><span class="pre">sav</span></code> كما في الشكل الأتي:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;folium.html&#39;</span><span class="p">)</span>
@@ -626,8 +626,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="plotly">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink"><span class="section-number">2.3.3. </span>Plotly</a><a class="headerlink" href="#plotly" title="Permalink to this heading">#</a></h3>
-<p>To create an interactive map using the plotly plotting backend, simply import the library as follows:</p>
+<h3><a class="toc-backref" href="#id13" role="doc-backlink"><span class="section-number">2.3.3. </span>استخدام حزمة Plotly</a><a class="headerlink" href="#plotly" title="Permalink to this heading">#</a></h3>
+<p>لاجل خلق خارطة تفاعلية باستخدام حزمة plotly ببساطة عليك استيراد المكتبة الخاصة كما في الايعاز التالي:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geemap.plotlymap</span> <span class="k">as</span> <span class="nn">geemap</span>
@@ -635,7 +635,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </div>
-<p>Then, create and display an interactive map (<a class="reference internal" href="#ch02-plotly"><span class="std std-numref">Fig. 2.3</span></a>).</p>
+<p>بعد ذلك, يمكنك خلق الخارطة التفاعلية  (<a class="reference internal" href="#ch02-plotly"><span class="std std-numref">Fig. 2.3</span></a>) بأستخدام الايعاز التالي.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -650,7 +650,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 <p><span class="caption-number">Fig. 2.3 </span><span class="caption-text">A map created using the plotly plotting backend.</span><a class="headerlink" href="#ch02-plotly" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Note that you might not see the map displayed in Colab as it does not yet support plotly FigureWidget. If you run into an error saying <code class="docutils literal notranslate"><span class="pre">FigureWidget</span> <span class="pre">-</span> <span class="pre">'mapbox._derived'</span> <span class="pre">Value</span> <span class="pre">Error</span></code> (see <a class="reference external" href="https://github.com/plotly/plotly.py/issues/2570#issuecomment-738735816">plotly issue 2570</a>), uncomment the following line and run it.</p>
+<p>ملاحظة لا يمكن قد لا ترى الخارطة عند استعراضعا في Colab حيث انه لا يدعم حزمة plotly FigureWidget. و اذا جاءت رسالة تخبرك <code class="docutils literal notranslate"><span class="pre">FigureWidget</span> <span class="pre">-</span> <span class="pre">'mapbox._derived'</span> <span class="pre">Value</span> <span class="pre">Error</span></code> (see <a class="reference external" href="https://github.com/plotly/plotly.py/issues/2570#issuecomment-738735816">plotly issue 2570</a>), احذف التعليق من الايعاز التالي ثم قم بتنفيذه.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># geemap.fix_widget_error()</span>
@@ -660,8 +660,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="pydeck">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink"><span class="section-number">2.3.4. </span>Pydeck</a><a class="headerlink" href="#pydeck" title="Permalink to this heading">#</a></h3>
-<p>To create an interactive map using the pydeck plotting backend, simply import the library as follows:</p>
+<h3><a class="toc-backref" href="#id14" role="doc-backlink"><span class="section-number">2.3.4. </span>استخدام حزمه Pydeck</a><a class="headerlink" href="#pydeck" title="Permalink to this heading">#</a></h3>
+<p>اجل خلق خارطة تفاعلية باستخدام حزمة pydeck ببساطة عليك استيراد المكتبة الخاصة كما في الايعاز التالي:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geemap.deck</span> <span class="k">as</span> <span class="nn">geemap</span>
@@ -669,7 +669,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </div>
-<p>Then, create and display an interactive map (<a class="reference internal" href="#ch02-pydeck"><span class="std std-numref">Fig. 2.4</span></a>).</p>
+<p>بعد ذلك, يمكنك خلق الخارطة التفاعلية  (<a class="reference internal" href="#ch02-pydeck"><span class="std std-numref">Fig. 2.4</span></a>) بأستخدام الايعاز التالي.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -686,8 +686,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </figure>
 </section>
 <section id="keplergl">
-<h3><a class="toc-backref" href="#id15" role="doc-backlink"><span class="section-number">2.3.5. </span>KeplerGL</a><a class="headerlink" href="#keplergl" title="Permalink to this heading">#</a></h3>
-<p>To create an interactive map using the <a class="reference external" href="https://docs.kepler.gl/docs/keplergl-jupyter">kepler.gl</a> plotting backend, simply import the library as follows:</p>
+<h3><a class="toc-backref" href="#id15" role="doc-backlink"><span class="section-number">2.3.5. </span>استخدام حزمة KeplerGL</a><a class="headerlink" href="#keplergl" title="Permalink to this heading">#</a></h3>
+<p>جل خلق خارطة تفاعلية باستخدام حزمة <a class="reference external" href="https://docs.kepler.gl/docs/keplergl-jupyter">kepler.gl</a> ببساطة عليك استيراد المكتبة الخاصة كما في الايعاز التالي:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geemap.kepler</span> <span class="k">as</span> <span class="nn">geemap</span>
@@ -695,7 +695,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </div>
 </div>
-<p>Then, create and display an interactive map (<a class="reference internal" href="#ch02-kepler"><span class="std std-numref">Fig. 2.5</span></a>).</p>
+<p>بعد ذلك, يمكنك خلق الخارطة التفاعلية  (<a class="reference internal" href="#ch02-kepler"><span class="std std-numref">Fig. 2.5</span></a>) بأستخدام الايعاز التالي.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span> <span class="o">=</span> <span class="n">geemap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
@@ -713,8 +713,8 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </section>
 </section>
 <section id="adding-basemaps">
-<h2><a class="toc-backref" href="#id16" role="doc-backlink"><span class="section-number">2.4. </span>Adding basemaps</a><a class="headerlink" href="#adding-basemaps" title="Permalink to this heading">#</a></h2>
-<p>There are several ways to add basemaps to a map. You can specify the basemap to use in the <code class="docutils literal notranslate"><span class="pre">basemap</span></code> keyword argument when creating the map with the <code class="docutils literal notranslate"><span class="pre">geemap.Map()</span></code> method. Alternatively, you can add basemap layers to the map using the <code class="docutils literal notranslate"><span class="pre">Map.add_basemap()</span></code> method. Geemap has hundreds of built-in basemaps available through <a class="reference external" href="https://github.com/geopandas/xyzservices">xyzservices</a> that can be easily added to the map with only one line of code.</p>
+<h2><a class="toc-backref" href="#id16" role="doc-backlink"><span class="section-number">2.4. </span>أضافة الخارطة التفاعلية Adding basemaps</a><a class="headerlink" href="#adding-basemaps" title="Permalink to this heading">#</a></h2>
+<p>هناك عدة طرق لاخراج الخارطة الاساسية الى القاعدة الاساس في الخارطة. يمكن تخصيص الخراطة الاساس باستخدام المفتاح الادخال <code class="docutils literal notranslate"><span class="pre">basemap</span></code> عند خلقها مع استخدام طريقة <code class="docutils literal notranslate"><span class="pre">()geemap.Map</span></code>.بديلا عن ذلك, يمكن إضافة طبقة القاعدة الاساس بأسخدام  <code class="docutils literal notranslate"><span class="pre">()Map.add_basemap</span></code>, ان geemap تتضمن المئات من خرائط الاساس الموجوده اساسا من خلال  <a class="reference external" href="https://github.com/geopandas/xyzservices">xyzservices</a> و التي من اسهل اضافتها الى بأيعاز واحد.</p>
 <section id="built-in-basemaps">
 <h3><a class="toc-backref" href="#id17" role="doc-backlink"><span class="section-number">2.4.1. </span>Built-in basemaps</a><a class="headerlink" href="#built-in-basemaps" title="Permalink to this heading">#</a></h3>
 <p>Let’s try out some of the built-in basemaps. First, import the geemap library as follows:</p>
@@ -992,13 +992,13 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter02-requirements">2.2. المتطلبات التقنية</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2.3. رسم الخلفيات الاساسية</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyleaflet">2.3.1. استخدام حزمه Ipyleaflet</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#folium">2.3.2. Folium</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotly">2.3.3. Plotly</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydeck">2.3.4. Pydeck</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keplergl">2.3.5. KeplerGL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#folium">2.3.2. استخدام حزمة Folium</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotly">2.3.3. استخدام حزمة Plotly</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydeck">2.3.4. استخدام حزمه Pydeck</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keplergl">2.3.5. استخدام حزمة KeplerGL</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-basemaps">2.4. Adding basemaps</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-basemaps">2.4. أضافة الخارطة التفاعلية Adding basemaps</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-basemaps">2.4.1. Built-in basemaps</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xyz-tiles">2.4.2. XYZ tiles</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wms-tiles">2.4.3. WMS tiles</a></li>
