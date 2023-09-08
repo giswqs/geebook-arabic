@@ -314,9 +314,8 @@ for basemap in geemap.basemaps.keys():
 len(geemap.basemaps)
 ```
 
-### XYZ tiles
-
-You can also add XYZ tile layers to the map using the `Map.add_tile_layer()` method. For example, the following code creates an interactive map and adds the Google Terrain basemap to it:
+### استخدام حزمه XYZ tiles
+يمكن ايضاَ اضافة طبقة خراطة اساس XYZ tile باستخدام الطرقة `()Map.add_tile_layer`, على سبيل المثال, الايعاز التالي يقوم بخلق خارطة تفاعلية و اضافة خارطة اساس Google Terrain اليها.
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -328,9 +327,8 @@ Map.add_tile_layer(
 Map
 ```
 
-### WMS tiles
-
-Similarly, you can add WMS tile layers to the map using the `Map.add_wms_layer()` method. For example, the following code creates an interactive map and adds the National Land Cover Database (NLCD) 2019 basemap to it ({numref}`ch02_basemap_nlcd`):
+### استخدام حزمة WMS tiles
+على وجه الشبة, يمكن اضافة طبقة خارطة اساس WMS tile الى االخارطة باستخدام الايعاز `()Map.add_wms_layer`, على سبيل المثال, الايعاز التالي يقوم بعملية خلق الخارطة التفاعلية و اضافة  خارطة اساسNational Land Cover Database (NLCD) 2019 كما في ({numref}`ch02_basemap_nlcd`):
 
 ```{code-cell} ipython3
 Map = geemap.Map(center=[40, -100], zoom=4)
@@ -353,12 +351,10 @@ width: 100%
 ---
 The National Land Cover Database (NLCD) 2019 basemap.
 ```
+للاطلاع على المزيد من خراط اساس WMS, الدخول الى الموقع التالي [USGS National Map Services](https://apps.nationalmap.gov/services). في حال الحصول على الرابط المطلوب للخراطة  الاساس WMS يمكن اتباع المثال اعلاه لاضافها الى الخارطة.  
 
-Want to find out more freely available WMS basemaps? Check out the [USGS National Map Services](https://apps.nationalmap.gov/services). Once you get a WMS URL, you can follow the example above to add it to the map.
-
-### Planet basemaps
-
-[Planet Labs](https://www.planet.com) provides high-resolution global satellite imagery with a high temporal frequency. The monthly and quarterly global basemaps can be streamed via the [XYZ Basemap Tile Service](https://developers.planet.com/docs/basemaps/tile-services/xyz) for use in web mapping applications or for visualization purposes. A valid [Planet account](https://developers.planet.com/docs/apis/data/#how-to-become-a-planet-developer) is required to access the Basemap Tile Service. Once you sign up for a Planet account, you can get your API key by navigating to the [Account Settings page](https://www.planet.com/account/#/user-settings) as shown in ({numref}`ch02_planet_api_key`).
+### استخدام حزمة Planet basemaps
+ان حزمه [Planet Labs](https://www.planet.com)  تزود صور اقمار صناعية عالية الدقة مع زيارات زمينه قصيره جداَ. انها توفر خرائط اساس بالمدى الزمني الشهري و الربع سنوي على المدى المكاني العالمي و التي يمكن ان تزود من خلال الرابط [XYZ Basemap Tile Service](https://developers.planet.com/docs/basemaps/tile-services/xyz) للاستخدام في رسم و تمثيل البيانات المكاني على التطبيقات على الويب. يجب ان يكون لك حساب على planet قد تم تفعيلة و على الرابط التالي يمكنك انشاء حساب [Planet account](https://developers.planet.com/docs/apis/data/#how-to-become-a-planet-developer) للتمكن من الوصل الى الخراطة الاساس Basemap Tile Service. في حال تم الحصول على حساب على Planet, يمكن الحصول على مفتاح API من خلال الدخول الى [Account Settings page](https://www.planet.com/account/#/user-settings) كما موضح في الشكل ({numref}`ch02_planet_api_key`).
 
 ```{figure} images/ch02_planet_api_key.jpg
 ---
@@ -367,48 +363,44 @@ width: 100%
 ---
 Planet account profile page.
 ```
-
-Replace `YOUR_API_KEY` below with the API key copied from your Account Settings page shown above. You can create an environment variable called `PLANET_API_KEY` and set it to the API key so that you can access the basemap tiles without having to specify the API key every time.
+استبدال المفتاح `YOUR_API_KEY` ادناه مع مفتاح API الذي يتم نسخة من أعدادات حسابك في الصوره أعلاه. يمكن خلق متغير كائن بيئة بأسم `PLANET_API_KEY` و تغيير اعدادات مفتاح API لكي تتمكن من الوصول الى الخارطة الاساس بدون أي تغيير في كل مره. 
 
 ```{code-cell} ipython3
 import os
 
 os.environ["PLANET_API_KEY"] = "YOUR_API_KEY"
 ```
-
-First, let's look at the list of available quarterly basemaps. Planet has quarterly basemaps going back to the first quarter of 2016. The names of the quarterly basemaps are: `Planet_2016q1`, `Planet_2016q2`, ..., `Planet_2022q1`, and so on.
+أولا, دعنا نلقي نظره على خرائط الاساس ذات التردد الزمني الربع سنوية. ان Planet تحتوي على بيانات خراطة اساس ربع سنوي ترجع الى سنة 2016. ان اسماء الخرائط الاساس تأتي على هذا السياق `Planet_2016q1`, `Planet_2016q2`, ..., و `Planet_2022q1`, و على هذا المنوال.
 
 ```{code-cell} ipython3
 quarterly_tiles = geemap.planet_quarterly_tiles()
 for tile in quarterly_tiles:
     print(tile)
 ```
-
-Next, let's look at the list of available monthly basemaps. Planet has monthly basemaps going back to January 2016. The names of the monthly basemaps are: `Planet_2016_01`, `Planet_2016_02`, ..., `Planet_2022_04`, and so on.
+بعد ذلك, دعنا نطلع على البيانات الشهري للخارطة الاساس. ان Planet فيها تحتوي على خرائط اساس بتردد زمني شهري تعود الى تاريخ January 2016. و ان اسماء خرائط الاساس ذات التردد الشهري تأتي على السياق التالي: `Planet_2016_01`, 
+`Planet_2016_02`, ..., و `Planet_2022_04`, و على هذا المنوال.
 
 ```{code-cell} ipython3
 monthly_tiles = geemap.planet_monthly_tiles()
 for tile in monthly_tiles:
     print(tile)
 ```
-
-To add a monthly basemap to the map, use the `Map.add_planet_by_month()` method as follows:
+لاجل أضافة خراطة اساس بتردد زمني شهري, يجب استاخدام الايعاز التالي `()Map.add_planet_by_month` و كما هو ادناه:
 
 ```{code-cell} ipython3
 Map = geemap.Map()
 Map.add_planet_by_month(year=2020, month=8)
 Map
 ```
-
-To add a quarterly basemap to the map, use the `Map.add_planet_by_quarter()` method as follows:
+و لاجل اضافة خراطة اساس بتردد ربع سنوي, يجب استخدام الايعاز التالي `()Map.add_planet_by_quarter` و كما هو ادناه:
 
 ```{code-cell} ipython3
 Map = geemap.Map()
 Map.add_planet_by_quarter(year=2019, quarter=2)
 Map
 ```
+ان الخارطه سوف تكون على الشكل التالي {numref}`ch02_basemap_planet`. 
 
-The map should look like {numref}`ch02_basemap_planet`.
 
 ```{figure} images/ch02_basemap_planet.jpg
 ---
@@ -419,19 +411,18 @@ The Planet quarterly basemap for second quarter of 2019.
 
 ```
 
-### Basemap GUI
+### استخدام حزمة Basemap GUI
 
-Geemap makes it easy for users to add basemaps to their maps without having to write any code. By clicking the "map" icon on the toolbar, the basemap GUI is activated ({numref}`ch02_basemap_gui`). Simply click the dropdown menu to select the basemap that you want to add. Additionally, if you have created an environment variable called `PLANET_API_KEY` and set it to your Planet API key, the Planet basemaps will also be available to select from the dropdown menu.
+ان geemap تسهل على المستخدمين اضافة طبقة الخارطة الاساس الى الخراطة بدون الحاجة الى كتابة كود برمجي. من خلال النقر على ايقونه "map" في شريط الادوات, سوف تفعل خارطة GUI و كما في ({numref}`ch02_basemap_gui`). ببساطة انقر على القائمة لاختيار الخارطة الاساس التي تريد اضافتها. بالاضافة الى ذلك, اذا قمت بخلق متغير نوع كائن بيئة بالاسم `PLANET_API_KEY` و ضبط اعداده على مفتاحك الخاص لـ Planet API, ان خارطة اساس Planet سوف تكون متاحة من القائمة النازلة.
 
-To set the Planet API key, use the following code:
+لاجل ضبط اعدادات مفتاح Planet API, استخدم الايعاز التالي: 
 
 ```{code-cell} ipython3
 import os
 
 os.environ["PLANET_API_KEY"] = "YOUR_API_KEY"
 ```
-
-Then the Planet basemaps will be available via the basemap dropdown menu.
+بعد ذلك ان الخارطة الاساس سوف تكون موجوده في القائمة المنسدلة.
 
 ```{code-cell} ipython3
 Map = geemap.Map()
@@ -447,8 +438,8 @@ width: 100%
 The basemap GUI for changing basemaps interactively without coding.
 ```
 
-## Summary
+## الخلاصة 
+في هذا الفصل, بدئنا بشرح الاساسيات لبيئة Jupyter notebook. و قدمنا امثلة عن كيفية استخدام الطرق الخمس لرسم الخلفية الاساس و التي تستخدم لخلق الخارطة الاساس. بالاضافه الى ذلك, استعرضنا كيفية دمج طقات من الخرائط الاساس مثل XYZ tiles, WMS tiles, و Planet الى الخارطة. 
 
-In this chapter, we began by introducing the fundamentals of Jupyter notebooks. We then provided hands-on examples of using the five geemap plotting backends to create interactive maps. Additionally, we explored how to incorporate various basemap layers, such as built-in basemaps, XYZ tiles, WMS tiles, and Planet basemaps, into our maps.
+الى الان, يجب ان تكون اصبحت على دراية في استخدام بية Jupyter notebook لخلق خراطة تفاعلية و التبديل بين مختلف الخرائط الاساس ذلك. في الفصل القادم سوف نتطرق بشكل مفصل حول استخدام بيانات Google Earth Engine.
 
-By now, you should be proficient in using Jupyter notebook to generate interactive maps and switch between various basemaps seamlessly. That concludes this chapter. In the next chapter, we will delve into Google Earth Engine data.
